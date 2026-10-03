@@ -5,6 +5,7 @@
 # Bí mật
 .env
 .env.local
+/local
 
 # Python
 __pycache__/
