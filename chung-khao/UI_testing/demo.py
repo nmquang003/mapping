@@ -23,9 +23,11 @@ import requests
 BASE_URL = os.getenv("AITC_BASE_URL", "https://api.thucchien.ai").rstrip("/")
 ENV_KEY = os.getenv("AITC_API_KEY", "")
 TIMEOUT = 300
+# Options not in the BTC docs default to AUTO = the field is left out of the request.
+AUTO = "auto"
 
 # ------------------------------------------------------------------ specs
-GOOGLE_RATIOS = ["1:1", "3:2", "2:3", "4:3", "3:4", "5:4", "4:5", "16:9", "9:16", "21:9"]
+GOOGLE_RATIOS = [AUTO, "1:1", "3:2", "2:3", "4:3", "3:4", "5:4", "4:5", "16:9", "9:16", "21:9"]
 
 # kind=google: Nano Banana (Gemini image). kind=openai: gpt-image.
 IMAGE_SPECS = {
@@ -36,7 +38,7 @@ IMAGE_SPECS = {
     "gpt-image-2.5-flare": {"kind": "openai", "max_refs": 16},
     "gpt-image-2.5-sunburst": {"kind": "openai", "max_refs": 16},
 }
-OPENAI_SIZES = ["auto", "1024x1024", "1536x1024", "1024x1536"]
+OPENAI_SIZES = [AUTO, "1024x1024", "1536x1024", "1024x1536"]
 
 VIDEO_MODELS = [
     "veo-3.1-lite-generate-001",
@@ -68,7 +70,7 @@ OPENAI_VOICES = [
     "alloy", "ash", "ballad", "coral", "echo", "fable", "nova", "onyx", "sage", "shimmer",
     "verse", "marin", "cedar",
 ]
-TTS_FORMATS = ["mp3", "opus", "aac", "flac", "wav", "pcm"]
+TTS_FORMATS = [AUTO, "mp3", "opus", "aac", "flac", "wav", "pcm"]
 
 STT_MODELS = [
     "gemini-3.5-transcribe-preview",
@@ -170,6 +172,13 @@ def _veo_image(path: str) -> dict:
         return {"bytesBase64Encoded": base64.b64encode(f.read()).decode(), "mimeType": _mime(path)}
 
 
+def _put(body: dict, key: str, value):
+    """Set body[key] unless value is empty or AUTO, so undocumented fields stay out by default."""
+    if value is None or value == "" or value == AUTO:
+        return
+    body[key] = value
+
+
 def _form(d: dict) -> dict:
     """Dict -> multipart form fields. Objects / bools / lists are JSON-encoded."""
     return {k: v if isinstance(v, str) else json.dumps(v) for k, v in d.items()}
@@ -244,29 +253,25 @@ def _image_once(api_key, model, prompt, o, refs, extra):
                 "messages": [{"role": "user", "content": content}],
                 "modalities": ["image"],
             }
-            cfg = {"aspect_ratio": o["ratio"]}
-            if o["size_g"]:
-                cfg["image_size"] = o["size_g"]
-            body["image_config"] = cfg
+            cfg = {}
+            _put(cfg, "aspect_ratio", o["ratio"])
+            _put(cfg, "image_size", o["size_g"])
+            _put(body, "image_config", cfg or None)
             body.update(extra)
             r = _call("POST", "/v1/chat/completions", api_key, json_body=body)
         else:
-            body = {"model": model, "prompt": prompt, "n": 1, "aspect_ratio": o["ratio"]}
-            if o["size_g"]:
-                body["image_size"] = o["size_g"]
+            body = {"model": model, "prompt": prompt, "n": 1}
+            _put(body, "aspect_ratio", o["ratio"])
+            _put(body, "image_size", o["size_g"])
             body.update(extra)
             r = _call("POST", "/images/generations", api_key, json_body=body)
     else:
-        body = {
-            "model": model,
-            "prompt": prompt,
-            "n": 1,
-            "size": o["size_o"],
-            "quality": o["quality"],
-            "background": o["background"],
-            "output_format": o["fmt"],
-            "moderation": o["moderation"],
-        }
+        body = {"model": model, "prompt": prompt, "n": 1}
+        _put(body, "size", o["size_o"])
+        _put(body, "quality", o["quality"])
+        _put(body, "background", o["background"])
+        _put(body, "output_format", o["fmt"])
+        _put(body, "moderation", o["moderation"])
         if o["fmt"] in ("jpeg", "webp"):
             body["output_compression"] = int(o["compression"])
         body.update(extra)
@@ -322,11 +327,10 @@ def on_image_model(model):
     spec = IMAGE_SPECS[model]
     is_google = spec["kind"] == "google"
     sizes = spec.get("sizes", [])
-    value = "1K" if "1K" in sizes else (sizes[0] if sizes else None)
     return (
         gr.update(visible=is_google),
         gr.update(visible=not is_google),
-        gr.update(choices=sizes, value=value, visible=bool(sizes)),
+        gr.update(choices=[AUTO] + sizes, value=AUTO, visible=bool(sizes)),
     )
 
 
@@ -368,8 +372,8 @@ def gen_video(
         body["resolution"] = "4k"
     if negative.strip():
         body["negativePrompt"] = negative.strip()
-    if not audio:
-        body["generateAudio"] = False
+    if audio != AUTO:
+        body["generateAudio"] = audio == "on"
     if seed is not None:
         body["seed"] = int(seed)
     if last_frame:
@@ -427,10 +431,10 @@ def gen_tts(api_key, model, text, voice, style, speed, fmt, extra_json):
     extra = _parse_extra(extra_json)
     body = {"model": model, "input": text, "voice": voice}
     if model.startswith("gpt-"):
-        if style.strip():
-            body["instructions"] = style.strip()
-        body["speed"] = float(speed)
-        body["response_format"] = fmt
+        _put(body, "instructions", style.strip())
+        if float(speed) != 1.0:
+            body["speed"] = float(speed)
+        _put(body, "response_format", fmt)
     elif style.strip():
         body["input"] = f"{style.strip()}: {text}"
     body.update(extra)
@@ -446,9 +450,13 @@ def gen_tts(api_key, model, text, voice, style, speed, fmt, extra_json):
 # ------------------------------------------------------------------ stt
 def on_stt_model(model):
     whisper = model == "whisper-1"
-    formats = ["json", "text", "srt", "verbose_json", "vtt"] if whisper else ["json"]
+    if model == "gpt-transcribe":  # BTC docs: must send response_format=json
+        formats, value = ["json"], "json"
+    else:
+        formats = [AUTO, "json", "text", "srt", "verbose_json", "vtt"] if whisper else [AUTO, "json"]
+        value = AUTO
     return (
-        gr.update(choices=formats, value="json"),
+        gr.update(choices=formats, value=value),
         gr.update(visible=whisper),
         gr.update(visible=whisper),
     )
@@ -459,14 +467,13 @@ def run_stt(api_key, model, audio_path, lang, prompt, fmt, temperature, granular
         raise gr.Error("Upload or record some audio.")
     extra = _parse_extra(extra_json)
     data = {"model": model}
-    if lang != "auto":
-        data["language"] = lang
-    if prompt.strip():
-        data["prompt"] = prompt.strip()
-    if model != "gemini-3.5-transcribe-preview":
-        data["response_format"] = fmt
-        if model == "whisper-1" and temperature:
-            data["temperature"] = str(temperature)
+    _put(data, "language", lang)
+    _put(data, "prompt", prompt.strip())
+    if model == "gpt-transcribe":  # BTC docs: required, 400 without it
+        fmt = "json"
+    _put(data, "response_format", fmt)
+    if model == "whisper-1" and temperature:
+        data["temperature"] = str(temperature)
     data.update(_form(extra))
     if granularities and fmt == "verbose_json":
         data["timestamp_granularities[]"] = list(granularities)
@@ -531,7 +538,8 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
     with gr.Row(equal_height=True):
         with gr.Column(scale=3):
             gr.Markdown(
-                f"# AITC Playground\nGateway: `{BASE_URL}` — Image · Video · Speech",
+                f"# AITC Playground\nGateway: `{BASE_URL}` — Image · Video · Speech  \n"
+                "Options marked *not in BTC docs* default to **auto** / empty = not sent.",
                 elem_id="app-title",
             )
         with gr.Column(scale=2, min_width=320):
@@ -549,29 +557,37 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                 with gr.Column(scale=2, min_width=480, elem_id="panel-0"):
                     i_model = gr.Dropdown(list(IMAGE_SPECS), value="nano-banana-2", label="Model")
                     i_prompt = gr.Textbox(label="Prompt", lines=8, max_lines=30)
-                    i_refs = ref_uploader("Reference images", 14)
+                    i_refs = ref_uploader("Reference images (not in BTC docs)", 14)
                     i_n = gr.Slider(1, 4, value=1, step=1, label="Number of images")
 
                     with gr.Column(visible=True) as i_google:
                         with gr.Row():
                             i_ratio = gr.Dropdown(GOOGLE_RATIOS, value="1:1", label="Aspect ratio")
                             i_size_g = gr.Dropdown(
-                                IMAGE_SPECS["nano-banana-2"]["sizes"], value="1K", label="Resolution"
+                                [AUTO] + IMAGE_SPECS["nano-banana-2"]["sizes"],
+                                value=AUTO,
+                                label="Resolution (not in BTC docs)",
                             )
                     with gr.Column(visible=False) as i_openai:
                         with gr.Row():
-                            i_size_o = gr.Dropdown(OPENAI_SIZES, value="auto", label="Size")
+                            i_size_o = gr.Dropdown(OPENAI_SIZES, value="1024x1024", label="Size")
                             i_quality = gr.Dropdown(
-                                ["auto", "low", "medium", "high"], value="auto", label="Quality"
+                                [AUTO, "low", "medium", "high"], value="low", label="Quality"
                             )
                         with gr.Row():
                             i_bg = gr.Dropdown(
-                                ["auto", "opaque", "transparent"], value="auto", label="Background"
+                                [AUTO, "opaque", "transparent"],
+                                value=AUTO,
+                                label="Background (not in BTC docs)",
                             )
-                            i_fmt = gr.Dropdown(["png", "jpeg", "webp"], value="png", label="Format")
+                            i_fmt = gr.Dropdown(
+                                [AUTO, "png", "jpeg", "webp"], value=AUTO, label="Format (not in BTC docs)"
+                            )
                         with gr.Row():
                             i_comp = gr.Slider(0, 100, value=90, step=1, label="Compression (jpeg/webp)")
-                            i_mod = gr.Dropdown(["auto", "low"], value="auto", label="Moderation")
+                            i_mod = gr.Dropdown(
+                                [AUTO, "low"], value=AUTO, label="Moderation (not in BTC docs)"
+                            )
 
                     with gr.Accordion("Advanced: raw parameters (JSON)", open=False):
                         i_extra = gr.Textbox(lines=3, show_label=False, placeholder='{"seed": 42}')
@@ -609,18 +625,26 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                     v_prompt = gr.Textbox(
                         label="Prompt (dialogue and sound cues allowed)", lines=8, max_lines=30
                     )
-                    v_neg = gr.Textbox(label="Negative prompt", lines=2)
+                    v_neg = gr.Textbox(label="Negative prompt (not in BTC docs; empty = not sent)", lines=2)
                     with gr.Row():
                         v_ratio = gr.Radio(["16:9", "9:16"], value="16:9", label="Aspect ratio")
-                        v_res = gr.Radio(["720p", "1080p", "4k"], value="720p", label="Resolution")
+                        v_res = gr.Radio(
+                            ["720p", "1080p", "4k"], value="720p", label="Resolution (4k not in BTC docs)"
+                        )
                     with gr.Row():
                         v_sec = gr.Radio(["4", "6", "8"], value="4", label="Duration (seconds)")
-                        v_audio = gr.Checkbox(value=True, label="Generate audio")
+                        v_audio = gr.Radio(
+                            [AUTO, "on", "off"], value=AUTO, label="Generate audio (not in BTC docs)"
+                        )
                     with gr.Row():
                         v_first = gr.Image(label="First frame (image-to-video)", type="filepath", height=180)
-                        v_last = gr.Image(label="Last frame (interpolation)", type="filepath", height=180)
-                    v_refs = ref_uploader("Reference images (asset)", 3)
-                    v_seed = gr.Number(label="Seed (empty = random)", value=None, precision=0)
+                        v_last = gr.Image(
+                            label="Last frame (not in BTC docs)", type="filepath", height=180
+                        )
+                    v_refs = ref_uploader("Reference images (not in BTC docs)", 3)
+                    v_seed = gr.Number(
+                        label="Seed (not in BTC docs; empty = not sent)", value=None, precision=0
+                    )
                     gr.HTML(
                         '<span class="hint">1080p / 4k / reference images / last frame require 8s — '
                         "the app sets it automatically.</span>"
@@ -665,12 +689,19 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                         value="Xin chào, đây là một thử nghiệm chuyển văn bản thành giọng nói.",
                     )
                     t_style = gr.Textbox(
-                        label="Style / instructions",
+                        label="Style / instructions (optional)",
                         placeholder="e.g. Say cheerfully / Speak slowly, like a bedtime story",
-                        info="gpt-4o-mini-tts: sent as `instructions`. Gemini: prepended to the text.",
+                        info="gpt-4o-mini-tts: sent as `instructions` (not in BTC docs). "
+                        "Gemini: prepended to the text. Empty = nothing added.",
                     )
-                    t_speed = gr.Slider(0.25, 4.0, value=1.0, step=0.05, label="Speed", visible=False)
-                    t_fmt = gr.Dropdown(TTS_FORMATS, value="mp3", label="Format", visible=False)
+                    t_speed = gr.Slider(
+                        0.25, 4.0, value=1.0, step=0.05,
+                        label="Speed (not in BTC docs; 1.0 = not sent)", visible=False,
+                    )
+                    t_fmt = gr.Dropdown(
+                        TTS_FORMATS, value=AUTO, label="Format (not in BTC docs; BTC returns mp3)",
+                        visible=False,
+                    )
                     with gr.Accordion("Advanced: raw parameters (JSON)", open=False):
                         t_extra = gr.Textbox(lines=3, show_label=False, placeholder="{}")
                         gr.HTML(RAW_HINT)
@@ -698,14 +729,19 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                         label="Audio", type="filepath", sources=["upload", "microphone"]
                     )
                     with gr.Row():
-                        s_lang = gr.Dropdown(STT_LANGS, value="auto", label="Language")
-                        s_fmt = gr.Dropdown(["json"], value="json", label="Response format")
+                        s_lang = gr.Dropdown(
+                            STT_LANGS, value=AUTO, label="Language (not in BTC docs)"
+                        )
+                        s_fmt = gr.Dropdown([AUTO, "json"], value=AUTO, label="Response format")
                     s_prompt = gr.Textbox(
-                        label="Prompt hint (optional)",
+                        label="Prompt hint (not in BTC docs; empty = not sent)",
                         lines=2,
                         info="Proper nouns, jargon... helps the model transcribe correctly.",
                     )
-                    s_temp = gr.Slider(0, 1, value=0, step=0.1, label="Temperature", visible=False)
+                    s_temp = gr.Slider(
+                        0, 1, value=0, step=0.1, label="Temperature (not in BTC docs; 0 = not sent)",
+                        visible=False,
+                    )
                     s_gran = gr.CheckboxGroup(
                         ["word", "segment"],
                         label="Timestamp granularities (whisper-1 + verbose_json only)",

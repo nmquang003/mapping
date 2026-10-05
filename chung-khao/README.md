@@ -57,7 +57,9 @@ Nếu không set biến môi trường, có thể dán key vào ô **API key** t
 
 ### Lưu ý
 
-- BTC chỉ nói docs được cập nhật theo tài liệu mới nhất của các nhà cung cấp. Các tham số ngoài docs BTC (ảnh ref cho ảnh, `image_size`, `generateAudio`, `negativePrompt`, `lastFrame`, `referenceImages`...) được gửi theo format của model gốc và **chưa được kiểm chứng với gateway**. Nếu gateway từ chối, lỗi sẽ hiện nguyên văn trên giao diện.
+- **Mặc định chỉ gửi field có trong docs BTC.** Mỗi option không có trong docs được đánh dấu *not in BTC docs* trên UI. Giá trị mặc định của chúng là `auto` (hoặc để trống, `1.0` với speed, `0` với temperature), nghĩa là **không gửi** field đó. Ở mặc định, request khớp đúng ví dụ trong docs BTC.
+- Các tham số ngoài docs BTC (ảnh ref cho ảnh, `image_size`, `background`, `output_format`, `generateAudio`, `negativePrompt`, `seed`, `lastFrame`, `referenceImages`, `instructions`, `speed`, `language`...) gửi theo format của model gốc và **chưa được kiểm chứng với gateway**. Docs BTC ghi gateway có thể **tự bỏ tham số không hỗ trợ mà không báo lỗi**, nên request trả 200 chưa chắc tham số đã có tác dụng. Hãy kiểm tra kết quả.
+- `gpt-transcribe` luôn gửi `response_format=json`, vì docs BTC bắt buộc.
 - Veo bắt buộc 8 giây khi dùng 1080p, 4k, ảnh ref hoặc last frame. App tự đặt 8 giây và ghi chú trong status.
 - Gateway chỉ trả 1 ảnh mỗi request (`n=1`). "Number of images" gửi nhiều request song song.
 

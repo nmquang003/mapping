@@ -43,7 +43,12 @@ Khi kiểm tra, **đừng kill process trên port 7860**: thường là app user
   - Image và audio dùng path không có `/v1`: `/images/generations`, `/audio/speech`, `/audio/transcriptions`.
   - Video và chat dùng path có `/v1`: `/v1/videos`, `/v1/chat/completions`.
 - Auth bằng `Authorization: Bearer <key>`.
-- Gateway là LiteLLM. Tham số ngoài docs BTC được gửi theo format của model gốc. Phần này **chưa kiểm chứng**, nên:
+- **Quy tắc auto:** chỉ field có trong docs BTC mới được gửi mặc định.
+  - Option ngoài docs có label *not in BTC docs* và mặc định `AUTO` / rỗng.
+  - Dùng `_put(body, key, value)` để bỏ qua giá trị `AUTO`, rỗng hoặc `None`.
+  - Thêm option mới cũng làm theo quy tắc này.
+  - Sau khi sửa, kiểm tra request mặc định của từng tab vẫn khớp ví dụ trong docs BTC, bằng server giả và panel debug.
+- Gateway là LiteLLM. Tham số ngoài docs BTC được gửi theo format của model gốc. Phần này **chưa kiểm chứng**, và docs BTC ghi gateway có thể tự bỏ tham số không hỗ trợ mà không báo lỗi. Vì vậy:
   - Giữ ô raw JSON và panel Request / Response ở mọi tab.
   - Không nuốt lỗi. Hiện nguyên văn response lỗi cho user.
   - Ghi rõ "chưa kiểm chứng" khi báo cáo cho user về các tham số này.
