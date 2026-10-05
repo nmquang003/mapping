@@ -13,6 +13,7 @@ import base64
 import json
 import mimetypes
 import os
+import shlex
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -491,6 +492,447 @@ def run_stt(api_key, model, audio_path, lang, prompt, fmt, temperature, granular
     return text, f"Done in {time.time() - t0:.1f}s", _debug(data, j)
 
 
+# ------------------------------------------------------------------ API snippets
+# Code samples mirror the examples in the BTC docs (same URLs, same base_url per SDK example),
+# so only documented fields appear. Placeholders are used for the key, never a real one.
+KEY_PLACEHOLDER = "<your_api_key>"
+DOC_RATIOS = ["1:1", "3:4", "4:3", "16:9", "9:16"]  # values listed in the BTC image docs
+DOC_VIDEO_SIZES = ["1280x720", "1920x1080", "720x1280", "1080x1920"]
+CHAT_METHOD = "Chat completions"
+STANDARD_METHOD = "Images API"
+
+
+def _kind(model: str) -> str:
+    if model in IMAGE_SPECS:
+        return "image-" + IMAGE_SPECS[model]["kind"]
+    if model in VIDEO_MODELS:
+        return "video"
+    return "tts" if model in TTS_MODELS else "stt"
+
+
+def _q(s) -> str:
+    """Python / JSON string literal."""
+    return json.dumps(s, ensure_ascii=False)
+
+
+def _fill(tpl: str, **kw) -> str:
+    for k, v in kw.items():
+        tpl = tpl.replace(f"@@{k}@@", str(v))
+    return tpl.strip("\n") + "\n"
+
+
+def _snip_image_google(model, prompt, ratio, method):
+    common = dict(BASE=BASE_URL, KEY=KEY_PLACEHOLDER, MODEL=_q(model), PROMPT=_q(prompt))
+    if method == CHAT_METHOD:
+        body = {"model": model, "messages": [{"role": "user", "content": prompt}]}
+        kw = dict(common, BODY=shlex.quote(json.dumps(body, ensure_ascii=False, indent=2)),
+                  DATA=json.dumps(body, ensure_ascii=False, indent=4))
+        curl = _fill('''
+curl -s @@BASE@@/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer @@KEY@@" \\
+  -d @@BODY@@ \\
+  | jq -r '.choices[0].message.images[0].image_url.url' \\
+  | sed 's/^data:image\\/png;base64,//' | base64 --decode > image.png
+''', **kw)
+        req = _fill('''
+import base64
+import requests
+
+url = "@@BASE@@/v1/chat/completions"
+headers = {"Authorization": "Bearer @@KEY@@"}
+data = @@DATA@@
+
+r = requests.post(url, headers=headers, json=data, timeout=300)
+r.raise_for_status()
+uri = r.json()["choices"][0]["message"]["images"][0]["image_url"]["url"]
+with open("image.png", "wb") as f:
+    f.write(base64.b64decode(uri.split(",", 1)[-1]))
+''', **kw)
+        sdk = _fill('''
+import base64
+from openai import OpenAI
+
+client = OpenAI(api_key="@@KEY@@", base_url="@@BASE@@/v1")
+
+resp = client.chat.completions.create(
+    model=@@MODEL@@,
+    messages=[{"role": "user", "content": @@PROMPT@@}],
+    modalities=["image"],  # return image data
+)
+uri = resp.choices[0].message.images[0].get("image_url").get("url")
+with open("image.png", "wb") as f:
+    f.write(base64.b64decode(uri.split(",", 1)[-1]))
+''', **kw)
+        return curl, req, sdk
+
+    body = {"model": model, "prompt": prompt, "aspect_ratio": ratio}
+    kw = dict(common, RATIO=_q(ratio), BODY=shlex.quote(json.dumps(body, ensure_ascii=False, indent=2)),
+              DATA=json.dumps(body, ensure_ascii=False, indent=4))
+    curl = _fill('''
+curl -s @@BASE@@/v1/images/generations \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer @@KEY@@" \\
+  -d @@BODY@@ \\
+  | jq -r '.data[0].b64_json' | base64 --decode > image.png
+''', **kw)
+    req = _fill('''
+import base64
+import requests
+
+url = "@@BASE@@/v1/images/generations"
+headers = {"Authorization": "Bearer @@KEY@@"}
+data = @@DATA@@
+
+r = requests.post(url, headers=headers, json=data, timeout=300)
+r.raise_for_status()
+with open("image.png", "wb") as f:
+    f.write(base64.b64decode(r.json()["data"][0]["b64_json"]))
+''', **kw)
+    sdk = _fill('''
+import base64
+from openai import OpenAI
+
+client = OpenAI(api_key="@@KEY@@", base_url="@@BASE@@/v1")
+
+resp = client.images.generate(
+    model=@@MODEL@@,
+    prompt=@@PROMPT@@,
+    extra_body={"aspect_ratio": @@RATIO@@},
+)
+with open("image.png", "wb") as f:
+    f.write(base64.b64decode(resp.data[0].b64_json))
+''', **kw)
+    return curl, req, sdk
+
+
+def _snip_image_openai(model, prompt, size, quality):
+    body = {"model": model, "prompt": prompt, "size": size, "quality": quality}
+    kw = dict(
+        BASE=BASE_URL, KEY=KEY_PLACEHOLDER, MODEL=_q(model), PROMPT=_q(prompt), SIZE=_q(size),
+        QUALITY=_q(quality), BODY=shlex.quote(json.dumps(body, ensure_ascii=False, indent=2)),
+        DATA=json.dumps(body, ensure_ascii=False, indent=4),
+    )
+    curl = _fill('''
+curl -s @@BASE@@/images/generations \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer @@KEY@@" \\
+  -d @@BODY@@ \\
+  | jq -r '.data[0].b64_json' | base64 --decode > image.png
+''', **kw)
+    req = _fill('''
+import base64
+import requests
+
+url = "@@BASE@@/images/generations"
+headers = {"Authorization": "Bearer @@KEY@@"}
+data = @@DATA@@
+
+r = requests.post(url, headers=headers, json=data, timeout=300)
+r.raise_for_status()
+with open("image.png", "wb") as f:
+    f.write(base64.b64decode(r.json()["data"][0]["b64_json"]))
+''', **kw)
+    sdk = _fill('''
+import base64
+from openai import OpenAI
+
+client = OpenAI(api_key="@@KEY@@", base_url="@@BASE@@")
+
+result = client.images.generate(
+    model=@@MODEL@@,
+    prompt=@@PROMPT@@,
+    size=@@SIZE@@,
+    quality=@@QUALITY@@,
+)
+with open("image.png", "wb") as f:
+    f.write(base64.b64decode(result.data[0].b64_json))
+''', **kw)
+    return curl, req, sdk
+
+
+def _snip_video(model, prompt, seconds, size, i2v):
+    fields = {"model": model, "prompt": prompt, "seconds": str(seconds), "size": size}
+    kw = dict(
+        BASE=BASE_URL, KEY=KEY_PLACEHOLDER, MODEL=_q(model), PROMPT=_q(prompt), SECONDS=_q(str(seconds)),
+        SIZE=_q(size), BODY=shlex.quote(json.dumps(fields, ensure_ascii=False, indent=2)),
+        DATA=json.dumps(fields, ensure_ascii=False, indent=4), RAWSECONDS=seconds, RAWSIZE=size,
+        RAWPROMPT=shlex.quote(prompt),
+    )
+    if i2v:
+        create_curl = _fill('''
+# 1) create (image-to-video: multipart/form-data with input_reference)
+curl -X POST @@BASE@@/v1/videos \\
+  -H "Authorization: Bearer @@KEY@@" \\
+  -F model=@@MODEL_RAW@@ \\
+  -F prompt=@@RAWPROMPT@@ \\
+  -F seconds=@@RAWSECONDS@@ \\
+  -F size=@@RAWSIZE@@ \\
+  -F input_reference=@start.png
+''', MODEL_RAW=shlex.quote(model), **kw).rstrip("\n")
+        create_req = 'r = requests.post(\n    f"{BASE}/v1/videos",\n    headers=headers,\n    data=fields,\n    files={"input_reference": open("start.png", "rb")},\n)'
+        create_sdk = _fill('''
+video = client.videos.create(
+    model=@@MODEL@@,
+    prompt=@@PROMPT@@,
+    seconds=@@SECONDS@@,
+    size=@@SIZE@@,
+    input_reference=open("start.png", "rb"),
+)''', **kw).rstrip("\n")
+    else:
+        create_curl = _fill('''
+# 1) create
+curl -X POST @@BASE@@/v1/videos \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer @@KEY@@" \\
+  -d @@BODY@@
+''', **kw).rstrip("\n")
+        create_req = 'r = requests.post(f"{BASE}/v1/videos", headers=headers, json=fields)'
+        create_sdk = _fill('''
+video = client.videos.create(
+    model=@@MODEL@@,
+    prompt=@@PROMPT@@,
+    seconds=@@SECONDS@@,
+    size=@@SIZE@@,
+)''', **kw).rstrip("\n")
+
+    curl = create_curl + "\n\n" + _fill('''
+# -> {"id": "video_...", "status": "processing", ...}
+
+# 2) poll until "status" is "completed" (or "failed")
+curl @@BASE@@/v1/videos/<video_id> \\
+  -H "Authorization: Bearer @@KEY@@"
+
+# 3) download the mp4
+curl @@BASE@@/v1/videos/<video_id>/content \\
+  -H "Authorization: Bearer @@KEY@@" \\
+  --output video.mp4
+''', **kw)
+
+    req = _fill('''
+import time
+import requests
+
+BASE = "@@BASE@@"
+headers = {"Authorization": "Bearer @@KEY@@"}
+fields = @@DATA@@
+
+# 1) create
+@@CREATE@@
+r.raise_for_status()
+video_id = r.json()["id"]
+
+# 2) poll until done
+while True:
+    status = requests.get(f"{BASE}/v1/videos/{video_id}", headers=headers).json()
+    print(status["status"])
+    if status["status"] in ("completed", "failed"):
+        break
+    time.sleep(10)
+if status["status"] == "failed":
+    raise SystemExit(status)
+
+# 3) download
+r = requests.get(f"{BASE}/v1/videos/{video_id}/content", headers=headers)
+r.raise_for_status()
+with open("video.mp4", "wb") as f:
+    f.write(r.content)
+''', CREATE=create_req, **kw)
+
+    sdk = _fill('''
+import time
+from openai import OpenAI
+
+client = OpenAI(api_key="@@KEY@@", base_url="@@BASE@@")
+
+# 1) create
+@@CREATE@@
+print("created:", video.id)
+
+# 2) poll until done
+while video.status not in ("completed", "failed"):
+    time.sleep(10)
+    video = client.videos.retrieve(video.id)
+    print("status:", video.status)
+if video.status == "failed":
+    raise SystemExit(f"failed: {video.error}")
+
+# 3) download
+content = client.videos.download_content(video.id)
+content.write_to_file("video.mp4")
+''', CREATE=create_sdk, **kw)
+    return curl, req, sdk
+
+
+def _snip_tts(model, text, voice):
+    body = {"model": model, "input": text, "voice": voice}
+    kw = dict(
+        BASE=BASE_URL, KEY=KEY_PLACEHOLDER, MODEL=_q(model), TEXT=_q(text), VOICE=_q(voice),
+        BODY=shlex.quote(json.dumps(body, ensure_ascii=False, indent=2)),
+        DATA=json.dumps(body, ensure_ascii=False, indent=4),
+    )
+    curl = _fill('''
+curl @@BASE@@/audio/speech \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer @@KEY@@" \\
+  -d @@BODY@@ \\
+  --output speech.mp3
+''', **kw)
+    req = _fill('''
+import requests
+
+url = "@@BASE@@/audio/speech"
+headers = {"Authorization": "Bearer @@KEY@@"}
+data = @@DATA@@
+
+r = requests.post(url, headers=headers, json=data, stream=True, timeout=300)
+r.raise_for_status()
+with open("speech.mp3", "wb") as f:
+    for chunk in r.iter_content(chunk_size=8192):
+        f.write(chunk)
+''', **kw)
+    sdk = _fill('''
+from openai import OpenAI
+
+client = OpenAI(api_key="@@KEY@@", base_url="@@BASE@@")
+
+response = client.audio.speech.create(
+    model=@@MODEL@@,
+    voice=@@VOICE@@,
+    input=@@TEXT@@,
+)
+response.stream_to_file("speech.mp3")
+''', **kw)
+    return curl, req, sdk
+
+
+def _snip_stt(model):
+    needs_json = model == "gpt-transcribe"  # BTC docs: required, else 400
+    kw = dict(BASE=BASE_URL, KEY=KEY_PLACEHOLDER, MODEL=_q(model), MODEL_RAW=shlex.quote(model))
+    curl = _fill(
+        "curl @@BASE@@/audio/transcriptions \\\n"
+        '  -H "Authorization: Bearer @@KEY@@" \\\n'
+        "  -F model=@@MODEL_RAW@@ \\\n"
+        + ("  -F response_format=json \\\n" if needs_json else "")
+        + "  -F file=@speech.mp3",
+        **kw,
+    )
+    req = _fill('''
+import requests
+
+with open("speech.mp3", "rb") as f:
+    r = requests.post(
+        "@@BASE@@/audio/transcriptions",
+        headers={"Authorization": "Bearer @@KEY@@"},
+        data=@@DATA@@,
+        files={"file": ("speech.mp3", f, "audio/mpeg")},
+        timeout=300,
+    )
+r.raise_for_status()
+print(r.json()["text"])
+''', DATA=json.dumps({"model": model, **({"response_format": "json"} if needs_json else {})}), **kw)
+    sdk = _fill('''
+from openai import OpenAI
+
+client = OpenAI(api_key="@@KEY@@", base_url="@@BASE@@")
+
+with open("speech.mp3", "rb") as audio_file:
+    transcript = client.audio.transcriptions.create(
+        model=@@MODEL@@,
+        file=audio_file,@@FORMAT@@
+    )
+print(transcript.text)
+''', FORMAT='\n        response_format="json",' if needs_json else "", **kw)
+    return curl, req, sdk
+
+
+def _notes(model: str, kind: str, method: str) -> str:
+    if kind == "image-google":
+        lines = [
+            "**Response:** base64 PNG. Images API: `data[0].b64_json`. Chat: "
+            "`choices[0].message.images[0].image_url.url` (a `data:image/png;base64,...` URI).",
+            "**Options (docs):** `aspect_ratio` = 1:1, 3:4, 4:3, 16:9, 9:16 (Images API only; "
+            "`size` has no effect). One image per request (`n` accepts only 1).",
+            "The docs' Chat samples send only `model` + `messages`; the SDK sample adds `modalities=[\"image\"]`.",
+        ]
+        if model == "nano-banana":
+            lines.append("⚠️ Docs: Google stops supporting `nano-banana` (gemini-2.5-flash-image) from 02/10/2026.")
+    elif kind == "image-openai":
+        lines = [
+            "**Response:** base64 in `data[0].b64_json`.",
+            "**Options (docs):** `size` = 1024x1024, 1536x1024, 1024x1536; `quality` = low, medium, high "
+            "(`low` is cheapest; ~$0.006 for a 1024x1024 low image on `gpt-image-2.5-flare`). "
+            "No `aspect_ratio`. One image per request.",
+        ]
+    elif kind == "video":
+        lines = [
+            "**Async:** create → poll status until `completed` / `failed` → download the mp4 "
+            "(about 30 s to a few minutes for 4–8 s clips).",
+            "**Options (docs):** `seconds` = 4, 6, 8; `size` = 1280x720, 1920x1080 (16:9) or 720x1280, 1080x1920 (9:16); "
+            "image-to-video = multipart `input_reference`.",
+            "Price per second (docs): lite $0.05 (720p), fast $0.10 (720p) / $0.12 (1080p), full $0.40.",
+        ]
+    elif kind == "tts":
+        voices = "OpenAI voices (alloy, echo, fable, onyx, nova, shimmer...), not Gemini voices like `Kore`" \
+            if model.startswith("gpt-") else "Gemini voices (Zephyr, Puck, Charon, Kore...)"
+        lines = [
+            f"**Voice:** {model} uses {voices}.",
+            "**Response:** audio file (mp3) in the response body, save it to disk.",
+        ]
+    else:
+        lines = [
+            "**Request:** `multipart/form-data` (file upload), not JSON.",
+            "**Response:** `{\"text\": ..., \"usage\": {...}, \"task\": \"transcribe\"}`.",
+        ]
+        if model == "gpt-transcribe":
+            lines.append("⚠️ `gpt-transcribe` requires `response_format=json`, otherwise the gateway returns 400.")
+    lines.append("_Snippets use the key placeholder `<your_api_key>`. Fields outside the BTC docs are not included._")
+    return "\n\n".join(lines)
+
+
+def make_snippets(model, text, method, ratio, size_o, quality, seconds, vsize, i2v, voice):
+    kind = _kind(model)
+    text = text or ""
+    if kind == "image-google":
+        out = _snip_image_google(model, text, ratio, method)
+    elif kind == "image-openai":
+        out = _snip_image_openai(model, text, size_o, quality)
+    elif kind == "video":
+        out = _snip_video(model, text, seconds, vsize, i2v)
+    elif kind == "tts":
+        out = _snip_tts(model, text, voice)
+    else:
+        out = _snip_stt(model)
+    return (*out, _notes(model, kind, method))
+
+
+def on_snip_model(model):
+    kind = _kind(model)
+    voices = OPENAI_VOICES if model.startswith("gpt-") else GEMINI_VOICES
+    labels = {"video": "Prompt", "tts": "Text", "image-google": "Prompt", "image-openai": "Prompt"}
+    return (
+        gr.update(visible=kind != "stt", label=labels.get(kind, "Prompt")),
+        gr.update(visible=kind == "image-google"),   # method
+        gr.update(visible=kind == "image-google"),   # aspect ratio
+        gr.update(visible=kind == "image-openai"),   # size
+        gr.update(visible=kind == "image-openai"),   # quality
+        gr.update(visible=kind == "video"),          # seconds
+        gr.update(visible=kind == "video"),          # video size
+        gr.update(visible=kind == "video"),          # image-to-video
+        gr.update(visible=kind == "tts", choices=voices, value=voices[0]),
+    )
+
+
+SNIPPET_MODELS = (
+    [(f"Image · {m}", m) for m in IMAGE_SPECS]
+    + [(f"Video · {m}", m) for m in VIDEO_MODELS]
+    + [(f"Text to speech · {m}", m) for m in TTS_MODELS]
+    + [(f"Speech to text · {m}", m) for m in STT_MODELS]
+)
+SNIPPET_DEFAULTS = ("nano-banana-2", "A majestic white tiger walking through a snowy forest",
+                    STANDARD_METHOD, "16:9", "1024x1024", "low", "4", "1280x720", False, "Zephyr")
+
+
 # ------------------------------------------------------------------ UI
 THEME = gr.themes.Base(
     primary_hue="indigo",
@@ -764,6 +1206,62 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                 [api_key, s_model, s_audio, s_lang, s_prompt, s_fmt, s_temp, s_gran, s_extra],
                 [s_text, s_status, s_debug],
             )
+
+        # ============================== API SNIPPETS
+        with gr.Tab("📋  API snippets"):
+            _init = make_snippets(*SNIPPET_DEFAULTS)
+            with gr.Row(equal_height=False):
+                with gr.Column(scale=2, min_width=480, elem_id="panel-8"):
+                    gr.Markdown(
+                        "Pick a model to get ready-to-paste **cURL**, **Python requests** and "
+                        "**OpenAI SDK** code, taken from the BTC docs examples."
+                    )
+                    n_model = gr.Dropdown(
+                        SNIPPET_MODELS, value=SNIPPET_DEFAULTS[0], label="Model", filterable=True
+                    )
+                    n_text = gr.Textbox(label="Prompt", value=SNIPPET_DEFAULTS[1], lines=4, max_lines=12)
+                    n_method = gr.Radio(
+                        [STANDARD_METHOD, CHAT_METHOD], value=SNIPPET_DEFAULTS[2], label="Method"
+                    )
+                    n_ratio = gr.Dropdown(DOC_RATIOS, value=SNIPPET_DEFAULTS[3], label="Aspect ratio")
+                    n_size = gr.Dropdown(
+                        OPENAI_SIZES[1:], value=SNIPPET_DEFAULTS[4], label="Size", visible=False
+                    )
+                    n_quality = gr.Dropdown(
+                        ["low", "medium", "high"], value=SNIPPET_DEFAULTS[5], label="Quality", visible=False
+                    )
+                    n_seconds = gr.Radio(
+                        ["4", "6", "8"], value=SNIPPET_DEFAULTS[6], label="Duration (seconds)", visible=False
+                    )
+                    n_vsize = gr.Dropdown(
+                        DOC_VIDEO_SIZES, value=SNIPPET_DEFAULTS[7], label="Video size", visible=False
+                    )
+                    n_i2v = gr.Checkbox(
+                        value=SNIPPET_DEFAULTS[8], label="Image-to-video (input_reference)", visible=False
+                    )
+                    n_voice = gr.Dropdown(
+                        GEMINI_VOICES, value=SNIPPET_DEFAULTS[9], label="Voice",
+                        allow_custom_value=True, visible=False,
+                    )
+
+                with gr.Column(scale=3, elem_id="panel-9"):
+                    with gr.Tabs():
+                        with gr.Tab("cURL"):
+                            n_curl = gr.Code(_init[0], language="shell", interactive=False, show_label=False)
+                        with gr.Tab("Python · requests"):
+                            n_req = gr.Code(_init[1], language="python", interactive=False, show_label=False)
+                        with gr.Tab("Python · OpenAI SDK"):
+                            n_sdk = gr.Code(_init[2], language="python", interactive=False, show_label=False)
+                    n_notes = gr.Markdown(_init[3])
+
+            _controls = [n_model, n_text, n_method, n_ratio, n_size, n_quality, n_seconds, n_vsize, n_i2v, n_voice]
+            _outs = [n_curl, n_req, n_sdk, n_notes]
+            n_model.change(
+                on_snip_model, n_model,
+                [n_text, n_method, n_ratio, n_size, n_quality, n_seconds, n_vsize, n_i2v, n_voice],
+            ).then(make_snippets, _controls, _outs)
+            for _c in _controls[1:]:
+                _c.change(make_snippets, _controls, _outs)
 
 if __name__ == "__main__":
     demo.queue().launch(theme=THEME, css=CSS)

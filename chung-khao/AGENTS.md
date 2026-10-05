@@ -37,6 +37,13 @@ Khi kiểm tra, **đừng kill process trên port 7860**: thường là app user
 - **Mỗi tab có 3 phần:** hàm xử lý (`gen_image`, `gen_video` là generator để stream status khi poll, `gen_tts`, `run_stt`), hàm `on_*_model` ẩn/hiện option theo model, và khối UI trong `with gr.Blocks()`.
 - **Output chuẩn của mỗi hàm xử lý:** `(kết quả, status markdown, debug json)`.
 
+### Tab API snippets
+
+- Sinh code mẫu trong `make_snippets()`, mỗi loại một hàm `_snip_*`. Template dùng token `@@NAME@@`, thay bằng `_fill()` (không dùng f-string vì code mẫu có nhiều dấu `{}`).
+- Mẫu bám theo ví dụ trong docs BTC: URL và `base_url` giống ví dụ gốc (ảnh dùng `/v1/images/generations` và SDK `base_url=.../v1`, audio dùng không `/v1`, video dùng `/v1/videos`). **Chỉ field có trong docs**, không dùng `_put` hay field ngoài docs ở đây.
+- Prompt đi qua `shlex.quote` (cURL) và `json.dumps` (Python) nên an toàn với dấu nháy, `$`, backtick, xuống dòng.
+- Sau khi sửa: duyệt mọi model và option, kiểm tra Python bằng `ast.parse` và cURL bằng `bash -n`.
+
 ### Quy ước gateway
 
 - Base URL `https://api.thucchien.ai`. Theo docs BTC:

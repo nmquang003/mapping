@@ -29,6 +29,8 @@ App Gradio để thử nhanh các model chung của BTC qua gateway `https://api
 | Text to Speech | `/audio/speech` | `gemini-*-tts`, `gpt-4o-mini-tts` |
 | Speech to Text | `/audio/transcriptions` | `gemini-3.5-transcribe-preview`, `gpt-4o(-mini)-transcribe`, `gpt-transcribe`, `whisper-1` |
 
+Tab thứ 5, **API snippets**, không gọi API: chọn model (17 model) và vài option theo docs là ra code **cURL**, **Python requests** và **OpenAI SDK** để copy, kèm ghi chú (định dạng response, giới hạn, cảnh báo). Code lấy theo các ví dụ trong docs BTC (cùng URL, cùng `base_url` cho từng ví dụ SDK), chỉ chứa field có trong docs, key luôn là `<your_api_key>`.
+
 ### Chạy
 
 Cần [uv](https://docs.astral.sh/uv/).
