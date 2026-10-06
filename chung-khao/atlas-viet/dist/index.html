@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="styles.css">
   <script type="module" src="app.js"></script>
+  <script type="module" src="rag-chat.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Đến nội dung chính</a>
@@ -25,7 +26,13 @@
   <main id="main" tabindex="-1"><div class="loading"><img src="assets/compass.svg" width="48" alt=""><p>Đang mở bản đồ Việt Nam…</p></div></main>
   <footer class="site-footer"><span>© Atlas Việt · Một hành trình tìm hiểu quê hương</span><button id="sources-footer">Nguồn dữ liệu & ghi chú</button><span class="footer-note">Nội dung đang biên soạn</span></footer>
   <button id="chat-toggle" class="chat-toggle" aria-expanded="false" aria-controls="chat-panel"><span class="chat-spark">✧</span><span>Hỏi Atlas</span><span class="chat-badge">AI</span></button>
-  <aside id="chat-panel" class="chat-panel" hidden aria-labelledby="chat-title"><div class="chat-head"><span class="chat-spark">✧</span><div><strong id="chat-title">Bạn đồng hành Atlas</strong><small>Khám phá từ những câu hỏi nhỏ</small></div><button id="chat-close" class="icon-button" aria-label="Đóng khung trợ lý">×</button></div><div class="chat-body"><span class="draft-badge">Chưa kết nối API AI</span><p>Chatbot tiếng Việt sẽ được bổ sung ở bước tiếp theo, với nguồn dẫn và phạm vi trả lời rõ ràng.</p><p class="muted">Trong lúc chờ, bạn có thể chọn một tỉnh/thành phố để mở sổ tay:</p><div id="chat-destinations"></div><div class="chat-scope">Phạm vi: Ninh Bình, Hà Nội, Quảng Ninh và Lào Cai.</div></div></aside>
+  <aside id="chat-panel" class="chat-panel" hidden aria-labelledby="chat-title">
+    <div class="chat-head"><span class="chat-spark">✧</span><div><strong id="chat-title">Bạn đồng hành Atlas</strong><small id="chat-status">Đang kết nối kho tri thức…</small></div><button id="chat-close" class="icon-button" aria-label="Đóng khung trợ lý">×</button></div>
+    <div class="chat-context"><label for="chat-dataset">Địa phương</label><select id="chat-dataset"><option value="">Cả bốn địa phương</option><option value="ninh-binh">Ninh Bình</option><option value="ha-noi">Hà Nội</option><option value="quang-ninh">Quảng Ninh</option><option value="lao-cai">Lào Cai</option></select></div>
+    <div class="chat-body"><div id="chat-messages" role="log" aria-live="polite" aria-label="Hội thoại với Atlas"><div class="chat-message assistant"><p>Chào bạn! Tôi tìm tư liệu trong sổ tay Ninh Bình, Hà Nội, Quảng Ninh và Lào Cai để trả lời, kèm nguồn tham khảo. Những thông tin chưa có căn cứ sẽ được nói rõ.</p></div></div><div id="chat-destinations" class="chat-suggestions"><button data-chat-question="Hoa Lư có vai trò gì trong lịch sử?">Lịch sử Hoa Lư</button><button data-chat-question="Sa Pa có cảnh quan gì nổi bật?">Khám phá Sa Pa</button></div></div>
+    <form id="chat-form" class="chat-form"><label class="sr-only" for="chat-question">Câu hỏi của bạn</label><textarea id="chat-question" rows="2" maxlength="1500" placeholder="Hỏi về một địa danh, lịch sử hoặc văn hóa…" required></textarea><button id="chat-submit" type="submit" aria-label="Gửi câu hỏi">Gửi ↗</button></form>
+    <p id="chat-error" class="chat-error" role="status" hidden></p><div class="chat-scope">Phạm vi: Ninh Bình, Hà Nội, Quảng Ninh và Lào Cai. AI có thể sai; hãy kiểm tra nguồn. Giá và lịch hiện hành chưa được xác nhận.</div>
+  </aside>
   <dialog id="destination-dialog" class="destination-dialog" aria-labelledby="destination-title"><div id="dialog-content"></div></dialog>
   <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="dialog-close icon-button" aria-label="Đóng" data-close-info>×</button><div id="info-content"></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>

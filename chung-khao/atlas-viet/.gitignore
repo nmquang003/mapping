@@ -9,3 +9,7 @@ data/360-tours/*/source/
 __pycache__/
 .openai/local.json
 data/360-tours/
+
+.rag/
+.env
+.vercel

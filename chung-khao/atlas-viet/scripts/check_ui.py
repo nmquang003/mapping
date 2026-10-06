@@ -54,7 +54,7 @@ async def main():
             assert await page.locator('.place-card').count()==4
             await page.reload(wait_until='networkidle')
             assert name==await page.locator('#detail-title').inner_text()
-            for tab in ['tong-quan','lich-su','van-hoa','nguon','dia-danh']:
+            for tab in ['tong-quan','du-lich','lich-su','van-hoa','nguon','dia-danh']:
                 await page.locator(f'[data-tab="{tab}"]').click()
                 await page.wait_for_function('(tab)=>document.querySelector("[role=tabpanel]")?.getAttribute("aria-labelledby") === "tab-"+tab',arg=tab)
                 assert await page.locator('#tab-content').inner_text()
@@ -78,7 +78,8 @@ async def main():
         assert not await page.locator('#info-dialog').is_visible()
         await page.locator('#chat-toggle').click()
         assert await page.locator('#chat-panel').is_visible()
-        assert 'Chưa kết nối API AI' in await page.locator('#chat-panel').inner_text()
+        assert await page.locator('#chat-form').is_visible()
+        assert 'RAG' in await page.locator('#chat-status').inner_text()
         assert 'Quảng Ninh và Lào Cai' in await page.locator('.chat-scope').inner_text()
         await page.locator('#chat-close').click()
         await page.locator('#sources-footer').click()

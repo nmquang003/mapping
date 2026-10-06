@@ -1,0 +1,8 @@
+# Local source data and tooling are not needed by the static website.
+data/
+scripts/
+.qa/
+.openai/
+.env
+.env.*
+**/__pycache__/
