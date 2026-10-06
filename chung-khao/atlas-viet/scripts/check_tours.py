@@ -42,7 +42,7 @@ async def main():
             await page.wait_for_function('document.querySelector("#tour-audio")?.currentTime>0 && !document.querySelector("#tour-audio").paused')
             assert await page.locator('#tour-audio').evaluate('(a)=>!a.loop && a.volume===.75')
             await page.evaluate('window.testAudio=document.querySelector("#tour-audio")')
-            await page.locator('#narration-volume').evaluate('(input)=>{input.value=40;input.dispatchEvent(new Event("input",{bubbles:true}));}')
+            await page.locator('#tour-volume').evaluate('(input)=>{input.value=40;input.dispatchEvent(new Event("input",{bubbles:true}));}')
             assert await page.locator('#tour-audio').evaluate('(a)=>a.volume===.4')
             await page.locator('[data-narration-toggle]').click()
             assert await page.locator('#tour-audio').evaluate('(a)=>a.paused')
@@ -52,7 +52,7 @@ async def main():
             await page.locator('[data-narration-toggle]').click()
             await page.wait_for_function('document.querySelector("[data-narration-toggle]").getAttribute("aria-pressed")==="true"')
             # Return to the default volume before the next destination.
-            await page.locator('#narration-volume').evaluate('(input)=>{input.value=75;input.dispatchEvent(new Event("input",{bubbles:true}));}')
+            await page.locator('#tour-volume').evaluate('(input)=>{input.value=75;input.dispatchEvent(new Event("input",{bubbles:true}));}')
             await page.locator('[data-tour-fullscreen]').click()
             await page.wait_for_function('document.fullscreenElement?.id==="tour-stage"')
             await page.evaluate('document.exitFullscreen()')
@@ -116,7 +116,7 @@ async def main():
         await blocked.goto(BASE+'#/dia-phuong/ha-noi?tab=du-lich')
         await blocked.locator('[data-tour-start]').click()
         await loaded(blocked)
-        await blocked.wait_for_function('document.querySelector("#narration-status").textContent.includes("Bấm Nghe thuyết minh")')
+        await blocked.wait_for_function('document.querySelector("#narration-status").textContent.includes("Bấm Bật thuyết minh")')
         assert await blocked.locator('[data-narration-toggle]').get_attribute('aria-pressed')=='false'
         await blocked.evaluate('()=>{HTMLMediaElement.prototype.play=window.originalPlay;}')
         await blocked.locator('[data-narration-toggle]').click()
