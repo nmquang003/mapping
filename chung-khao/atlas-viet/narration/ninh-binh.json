@@ -1,13 +1,12 @@
 {
   "region_id": "ninh-binh",
   "region_name": "Ninh Bình",
-  "voice": "Linh",
-  "rate": 185,
+  "voice": "Sulafat",
   "chapters": [
     {
       "id": "gioi-thieu",
-      "title": "Giới thiệu",
-      "text": "Xin chào bạn, chào mừng đến với Ninh Bình cùng Atlas Việt. Trong chuyến tham quan này, mình sẽ đồng hành cùng bạn qua những ngọn núi đá vôi, dòng sông và dấu tích cố đô. Bạn có thể bắt đầu từ Hang Múa, nhìn xuống Tam Cốc, rồi chuyển sang Tràng An và Bái Đính. Mỗi góc nhìn kể một phần câu chuyện của vùng đất. Hãy kéo nhẹ trên ảnh để nhìn quanh, chọn cảnh bạn yêu thích và nghe từng phần thuyết minh. Những điểm đến này là một phần của Ninh Bình; chúng không đại diện cho toàn bộ tỉnh hiện nay.",
+      "title": "Bức tranh miền đất",
+      "text": "Giữa những dãy núi đá vôi trầm mặc, dòng nước Tràng An mở ra một khoảng xanh yên tĩnh. Núi soi bóng xuống sông, còn sông ôm lấy những thung lũng, nối hang động với những miền cây lá.\n\nTừ Hang Múa nhìn xuống, Tam Cốc hiện ra bằng đường cong của sông Ngô Đồng và những cánh đồng nằm giữa núi. Đi xa hơn trong câu chuyện của vùng đất, Hoa Lư giữ dấu kinh đô, Bái Đính mở ra không gian kiến trúc Phật giáo, còn Cúc Phương kể một câu chuyện khác bằng màu xanh của rừng.\n\nNinh Bình là nơi cảnh sắc và ký ức gặp nhau. Mỗi góc nhìn mở thêm một lớp non nước; mỗi điểm dừng đưa ta đến gần hơn với chiều sâu của vùng đất.",
       "sources": [
         {
           "id": "S01",
@@ -94,7 +93,7 @@
     {
       "id": "dia-ly",
       "title": "Địa lý & cảnh quan",
-      "text": "Bạn hãy để ý những ngọn núi đá vôi và khoảng nước nằm giữa các thung lũng. Đó là nét cảnh quan nổi bật của khu vực Tràng An và Tam Cốc. Tại Tam Cốc, sông Ngô Đồng đi qua ba hang và những cánh đồng, tạo nên hành trình gắn kết sông nước với núi đá. Ninh Bình còn có những không gian thiên nhiên khác. Cúc Phương mở ra câu chuyện về hệ sinh thái rừng, còn vùng Kim Sơn gắn với bãi bồi ven biển và nghề cói. Khi đổi góc nhìn, bạn có thể quan sát cách núi, nước và hoạt động của con người cùng tạo nên cảnh quan.",
+      "text": "Núi ở Tràng An và Tam Cốc không đứng riêng lẻ. Những khối đá vôi nối nhau qua thung lũng, hang động và khoảng nước, tạo nên một cảnh quan vừa hùng vĩ, vừa mềm mại.\n\nSông Ngô Đồng đi qua ba hang của Tam Cốc, rồi uốn mình giữa những cánh đồng. Nhìn từ trên cao, dòng sông như một nét bút, còn núi đá là những khoảng lặng để nét bút ấy hiện lên rõ hơn.\n\nRời miền sông núi, Cúc Phương mở ra hệ sinh thái rừng. Về phía Kim Sơn, câu chuyện chuyển sang bãi bồi ven biển và nghề cói. Từ đá, nước đến rừng và bãi bồi, thiên nhiên Ninh Bình có nhiều dáng vẻ; mỗi dáng vẻ lại gắn với một cách con người sinh sống trên đất ấy.",
       "sources": [
         {
           "id": "S04",
@@ -141,7 +140,7 @@
     {
       "id": "lich-su",
       "title": "Lịch sử & di sản",
-      "text": "Để tìm hiểu lịch sử Ninh Bình, chúng ta hãy hướng về Hoa Lư. Năm chín trăm sáu mươi tám, Đinh Bộ Lĩnh lên ngôi, mở ra một dấu mốc quan trọng trong lịch sử đất nước. Hoa Lư gắn với các triều Đinh, Tiền Lê và đầu thời Lý. Đến năm một nghìn không trăm mười, Lý Thái Tổ dời đô về Thăng Long. Ngày nay, đền thờ vua Đinh Tiên Hoàng và vua Lê Đại Hành là những điểm dừng để tìm hiểu ký ức lịch sử của vùng đất. Cảnh quan cố đô vì thế có thể được khám phá bằng cả đôi mắt và những câu chuyện của quá khứ.",
+      "text": "Hoa Lư giữ một khoảng lặng sâu trong câu chuyện Ninh Bình. Giữa cảnh núi đá và thung lũng, dấu tích cố đô đưa ký ức trở về những buổi đầu của quốc gia độc lập.\n\nNăm chín trăm sáu mươi tám, Đinh Bộ Lĩnh lên ngôi. Hoa Lư gắn với các triều Đinh, Tiền Lê và đầu thời Lý. Đến năm một nghìn không trăm mười, Lý Thái Tổ dời đô về Thăng Long, mở một chương mới trong lịch sử kinh đô.\n\nHôm nay, đền thờ vua Đinh Tiên Hoàng và vua Lê Đại Hành vẫn là những điểm dừng để tìm hiểu các dấu mốc ấy. Lịch sử ở đây có thể được đọc qua tư liệu và di tích; cảnh non nước bao quanh làm cho hành trình tìm hiểu thêm phần sâu lắng.",
       "sources": [
         {
           "id": "S05",
@@ -158,7 +157,7 @@
     {
       "id": "van-hoa",
       "title": "Văn hóa & ẩm thực",
-      "text": "Văn hóa Ninh Bình hiện diện trong lễ hội, nghề thủ công và bữa ăn địa phương. Lễ hội Hoa Lư tưởng nhớ các vị vua và tiền nhân, với những nghi thức như rước nước, rước kiệu và dâng hương. Nghề thêu ren Văn Lâm và nghề cói Kim Sơn cho thấy kỹ năng được gìn giữ qua nhiều thế hệ. Bái Đính và Phát Diệm gợi mở những cách tiếp cận khác nhau về kiến trúc tôn giáo. Còn trong câu chuyện ẩm thực, bạn có thể tìm hiểu cơm cháy, thịt dê, mắm tép Gia Viễn và nem chua Yên Mạc. Mỗi tên gọi là một gợi ý để khám phá sâu hơn về đời sống địa phương.",
+      "text": "Văn hóa Ninh Bình đi qua cả những nghi lễ trang trọng và những công việc bình dị. Trong lễ hội Hoa Lư, rước nước, rước kiệu và dâng hương nối lòng tưởng nhớ hôm nay với các vị vua và tiền nhân.\n\nỞ Văn Lâm, đường kim, mũi chỉ làm nên câu chuyện thêu ren. Tại Kim Sơn, nghề cói kể về bàn tay khéo léo và sự gắn bó với sản vật của vùng đất. Bái Đính và Phát Diệm lại mở hai góc nhìn về kiến trúc tôn giáo, mỗi nơi một cách biểu đạt.\n\nCâu chuyện còn tiếp tục bên mâm cơm: cơm cháy, thịt dê, mắm tép Gia Viễn, nem chua Yên Mạc. Những tên gọi giữ hương vị địa phương, để một chuyến đi được nhớ bằng cả cảnh sắc và vị giác.",
       "sources": [
         {
           "id": "S08",
@@ -232,5 +231,8 @@
         }
       ]
     }
-  ]
+  ],
+  "provider": "openrouter",
+  "model": "google/gemini-3.8-flash-tts",
+  "style": "Vietnamese travel-documentary narration, warm expressive female voice with a clear natural standard northern Vietnamese accent. Begin directly with the supplied text. Speak with calm confidence, vivid storytelling and gentle changes of emphasis; warm and engaging rather than flat, robotic or sleepy. Moderate unhurried pace, natural breaths and thoughtful short pauses at punctuation and paragraph breaks. Read all the words faithfully. Do not greet, add words, sing, chant, exaggerate, or add background music."
 }

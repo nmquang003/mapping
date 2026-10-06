@@ -194,5 +194,5 @@
 .narration-controls input{width:100px;accent-color:var(--forest)}.narration-controls button[aria-pressed=true]{border-color:var(--forest);background:#dce5d1}
 .narration-progress{flex-wrap:nowrap;margin-top:16px}.narration-progress progress{flex:1;min-width:0;accent-color:var(--forest)}
 .narration-transcript{border-top:1px solid var(--line);margin-top:16px;padding-top:14px;font-size:12px;line-height:1.8}
-.narration-transcript summary{cursor:pointer;color:var(--forest)}.narration-transcript h4{margin-bottom:8px}.narration-transcript p{max-width:85ch}.narration-transcript a{text-decoration:underline;text-underline-offset:3px}
+.narration-transcript summary{cursor:pointer;color:var(--forest)}.narration-transcript h4{margin-bottom:8px}.narration-transcript p{max-width:85ch;white-space:pre-line}.narration-transcript a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.tour-narration{padding:16px}.narration-heading{align-items:stretch}.narration-heading>div,.narration-heading label{width:100%}.narration-controls{gap:10px}.narration-controls button{font-size:11px}.narration-controls input{flex:1;min-width:70px;max-width:120px}}

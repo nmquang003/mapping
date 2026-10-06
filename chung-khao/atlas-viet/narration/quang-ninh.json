@@ -1,13 +1,12 @@
 {
   "region_id": "quang-ninh",
   "region_name": "Quảng Ninh",
-  "voice": "Linh",
-  "rate": 185,
+  "voice": "Sulafat",
   "chapters": [
     {
       "id": "gioi-thieu",
-      "title": "Giới thiệu",
-      "text": "Chào mừng bạn đến với hành trình khám phá Quảng Ninh cùng Atlas Việt. Tour ba trăm sáu mươi độ hiện đưa chúng ta quanh Vịnh Hạ Long, qua đảo đá, hang động, làng chài và những góc nhìn trên mặt vịnh. Hãy chọn một cảnh, kéo để nhìn quanh và cảm nhận sự thay đổi của cảnh quan. Câu chuyện Quảng Ninh còn mở rộng đến Cô Tô, Quan Lạn, Yên Tử và Bảo tàng, Thư viện Quảng Ninh. Các địa điểm đó được giới thiệu trong lời thuyết minh, nhưng chưa có đầy đủ cảnh riêng trong tour này. Mình sẽ đồng hành cùng bạn tìm hiểu từng chủ đề trong lúc ngắm cảnh.",
+      "title": "Bức tranh miền đất",
+      "text": "Giữa mênh mang biển, những đảo đá Hạ Long hiện lên như nét chạm khắc của thiên nhiên. Từ trên cao, khoảng nước mở rộng giữa các khối núi; xuống gần mặt vịnh, cảnh quan lại có một chiều sâu khác.\n\nNhững góc nhìn đưa câu chuyện qua đảo đá, hang động và hình ảnh làng chài. Cảnh sắc ấy gợi mối liên hệ lâu dài giữa con người với biển, giữa chỗ ở và hành trình mưu sinh.\n\nTừ Hạ Long, câu chuyện Quảng Ninh còn mở về Quan Lạn, Cô Tô, rồi lên miền núi Yên Tử. Biển đảo và núi rừng mang những dáng vẻ khác nhau, nhưng cùng làm nên một vùng đất có nhiều lớp cảnh quan và di sản để khám phá.",
       "sources": [
         {
           "id": "S02",
@@ -64,7 +63,7 @@
     {
       "id": "dia-ly",
       "title": "Địa lý & cảnh quan",
-      "text": "Điểm nổi bật của Hạ Long là những khối núi đá vôi giữa biển. Trong tour, bạn có thể đổi từ góc nhìn trên cao xuống các cảnh gần mặt nước để quan sát hình dáng đảo đá và khoảng biển giữa chúng. Quảng Ninh còn có những không gian khác: Quan Lạn nằm trong vịnh Bái Tử Long; Cô Tô gắn với bãi biển, bờ đá và đảo Thanh Lân. Yên Tử lại mở ra cảnh quan núi rừng. Sự khác biệt giữa biển đảo và núi giúp bạn lựa chọn các chủ đề khám phá. Những cảnh hiện có là một lát cắt về Vịnh Hạ Long, không phải toàn cảnh mọi điểm đến của Quảng Ninh.",
+      "text": "Hạ Long được nhận ra bằng núi đá vôi giữa biển. Những khối núi có hình dáng khác nhau, còn khoảng nước giữa chúng tạo nên những lối nhìn luôn thay đổi.\n\nTừ trên cao, cảnh quan hiện ra thành một bức tranh rộng. Khi hạ xuống gần mặt nước, các khối đá trở nên gần gũi hơn, và hành trình có thêm những chi tiết để quan sát.\n\nQuan Lạn nằm trong vịnh Bái Tử Long. Cô Tô mở câu chuyện qua bãi biển, bờ đá và đảo Thanh Lân. Xa không gian biển đảo, Yên Tử lại có cảnh quan núi rừng. Quảng Ninh vì thế có nhiều nhịp điệu của thiên nhiên: khoảng rộng của biển, đường nét của đảo và chiều sâu của núi.",
       "sources": [
         {
           "id": "S02",
@@ -111,7 +110,7 @@
     {
       "id": "lich-su",
       "title": "Lịch sử & di sản",
-      "text": "Khi tìm hiểu lịch sử và di sản Quảng Ninh, Yên Tử là một điểm dừng đáng chú ý. Nơi đây gắn với Trần Nhân Tông và Thiền phái Trúc Lâm. Chùa, am và tháp tạo thành không gian kiến trúc giữa núi rừng, giúp chúng ta tìm hiểu câu chuyện Phật giáo và ký ức lịch sử. Khu di tích được xếp hạng quốc gia đặc biệt vào năm hai nghìn không trăm mười hai. Đây là một dấu mốc về di tích Yên Tử. Trong khi ngắm Vịnh Hạ Long, bạn có thể ghi nhớ chủ đề này cho một hành trình khác, kết nối cảnh quan biển với việc tìm hiểu di sản trên núi.",
+      "text": "Trên miền núi Yên Tử, câu chuyện lịch sử đi cùng chùa, am và tháp. Các công trình nằm trong cảnh quan núi rừng, tạo nên một hành trình vừa tìm hiểu kiến trúc, vừa tìm hiểu ký ức Phật giáo.\n\nYên Tử gắn với Trần Nhân Tông và Thiền phái Trúc Lâm. Những tên gọi ấy mở một lớp di sản khác của Quảng Ninh, bên cạnh cảnh sắc biển đảo thường được biết đến.\n\nNăm hai nghìn không trăm mười hai, khu di tích được xếp hạng quốc gia đặc biệt. Dấu mốc ấy thuộc câu chuyện bảo tồn và nhận diện giá trị di tích. Nhìn về Yên Tử, hành trình khám phá có thêm một khoảng sâu lắng, nơi cảnh quan và lịch sử cùng được đọc qua những điều còn được gìn giữ.",
       "sources": [
         {
           "id": "S05",
@@ -128,7 +127,7 @@
     {
       "id": "van-hoa",
       "title": "Văn hóa & ẩm thực",
-      "text": "Văn hóa Quảng Ninh có thể được khám phá qua nhiều không gian. Tại Yên Tử, kiến trúc chùa, am và tháp gắn với sinh hoạt Phật giáo. Quan Lạn có cụm đình, đền, chùa, cho thấy chuyến đi biển đảo cũng là cơ hội tìm hiểu di sản văn hóa. Bảo tàng, Thư viện Quảng Ninh góp phần lưu giữ và giới thiệu câu chuyện địa phương. Ẩm thực lại mở một góc nhìn về đời sống gắn với biển: các bài giới thiệu Cô Tô nhắc đến mực, hàu, bề bề và sá sùng. Đây là những nguyên liệu được giới thiệu trong trải nghiệm du lịch, không phải những món chỉ có ở Quảng Ninh.",
+      "text": "Biển đảo Quảng Ninh có cả cảnh đẹp và những câu chuyện văn hóa. Trên Quan Lạn, cụm đình, đền, chùa mở một lối tìm hiểu di sản giữa hành trình khám phá đảo. Ở Yên Tử, chùa, am và tháp lại gắn với sinh hoạt Phật giáo.\n\nBảo tàng, Thư viện Quảng Ninh góp phần lưu giữ và giới thiệu ký ức địa phương. Mỗi điểm dừng đưa người xem đến gần một cách sống, một không gian sinh hoạt và một phần câu chuyện của vùng đất.\n\nHương vị biển cũng có chỗ trong hành trình ấy. Mực, hàu, bề bề và sá sùng được nhắc đến trong tư liệu giới thiệu Cô Tô. Từ cảnh quan đến bàn ăn, việc khám phá đi qua nhiều giác quan, để ký ức về một vùng biển trở nên phong phú hơn.",
       "sources": [
         {
           "id": "S04",
@@ -172,5 +171,8 @@
         }
       ]
     }
-  ]
+  ],
+  "provider": "openrouter",
+  "model": "google/gemini-3.8-flash-tts",
+  "style": "Vietnamese travel-documentary narration, warm expressive female voice with a clear natural standard northern Vietnamese accent. Begin directly with the supplied text. Speak with calm confidence, vivid storytelling and gentle changes of emphasis; warm and engaging rather than flat, robotic or sleepy. Moderate unhurried pace, natural breaths and thoughtful short pauses at punctuation and paragraph breaks. Read all the words faithfully. Do not greet, add words, sing, chant, exaggerate, or add background music."
 }

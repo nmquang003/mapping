@@ -1,13 +1,12 @@
 {
   "region_id": "lao-cai",
   "region_name": "Lào Cai",
-  "voice": "Linh",
-  "rate": 185,
+  "voice": "Sulafat",
   "chapters": [
     {
       "id": "gioi-thieu",
-      "title": "Giới thiệu",
-      "text": "Xin chào bạn, chào mừng đến với Lào Cai cùng Atlas Việt. Trong tour này, chúng ta đang khám phá trung tâm Sa Pa: nhà thờ đá, quảng trường, hồ Sa Pa, Sun Plaza và khu chợ. Hãy thử chuyển từ góc nhìn trên cao xuống một cảnh gần mặt đất để quan sát phố và không gian sinh hoạt. Sổ tay Lào Cai còn giới thiệu Fansipan, Bắc Hà, Mù Cang Chải và hồ Thác Bà. Phạm vi tỉnh hiện nay gồm Lào Cai và Yên Bái trước sắp xếp năm hai nghìn không trăm hai mươi lăm. Những cảnh Sa Pa là điểm khởi đầu, chưa bao quát toàn bộ vùng đất ấy.",
+      "title": "Bức tranh miền đất",
+      "text": "Sa Pa mở ra giữa những lớp núi và khoảng trời rộng. Nhìn từ trên cao, phố xá nằm gọn trong cảnh quan; xuống gần mặt đất, nhà thờ đá, quảng trường và hồ Sa Pa trở thành những điểm dừng gần gũi.\n\nSun Plaza, khu chợ, những con đường nối các không gian sinh hoạt. Mỗi cảnh cho thấy một nét khác của trung tâm Sa Pa, nơi đời sống đô thị gặp cảnh sắc vùng cao.\n\nTừ đây, câu chuyện Lào Cai còn đi về Fansipan, Bắc Hà, những sườn ruộng Mù Cang Chải và khoảng nước hồ Thác Bà. Núi, ruộng và hồ mở ra nhiều dáng vẻ của vùng đất. Hành trình bắt đầu ở Sa Pa, rồi tiếp tục qua những miền cảnh quan và đời sống được kể trong sổ tay.",
       "sources": [
         {
           "id": "S01",
@@ -54,7 +53,7 @@
     {
       "id": "dia-ly",
       "title": "Địa lý & cảnh quan",
-      "text": "Cảnh quan Lào Cai mở ra nhiều cách khám phá. Sa Pa gắn với núi, thung lũng và ruộng bậc thang. Mù Cang Chải nổi bật với những thửa ruộng trên sườn núi; Khau Phạ là con đèo trong khu vực Mù Cang Chải, Tú Lệ. Một không gian khác là hồ Thác Bà, hồ nhân tạo hình thành cùng công trình thủy điện Thác Bà. Trong tour hiện tại, bạn đang xem những cảnh ở trung tâm Sa Pa. Hãy dùng chúng làm điểm bắt đầu để tìm hiểu sự đa dạng giữa núi, ruộng bậc thang và cảnh quan hồ trong các hồ sơ của sổ tay.",
+      "text": "Núi và thung lũng tạo nên những lớp cảnh quan quanh Sa Pa. Ở Mù Cang Chải, ruộng bậc thang đi theo sườn núi, để đường nét của canh tác hòa vào địa hình.\n\nKhau Phạ là con đèo trong khu vực Mù Cang Chải, Tú Lệ. Câu chuyện về vùng cao vì thế có thêm những lối đi, nối nơi ở với những khoảng nhìn rộng hơn.\n\nHồ Thác Bà mở một nhịp khác: mặt nước của hồ nhân tạo hình thành cùng công trình thủy điện. Từ núi và ruộng đến hồ, cảnh quan Lào Cai cho thấy nhiều mối liên hệ giữa tự nhiên và hoạt động của con người. Mỗi không gian có một dáng vẻ riêng, và một câu chuyện riêng về cách sinh sống trên vùng đất ấy.",
       "sources": [
         {
           "id": "S03",
@@ -91,7 +90,7 @@
     {
       "id": "lich-su",
       "title": "Lịch sử & di sản",
-      "text": "Phần lịch sử trong tư liệu Lào Cai của sổ tay được kể qua một vài lát cắt. Hồ Thác Bà gắn với công trình thủy điện, cho thấy mối liên hệ giữa hoạt động của con người và sự hình thành cảnh quan. Ruộng bậc thang lại gợi mở câu chuyện về sinh kế nông nghiệp trên sườn núi. Phạm vi hành chính của tỉnh thay đổi sau sắp xếp năm hai nghìn không trăm hai mươi lăm, gồm Lào Cai và Yên Bái trước đây. Vì vậy, khi đọc tài liệu cũ, chúng ta cần chú ý thời điểm của tên địa phương. Những lát cắt này giúp mở đầu việc tìm hiểu, nhưng chưa phải một niên biểu lịch sử đầy đủ của toàn tỉnh.",
+      "text": "Nhìn những thửa ruộng trên sườn núi, có thể đọc cảnh quan như một phần câu chuyện sinh kế. Đường nét của canh tác cho thấy cách con người làm việc cùng địa hình, để tạo nên không gian nông nghiệp của vùng cao.\n\nỞ hồ Thác Bà, cảnh quan lại gắn với công trình thủy điện. Sự hình thành hồ mở một lát cắt khác về mối liên hệ giữa hoạt động của con người và diện mạo vùng đất.\n\nSau sắp xếp năm hai nghìn không trăm hai mươi lăm, phạm vi tỉnh Lào Cai gồm Lào Cai và Yên Bái trước đây. Những tên địa phương trong tư liệu cũ vì thế cần được đọc cùng thời điểm xuất bản. Qua từng lát cắt, lịch sử dần được nối lại từ cảnh quan, sinh kế và các dấu mốc thay đổi.",
       "sources": [
         {
           "id": "S01",
@@ -128,7 +127,7 @@
     {
       "id": "van-hoa",
       "title": "Văn hóa & ẩm thực",
-      "text": "Đời sống cộng đồng là một phần quan trọng trong hành trình khám phá Lào Cai. Tại Mù Cang Chải, nghề dệt của người Mông là một chủ đề được giới thiệu trong tư liệu du lịch. Ở Ngòi Tu bên hồ Thác Bà, câu chuyện gắn với nhà sàn, nghề đan và sinh hoạt của cộng đồng Dao. Mỗi nét văn hóa cần được hiểu trong cộng đồng và không gian cụ thể. Trong trải nghiệm ẩm thực quanh hồ Thác Bà, tư liệu nhắc đến cơm lam và món gà nấu măng chua. Những câu chuyện đó gợi mở hành trình tiếp theo, bên cạnh các cảnh phố, hồ và chợ Sa Pa mà bạn đang xem.",
+      "text": "Văn hóa vùng cao có thể được tìm hiểu từ một nếp nhà, một nghề thủ công, một bữa ăn. Tại Mù Cang Chải, tư liệu du lịch giới thiệu nghề dệt của người Mông. Câu chuyện nằm trong kỹ năng làm việc và những điều được cộng đồng gìn giữ.\n\nBên hồ Thác Bà, Ngòi Tu mở một không gian khác, gắn với nhà sàn, nghề đan và sinh hoạt của cộng đồng Dao. Mỗi nét văn hóa có nơi chốn riêng, cần được hiểu trong đời sống của cộng đồng ấy.\n\nCơm lam và gà nấu măng chua góp thêm câu chuyện về hương vị quanh hồ. Từ bàn tay làm nghề đến bữa ăn, hành trình khám phá trở nên gần gũi hơn: cảnh quan được nhìn thấy, còn đời sống được cảm nhận qua những điều bình dị.",
       "sources": [
         {
           "id": "S04",
@@ -152,5 +151,8 @@
         }
       ]
     }
-  ]
+  ],
+  "provider": "openrouter",
+  "model": "google/gemini-3.8-flash-tts",
+  "style": "Vietnamese travel-documentary narration, warm expressive female voice with a clear natural standard northern Vietnamese accent. Begin directly with the supplied text. Speak with calm confidence, vivid storytelling and gentle changes of emphasis; warm and engaging rather than flat, robotic or sleepy. Moderate unhurried pace, natural breaths and thoughtful short pauses at punctuation and paragraph breaks. Read all the words faithfully. Do not greet, add words, sing, chant, exaggerate, or add background music."
 }

@@ -1,13 +1,12 @@
 {
   "region_id": "ha-noi",
   "region_name": "Hà Nội",
-  "voice": "Linh",
-  "rate": 185,
+  "voice": "Sulafat",
   "chapters": [
     {
       "id": "gioi-thieu",
-      "title": "Giới thiệu",
-      "text": "Xin chào bạn, mình là người đồng hành trong hành trình khám phá Hà Nội cùng Atlas Việt. Những cảnh ba trăm sáu mươi độ ở đây đưa chúng ta đến Hồ Hoàn Kiếm và các góc nhìn trên cao của khu vực trung tâm. Bạn hãy thử nhìn quanh, tìm mặt hồ, những mái nhà và đường phố. Từ không gian này, chúng ta sẽ mở rộng câu chuyện đến phố cổ, Hoàng thành Thăng Long, Văn Miếu và các bảo tàng. Hà Nội có nhiều lớp di sản và nhịp sống khác nhau. Bạn có thể chọn nghe về địa lý, lịch sử hoặc văn hóa trong lúc tiếp tục khám phá từng cảnh.",
+      "title": "Bức tranh miền đất",
+      "text": "Mặt hồ Hoàn Kiếm giữ một khoảng thoáng giữa nhịp phố Hà Nội. Quanh hồ, đường phố nối tiếp nhau; nhìn từ trên cao, mặt nước mở ra một nhịp chậm giữa những lớp mái nhà.\n\nTừ không gian ấy, câu chuyện đi về phố cổ, nơi tên phố còn gợi những nghề và những cuộc mua bán. Rồi đến Hoàng thành Thăng Long, Văn Miếu, những di tích và bảo tàng đang gìn giữ nhiều lớp ký ức.\n\nHà Nội có vẻ đẹp của sự đan xen: hồ nước bên phố xá, dấu xưa trong đời sống hôm nay. Một góc nhìn có thể bắt đầu từ Tháp Rùa, nhưng hành trình tìm hiểu còn mở xa hơn, qua lịch sử, văn hóa và những hương vị thường ngày của thủ đô.",
       "sources": [
         {
           "id": "S03",
@@ -54,7 +53,7 @@
     {
       "id": "dia-ly",
       "title": "Địa lý & cảnh quan",
-      "text": "Hồ nước là một cách thú vị để đọc không gian Hà Nội. Hồ Hoàn Kiếm nằm trong khu vực trung tâm, gắn với đền Ngọc Sơn, cầu Thê Húc và phố cổ lân cận. Khi nhìn từ trên cao, bạn có thể quan sát mặt hồ trong mối liên hệ với những tuyến phố bao quanh. Câu chuyện địa lý đô thị còn có sông Hồng, cầu Long Biên và khu vực Trúc Bạch. Những địa điểm ấy gợi mở nhiều tuyến đi bộ và góc nhìn khác nhau về thành phố. Tour hiện tại tập trung vào trung tâm Hà Nội; không phải mọi địa danh được nhắc đến đều có cảnh riêng trong trình xem.",
+      "text": "Giữa những tuyến phố nối nhau, hồ nước cho Hà Nội một khoảng thở. Hồ Hoàn Kiếm nằm trong khu vực trung tâm, gắn với đền Ngọc Sơn, cầu Thê Húc và không gian phố cổ lân cận.\n\nTừ trên cao, có thể nhìn thấy mối liên hệ giữa mặt hồ và các con đường bao quanh. Đổi một góc nhìn, hình dáng thành phố cũng đổi: khoảng nước trở thành điểm tựa để đọc nhịp điệu phố xá.\n\nCâu chuyện địa lý đô thị còn mở ra ở sông Hồng, cầu Long Biên và khu vực Trúc Bạch. Sông và hồ, cầu và phố, mỗi yếu tố góp một nét vào bức tranh Hà Nội. Những không gian ấy gợi nhiều tuyến khám phá, nối cảnh quan với đời sống của thành phố.",
       "sources": [
         {
           "id": "S04",
@@ -81,7 +80,7 @@
     {
       "id": "lich-su",
       "title": "Lịch sử & di sản",
-      "text": "Hành trình lịch sử Hà Nội có thể bắt đầu từ Hoàng thành Thăng Long. Di tích lưu giữ nhiều lớp dấu tích qua các triều đại và được UNESCO ghi danh vào năm hai nghìn không trăm mười. Một điểm dừng khác là Văn Miếu, với mốc xây dựng năm một nghìn không trăm bảy mươi. Quốc Tử Giám có mốc năm một nghìn không trăm bảy mươi sáu. Những dấu mốc này giúp chúng ta tìm hiểu truyền thống giáo dục và lịch sử của kinh đô. Khi quan sát cảnh thành phố hôm nay, bạn có thể hình dung một hành trình tiếp theo qua các di tích để tìm hiểu sâu hơn về những lớp ký ức ấy.",
+      "text": "Thăng Long giữ ký ức bằng những lớp dấu tích nằm lại qua các triều đại. Hoàng thành là một điểm dừng để lần theo các lớp ấy, tìm hiểu lịch sử kinh đô qua tư liệu và di sản. Năm hai nghìn không trăm mười, di tích được UNESCO ghi danh.\n\nỞ một không gian khác, Văn Miếu và Quốc Tử Giám mở câu chuyện về truyền thống học tập. Văn Miếu có mốc xây dựng năm một nghìn không trăm bảy mươi; Quốc Tử Giám có mốc năm một nghìn không trăm bảy mươi sáu.\n\nNhững mốc thời gian làm lịch sử trở nên rõ ràng. Khi đặt chúng bên cảnh thành phố hôm nay, ta thấy một hành trình tiếp nối: di tích gìn giữ ký ức, còn đời sống hiện tại tiếp tục viết những trang riêng của Hà Nội.",
       "sources": [
         {
           "id": "S03",
@@ -108,7 +107,7 @@
     {
       "id": "van-hoa",
       "title": "Văn hóa & ẩm thực",
-      "text": "Bạn có nhận ra những tên phố bắt đầu bằng chữ Hàng? Hàng Bạc, Hàng Mã, Hàng Đường gợi lại hoạt động nghề và buôn bán của phố cổ. Tên phố trở thành một lối vào câu chuyện văn hóa đô thị. Nếu muốn khám phá đời sống của các cộng đồng dân tộc trên cả nước, Bảo tàng Dân tộc học Việt Nam là một điểm dừng để tìm hiểu. Còn trong hành trình ẩm thực Hà Nội, phở và cà phê trứng là những gợi ý quen thuộc; phở cuốn và phở chiên phồng cũng xuất hiện trong các tuyến trải nghiệm được giới thiệu. Hãy xem đây là những gợi mở để tiếp tục khám phá theo sở thích của bạn.",
+      "text": "Hàng Bạc, Hàng Mã, Hàng Đường. Chỉ vài tên phố đã mở ra câu chuyện về nghề và buôn bán của Hà Nội. Tên gọi nằm trong đời sống thường ngày, nhưng cũng giữ một phần ký ức của phố cổ.\n\nTừ phố nghề, hành trình có thể đi đến Bảo tàng Dân tộc học Việt Nam, nơi giới thiệu đời sống văn hóa của nhiều cộng đồng trên cả nước. Mỗi không gian là một cách tìm hiểu con người: qua công việc, sinh hoạt và những điều được gìn giữ.\n\nRồi câu chuyện trở về với hương vị. Một bát phở, một tách cà phê trứng, phở cuốn hay phở chiên phồng gợi những cuộc khám phá khác giữa phố. Văn hóa Hà Nội hiện diện trong di sản, và cả trong những điều bình dị có thể gặp trên đường đi.",
       "sources": [
         {
           "id": "S03",
@@ -142,5 +141,8 @@
         }
       ]
     }
-  ]
+  ],
+  "provider": "openrouter",
+  "model": "google/gemini-3.8-flash-tts",
+  "style": "Vietnamese travel-documentary narration, warm expressive female voice with a clear natural standard northern Vietnamese accent. Begin directly with the supplied text. Speak with calm confidence, vivid storytelling and gentle changes of emphasis; warm and engaging rather than flat, robotic or sleepy. Moderate unhurried pace, natural breaths and thoughtful short pauses at punctuation and paragraph breaks. Read all the words faithfully. Do not greet, add words, sing, chant, exaggerate, or add background music."
 }
