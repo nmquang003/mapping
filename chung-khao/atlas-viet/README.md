@@ -12,7 +12,19 @@ python3 -m http.server 4321 --bind 127.0.0.1 --directory dist
 
 Mở http://127.0.0.1:4321/. Cần máy chủ HTTP để tải GeoJSON; không mở `index.html` bằng `file://`.
 
+## Chạy chatbot RAG
+
+Đặt `THUCCHIEN_API_KEY` hoặc `AITC_API_KEY` trong môi trường backend, rồi chạy từ thư mục này:
+
+```sh
+python3 rag/server.py serve --port 4322
+```
+
+Mở http://127.0.0.1:4322/. Lần đầu tạo embedding qua API BTC; những lần sau dùng lại chỉ mục nếu dữ liệu không đổi. [Model, luồng truy xuất và kiểm tra](rag/README.md).
+
 ## Đã triển khai
+
+- Chatbot RAG tiếng Việt: embedding 142 tư liệu từ bốn SQLite, truy xuất theo địa phương/địa danh, kiểm tra căn cứ, dẫn nguồn từng câu và từ chối ngoài phạm vi/thiếu dữ liệu.
 
 - Bản đồ SVG từ dữ liệu ranh giới 34 tỉnh/thành; làm nổi bật bốn tỉnh/thành phố trong phạm vi.
 - Hình học tham khảo quần đảo Hoàng Sa, Trường Sa; bản đồ không biểu diễn đường biên biển.
@@ -20,10 +32,11 @@ Mở http://127.0.0.1:4321/. Cần máy chủ HTTP để tải GeoJSON; không m
 - Popup bản đồ địa phương với bốn địa danh, dấu mốc, thẻ giới thiệu và liên kết trang chi tiết.
 - Bốn trang riêng bằng hash URL, hỗ trợ tải lại trực tiếp. Đường dẫn `ha-long` và `sa-pa` cũ chuyển sang `quang-ninh` và `lao-cai`; sổ tay đã lưu cũng được chuyển đổi.
 - Popup hiển thị ranh giới toàn tỉnh/thành phố. Hạ Long là địa danh thuộc Quảng Ninh; Sa Pa và Mù Cang Chải thuộc phạm vi Lào Cai trên bản đồ 34 tỉnh/thành phố. Nội dung vẫn là một nhóm địa danh khởi đầu, chưa phải tư liệu đầy đủ về toàn tỉnh.
-- Các tab Địa lý – Tổng quan, Địa danh, Lịch sử, Văn hóa – Ẩm thực, Nguồn tham khảo.
+- Các tab Địa lý – Tổng quan, Địa danh, Bộ ảnh AI, Du lịch online, Lịch sử, Văn hóa – Ẩm thực, Nguồn tham khảo.
+- Du lịch online nhúng tour AirPano chính thức: 5 cảnh Hà Nội, 9 cảnh Hạ Long thuộc Quảng Ninh; chọn cảnh khởi đầu, thử lại, dừng tour và toàn màn hình. Chỉ tải iframe khi bấm bắt đầu; rời tab sẽ đóng tour. Ninh Bình và Lào Cai hiển thị trạng thái chưa có dữ liệu phù hợp.
 - Lưu tỉnh/thành phố bằng localStorage, sổ tay đã lưu và thông báo ngoài phạm vi.
 - Bố cục máy tính/điện thoại; modal dùng bàn phím và Escape; các tab dùng phím mũi tên.
-- Font và ảnh phục vụ từ thư mục local để bản mẫu không phụ thuộc tài nguyên bên ngoài khi mở.
+- Font và ảnh giao diện phục vụ từ thư mục local. Tour AirPano cần Internet và có thể phát âm thanh khi bắt đầu.
 
 ## Nội dung đang biên soạn
 
@@ -31,7 +44,7 @@ Nội dung ngắn được đánh dấu là bản mẫu. Tọa độ địa danh
 
 Ảnh AI đã được nối vào thẻ điểm đến, banner trang chi tiết và các địa danh có ảnh tương ứng. Tab **Bộ ảnh AI** hiển thị ảnh tuyển chọn theo Hà Nội, Quảng Ninh và Lào Cai; bấm ảnh để xem lớn, giới thiệu địa danh và nguồn. Bộ ảnh Quảng Ninh/Lào Cai rộng hơn các dấu mốc Hạ Long/Sa Pa trên bản đồ. Ảnh có nhãn minh họa, không phải ảnh tư liệu. Ninh Bình hiện dùng ảnh thực tế có nguồn vì chưa có ảnh AI hoàn tất trong thư mục đầu vào.
 
-Khung trợ lý ghi rõ **chưa kết nối API AI**, không giả lập câu trả lời AI.
+Chatbot **RAG sử dụng API BTC** qua backend Python, truy xuất bốn database có nguồn. Cần chạy backend để sử dụng chatbot; trạng thái kết nối hiển thị trong khung trợ lý. Xem [hướng dẫn RAG](rag/README.md).
 
 Trước khi nộp: đối chiếu ranh giới, tọa độ, nội dung và mốc dữ liệu; kiểm tra chi tiết ảnh AI, bổ sung ảnh còn thiếu và chatbot tiếng Việt chỉ trả lời từ kho tri thức đã duyệt, có dẫn nguồn.
 
@@ -57,6 +70,15 @@ Các ảnh chưa tạo không sinh đường dẫn lỗi. Khi chưa có ảnh AI
 - `scripts/prepare_assets.py`: tái tạo tài nguyên từ nguồn công khai đã ghim phiên bản.
 - `scripts/check_ui.py`: kiểm tra luồng thực trên Chromium và tạo ảnh QA ở `.qa/`.
 - `scripts/sync_ai_images.py`: đồng bộ ảnh đã tạo và xuất danh mục media cho web.
+- `scripts/check_tours.py`: kiểm tra giao diện chủ với phản hồi iframe giả lập để xác minh tải khi bắt đầu, chọn cảnh, thử lại/dừng, dọn iframe và responsive. Khả năng tải ảnh thực bên trong tour phụ thuộc AirPano.
+
+## Tour du lịch online
+
+Tour dùng mã nhúng do AirPano cung cấp, với ghi công `Courtesy of www.AirPano.com` và liên kết nguồn. Tên cảnh tiếng Việt dựa trên cấu hình tour gốc; thứ tự cảnh giữ nguyên vì tham số `startscene` dùng chỉ số từ 0. Quảng Ninh chỉ có tour khu vực Hạ Long, chưa có tour Yên Tử hoặc Cô Tô.
+
+Danh sách ngoài khung chọn **cảnh khởi đầu**. Người dùng vẫn chuyển được cảnh bên trong tour; do iframe khác origin, web không đồng bộ lựa chọn bên ngoài theo thao tác trong AirPano và không xác nhận được ảnh 360° bên trong đã tải thành công. Nút thử lại và liên kết nguồn luôn có khi tour mở. Ninh Bình chưa nhúng trang nguồn có iframe bất thường; ảnh panorama nguồn chưa tải được.
+
+Dữ liệu tải về trong `data/360-tours/` vẫn là bản lưu riêng, chưa được phục vụ công khai cùng website. Không sao chép runtime hoặc ảnh AirPano vào `dist/` trong phiên bản nhúng này.
 
 ## Nguồn bản đồ
 
@@ -84,6 +106,7 @@ Khởi động máy chủ HTTP như trên, sau đó:
 ```sh
 node --check dist/app.js
 uv run --no-project --with playwright python scripts/check_ui.py
+uv run --no-project --with playwright python scripts/check_tours.py
 ```
 
 Cần Chromium của Playwright có sẵn để chạy kiểm tra UI. Script kiểm tra 34 vùng, bốn luồng bản đồ → popup → trang riêng, tất cả tab, deep link, lưu sổ tay, vùng ngoài phạm vi và bố cục điện thoại.
