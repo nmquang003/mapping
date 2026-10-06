@@ -1,0 +1,6 @@
+.qa/
+data/*.geojson
+data/gis-tree.json
+__pycache__/
+.openai/local.json
+data/360-tours/

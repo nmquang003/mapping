@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ninh-binh",
+    "file": "assets/ninh-binh.jpg",
+    "author": "Benjamin Smith",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trang_An_-_05.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Thu nhỏ tối đa 1600px; cắt khung bằng CSS. Ảnh thực tế dùng tạm cho bản mẫu, chưa phải minh họa AI."
+  },
+  {
+    "id": "ha-noi",
+    "file": "assets/ha-noi.jpg",
+    "author": "Tranhuutukkt",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hoan_Kiem_Lake_photo.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Thu nhỏ tối đa 1600px; cắt khung bằng CSS. Ảnh thực tế dùng tạm cho bản mẫu, chưa phải minh họa AI."
+  },
+  {
+    "id": "ha-long",
+    "file": "assets/ha-long.jpg",
+    "author": "Isderion",
+    "license": "CC BY-SA 3.0 DE",
+    "source": "https://commons.wikimedia.org/wiki/File:Halong_Bay_panorama.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+    "changes": "Thu nhỏ tối đa 1600px; cắt khung bằng CSS. Ảnh thực tế dùng tạm cho bản mẫu, chưa phải minh họa AI."
+  },
+  {
+    "id": "sa-pa",
+    "file": "assets/sa-pa.jpg",
+    "author": "Eerin25",
+    "license": "CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rice_terraces_in_Sapa%2C_Vietnam.jpg",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Thu nhỏ tối đa 1600px; cắt khung bằng CSS. Ảnh thực tế dùng tạm cho bản mẫu, chưa phải minh họa AI."
+  }
+]

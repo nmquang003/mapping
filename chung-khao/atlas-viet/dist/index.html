@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#214e43">
+  <meta name="description" content="Atlas Việt — Sổ tay điện tử khám phá địa lý, lịch sử và văn hóa Hà Nội, Ninh Bình, Hạ Long, Sa Pa.">
+  <title>Atlas Việt — Mỗi miền đất, một câu chuyện</title>
+  <link rel="icon" href="assets/compass.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="Atlas Việt — Trang chủ"><img src="assets/compass.svg" alt="" width="39" height="39"><span>Atlas <em>Việt</em><small>SỔ TAY ĐIỆN TỬ DƯ ĐỊA CHÍ</small></span></a>
+    <nav aria-label="Điều hướng chính">
+      <a class="nav-explore active" href="#/">Khám phá</a>
+      <button id="saved-nav" class="nav-button">Sổ tay của tôi <span id="saved-count">0</span></button>
+      <button id="about-nav" class="nav-button">Về dự án</button>
+    </nav>
+    <span class="edition"><span></span> PHIÊN BẢN KHÁM PHÁ</span>
+  </header>
+  <main id="main" tabindex="-1"><div class="loading"><img src="assets/compass.svg" width="48" alt=""><p>Đang mở bản đồ Việt Nam…</p></div></main>
+  <footer class="site-footer"><span>© Atlas Việt · Một hành trình tìm hiểu quê hương</span><button id="sources-footer">Nguồn dữ liệu & ghi chú</button><span class="footer-note">Nội dung đang biên soạn</span></footer>
+  <button id="chat-toggle" class="chat-toggle" aria-expanded="false" aria-controls="chat-panel"><span class="chat-spark">✧</span><span>Hỏi Atlas</span><span class="chat-badge">AI</span></button>
+  <aside id="chat-panel" class="chat-panel" hidden aria-labelledby="chat-title"><div class="chat-head"><span class="chat-spark">✧</span><div><strong id="chat-title">Bạn đồng hành Atlas</strong><small>Khám phá từ những câu hỏi nhỏ</small></div><button id="chat-close" class="icon-button" aria-label="Đóng khung trợ lý">×</button></div><div class="chat-body"><span class="draft-badge">Chưa kết nối API AI</span><p>Chatbot tiếng Việt sẽ được bổ sung ở bước tiếp theo, với nguồn dẫn và phạm vi trả lời rõ ràng.</p><p class="muted">Trong lúc chờ, bạn có thể chọn một điểm đến để mở sổ tay:</p><div id="chat-destinations"></div><div class="chat-scope">Phạm vi: Hà Nội, Ninh Bình, Hạ Long và Sa Pa.</div></div></aside>
+  <dialog id="destination-dialog" class="destination-dialog" aria-labelledby="destination-title"><div id="dialog-content"></div></dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="dialog-close icon-button" aria-label="Đóng" data-close-info>×</button><div id="info-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
