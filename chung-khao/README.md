@@ -29,6 +29,8 @@ App Gradio để thử nhanh các model chung của BTC qua gateway `https://api
 | Text to Speech | `/audio/speech` | `gemini-*-tts`, `gpt-4o-mini-tts` |
 | Speech to Text | `/audio/transcriptions` | `gemini-3.5-transcribe-preview`, `gpt-4o(-mini)-transcribe`, `gpt-transcribe`, `whisper-1` |
 
+**Thanh budget** ghim trên đầu mọi tab, hiện số tiền đội đã tiêu, budget và số còn lại (thanh đổi màu xanh, vàng, đỏ ở mức 70% và 90%). Thanh tự cập nhật mỗi 30 giây, sau mỗi lần Generate, hoặc khi bấm ↻. Dữ liệu lấy từ `GET /key/info` và `GET /team/info` theo trang [Kiểm tra chi tiêu](https://docs.thucchien.ai/docs/round-2/api-reference/spend-checking) (budget tính chung cho cả đội). Thanh cũng hiện chi tiêu của riêng key đang dùng, và tổng chi phí các request app đã gửi (cộng từ header `x-litellm-response-cost`).
+
 Tab thứ 5, **API snippets**, không gọi API: chọn model (17 model) và vài option theo docs là ra code **cURL**, **Python requests** và **OpenAI SDK** để copy, kèm ghi chú (định dạng response, giới hạn, cảnh báo). Code lấy theo các ví dụ trong docs BTC (cùng URL, cùng `base_url` cho từng ví dụ SDK), chỉ chứa field có trong docs, key luôn là `<your_api_key>`.
 
 ### Chạy

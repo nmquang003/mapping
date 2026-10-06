@@ -15,8 +15,12 @@ import mimetypes
 import os
 import shlex
 import tempfile
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
+from html import escape
+from urllib.parse import quote
 
 import gradio as gr
 import requests
@@ -101,9 +105,25 @@ def _call(method, path, api_key, *, json_body=None, data=None, files=None, timeo
         files=files,
         timeout=timeout,
     )
+    _track_cost(r)
     if not r.ok:
         raise gr.Error(f"HTTP {r.status_code} {method} {path}: {r.text[:1000]}")
     return r
+
+
+# Cost of every request made by this app process, from the gateway's
+# x-litellm-response-cost header (BTC pricing docs). Shown in the budget bar.
+_session = {"cost": 0.0}
+_session_lock = threading.Lock()
+
+
+def _track_cost(r: requests.Response):
+    try:
+        cost = float(r.headers.get("x-litellm-response-cost", ""))
+    except ValueError:
+        return
+    with _session_lock:
+        _session["cost"] += cost
 
 
 def _tmp(suffix: str) -> str:
@@ -375,8 +395,12 @@ def gen_video(
         body["negativePrompt"] = negative.strip()
     if audio != AUTO:
         body["generateAudio"] = audio == "on"
-    if seed is not None:
-        body["seed"] = int(seed)
+    seed = (seed or "").strip()
+    if seed:
+        try:
+            body["seed"] = int(seed)
+        except ValueError:
+            raise gr.Error(f"Seed must be an integer, got {seed!r}.")
     if last_frame:
         body["lastFrame"] = _veo_image(last_frame)
     if refs:
@@ -933,6 +957,66 @@ SNIPPET_DEFAULTS = ("nano-banana-2", "A majestic white tiger walking through a s
                     STANDARD_METHOD, "16:9", "1024x1024", "low", "4", "1280x720", False, "Zephyr")
 
 
+# ------------------------------------------------------------------ budget bar
+# BTC docs (Kiểm tra chi tiêu): budget belongs to the team and is shared by every key.
+# /key/info gives this key's spend + team_id; /team/info gives team spend + max_budget.
+BUDGET_REFRESH_SECONDS = 30
+
+
+def _money(x) -> str:
+    return f"${x:,.2f}" if isinstance(x, (int, float)) else "?"
+
+
+def _bar_html(spend=None, budget=None, scope="team", key_spend=None, note="", error="") -> str:
+    with _session_lock:
+        session = _session["cost"]
+    now = datetime.now().strftime("%H:%M:%S")
+    if error:
+        main = f'<span class="bb-err">⚠️ {escape(error)}</span>'
+        pct, color = 0, "var(--neutral-400)"
+    elif isinstance(budget, (int, float)) and budget > 0 and isinstance(spend, (int, float)):
+        left = budget - spend
+        pct = max(0.0, min(100.0, spend / budget * 100))
+        color = "#16a34a" if pct < 70 else "#d97706" if pct < 90 else "#dc2626"
+        main = (
+            f'<span class="bb-title">💰 {scope.title()} budget</span>'
+            f"<span><b>{_money(spend)}</b> spent of {_money(budget)} ({pct:.1f}%)</span>"
+            f'<span class="bb-left" style="color:{color}">{_money(left)} left</span>'
+        )
+    else:
+        pct, color = 0, "var(--neutral-400)"
+        main = (
+            f'<span class="bb-title">💰 {scope.title()} spend</span>'
+            f"<span><b>{_money(spend)}</b> spent · budget unknown</span>"
+        )
+    extra = [f"this key {_money(key_spend)}"] if key_spend is not None else []
+    extra += [f"this app session {_money(session)}", f"updated {now}"]
+    if note:
+        extra.append(escape(note))
+    return (
+        f'<div class="bb"><div class="bb-row">{main}'
+        f'<span class="bb-muted">{" · ".join(extra)}</span></div>'
+        f'<div class="bb-track"><div class="bb-fill" style="width:{pct:.1f}%;background:{color}"></div></div></div>'
+    )
+
+
+def budget_bar(api_key) -> str:
+    """Never raises: it runs on a timer, so errors are shown in the bar instead of popups."""
+    try:
+        info = _call("GET", "/key/info", api_key, timeout=20).json().get("info", {})
+    except Exception as e:  # missing key, 401, network...
+        return _bar_html(error=(getattr(e, "message", None) or str(e) or type(e).__name__)[:200])
+    key_spend, team_id = info.get("spend"), info.get("team_id")
+    if not team_id:
+        return _bar_html(info.get("spend"), info.get("max_budget"), "key")
+    try:
+        team = _call("GET", f"/team/info?team_id={quote(team_id)}", api_key, timeout=20).json()
+        ti = team.get("team_info", {})
+        return _bar_html(ti.get("spend"), ti.get("max_budget"), "team", key_spend)
+    except Exception as e:
+        return _bar_html(key_spend, info.get("max_budget"), "key", note=f"team info unavailable: {str(e)[:80]}")
+
+
 # ------------------------------------------------------------------ UI
 THEME = gr.themes.Base(
     primary_hue="indigo",
@@ -968,6 +1052,21 @@ CSS = """
 .ref-thumbs .gallery-item:hover .delete-button {opacity: 1}
 .ref-thumbs .upload-container {min-height: 130px}
 .ref-thumbs .gallery-container:has(.preview) {height: 440px !important}
+/* budget bar pinned to the top of every tab.
+   Gradio sets overflow:hidden on .gradio-container, which disables position:sticky;
+   overflow:clip still clips but does not create a scroll container. */
+.gradio-container {overflow: clip !important}
+#budget-bar {position: sticky; top: 0; z-index: 100; background: var(--body-background-fill);
+        padding: 8px 0 !important; gap: 8px; align-items: center}
+.bb {border: 1px solid var(--border-color-primary); border-radius: 12px; padding: 8px 14px;
+        background: var(--background-fill-secondary)}
+.bb-row {display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: .95rem}
+.bb-title {font-weight: 700}
+.bb-left {font-weight: 700}
+.bb-muted {opacity: .6; font-size: .82rem; margin-left: auto}
+.bb-err {color: #dc2626}
+.bb-track {height: 6px; border-radius: 999px; background: var(--neutral-200); margin-top: 6px; overflow: hidden}
+.bb-fill {height: 100%; border-radius: 999px; transition: width .4s}
 """
 
 RAW_HINT = (
@@ -991,6 +1090,16 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                 value=ENV_KEY,
                 placeholder="Defaults to AITC_API_KEY",
             )
+
+    with gr.Row(elem_id="budget-bar", equal_height=True):
+        budget = gr.HTML('<div class="bb">💰 Loading budget…</div>')
+        budget_btn = gr.Button("↻", size="sm", scale=0, min_width=44)
+    budget_timer = gr.Timer(BUDGET_REFRESH_SECONDS)
+    _refresh = dict(fn=budget_bar, inputs=api_key, outputs=budget, show_progress="hidden")
+    budget_timer.tick(**_refresh)
+    budget_btn.click(**_refresh)
+    api_key.blur(**_refresh)
+    demo.load(**_refresh)
 
     with gr.Tabs():
         # ============================== IMAGE
@@ -1057,7 +1166,7 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                     i_bg, i_fmt, i_comp, i_mod, i_refs, i_extra,
                 ],
                 [i_out, i_status, i_debug],
-            )
+            ).then(**_refresh)
 
         # ============================== VIDEO
         with gr.Tab("🎬  Video"):
@@ -1084,8 +1193,9 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                             label="Last frame (not in BTC docs)", type="filepath", height=180
                         )
                     v_refs = ref_uploader("Reference images (not in BTC docs)", 3)
-                    v_seed = gr.Number(
-                        label="Seed (not in BTC docs; empty = not sent)", value=None, precision=0
+                    # Textbox, not gr.Number: in Gradio 6 Number(value=None) shows and sends 0.
+                    v_seed = gr.Textbox(
+                        label="Seed (not in BTC docs; empty = not sent)", placeholder="e.g. 42"
                     )
                     gr.HTML(
                         '<span class="hint">1080p / 4k / reference images / last frame require 8s — '
@@ -1114,7 +1224,7 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                     v_first, v_last, v_refs, v_extra,
                 ],
                 [v_out, v_status, v_debug],
-            )
+            ).then(**_refresh)
 
         # ============================== TTS
         with gr.Tab("🔊  Text to Speech"):
@@ -1160,7 +1270,7 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                 gen_tts,
                 [api_key, t_model, t_text, t_voice, t_style, t_speed, t_fmt, t_extra],
                 [t_out, t_status, t_debug],
-            )
+            ).then(**_refresh)
 
         # ============================== STT
         with gr.Tab("📝  Speech to Text"):
@@ -1205,7 +1315,7 @@ with gr.Blocks(title="AITC Playground", fill_width=True) as demo:
                 run_stt,
                 [api_key, s_model, s_audio, s_lang, s_prompt, s_fmt, s_temp, s_gran, s_extra],
                 [s_text, s_status, s_debug],
-            )
+            ).then(**_refresh)
 
         # ============================== API SNIPPETS
         with gr.Tab("📋  API snippets"):

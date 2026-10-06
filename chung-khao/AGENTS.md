@@ -37,6 +37,12 @@ Khi kiểm tra, **đừng kill process trên port 7860**: thường là app user
 - **Mỗi tab có 3 phần:** hàm xử lý (`gen_image`, `gen_video` là generator để stream status khi poll, `gen_tts`, `run_stt`), hàm `on_*_model` ẩn/hiện option theo model, và khối UI trong `with gr.Blocks()`.
 - **Output chuẩn của mỗi hàm xử lý:** `(kết quả, status markdown, debug json)`.
 
+### Thanh budget
+
+- `budget_bar(api_key)` gọi `/key/info` (lấy `spend` của key và `team_id`), rồi `/team/info?team_id=` (lấy `spend` và `max_budget` của đội). Hàm **không bao giờ raise**, lỗi được hiện trong thanh, vì nó chạy theo `gr.Timer`.
+- Thanh được làm mới bởi timer 30 giây, nút ↻, blur ô API key, `demo.load`, và `.then(**_refresh)` sau mọi nút Generate. Nút mới cũng phải nối `.then(**_refresh)`.
+- `_call()` cộng header `x-litellm-response-cost` vào `_session["cost"]` (có lock, vì ảnh chạy nhiều thread).
+
 ### Tab API snippets
 
 - Sinh code mẫu trong `make_snippets()`, mỗi loại một hàm `_snip_*`. Template dùng token `@@NAME@@`, thay bằng `_fill()` (không dùng f-string vì code mẫu có nhiều dấu `{}`).
@@ -68,6 +74,9 @@ Khi kiểm tra, **đừng kill process trên port 7860**: thường là app user
 
 - `css=` và `theme=` truyền vào `launch()`, không truyền vào `gr.Blocks()`.
 - `gr.Textbox(show_copy_button=...)` không còn. Dùng `buttons=["copy"]`.
+- **`gr.Number(value=None)` vẫn hiện và gửi `0`**, không phải `None`. Với field "để trống = không gửi" thì dùng `gr.Textbox` rồi tự parse (xem ô Seed).
+- `.gradio-container` có `overflow: hidden`, làm `position: sticky` không chạy. CSS đã đổi thành `overflow: clip`.
+- Test hành vi "không gửi field" phải đi **qua giao diện thật** (Playwright bấm Generate và server giả ghi lại body). Gọi hàm Python trực tiếp sẽ bỏ sót lỗi kiểu `gr.Number`.
 - `elem_classes` trên `gr.Column` không xuất hiện trong DOM của app này. Panel card dùng `elem_id="panel-N"` và CSS `[id^="panel-"]`.
 - Ô ảnh tham chiếu dùng `gr.Gallery(interactive=True)` có sẵn:
   - Upload thêm sẽ cộng dồn, có nút X trên từng ảnh, bấm vào ảnh thì phóng to.
