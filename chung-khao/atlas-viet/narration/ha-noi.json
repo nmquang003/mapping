@@ -1,0 +1,146 @@
+{
+  "region_id": "ha-noi",
+  "region_name": "Hà Nội",
+  "voice": "Linh",
+  "rate": 185,
+  "chapters": [
+    {
+      "id": "gioi-thieu",
+      "title": "Giới thiệu",
+      "text": "Xin chào bạn, mình là người đồng hành trong hành trình khám phá Hà Nội cùng Atlas Việt. Những cảnh ba trăm sáu mươi độ ở đây đưa chúng ta đến Hồ Hoàn Kiếm và các góc nhìn trên cao của khu vực trung tâm. Bạn hãy thử nhìn quanh, tìm mặt hồ, những mái nhà và đường phố. Từ không gian này, chúng ta sẽ mở rộng câu chuyện đến phố cổ, Hoàng thành Thăng Long, Văn Miếu và các bảo tàng. Hà Nội có nhiều lớp di sản và nhịp sống khác nhau. Bạn có thể chọn nghe về địa lý, lịch sử hoặc văn hóa trong lúc tiếp tục khám phá từng cảnh.",
+      "sources": [
+        {
+          "id": "S03",
+          "title": "Hanoi: six heritage sites",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho tổng quan di tích, mốc Văn Miếu, Quốc Tử Giám và phố cổ. Loại chi tiết truyền thuyết và niên đại chưa đối chiếu thêm."
+        },
+        {
+          "id": "S05",
+          "title": "11 must-see attractions in Ha Noi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài có chi tiết cần biên tập: nhầm vua xây chùa Một Cột, nhầm nhân vật truyền thuyết trả gươm; cách gọi 54 ethnic minorities không chính xác; giá và giờ không có mốc rõ. Đã loại các chi tiết này, chỉ lấy mô tả địa danh có căn cứ."
+        },
+        {
+          "id": "S07",
+          "title": "Thư ngỏ – Hoàng thành Thăng Long",
+          "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
+          "url": "https://hoangthanhthanglong.vn/thu-ngo/",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn quản lý nêu khai quật khảo cổ năm 2002 và UNESCO năm 2010; dùng đối chiếu lịch sử và di sản."
+        },
+        {
+          "id": "S04",
+          "title": "3 walking tours of Hanoi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho địa danh và tên món ăn; không lấy mô tả nguyên liệu phở cuốn trong bài. Tuyến đi bộ không được coi là hướng dẫn an toàn hay lịch hoạt động hiện hành."
+        }
+      ]
+    },
+    {
+      "id": "dia-ly",
+      "title": "Địa lý & cảnh quan",
+      "text": "Hồ nước là một cách thú vị để đọc không gian Hà Nội. Hồ Hoàn Kiếm nằm trong khu vực trung tâm, gắn với đền Ngọc Sơn, cầu Thê Húc và phố cổ lân cận. Khi nhìn từ trên cao, bạn có thể quan sát mặt hồ trong mối liên hệ với những tuyến phố bao quanh. Câu chuyện địa lý đô thị còn có sông Hồng, cầu Long Biên và khu vực Trúc Bạch. Những địa điểm ấy gợi mở nhiều tuyến đi bộ và góc nhìn khác nhau về thành phố. Tour hiện tại tập trung vào trung tâm Hà Nội; không phải mọi địa danh được nhắc đến đều có cảnh riêng trong trình xem.",
+      "sources": [
+        {
+          "id": "S04",
+          "title": "3 walking tours of Hanoi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho địa danh và tên món ăn; không lấy mô tả nguyên liệu phở cuốn trong bài. Tuyến đi bộ không được coi là hướng dẫn an toàn hay lịch hoạt động hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "11 must-see attractions in Ha Noi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài có chi tiết cần biên tập: nhầm vua xây chùa Một Cột, nhầm nhân vật truyền thuyết trả gươm; cách gọi 54 ethnic minorities không chính xác; giá và giờ không có mốc rõ. Đã loại các chi tiết này, chỉ lấy mô tả địa danh có căn cứ."
+        }
+      ]
+    },
+    {
+      "id": "lich-su",
+      "title": "Lịch sử & di sản",
+      "text": "Hành trình lịch sử Hà Nội có thể bắt đầu từ Hoàng thành Thăng Long. Di tích lưu giữ nhiều lớp dấu tích qua các triều đại và được UNESCO ghi danh vào năm hai nghìn không trăm mười. Một điểm dừng khác là Văn Miếu, với mốc xây dựng năm một nghìn không trăm bảy mươi. Quốc Tử Giám có mốc năm một nghìn không trăm bảy mươi sáu. Những dấu mốc này giúp chúng ta tìm hiểu truyền thống giáo dục và lịch sử của kinh đô. Khi quan sát cảnh thành phố hôm nay, bạn có thể hình dung một hành trình tiếp theo qua các di tích để tìm hiểu sâu hơn về những lớp ký ức ấy.",
+      "sources": [
+        {
+          "id": "S03",
+          "title": "Hanoi: six heritage sites",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho tổng quan di tích, mốc Văn Miếu, Quốc Tử Giám và phố cổ. Loại chi tiết truyền thuyết và niên đại chưa đối chiếu thêm."
+        },
+        {
+          "id": "S07",
+          "title": "Thư ngỏ – Hoàng thành Thăng Long",
+          "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
+          "url": "https://hoangthanhthanglong.vn/thu-ngo/",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn quản lý nêu khai quật khảo cổ năm 2002 và UNESCO năm 2010; dùng đối chiếu lịch sử và di sản."
+        }
+      ]
+    },
+    {
+      "id": "van-hoa",
+      "title": "Văn hóa & ẩm thực",
+      "text": "Bạn có nhận ra những tên phố bắt đầu bằng chữ Hàng? Hàng Bạc, Hàng Mã, Hàng Đường gợi lại hoạt động nghề và buôn bán của phố cổ. Tên phố trở thành một lối vào câu chuyện văn hóa đô thị. Nếu muốn khám phá đời sống của các cộng đồng dân tộc trên cả nước, Bảo tàng Dân tộc học Việt Nam là một điểm dừng để tìm hiểu. Còn trong hành trình ẩm thực Hà Nội, phở và cà phê trứng là những gợi ý quen thuộc; phở cuốn và phở chiên phồng cũng xuất hiện trong các tuyến trải nghiệm được giới thiệu. Hãy xem đây là những gợi mở để tiếp tục khám phá theo sở thích của bạn.",
+      "sources": [
+        {
+          "id": "S03",
+          "title": "Hanoi: six heritage sites",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho tổng quan di tích, mốc Văn Miếu, Quốc Tử Giám và phố cổ. Loại chi tiết truyền thuyết và niên đại chưa đối chiếu thêm."
+        },
+        {
+          "id": "S05",
+          "title": "11 must-see attractions in Ha Noi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài có chi tiết cần biên tập: nhầm vua xây chùa Một Cột, nhầm nhân vật truyền thuyết trả gươm; cách gọi 54 ethnic minorities không chính xác; giá và giờ không có mốc rõ. Đã loại các chi tiết này, chỉ lấy mô tả địa danh có căn cứ."
+        },
+        {
+          "id": "S04",
+          "title": "3 walking tours of Hanoi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho địa danh và tên món ăn; không lấy mô tả nguyên liệu phở cuốn trong bài. Tuyến đi bộ không được coi là hướng dẫn an toàn hay lịch hoạt động hiện hành."
+        }
+      ]
+    }
+  ]
+}

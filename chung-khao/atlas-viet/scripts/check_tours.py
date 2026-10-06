@@ -40,19 +40,19 @@ async def main():
             await page.locator('[data-tour-start]').click()
             await loaded(page)
             await page.wait_for_function('document.querySelector("#tour-audio")?.currentTime>0 && !document.querySelector("#tour-audio").paused')
-            assert await page.locator('#tour-audio').evaluate('(a)=>a.loop && a.volume===.25')
+            assert await page.locator('#tour-audio').evaluate('(a)=>!a.loop && a.volume===.75')
             await page.evaluate('window.testAudio=document.querySelector("#tour-audio")')
-            await page.locator('#tour-volume').evaluate('(input)=>{input.value=40;input.dispatchEvent(new Event("input",{bubbles:true}));}')
+            await page.locator('#narration-volume').evaluate('(input)=>{input.value=40;input.dispatchEvent(new Event("input",{bubbles:true}));}')
             assert await page.locator('#tour-audio').evaluate('(a)=>a.volume===.4')
-            await page.locator('[data-tour-music]').click()
+            await page.locator('[data-narration-toggle]').click()
             assert await page.locator('#tour-audio').evaluate('(a)=>a.paused')
             await page.locator('[data-tour-select="0"]').click()
             await loaded(page)
             assert await page.locator('#tour-audio').evaluate('(a)=>a.paused')
-            await page.locator('[data-tour-music]').click()
-            await page.wait_for_function('document.querySelector("[data-tour-music]").getAttribute("aria-pressed")==="true"')
+            await page.locator('[data-narration-toggle]').click()
+            await page.wait_for_function('document.querySelector("[data-narration-toggle]").getAttribute("aria-pressed")==="true"')
             # Return to the default volume before the next destination.
-            await page.locator('#tour-volume').evaluate('(input)=>{input.value=25;input.dispatchEvent(new Event("input",{bubbles:true}));}')
+            await page.locator('#narration-volume').evaluate('(input)=>{input.value=75;input.dispatchEvent(new Event("input",{bubbles:true}));}')
             await page.locator('[data-tour-fullscreen]').click()
             await page.wait_for_function('document.fullscreenElement?.id==="tour-stage"')
             await page.evaluate('document.exitFullscreen()')
@@ -65,11 +65,11 @@ async def main():
             await page.locator('.pnlm-hotspot.pnlm-scene').first.dispatch_event('click')
             await loaded(page)
             assert await page.locator('[data-tour-select][aria-pressed=true]').get_attribute('data-tour-select')!=str(count-1)
-            music_time=await page.locator('#tour-audio').evaluate('(a)=>a.currentTime')
+            narration_time=await page.locator('#tour-audio').evaluate('(a)=>a.currentTime')
             await page.locator('[data-tour-retry]').click()
             await loaded(page)
             assert await page.evaluate('window.testAudio===document.querySelector("#tour-audio")')
-            assert await page.locator('#tour-audio').evaluate('(a)=>a.currentTime')>=music_time
+            assert await page.locator('#tour-audio').evaluate('(a)=>a.currentTime')>=narration_time
             await page.screenshot(path=str(QA/f'local-{slug}.png'),full_page=True)
             await page.locator('[data-tour-stop]').click()
             assert await page.locator('#tour-viewer, #tour-audio').count()==0
@@ -108,7 +108,7 @@ async def main():
         await page.unroute('**/panos/hi/01/_f.jpg',missing)
         await page.locator('[data-tour-retry]').click()
         await loaded(page)
-        # Autoplay rejection remains recoverable through the explicit Music button.
+        # Autoplay rejection remains recoverable through the explicit Narration button.
         blocked=await browser.new_page()
         await blocked.route('**/*',requests)
         await blocked.route('**/api/status',lambda route:route.fulfill(status=503,json={'error':'Backend intentionally unavailable in tour checks.'}))
@@ -116,21 +116,21 @@ async def main():
         await blocked.goto(BASE+'#/dia-phuong/ha-noi?tab=du-lich')
         await blocked.locator('[data-tour-start]').click()
         await loaded(blocked)
-        await blocked.wait_for_function('document.querySelector("#tour-music-status").textContent.includes("Bấm Bật nhạc")')
-        assert await blocked.locator('[data-tour-music]').get_attribute('aria-pressed')=='false'
+        await blocked.wait_for_function('document.querySelector("#narration-status").textContent.includes("Bấm Nghe thuyết minh")')
+        assert await blocked.locator('[data-narration-toggle]').get_attribute('aria-pressed')=='false'
         await blocked.evaluate('()=>{HTMLMediaElement.prototype.play=window.originalPlay;}')
-        await blocked.locator('[data-tour-music]').click()
+        await blocked.locator('[data-narration-toggle]').click()
         await blocked.wait_for_function('document.querySelector("#tour-audio").currentTime>0')
         await blocked.locator('[data-tour-stop]').click()
-        await blocked.route('**/peaceful-tour.mp3',missing)
+        await blocked.route('**/audio/narration/**',missing)
         await blocked.locator('[data-tour-start]').click()
-        await blocked.wait_for_function('document.querySelector("#tour-music-status").textContent.includes("Chưa tải được nhạc")')
-        await blocked.unroute('**/peaceful-tour.mp3',missing)
-        await blocked.locator('[data-tour-music]').click()
+        await blocked.wait_for_function('document.querySelector("#narration-status").textContent.includes("Chưa tải được thuyết minh")')
+        await blocked.unroute('**/audio/narration/**',missing)
+        await blocked.locator('[data-narration-toggle]').click()
         await blocked.wait_for_function('document.querySelector("#tour-audio").currentTime>0')
         await browser.close()
     assert not external,external
     assert not errors,errors
-    print('PASS: 44 actual local scenes, hotspot sync, lazy loading, fullscreen, retry/stop, route cleanup, mobile, missing-image recovery; real music playback, mute/volume, continuity, cleanup, autoplay recovery; zero external requests.')
+    print('PASS: 44 actual local scenes, hotspot sync, lazy loading, fullscreen, retry/stop, route cleanup, mobile, missing-image recovery; real narration playback, pause/volume, continuity, cleanup, autoplay recovery; zero external requests.')
 
 asyncio.run(main())

@@ -1,5 +1,6 @@
 import { installMotion, dismissDialog } from './motion.js';
 import { createLocalTour } from './local-tour.js';
+import { narrationView, createNarration } from './tour-narration.js';
 import { articleView, animateReading } from './articles.js';
 import { createProvinceHints } from './province-hints.js';
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -57,7 +58,7 @@ const onlineTours = {
 const tourSource=(tour,index=0)=>tour.sourceUrl || `https://www.airpano.com/360photo/${tour.slug}/?startscene=${index}`;
 let tourLoadTimer, tourViewer, tourAbort;
 let tourGeneration=0;
-let tourAudio, musicEnabled=true, musicVolume=.25;
+let tourNarration;
 const tourMetadata=new Map();
 const legacyIds = {'ha-long':'quang-ninh','sa-pa':'lao-cai'};
 const photoId = d => d.photoId || d.id;
@@ -261,52 +262,21 @@ function tabView(d,tab) {
 function onlineTourView(d) {
  const tour=onlineTours[d.id];
  if(!tour)return `<div class="tour-empty"><span class="eyebrow">DU LỊCH ONLINE · 360°</span><h2>${d.id==='ninh-binh'?'Một hành trình đang được chuẩn bị':'Hẹn một chuyến khám phá mới'}</h2><p>${d.id==='ninh-binh'?'Tour 360° Ninh Bình đang được bổ sung. Bạn có thể tiếp tục khám phá các địa danh trên bản đồ trong lúc chờ.':'Chưa có tour 360° cho Lào Cai trong sổ tay này. Những hành trình mới sẽ được bổ sung khi có dữ liệu phù hợp.'}</p><span class="draft-badge">${d.id==='ninh-binh'?'Dữ liệu 360° đang được bổ sung':'Chưa có tour 360°'}</span><a class="secondary-button" href="#/dia-phuong/${d.id}?tab=dia-danh">${icon('map')} Khám phá địa danh</a></div>`;
- return `<div class="tour-section" data-tour="${d.id}" data-tour-scene="0"><div class="section-heading"><h2>${tour.title}</h2><span>${String(tour.scenes.length).padStart(2,'0')} cảnh · ${tour.provider}</span></div><p class="tour-intro">${tour.scope} Chọn một cảnh, rồi kéo để nhìn quanh. Dùng nút +/− để phóng to hoặc thu nhỏ.</p><div class="tour-stage" id="tour-stage"><div class="tour-poster" id="tour-poster"><img src="assets/${photoId(d)}.jpg" alt="${photoDescription(photoId(d))}" class="tour-cover"><div class="tour-poster-content"><span class="tour-label">MỞ MỘT GÓC NHÌN MỚI</span><h3 id="tour-start-title">${tour.scenes[0]}</h3><p>Một chuyến đi ngay trên màn hình của bạn.</p><button class="primary-button" data-tour-start>${icon('arrow')} Bắt đầu khám phá</button><small>Ảnh 360° và nhạc nền nhẹ · Tải trực tiếp từ website này</small></div></div></div><p class="tour-image-caption">Ảnh bìa: ${escapeHTML(photoDescription(photoId(d)))} · Ảnh thật · ${escapeHTML(creditFor(d)?.author || 'Wikimedia Commons')} / Wikimedia Commons · ${escapeHTML(creditFor(d)?.license || '')}. Ảnh panorama 360°: <span id="panorama-caption">${tour.scenes[0]} · Ảnh thật · ${tour.provider}</span>.</p><div class="tour-toolbar"><p id="tour-status" role="status" aria-live="polite">Tour sẽ được tải khi bạn chọn “Bắt đầu khám phá”.</p><div id="tour-controls" hidden><button class="secondary-button" data-tour-retry>Thử lại</button><button class="secondary-button" data-tour-fullscreen>${icon('focus')} Toàn màn hình</button><button class="secondary-button" data-tour-stop>Dừng tour</button></div></div><div class="tour-music" id="tour-music" hidden><button class="secondary-button" data-tour-music aria-pressed="false">♫ Bật nhạc</button><label for="tour-volume">Âm lượng</label><input id="tour-volume" type="range" min="0" max="100" step="1" value="${Math.round(musicVolume*100)}" aria-label="Âm lượng nhạc nền"><span id="tour-music-status" role="status" aria-live="polite">Nhạc không lời · Êm dịu</span></div><div class="tour-scenes-heading"><h3>Chọn cảnh khám phá</h3><span>Chọn trong danh sách hoặc bấm điểm chuyển cảnh trên ảnh.</span></div><div class="tour-scenes" aria-label="Các cảnh trong tour">${tour.scenes.map((title,index)=>`<button class="tour-scene" data-tour-select="${index}" aria-pressed="${index===0}"><span class="tour-scene-number">${String(index+1).padStart(2,'0')}</span><span>${title}</span>${icon('arrow')}</button>`).join('')}</div><div class="tour-credit"><p>${tour.provider==='AirPano'?'Courtesy of <a href="https://www.airpano.com/" target="_blank" rel="noopener noreferrer">www.AirPano.com</a>':`Nguồn ảnh: <a href="${escapeHTML(tour.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(tour.provider)} — ${tour.mediaId==='sa-pa'?'Sa Pa 360°':'Ninh Binh in 360'}</a>`} · Nguồn ảnh panorama: ${tour.provider} · Trình xem 360°: Pannellum.</p><a id="tour-source" href="${tourSource(tour)}" target="_blank" rel="noopener noreferrer">Nguồn ảnh gốc ${icon('external')}</a></div></div>`;
+ return `<div class="tour-section" data-tour="${d.id}" data-tour-scene="0"><div class="section-heading"><h2>${tour.title}</h2><span>${String(tour.scenes.length).padStart(2,'0')} cảnh · ${tour.provider}</span></div><p class="tour-intro">${tour.scope} Chọn một cảnh, rồi kéo để nhìn quanh. Dùng nút +/− để phóng to hoặc thu nhỏ.</p><div class="tour-stage" id="tour-stage"><div class="tour-poster" id="tour-poster"><img src="assets/${photoId(d)}.jpg" alt="${photoDescription(photoId(d))}" class="tour-cover"><div class="tour-poster-content"><span class="tour-label">MỞ MỘT GÓC NHÌN MỚI</span><h3 id="tour-start-title">${tour.scenes[0]}</h3><p>Một chuyến đi ngay trên màn hình của bạn.</p><button class="primary-button" data-tour-start>${icon('arrow')} Bắt đầu khám phá</button><small>Ảnh 360° và thuyết minh tiếng Việt · Tải trực tiếp từ website này</small></div></div></div><p class="tour-image-caption">Ảnh bìa: ${escapeHTML(photoDescription(photoId(d)))} · Ảnh thật · ${escapeHTML(creditFor(d)?.author || 'Wikimedia Commons')} / Wikimedia Commons · ${escapeHTML(creditFor(d)?.license || '')}. Ảnh panorama 360°: <span id="panorama-caption">${tour.scenes[0]} · Ảnh thật · ${tour.provider}</span>.</p><div class="tour-toolbar"><p id="tour-status" role="status" aria-live="polite">Tour sẽ được tải khi bạn chọn “Bắt đầu khám phá”.</p><div id="tour-controls" hidden><button class="secondary-button" data-tour-retry>Thử lại</button><button class="secondary-button" data-tour-fullscreen>${icon('focus')} Toàn màn hình</button><button class="secondary-button" data-tour-stop>Dừng tour</button></div></div>${narrationView(d.id)}<div class="tour-scenes-heading"><h3>Chọn cảnh khám phá</h3><span>Chọn trong danh sách hoặc bấm điểm chuyển cảnh trên ảnh.</span></div><div class="tour-scenes" aria-label="Các cảnh trong tour">${tour.scenes.map((title,index)=>`<button class="tour-scene" data-tour-select="${index}" aria-pressed="${index===0}"><span class="tour-scene-number">${String(index+1).padStart(2,'0')}</span><span>${title}</span>${icon('arrow')}</button>`).join('')}</div><div class="tour-credit"><p>${tour.provider==='AirPano'?'Courtesy of <a href="https://www.airpano.com/" target="_blank" rel="noopener noreferrer">www.AirPano.com</a>':`Nguồn ảnh: <a href="${escapeHTML(tour.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(tour.provider)} — ${tour.mediaId==='sa-pa'?'Sa Pa 360°':'Ninh Binh in 360'}</a>`} · Nguồn ảnh panorama: ${tour.provider} · Trình xem 360°: Pannellum.</p><a id="tour-source" href="${tourSource(tour)}" target="_blank" rel="noopener noreferrer">Nguồn ảnh gốc ${icon('external')}</a></div></div>`;
 }
-function updateMusicControls() {
- const button=$('[data-tour-music]');if(!button)return;
- const playing=Boolean(tourAudio&&!tourAudio.paused);
- button.textContent=playing?'♫ Tắt nhạc':'♫ Bật nhạc';
- button.setAttribute('aria-pressed',String(playing));
-}
-function playTourMusic() {
+function playTourNarration() {
  const section=$('[data-tour]');if(!section)return;
- if(!tourAudio){
-  tourAudio=document.createElement('audio');tourAudio.id='tour-audio';
-  tourAudio.src='assets/audio/peaceful-tour.mp3';tourAudio.loop=true;
-  tourAudio.preload='none';tourAudio.volume=musicVolume;section.append(tourAudio);
-  tourAudio.addEventListener('playing',updateMusicControls);
-  tourAudio.addEventListener('pause',updateMusicControls);
- }
- $('#tour-music').hidden=false;
- if(!musicEnabled){updateMusicControls();return;}
- const audio=tourAudio;
- if(audio.error)audio.load();
- // Called synchronously from the Start / Music click to preserve user activation.
- audio.play().then(()=>{
-  if(audio!==tourAudio)return;
-  if(!musicEnabled){audio.pause();return;}
-  updateMusicControls();$('#tour-music-status').textContent='Nhạc không lời · Êm dịu';
- }).catch(error=>{
-  if(audio!==tourAudio||error.name==='AbortError')return;
-  updateMusicControls();$('#tour-music-status').textContent=error.name==='NotAllowedError'?'Bấm Bật nhạc để nghe nhạc nền.':'Chưa tải được nhạc. Bấm Bật nhạc để thử lại.';
- });
+ if(!tourNarration)tourNarration=createNarration(section.dataset.tour,section);
+ tourNarration.start();
 }
-function stopTourMusic() {
- const audio=tourAudio;tourAudio=null;
- if(audio){audio.pause();audio.removeAttribute('src');audio.load();audio.remove();}
- if($('#tour-music'))$('#tour-music').hidden=true;
+function stopTourNarration() {
+ tourNarration?.destroy();tourNarration=null;
 }
-function toggleTourMusic() {
- if(tourAudio&&!tourAudio.paused){musicEnabled=false;tourAudio.pause();}
- else {musicEnabled=true;playTourMusic();}
- updateMusicControls();
-}
-function disposeOnlineTour(keepMusic=false) {
+function disposeOnlineTour(keepNarration=false) {
  tourGeneration++;tourAbort?.abort();tourAbort=null;
  clearTimeout(tourLoadTimer);tourViewer?.destroy();tourViewer=null;
  $('#tour-viewer')?.remove();
- if(!keepMusic)stopTourMusic();
+ if(!keepNarration)stopTourNarration();
 }
 function updateTourSelection(index) {
  const section=$('[data-tour]');if(!section)return;
@@ -328,7 +298,7 @@ async function startOnlineTour() {
  disposeOnlineTour(true);const generation=tourGeneration;
  const controller=new AbortController();tourAbort=controller;
  $('#tour-poster').hidden=true;$('#tour-controls').hidden=false;tourLoading();
- playTourMusic();
+ playTourNarration();
  const mediaId=tour.mediaId;
  try {
   let metadata=tourMetadata.get(mediaId);
@@ -411,7 +381,6 @@ document.addEventListener('click',event=>{
  if(target.hasAttribute('data-tour-start')||target.hasAttribute('data-tour-retry'))startOnlineTour();
  if(target.hasAttribute('data-tour-select'))selectTourScene(Number(target.dataset.tourSelect));
  if(target.hasAttribute('data-tour-stop'))stopOnlineTour();
- if(target.hasAttribute('data-tour-music'))toggleTourMusic();
  if(target.hasAttribute('data-tour-fullscreen')){const stage=$('#tour-stage');if(stage?.requestFullscreen)stage.requestFullscreen().catch(()=>notify('Không thể mở toàn màn hình. Bạn vẫn có thể xem tour trong khung hiện tại.'));else notify('Trình duyệt này chưa hỗ trợ toàn màn hình.');}
  if(target.hasAttribute('data-close-info'))dismissDialog(infoDialog);
  if(target.hasAttribute('data-sources'))showSources();
@@ -449,12 +418,7 @@ try {
  render();
 }catch(error){main.innerHTML=`<div class="error-box"><h2>Bản đồ chưa tải được</h2><p>${escapeHTML(error.message)}</p><p>Hãy mở website qua máy chủ HTTP và tải lại trang.</p><button class="primary-button" onclick="location.reload()">Thử lại</button></div>`;}
 
-document.addEventListener('input',event=>{
- if(event.target.id!=='tour-volume')return;
- musicVolume=Number(event.target.value)/100;
- if(tourAudio)tourAudio.volume=musicVolume;
-});
-window.addEventListener('pagehide',()=>stopTourMusic());
+window.addEventListener('pagehide',()=>stopTourNarration());
 
 document.addEventListener('input',event=>{
  const target=event.target;

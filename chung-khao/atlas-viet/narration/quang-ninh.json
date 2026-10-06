@@ -1,0 +1,176 @@
+{
+  "region_id": "quang-ninh",
+  "region_name": "Quảng Ninh",
+  "voice": "Linh",
+  "rate": 185,
+  "chapters": [
+    {
+      "id": "gioi-thieu",
+      "title": "Giới thiệu",
+      "text": "Chào mừng bạn đến với hành trình khám phá Quảng Ninh cùng Atlas Việt. Tour ba trăm sáu mươi độ hiện đưa chúng ta quanh Vịnh Hạ Long, qua đảo đá, hang động, làng chài và những góc nhìn trên mặt vịnh. Hãy chọn một cảnh, kéo để nhìn quanh và cảm nhận sự thay đổi của cảnh quan. Câu chuyện Quảng Ninh còn mở rộng đến Cô Tô, Quan Lạn, Yên Tử và Bảo tàng, Thư viện Quảng Ninh. Các địa điểm đó được giới thiệu trong lời thuyết minh, nhưng chưa có đầy đủ cảnh riêng trong tour này. Mình sẽ đồng hành cùng bạn tìm hiểu từng chủ đề trong lúc ngắm cảnh.",
+      "sources": [
+        {
+          "id": "S02",
+          "title": "Ha Long",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/places-to-go/northern-vietnam/ha-long",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Chỉ lấy mô tả cảnh quan và trải nghiệm tổng quát. Nội dung có nhắc điểm ngoài Quảng Ninh; đã loại khỏi hồ sơ. Không lấy lịch hoặc thời gian vận chuyển làm thông tin hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "Khu di tích lịch sử và danh lam thắng cảnh Yên Tử",
+          "publisher": "Cổng thông tin điện tử Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530",
+          "displayed_date": "2025-07-14",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài nêu địa giới phường sau sắp xếp và sự kiện UNESCO ngày 12/07/2025. Chỉ lấy phần di tích Quảng Ninh, không mở rộng hồ sơ sang Bắc Ninh hoặc Hải Phòng."
+        },
+        {
+          "id": "S06",
+          "title": "Bảo tàng – Thư viện thành phố",
+          "publisher": "Sở Văn hóa, Thể thao và Du lịch Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/so/sovanhoathethao/trang/chitietbvgioithieu.aspx?bvid=84",
+          "displayed_date": "2026-09-04",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn về chức năng và nhiệm vụ đơn vị, không phải hướng dẫn trưng bày hoặc giá vé. Không nhập thông tin cá nhân cán bộ vào database du lịch."
+        },
+        {
+          "id": "S03",
+          "title": "Co To Island: pristine beauty of Northeast Vietnam",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Trang tiếng Việt ghi bản dịch do AI tạo. Chỉ lấy mô tả địa danh tổng quát; loại số liệu, niên đại hải đăng và quy định hạn chế nhựa chưa đối chiếu."
+        },
+        {
+          "id": "S04",
+          "title": "Discovering the beauty of Quan Lan Island",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam – TITC",
+          "url": "https://vietnamtourism.gov.vn/en/post/9785",
+          "displayed_date": "2015-11-09",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài năm 2015 dùng địa danh huyện Vân Đồn trước sắp xếp. Không nhập số lượng phòng, cơ sở lưu trú, lịch tàu, giá hay thời gian chạy tàu như hiện hành."
+        }
+      ]
+    },
+    {
+      "id": "dia-ly",
+      "title": "Địa lý & cảnh quan",
+      "text": "Điểm nổi bật của Hạ Long là những khối núi đá vôi giữa biển. Trong tour, bạn có thể đổi từ góc nhìn trên cao xuống các cảnh gần mặt nước để quan sát hình dáng đảo đá và khoảng biển giữa chúng. Quảng Ninh còn có những không gian khác: Quan Lạn nằm trong vịnh Bái Tử Long; Cô Tô gắn với bãi biển, bờ đá và đảo Thanh Lân. Yên Tử lại mở ra cảnh quan núi rừng. Sự khác biệt giữa biển đảo và núi giúp bạn lựa chọn các chủ đề khám phá. Những cảnh hiện có là một lát cắt về Vịnh Hạ Long, không phải toàn cảnh mọi điểm đến của Quảng Ninh.",
+      "sources": [
+        {
+          "id": "S02",
+          "title": "Ha Long",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/places-to-go/northern-vietnam/ha-long",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Chỉ lấy mô tả cảnh quan và trải nghiệm tổng quát. Nội dung có nhắc điểm ngoài Quảng Ninh; đã loại khỏi hồ sơ. Không lấy lịch hoặc thời gian vận chuyển làm thông tin hiện hành."
+        },
+        {
+          "id": "S03",
+          "title": "Co To Island: pristine beauty of Northeast Vietnam",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Trang tiếng Việt ghi bản dịch do AI tạo. Chỉ lấy mô tả địa danh tổng quát; loại số liệu, niên đại hải đăng và quy định hạn chế nhựa chưa đối chiếu."
+        },
+        {
+          "id": "S04",
+          "title": "Discovering the beauty of Quan Lan Island",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam – TITC",
+          "url": "https://vietnamtourism.gov.vn/en/post/9785",
+          "displayed_date": "2015-11-09",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài năm 2015 dùng địa danh huyện Vân Đồn trước sắp xếp. Không nhập số lượng phòng, cơ sở lưu trú, lịch tàu, giá hay thời gian chạy tàu như hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "Khu di tích lịch sử và danh lam thắng cảnh Yên Tử",
+          "publisher": "Cổng thông tin điện tử Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530",
+          "displayed_date": "2025-07-14",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài nêu địa giới phường sau sắp xếp và sự kiện UNESCO ngày 12/07/2025. Chỉ lấy phần di tích Quảng Ninh, không mở rộng hồ sơ sang Bắc Ninh hoặc Hải Phòng."
+        }
+      ]
+    },
+    {
+      "id": "lich-su",
+      "title": "Lịch sử & di sản",
+      "text": "Khi tìm hiểu lịch sử và di sản Quảng Ninh, Yên Tử là một điểm dừng đáng chú ý. Nơi đây gắn với Trần Nhân Tông và Thiền phái Trúc Lâm. Chùa, am và tháp tạo thành không gian kiến trúc giữa núi rừng, giúp chúng ta tìm hiểu câu chuyện Phật giáo và ký ức lịch sử. Khu di tích được xếp hạng quốc gia đặc biệt vào năm hai nghìn không trăm mười hai. Đây là một dấu mốc về di tích Yên Tử. Trong khi ngắm Vịnh Hạ Long, bạn có thể ghi nhớ chủ đề này cho một hành trình khác, kết nối cảnh quan biển với việc tìm hiểu di sản trên núi.",
+      "sources": [
+        {
+          "id": "S05",
+          "title": "Khu di tích lịch sử và danh lam thắng cảnh Yên Tử",
+          "publisher": "Cổng thông tin điện tử Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530",
+          "displayed_date": "2025-07-14",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài nêu địa giới phường sau sắp xếp và sự kiện UNESCO ngày 12/07/2025. Chỉ lấy phần di tích Quảng Ninh, không mở rộng hồ sơ sang Bắc Ninh hoặc Hải Phòng."
+        }
+      ]
+    },
+    {
+      "id": "van-hoa",
+      "title": "Văn hóa & ẩm thực",
+      "text": "Văn hóa Quảng Ninh có thể được khám phá qua nhiều không gian. Tại Yên Tử, kiến trúc chùa, am và tháp gắn với sinh hoạt Phật giáo. Quan Lạn có cụm đình, đền, chùa, cho thấy chuyến đi biển đảo cũng là cơ hội tìm hiểu di sản văn hóa. Bảo tàng, Thư viện Quảng Ninh góp phần lưu giữ và giới thiệu câu chuyện địa phương. Ẩm thực lại mở một góc nhìn về đời sống gắn với biển: các bài giới thiệu Cô Tô nhắc đến mực, hàu, bề bề và sá sùng. Đây là những nguyên liệu được giới thiệu trong trải nghiệm du lịch, không phải những món chỉ có ở Quảng Ninh.",
+      "sources": [
+        {
+          "id": "S04",
+          "title": "Discovering the beauty of Quan Lan Island",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam – TITC",
+          "url": "https://vietnamtourism.gov.vn/en/post/9785",
+          "displayed_date": "2015-11-09",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài năm 2015 dùng địa danh huyện Vân Đồn trước sắp xếp. Không nhập số lượng phòng, cơ sở lưu trú, lịch tàu, giá hay thời gian chạy tàu như hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "Khu di tích lịch sử và danh lam thắng cảnh Yên Tử",
+          "publisher": "Cổng thông tin điện tử Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530",
+          "displayed_date": "2025-07-14",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài nêu địa giới phường sau sắp xếp và sự kiện UNESCO ngày 12/07/2025. Chỉ lấy phần di tích Quảng Ninh, không mở rộng hồ sơ sang Bắc Ninh hoặc Hải Phòng."
+        },
+        {
+          "id": "S06",
+          "title": "Bảo tàng – Thư viện thành phố",
+          "publisher": "Sở Văn hóa, Thể thao và Du lịch Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/so/sovanhoathethao/trang/chitietbvgioithieu.aspx?bvid=84",
+          "displayed_date": "2026-09-04",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn về chức năng và nhiệm vụ đơn vị, không phải hướng dẫn trưng bày hoặc giá vé. Không nhập thông tin cá nhân cán bộ vào database du lịch."
+        },
+        {
+          "id": "S03",
+          "title": "Co To Island: pristine beauty of Northeast Vietnam",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Trang tiếng Việt ghi bản dịch do AI tạo. Chỉ lấy mô tả địa danh tổng quát; loại số liệu, niên đại hải đăng và quy định hạn chế nhựa chưa đối chiếu."
+        }
+      ]
+    }
+  ]
+}

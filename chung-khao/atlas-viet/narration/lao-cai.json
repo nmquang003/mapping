@@ -1,0 +1,156 @@
+{
+  "region_id": "lao-cai",
+  "region_name": "Lào Cai",
+  "voice": "Linh",
+  "rate": 185,
+  "chapters": [
+    {
+      "id": "gioi-thieu",
+      "title": "Giới thiệu",
+      "text": "Xin chào bạn, chào mừng đến với Lào Cai cùng Atlas Việt. Trong tour này, chúng ta đang khám phá trung tâm Sa Pa: nhà thờ đá, quảng trường, hồ Sa Pa, Sun Plaza và khu chợ. Hãy thử chuyển từ góc nhìn trên cao xuống một cảnh gần mặt đất để quan sát phố và không gian sinh hoạt. Sổ tay Lào Cai còn giới thiệu Fansipan, Bắc Hà, Mù Cang Chải và hồ Thác Bà. Phạm vi tỉnh hiện nay gồm Lào Cai và Yên Bái trước sắp xếp năm hai nghìn không trăm hai mươi lăm. Những cảnh Sa Pa là điểm khởi đầu, chưa bao quát toàn bộ vùng đất ấy.",
+      "sources": [
+        {
+          "id": "S01",
+          "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+          "displayed_date": "2026-10-05",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dân số và diện tích Lào Cai là số liệu phục vụ sắp xếp năm 2025; không gọi là số liệu mới nhất năm 2026."
+        },
+        {
+          "id": "S03",
+          "title": "Sapa",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cảnh quan, địa danh và chợ phiên; loại chiều cao Fansipan, thời gian cáp treo và thời gian di chuyển chưa đối chiếu. Mùa vụ và thời tiết là tham khảo, không phải dự báo."
+        },
+        {
+          "id": "S04",
+          "title": "4 things you will love about Mu Cang Chai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng địa danh tỉnh Yên Bái trước sắp xếp. Dùng mô tả cảnh quan và văn hóa; không dùng số giờ chạy xe hay lịch mùa vụ như cam kết hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "Thac Ba Lake: the emerald of Yen Bai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng Yên Bái và huyện Yên Bình/Lục Yên trước sắp xếp. Đã ánh xạ phạm vi tỉnh qua S01; loại xếp hạng hồ, số đảo và diện tích chưa đối chiếu; không khuyến nghị món cá sống."
+        }
+      ]
+    },
+    {
+      "id": "dia-ly",
+      "title": "Địa lý & cảnh quan",
+      "text": "Cảnh quan Lào Cai mở ra nhiều cách khám phá. Sa Pa gắn với núi, thung lũng và ruộng bậc thang. Mù Cang Chải nổi bật với những thửa ruộng trên sườn núi; Khau Phạ là con đèo trong khu vực Mù Cang Chải, Tú Lệ. Một không gian khác là hồ Thác Bà, hồ nhân tạo hình thành cùng công trình thủy điện Thác Bà. Trong tour hiện tại, bạn đang xem những cảnh ở trung tâm Sa Pa. Hãy dùng chúng làm điểm bắt đầu để tìm hiểu sự đa dạng giữa núi, ruộng bậc thang và cảnh quan hồ trong các hồ sơ của sổ tay.",
+      "sources": [
+        {
+          "id": "S03",
+          "title": "Sapa",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cảnh quan, địa danh và chợ phiên; loại chiều cao Fansipan, thời gian cáp treo và thời gian di chuyển chưa đối chiếu. Mùa vụ và thời tiết là tham khảo, không phải dự báo."
+        },
+        {
+          "id": "S04",
+          "title": "4 things you will love about Mu Cang Chai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng địa danh tỉnh Yên Bái trước sắp xếp. Dùng mô tả cảnh quan và văn hóa; không dùng số giờ chạy xe hay lịch mùa vụ như cam kết hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "Thac Ba Lake: the emerald of Yen Bai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng Yên Bái và huyện Yên Bình/Lục Yên trước sắp xếp. Đã ánh xạ phạm vi tỉnh qua S01; loại xếp hạng hồ, số đảo và diện tích chưa đối chiếu; không khuyến nghị món cá sống."
+        }
+      ]
+    },
+    {
+      "id": "lich-su",
+      "title": "Lịch sử & di sản",
+      "text": "Phần lịch sử trong tư liệu Lào Cai của sổ tay được kể qua một vài lát cắt. Hồ Thác Bà gắn với công trình thủy điện, cho thấy mối liên hệ giữa hoạt động của con người và sự hình thành cảnh quan. Ruộng bậc thang lại gợi mở câu chuyện về sinh kế nông nghiệp trên sườn núi. Phạm vi hành chính của tỉnh thay đổi sau sắp xếp năm hai nghìn không trăm hai mươi lăm, gồm Lào Cai và Yên Bái trước đây. Vì vậy, khi đọc tài liệu cũ, chúng ta cần chú ý thời điểm của tên địa phương. Những lát cắt này giúp mở đầu việc tìm hiểu, nhưng chưa phải một niên biểu lịch sử đầy đủ của toàn tỉnh.",
+      "sources": [
+        {
+          "id": "S01",
+          "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+          "displayed_date": "2026-10-05",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dân số và diện tích Lào Cai là số liệu phục vụ sắp xếp năm 2025; không gọi là số liệu mới nhất năm 2026."
+        },
+        {
+          "id": "S04",
+          "title": "4 things you will love about Mu Cang Chai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng địa danh tỉnh Yên Bái trước sắp xếp. Dùng mô tả cảnh quan và văn hóa; không dùng số giờ chạy xe hay lịch mùa vụ như cam kết hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "Thac Ba Lake: the emerald of Yen Bai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng Yên Bái và huyện Yên Bình/Lục Yên trước sắp xếp. Đã ánh xạ phạm vi tỉnh qua S01; loại xếp hạng hồ, số đảo và diện tích chưa đối chiếu; không khuyến nghị món cá sống."
+        }
+      ]
+    },
+    {
+      "id": "van-hoa",
+      "title": "Văn hóa & ẩm thực",
+      "text": "Đời sống cộng đồng là một phần quan trọng trong hành trình khám phá Lào Cai. Tại Mù Cang Chải, nghề dệt của người Mông là một chủ đề được giới thiệu trong tư liệu du lịch. Ở Ngòi Tu bên hồ Thác Bà, câu chuyện gắn với nhà sàn, nghề đan và sinh hoạt của cộng đồng Dao. Mỗi nét văn hóa cần được hiểu trong cộng đồng và không gian cụ thể. Trong trải nghiệm ẩm thực quanh hồ Thác Bà, tư liệu nhắc đến cơm lam và món gà nấu măng chua. Những câu chuyện đó gợi mở hành trình tiếp theo, bên cạnh các cảnh phố, hồ và chợ Sa Pa mà bạn đang xem.",
+      "sources": [
+        {
+          "id": "S04",
+          "title": "4 things you will love about Mu Cang Chai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng địa danh tỉnh Yên Bái trước sắp xếp. Dùng mô tả cảnh quan và văn hóa; không dùng số giờ chạy xe hay lịch mùa vụ như cam kết hiện hành."
+        },
+        {
+          "id": "S05",
+          "title": "Thac Ba Lake: the emerald of Yen Bai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng Yên Bái và huyện Yên Bình/Lục Yên trước sắp xếp. Đã ánh xạ phạm vi tỉnh qua S01; loại xếp hạng hồ, số đảo và diện tích chưa đối chiếu; không khuyến nghị món cá sống."
+        }
+      ]
+    }
+  ]
+}
