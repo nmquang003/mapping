@@ -3,6 +3,7 @@ import argparse
 import json
 import sys
 import threading
+import webbrowser
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
@@ -13,6 +14,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('command', choices=['serve','build-index'])
     parser.add_argument('--port', type=int, default=4322)
+    parser.add_argument('--open-browser', action='store_true')
     args = parser.parse_args()
     rag = RAG()
     if args.command=='build-index':
@@ -93,7 +95,10 @@ def main():
             finally:
                 slots.release()
     print(f'Atlas RAG: http://127.0.0.1:{args.port}/',flush=True)
-    ThreadingHTTPServer(('127.0.0.1',args.port),Handler).serve_forever()
+    httpd=ThreadingHTTPServer(('127.0.0.1',args.port),Handler)
+    if args.open_browser:
+        webbrowser.open(f'http://127.0.0.1:{args.port}/')
+    httpd.serve_forever()
 
 
 if __name__=='__main__':

@@ -2,6 +2,12 @@
 
 RAG sử dụng bốn database trong `../data-catalog.json` (tính từ `atlas-viet/` là `../data-catalog.json`), đọc SQLite ở chế độ chỉ đọc. Không sửa database nguồn.
 
+## Gói chạy độc lập
+
+Gói `release/atlas-viet-rag.zip` gồm website, backend, bốn database, tư liệu JSON và chỉ mục 142 embedding thật. Không có API key. Giải nén toàn bộ, giữ cấu trúc, vào `atlas-viet/`, sao chép `.env.example` thành `.env`, điền key BTC rồi chạy `python3 run.py` (Windows: `python run.py`). Cần Python 3.10 trở lên; không cần cài thêm thư viện cho runtime. Có `launch.command` và `launch.bat` để khởi động.
+
+Tạo lại gói sau khi sửa code/data: `python3 scripts/package_rag.py`. Script chỉ lấy danh sách file cho phép và kiểm tra không có key môi trường trong nội dung gói. Chỉ mục trong gói là dữ liệu sinh ra; ở repo nó vẫn được bỏ qua bởi Git.
+
 ## Chạy
 
 Từ thư mục `chung-khao/atlas-viet/`, đặt `THUCCHIEN_API_KEY` hoặc `AITC_API_KEY` trong môi trường của backend. Không đưa key vào trình duyệt, mã nguồn hoặc chat.

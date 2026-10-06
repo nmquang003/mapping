@@ -6,10 +6,7 @@ Hướng dẫn cho AI coding agent (Claude Code, Codex, Cursor, Gemini, Antigrav
 
 - Mọi code của vòng này nằm dưới `chung-khao/`. **Không sửa / xoá** cấu trúc thư mục do BTC tạo, không sửa `README.md` ở root.
 - **Không commit secret:** API key, `.env`, token. `.env` và `.venv/` đã có trong `.gitignore`. Key đọc từ biến môi trường.
-- **AI log là tự động** (xem `.agents/rules/ai-log-hook.md`):
-  - KHÔNG chạy `scripts/log_antigravity.py` hay `scripts/log_manual.py` sau mỗi task.
-  - KHÔNG sửa / xoá file trong `.ai-log/`.
-  - Nếu pre-push hook lỗi: báo user, KHÔNG bypass bằng `--no-verify`.
+- **AI log đã tắt theo yêu cầu của user** (xem `.agents/rules/ai-log-hook.md`). Không tự cài lại hook hoặc chạy script ghi/gửi log nếu user chưa yêu cầu rõ ràng.
 - Hỏi user trước khi commit, push hay tạo nhánh.
 
 ## UI_testing/ — AITC Playground (Gradio)

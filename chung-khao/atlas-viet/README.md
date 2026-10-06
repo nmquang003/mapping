@@ -14,6 +14,8 @@ Mở http://127.0.0.1:4321/. Cần máy chủ HTTP để tải GeoJSON; không m
 
 ## Chạy chatbot RAG
 
+Có gói bàn giao ở `release/atlas-viet-rag.zip`; xem [hướng dẫn chạy độc lập](rag/README.md).
+
 Đặt `THUCCHIEN_API_KEY` hoặc `AITC_API_KEY` trong môi trường backend, rồi chạy từ thư mục này:
 
 ```sh

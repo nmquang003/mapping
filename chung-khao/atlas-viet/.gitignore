@@ -13,3 +13,5 @@ data/360-tours/
 .rag/
 .env
 .vercel
+release/
+.env*

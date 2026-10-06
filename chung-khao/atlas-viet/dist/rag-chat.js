@@ -8,8 +8,63 @@ const statusLabel = document.querySelector('#chat-status');
 const submit = document.querySelector('#chat-submit');
 const localPreview = ['127.0.0.1', 'localhost'].includes(location.hostname) && location.port === '4321';
 const apiBase = localPreview ? `http://${location.hostname}:4322` : '';
-let history = [], busy = false;
+let history = [], busy = false, connected = false, healthRequest = null;
+const connectionError = 'Chưa kết nối được máy chủ chatbot. Vui lòng thử kết nối lại; nếu vẫn lỗi, tải lại trang.';
+function showError(text, reconnect = false) {
+  errorBox.replaceChildren(document.createTextNode(text));
+  if (reconnect) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'chat-reconnect';
+    button.textContent = 'Kết nối lại';
+    button.addEventListener('click', () => refreshConnection());
+    errorBox.append(' ', button);
+  }
+  errorBox.hidden = false;
+}
+async function requestJSON(path, options = {}) {
+  const response = await fetch(apiBase + path, {cache: 'no-store', ...options});
+  const type = response.headers.get('Content-Type') || '';
+  if (!type.toLowerCase().includes('application/json')) {
+    connected = false;
+    throw new Error(connectionError);
+  }
+  let result;
+  try {result = await response.json();} catch {
+    connected = false;
+    throw new Error(connectionError);
+  }
+  if (!result || typeof result !== 'object' || Array.isArray(result)) throw new Error(connectionError);
+  if (!response.ok) throw new Error(typeof result.error === 'string' ? result.error : 'Máy chủ chatbot tạm thời chưa xử lý được câu hỏi.');
+  return result;
+}
+async function refreshConnection() {
+  if (healthRequest) return healthRequest;
+  healthRequest = (async () => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    try {
+      const status = await requestJSON('/api/status', {signal: controller.signal});
+      if (typeof status.ready !== 'boolean' || !Number.isInteger(status.documents)) throw new Error(connectionError);
+      connected = status.ready && status.api_configured;
+      statusLabel.textContent = connected ? `RAG · ${status.documents} tư liệu có nguồn` : 'RAG chưa sẵn sàng';
+      if (connected) {
+        if (errorBox.querySelector('.chat-reconnect')) errorBox.hidden = true;
+      } else showError(status.startup_error || 'Cần cấu hình API key và chỉ mục ở backend.', true);
+      return connected;
+    } catch {
+      connected = false;
+      statusLabel.textContent = 'Chưa kết nối backend RAG';
+      showError(connectionError, true);
+      return false;
+    } finally {clearTimeout(timeout);}
+  })();
+  try {return await healthRequest;} finally {healthRequest = null;}
+}
 
+function scrollToLatest() {
+  requestAnimationFrame(() => {const body = panel.querySelector('.chat-body'); body.scrollTop = body.scrollHeight;});
+}
 function openChat() {
   panel.hidden = false;
   document.querySelector('#chat-toggle').setAttribute('aria-expanded', 'true');
@@ -29,7 +84,7 @@ function message(role, text) {
   p.textContent = text;
   block.append(p);
   log.append(block);
-  block.scrollIntoView({block: 'nearest'});
+  scrollToLatest();
   return block;
 }
 function renderAnswer(result) {
@@ -73,11 +128,15 @@ function renderAnswer(result) {
     }
     block.append(details);
   }
-  block.scrollIntoView({block: 'nearest'});
+  scrollToLatest();
 }
 async function ask(question) {
   if (busy || !question.trim()) return;
   busy = true;
+  if (!connected && !await refreshConnection()) {
+    busy = false;
+    return;
+  }
   submit.disabled = true;
   input.disabled = true;
   errorBox.hidden = true;
@@ -88,20 +147,21 @@ async function ask(question) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 240000);
   try {
-    const response = await fetch(apiBase + '/api/chat', {
+    const result = await requestJSON('/api/chat', {
       method: 'POST', headers: {'Content-Type': 'application/json'}, signal: controller.signal,
       body: JSON.stringify({question, dataset_id: select.value || null, history: history.slice(-6)})
     });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error || 'Atlas chưa xử lý được câu hỏi.');
+    if (typeof result.answer !== 'string' || !Array.isArray(result.claims) || !Array.isArray(result.sources)) throw new Error(connectionError);
+    statusLabel.textContent = 'RAG · Trả lời có nguồn';
     pending.remove();
     renderAnswer(result);
     history.push({role: 'user', content: question}, {role: 'assistant', content: result.answer.slice(0, 4000)});
     history = history.slice(-6);
   } catch (error) {
     pending.remove();
-    errorBox.textContent = error.name === 'AbortError' ? 'API đang phản hồi chậm. Bạn có thể thử lại.' : (error.message === 'Failed to fetch' ? 'Chưa kết nối được backend RAG. Hãy chạy máy chủ theo hướng dẫn.' : error.message);
-    errorBox.hidden = false;
+    const lostConnection = error.message === 'Failed to fetch' || error.message === connectionError;
+    if (lostConnection) {connected = false; statusLabel.textContent = 'Chưa kết nối backend RAG';}
+    showError(error.name === 'AbortError' ? 'API đang phản hồi chậm. Bạn có thể thử lại.' : (lostConnection ? connectionError : error.message), lostConnection);
     input.value = question;
   } finally {
     clearTimeout(timeout);
@@ -125,18 +185,8 @@ document.addEventListener('click', event => {
   }
   if (suggestion) {openChat(); ask(suggestion.dataset.chatQuestion);}
 });
-document.querySelector('#chat-toggle').addEventListener('click', () => {if (!panel.hidden) {syncDataset(); input.focus();}});
+document.querySelector('#chat-toggle').addEventListener('click', () => {if (!panel.hidden) {syncDataset(); input.focus(); refreshConnection();}});
 window.addEventListener('hashchange', syncDataset);
+window.addEventListener('resize', () => {if (!panel.hidden) scrollToLatest();});
 syncDataset();
-try {
-  const response = await fetch(apiBase + '/api/status');
-  if (!response.ok) throw new Error();
-  const status = await response.json();
-  statusLabel.textContent = status.ready ? `RAG · ${status.documents} tư liệu có nguồn` : 'RAG chưa sẵn sàng';
-  if (!status.ready) {
-    errorBox.textContent = status.startup_error || 'Cần tạo chỉ mục và cấu hình API ở backend.';
-    errorBox.hidden = false;
-  }
-} catch {
-  statusLabel.textContent = 'Chưa kết nối backend RAG';
-}
+refreshConnection();
