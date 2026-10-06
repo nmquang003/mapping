@@ -1,0 +1,12 @@
+{
+  "text": ["gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-3.1-pro-preview", "gemini-2.5-pro", "gemini-2.5-flash", "gpt-6-luna", "gpt-6.1-sol", "gpt-6-astra", "gpt-6-sol", "gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna", "o3", "o4-mini", "deepseek-flash", "deepseek-v4-pro"],
+  "image": ["nano-banana-2-lite", "nano-banana-2", "nano-banana-pro", "gemini-3.1-flash-image", "gemini-3.1-flash-lite-image", "gemini-3-pro-image", "gpt-image-2.5-flare", "gpt-image-2.5-sunburst"],
+  "video": ["veo-3.1-lite-generate-001", "veo-3.1-fast-generate-001", "veo-3.1-generate-001"],
+  "speech": ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts", "gpt-4o-mini-tts"],
+  "transcription": ["gemini-3.5-transcribe-preview", "gpt-4o-mini-transcribe", "gpt-4o-transcribe", "gpt-transcribe", "whisper-1"],
+  "embedding": ["text-embedding-3-small", "text-embedding-3-large", "gemini-embedding-001", "gemini-embedding-2", "text-multilingual-embedding-002", "text-embedding-005"],
+  "moderation": ["omni-moderation-latest"],
+  "gemini_voices": ["Zephyr", "Puck", "Charon", "Kore"],
+  "openai_voices": ["alloy", "echo", "fable", "onyx", "nova", "shimmer"],
+  "video_usd_per_second": {"veo-3.1-lite-generate-001": 0.05, "veo-3.1-fast-generate-001": 0.10, "veo-3.1-generate-001": 0.40}
+}

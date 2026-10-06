@@ -1,0 +1,148 @@
+{
+  "source": "https://docs.thucchien.ai/docs/user-guide",
+  "downloaded_at": "2026-10-05T08:59:36.974271+07:00",
+  "chapter_count": 13,
+  "page_count": 14,
+  "pages": [
+    {
+      "title": "Hướng dẫn sử dụng API",
+      "url": "https://docs.thucchien.ai/docs/user-guide",
+      "markdown": "markdown/00-overview.md",
+      "html": "html/00-overview.html",
+      "raw": "raw/00-overview.html",
+      "sha256": "12364d2c987e8442529c8ed577d5189a02beb792f6129cc526286ac3f52723cf",
+      "code_blocks": 0,
+      "tables": 0
+    },
+    {
+      "title": "Giới thiệu",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/introduction",
+      "markdown": "markdown/01-introduction.md",
+      "html": "html/01-introduction.html",
+      "raw": "raw/01-introduction.html",
+      "sha256": "968ecdca325901fa621ac0376c553afc1007e453e8cdb01f18b85bb07e13cdfc",
+      "code_blocks": 0,
+      "tables": 0
+    },
+    {
+      "title": "Các khái niệm cốt lõi",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/core-concepts",
+      "markdown": "markdown/02-core-concepts.md",
+      "html": "html/02-core-concepts.html",
+      "raw": "raw/02-core-concepts.html",
+      "sha256": "3494a4a8ee662e6a7a8792e8733f7ecfc76c057b9d5204436c3b5d9f76518f21",
+      "code_blocks": 3,
+      "tables": 0
+    },
+    {
+      "title": "Sinh văn bản (Text Generation)",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/text-generation",
+      "markdown": "markdown/03-text-generation.md",
+      "html": "html/03-text-generation.html",
+      "raw": "raw/03-text-generation.html",
+      "sha256": "df9070f5698ee41d09df666b8256a45621ebf2830585958207bbd186545d936f",
+      "code_blocks": 1,
+      "tables": 0
+    },
+    {
+      "title": "Sinh hình ảnh (Image Generation)",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/image-generation",
+      "markdown": "markdown/04-image-generation.md",
+      "html": "html/04-image-generation.html",
+      "raw": "raw/04-image-generation.html",
+      "sha256": "65bfc8448335557419d3bf46eade888636e427f70aaacc13fd614c6b03c6c94e",
+      "code_blocks": 8,
+      "tables": 0
+    },
+    {
+      "title": "Sinh video với Veo 3.1 (Quy trình bất đồng bộ)",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/video-generation-veo3",
+      "markdown": "markdown/05-video-generation-veo3.md",
+      "html": "html/05-video-generation-veo3.html",
+      "raw": "raw/05-video-generation-veo3.html",
+      "sha256": "b61af8bf5a7bc8672031ea91e73bc3a1f2716c1a0c0058cf115b3292d4e469a6",
+      "code_blocks": 8,
+      "tables": 1
+    },
+    {
+      "title": "Chuyển văn bản thành giọng nói (Text-to-Speech)",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/text-to-speech",
+      "markdown": "markdown/06-text-to-speech.md",
+      "html": "html/06-text-to-speech.html",
+      "raw": "raw/06-text-to-speech.html",
+      "sha256": "202f7c48db4f420d6cba57f1aa987aae8260e26b9ff673976a9f5fa4442bca7e",
+      "code_blocks": 3,
+      "tables": 0
+    },
+    {
+      "title": "Chuyển giọng nói thành văn bản (Speech-to-Text)",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/speech-to-text",
+      "markdown": "markdown/07-speech-to-text.md",
+      "html": "html/07-speech-to-text.html",
+      "raw": "raw/07-speech-to-text.html",
+      "sha256": "bf214ee79d63ebea122ccd57bea585023c1bda3aa4eebbf6b3aae08fba1d42d7",
+      "code_blocks": 4,
+      "tables": 0
+    },
+    {
+      "title": "Tìm kiếm web (Google Search grounding)",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/google-search-grounding",
+      "markdown": "markdown/08-google-search-grounding.md",
+      "html": "html/08-google-search-grounding.html",
+      "raw": "raw/08-google-search-grounding.html",
+      "sha256": "13121c441c92c603195bba941c15187c884961d9ef66002ccd7ca3406eb1611b",
+      "code_blocks": 4,
+      "tables": 3
+    },
+    {
+      "title": "Embedding",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/embeddings",
+      "markdown": "markdown/09-embeddings.md",
+      "html": "html/09-embeddings.html",
+      "raw": "raw/09-embeddings.html",
+      "sha256": "522992096d915fc76e1b7fdb34b3ba67fd526b6e661511e55f18dd80624922dc",
+      "code_blocks": 2,
+      "tables": 1
+    },
+    {
+      "title": "Model OpenAI và DeepSeek",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/openai-deepseek",
+      "markdown": "markdown/10-openai-deepseek.md",
+      "html": "html/10-openai-deepseek.html",
+      "raw": "raw/10-openai-deepseek.html",
+      "sha256": "b2e9a484becd912f1c8b2a2938710e5c01e133bc45807709efd141a9aed165e1",
+      "code_blocks": 8,
+      "tables": 3
+    },
+    {
+      "title": "Bảng giá model",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/pricing",
+      "markdown": "markdown/11-pricing.md",
+      "html": "html/11-pricing.html",
+      "raw": "raw/11-pricing.html",
+      "sha256": "db643521d2b49d91e62811c195b67f0d5fefc70ff4e9cf404960635ce1ded682",
+      "code_blocks": 0,
+      "tables": 7
+    },
+    {
+      "title": "Giới hạn tốc độ (rate limit)",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/rate-limits",
+      "markdown": "markdown/12-rate-limits.md",
+      "html": "html/12-rate-limits.html",
+      "raw": "raw/12-rate-limits.html",
+      "sha256": "597b892ad7af0d62216e92fb8bfc059a8d17905298a2de943cb0d5b00a51983b",
+      "code_blocks": 0,
+      "tables": 2
+    },
+    {
+      "title": "Tham khảo",
+      "url": "https://docs.thucchien.ai/docs/round-2/user-guide/references",
+      "markdown": "markdown/13-references.md",
+      "html": "html/13-references.html",
+      "raw": "raw/13-references.html",
+      "sha256": "6ef6a852e0e5abfdda1d85166346db2818e15071e1589ed2433aa8c0b0a82771",
+      "code_blocks": 0,
+      "tables": 0
+    }
+  ]
+}

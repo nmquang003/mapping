@@ -1,0 +1,63 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Chuyển giọng nói thành văn bản (Speech-to-Text)</title><style>body{max-width:980px;margin:40px auto;padding:0 24px;font:17px/1.6 system-ui;color:#202124}pre{background:#f2f4f7;padding:18px;overflow:auto;white-space:pre}code{font-family:monospace}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ccc;padding:8px}img{max-width:100%}a{color:#1659ad}button{display:none}blockquote{border-left:4px solid #ccc;padding-left:16px}</style><body><p><a href="../index.html">Mục lục offline</a> · <a href="https://docs.thucchien.ai/docs/round-2/user-guide/speech-to-text">Nguồn</a></p><article><nav aria-label="Breadcrumbs" class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="https://docs.thucchien.ai/"><svg class="breadcrumbHomeIcon_YNFT" viewbox="0 0 24 24"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="https://docs.thucchien.ai/docs/round-2"><span>Vòng Chung Khảo</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../html/00-overview.html"><span>Hướng dẫn sử dụng API</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Chuyển giọng nói thành văn bản (Speech-to-Text)</span></li></ul></nav><div class="theme-doc-markdown markdown"><header><h1>Chuyển giọng nói thành văn bản (Speech-to-Text)</h1></header>
+<!-- -->
+<p>Mô hình Speech-to-Text (STT) nhận một file âm thanh và trả về nội dung lời nói dưới dạng văn bản, hỗ trợ tiếng Việt.</p>
+<p><strong>Model được hỗ trợ</strong> (Gemini Enterprise Agent Platform (trước đây là Vertex AI)):</p>
+<ul>
+<li><code>gemini-3.5-transcribe-preview</code></li>
+</ul>
+<p><strong>Model OpenAI:</strong> <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code>, <code>gpt-transcribe</code>, <code>whisper-1</code>. Riêng <code>gpt-transcribe</code> phải gửi <code>response_format=json</code>, xem <a href="../html/10-openai-deepseek.html#%C3%A2m-thanh">Model OpenAI và DeepSeek</a>.</p>
+<p><strong>Endpoint:</strong> <code>POST /audio/transcriptions</code></p>
+<p>Request gửi dạng <code>multipart/form-data</code> (upload file), không phải JSON.</p>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">curl</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (requests)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (openai)</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl https://api.thucchien.ai/audio/transcriptions \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+-F model=gemini-3.5-transcribe-preview \
+-F file=@speech.mp3</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import requests
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai"
+AI_API_KEY = "sk-1234" # Thay bằng API key của bạn
+
+# --- Thực thi ---
+with open("speech.mp3", "rb") as f:
+  response = requests.post(
+      f"{AI_API_BASE}/audio/transcriptions",
+      headers={"Authorization": f"Bearer {AI_API_KEY}"},
+      data={"model": "gemini-3.5-transcribe-preview"},
+      files={"file": ("speech.mp3", f, "audio/mpeg")},
+  )
+
+if response.status_code == 200:
+  print(response.json()["text"])
+else:
+  print(f"Error: {response.status_code}")
+  print(response.text)</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai"
+AI_API_KEY = "sk-1234" # Thay bằng API key của bạn
+
+# --- Thực thi ---
+client = OpenAI(
+  api_key=AI_API_KEY,
+  base_url=AI_API_BASE
+)
+
+with open("speech.mp3", "rb") as audio_file:
+  transcript = client.audio.transcriptions.create(
+      model="gemini-3.5-transcribe-preview",
+      file=audio_file,
+  )
+
+print(transcript.text)</code></pre></div></div></div></div></div>
+<p>Kết quả trả về là JSON, nội dung lời nói nằm trong trường <code>text</code>:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">{
+  "text": "Xin chào các đội thi.",
+  "usage": {
+    "type": "tokens",
+    "input_tokens": 51,
+    "output_tokens": 6,
+    "total_tokens": 57
+  },
+  "task": "transcribe"
+}</code></pre></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 12 16"><path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z" fill-rule="evenodd"></path></svg></span>Kết hợp với Text-to-Speech</div><div class="admonitionContent_BuS1"><p>Bạn có thể dùng file âm thanh sinh ra từ <a href="../html/06-text-to-speech.html">Text-to-Speech</a> để thử nhanh endpoint này.</p></div></div></div></article></body></html>

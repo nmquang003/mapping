@@ -1,0 +1,308 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Sinh hình ảnh (Image Generation)</title><style>body{max-width:980px;margin:40px auto;padding:0 24px;font:17px/1.6 system-ui;color:#202124}pre{background:#f2f4f7;padding:18px;overflow:auto;white-space:pre}code{font-family:monospace}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ccc;padding:8px}img{max-width:100%}a{color:#1659ad}button{display:none}blockquote{border-left:4px solid #ccc;padding-left:16px}</style><body><p><a href="../index.html">Mục lục offline</a> · <a href="https://docs.thucchien.ai/docs/round-2/user-guide/image-generation">Nguồn</a></p><article><nav aria-label="Breadcrumbs" class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="https://docs.thucchien.ai/"><svg class="breadcrumbHomeIcon_YNFT" viewbox="0 0 24 24"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="https://docs.thucchien.ai/docs/round-2"><span>Vòng Chung Khảo</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../html/00-overview.html"><span>Hướng dẫn sử dụng API</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Sinh hình ảnh (Image Generation)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"></div><div class="theme-doc-markdown markdown"><header><h1>Sinh hình ảnh (Image Generation)</h1></header>
+<!-- -->
+<p>AI cung cấp hai phương pháp để tạo hình ảnh từ mô tả văn bản (prompt), tùy thuộc vào mô hình bạn sử dụng.</p>
+<ul>
+<li><strong>Phương pháp chuẩn (Standard):</strong> Sử dụng endpoint <code>/images/generations</code>, tuân thủ theo API của OpenAI.</li>
+<li><strong>Phương pháp trò chuyện (Chat):</strong> Sử dụng endpoint <code>/chat/completions</code> với các mô hình đa phương thức (multimodal).</li>
+</ul>
+<hr/>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-phương-pháp-chuẩn-endpoint-imagesgenerations">1. Phương pháp chuẩn (Endpoint: <code>/images/generations</code>)<a aria-label="Direct link to 1-phương-pháp-chuẩn-endpoint-imagesgenerations" class="hash-link" href="../html/04-image-generation.html#1-phương-pháp-chuẩn-endpoint-imagesgenerations" title="Direct link to 1-phương-pháp-chuẩn-endpoint-imagesgenerations" translate="no">​</a></h2>
+<p>Phương pháp này tương thích với các thư viện client của OpenAI và là cách được khuyến nghị cho các mô hình sinh ảnh chuyên dụng. API sẽ trả về dữ liệu ảnh được mã hóa dưới dạng <strong>base64</strong> thay vì URL.</p>
+<p><strong>Model được hỗ trợ</strong> (Nano Banana, Gemini Enterprise Agent Platform (trước đây là Vertex AI); tên alias và ID gốc gọi cùng một model):</p>
+<ul>
+<li><code>nano-banana-2</code> = <code>gemini-3.1-flash-image</code></li>
+<li><code>nano-banana-2-lite</code> = <code>gemini-3.1-flash-lite-image</code>: rẻ và nhanh nhất</li>
+<li><code>nano-banana-pro</code> = <code>gemini-3-pro-image</code>: chất lượng cao nhất</li>
+<li><code>nano-banana</code> = <code>gemini-2.5-flash-image</code>: Google ngừng hỗ trợ từ 02/10/2026</li>
+</ul>
+<p>Ngoài ra còn có model OpenAI <code>gpt-image-2.5-flare</code> và <code>gpt-image-2.5-sunburst</code>. Các model này dùng <code>size</code> và <code>quality</code> thay cho <code>aspect_ratio</code>, xem <a href="../html/10-openai-deepseek.html#t%E1%BA%A1o-%E1%BA%A3nh-gpt-image-">Model OpenAI và DeepSeek</a>.</p>
+<p>Mỗi request tạo <strong>1 ảnh</strong> (<code>n</code> chỉ nhận <code>1</code>). Chọn tỷ lệ khung hình bằng <code>aspect_ratio</code> (<code>1:1</code>, <code>3:4</code>, <code>4:3</code>, <code>16:9</code>, <code>9:16</code>); tham số <code>size</code> không có tác dụng.</p>
+<p><strong>Endpoint:</strong> <code>POST /images/generations</code></p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 16 16"><path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z" fill-rule="evenodd"></path></svg></span>Chú ý</div><div class="admonitionContent_BuS1"><p>Để tránh lỗi caching, bạn có thể thêm một chuỗi ngẫu nhiên vào cuối prompt, ví dụ: <code>"A beautiful landscape painting, " + str(random.randint(1, 10000))</code>. hoặc thay đổi prompt một chút.</p></div></div>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">curl</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (requests)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (openai)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (litellm)</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><p>Sử dụng <code>curl</code> để tạo hình ảnh và lưu từ dữ liệu base64.</p><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv"># Cấu hình
+API_URL="https://api.thucchien.ai/v1/images/generations"
+API_KEY="&lt;your_api_key&gt;"
+PROMPT="Một bức tranh phong cảnh biển hoàng hôn, phong cách sơn dầu"
+
+# Gọi API
+response=$(curl -s --location "$API_URL" \
+--header 'Content-Type: application/json' \
+--header "Authorization: Bearer $API_KEY" \
+--data "{
+  \"model\": \"nano-banana-2\",
+  \"prompt\": \"$PROMPT\",
+  \"aspect_ratio\": \"16:9\"
+}")
+
+# Xử lý và lưu từng ảnh
+image_count=$(echo "$response" | jq '.data | length')
+if [ "$image_count" -gt 0 ]; then
+for ((i=0; i&lt;$image_count; i++)); do
+  image_data=$(echo "$response" | jq -r ".data[$i].b64_json")
+  
+  # Lưu file
+  echo "$image_data" | base64 --decode &gt; "generated_image_$((i+1)).png"
+  echo "Image $((i+1)) saved to generated_image_$((i+1)).png"
+done
+else
+echo "Failed to generate images. Response:"
+echo "$response"
+fi</code></pre></div></div><p><b>Ví dụ kết quả:</b></p><div style="display:flex;gap:10px"><img alt="Generated Image 1" src="../assets/51fbd50801dd.png" style="width:49%"/><img alt="Generated Image 2" src="../assets/90dba7b26d6f.png" style="width:49%"/></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Sử dụng thư viện <code>requests</code> để giải mã và lưu nhiều hình ảnh.</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import requests
+import json
+import base64
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai/v1"
+AI_API_KEY = "&lt;your_api_key&gt;"
+
+# --- Gọi API để tạo hình ảnh ---
+url = f"{AI_API_BASE}/images/generations"
+headers = {
+  "Content-Type": "application/json",
+  "Authorization": f"Bearer {AI_API_KEY}"
+}
+data = {
+  "model": "nano-banana-2",
+  "prompt": "A majestic white tiger walking through a snowy forest",
+  "aspect_ratio": "16:9",
+}
+
+try:
+  response = requests.post(url, headers=headers, data=json.dumps(data))
+  response.raise_for_status()
+
+  result = response.json()
+  
+  # --- Xử lý và lưu từng ảnh ---
+  for i, image_obj in enumerate(result['data']):
+      b64_data = image_obj['b64_json']
+      image_data = base64.b64decode(b64_data)
+      
+      save_path = f"generated_image_{i+1}.png"
+      with open(save_path, 'wb') as f:
+          f.write(image_data)
+      print(f"Image saved to {save_path}")
+
+except requests.exceptions.RequestException as e:
+  print(f"An error occurred: {e}")
+  print(f"Response body: {response.text if 'response' in locals() else 'No response'}")</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+import base64
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai/v1"
+AI_API_KEY = "&lt;your_api_key&gt;"
+
+# --- Khởi tạo client ---
+client = OpenAI(
+  api_key=AI_API_KEY,
+  base_url=AI_API_BASE
+)
+
+# --- Gọi API để tạo hình ảnh ---
+response = client.images.generate(
+  model="nano-banana-2",
+  prompt="An astronaut riding a horse on Mars, photorealistic",
+  extra_body={"aspect_ratio": "16:9"},
+)
+
+# --- Xử lý và lưu từng ảnh ---
+for i, image_obj in enumerate(response.data):
+  b64_data = image_obj.b64_json
+  image_data = base64.b64decode(b64_data)
+  
+  save_path = f"generated_image_{i+1}.png"
+  with open(save_path, 'wb') as f:
+      f.write(image_data)
+  print(f"Image saved to {save_path}")</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Sử dụng hàm <code>litellm.image_generation</code>.</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import litellm
+import base64
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai"
+AI_API_KEY = "your_api_key"
+
+
+# --- Gọi API để tạo hình ảnh ---
+response = litellm.image_generation(
+  prompt="A peaceful Japanese garden with a koi pond and cherry blossoms 2",
+  model="litellm_proxy/nano-banana-2",
+  aspect_ratio="16:9",
+  api_key=AI_API_KEY,
+  api_base=AI_API_BASE,
+)
+
+# --- Xử lý và lưu từng ảnh ---
+for i, image_obj in enumerate(response.data):
+  b64_data = image_obj['b64_json']
+  image_data = base64.b64decode(b64_data)
+
+  save_path = f"generated_image_{i+1}.png"
+  with open(save_path, 'wb') as f:
+      f.write(image_data)
+      print(f"Image saved to {save_path}")</code></pre></div></div></div></div></div>
+<hr/>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-phương-pháp-trò-chuyện-endpoint-chatcompletions">2. Phương pháp trò chuyện (Endpoint: <code>/chat/completions</code>)<a aria-label="Direct link to 2-phương-pháp-trò-chuyện-endpoint-chatcompletions" class="hash-link" href="../html/04-image-generation.html#2-phương-pháp-trò-chuyện-endpoint-chatcompletions" title="Direct link to 2-phương-pháp-trò-chuyện-endpoint-chatcompletions" translate="no">​</a></h2>
+<p>Một số mô hình đa phương thức cho phép bạn tạo hình ảnh ngay trong một cuộc hội thoại. Thay vì trả về URL, các mô hình này sẽ trả về dữ liệu ảnh được mã hóa dưới dạng base64.</p>
+<p><strong>Model được hỗ trợ:</strong> các model Nano Banana ở trên, ví dụ <code>nano-banana-2</code>.</p>
+<p><strong>Endpoint:</strong> <code>POST /chat/completions</code></p>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">curl</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (requests)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (openai)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (litellm)</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><p>Sử dụng <code>curl</code> để yêu cầu hình ảnh và lưu từ dữ liệu base64.</p><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv"># Bước 1: Gọi API và trích xuất dữ liệu ảnh base64
+IMAGE_DATA=$(curl -s https://api.thucchien.ai/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+-d '{
+  "model": "nano-banana-2",
+  "messages": [
+      {
+          "role": "user",
+          "content": "An olympic size swimming pool with crystal clear water and modern architecture. High resolution, photorealistic, 8k"
+      }
+  ]
+}' | jq -r '.choices[0].message.images[0].image_url.url' | sed 's/^data:image\/png;base64,//')
+
+# Bước 2: Giải mã base64 và lưu thành file ảnh
+if [ -n "$IMAGE_DATA" ]; then
+echo "$IMAGE_DATA" | base64 --decode &gt; generated_chat_image.png
+echo "Image saved to generated_chat_image.png"
+else
+echo "Failed to get image data."
+fi</code></pre></div></div><p><b>Ví dụ kết quả:</b></p><div style="display:flex;justify-content:center"><img alt="Ví dụ hình ảnh được tạo ra" src="../assets/de5cad44d354.png" style="max-width:512px;width:100%"/></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Sử dụng thư viện <code>requests</code> để giải mã và lưu ảnh.</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import requests
+import json
+import base64
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai/v1"
+AI_API_KEY = "&lt;your_api_key&gt;" # Thay bằng API key của bạn
+IMAGE_SAVE_PATH = "generated_chat_image.png"
+
+# --- Bước 1: Gọi API để tạo hình ảnh ---
+url = f"{AI_API_BASE}/chat/completions"
+headers = {
+  "Content-Type": "application/json",
+  "Authorization": f"Bearer {AI_API_KEY}"
+}
+data = {
+  "model": "nano-banana-2",
+  "messages": [
+      {
+          "role": "user",
+          "content": "A futuristic cityscape at sunset, with flying cars and neon lights. High resolution, photorealistic, 8k"
+      }
+  ]
+}
+
+try:
+  response = requests.post(url, headers=headers, data=json.dumps(data))
+  response.raise_for_status()
+
+  result = response.json()
+  # Trích xuất dữ liệu ảnh base64 từ response
+  base64_string = result['choices'][0]['message']['images'][0]['image_url']['url']
+  print("Image data received successfully.")
+
+  # --- Bước 2: Giải mã và lưu hình ảnh ---
+  # Loại bỏ tiền tố 'data:image/png;base64,' nếu có
+  if ',' in base64_string:
+      header, encoded = base64_string.split(',', 1)
+  else:
+      encoded = base64_string
+
+  image_data = base64.b64decode(encoded)
+
+  with open(IMAGE_SAVE_PATH, 'wb') as f:
+      f.write(image_data)
+  
+  print(f"Image saved to {IMAGE_SAVE_PATH}")
+
+except requests.exceptions.RequestException as e:
+  print(f"An error occurred: {e}")
+  print(f"Response body: {response.text if 'response' in locals() else 'No response'}")
+except (KeyError, IndexError) as e:
+  print(f"Failed to parse image data from response: {e}")
+  print(f"Response body: {response.text if 'response' in locals() else 'No response'}")</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Sử dụng thư viện <code>openai</code> để yêu cầu hình ảnh và xử lý dữ liệu base64.</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+import base64
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai/v1"
+AI_API_KEY = "&lt;your_api_key&gt;" # Thay bằng API key của bạn
+IMAGE_SAVE_PATH = "generated_chat_image.png"
+
+# --- Khởi tạo client ---
+client = OpenAI(
+  api_key=AI_API_KEY,
+  base_url=AI_API_BASE,
+)
+
+# --- Bước 1: Gọi API để tạo hình ảnh ---
+try:
+  response = client.chat.completions.create(
+      model="nano-banana-2",
+      messages=[
+          {
+              "role": "user",
+              "content": "A detailed illustration of a vintage steam train crossing a mountain bridge. High resolution, photorealistic, 8k"
+          }
+      ],
+      modalities=["image"]  # Chỉ định trả về dữ liệu ảnh
+  )
+
+  # Trích xuất dữ liệu ảnh base64
+  base64_string = response.choices[0].message.images[0].get('image_url').get("url")
+  print("Image data received successfully.")
+
+  # --- Bước 2: Giải mã và lưu hình ảnh ---
+  if ',' in base64_string:
+      header, encoded = base64_string.split(',', 1)
+  else:
+      encoded = base64_string
+
+  image_data = base64.b64decode(encoded)
+
+  with open(IMAGE_SAVE_PATH, 'wb') as f:
+      f.write(image_data)
+      
+  print(f"Image saved to {IMAGE_SAVE_PATH}")
+
+except Exception as e:
+  print(f"An error occurred: {e}")</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Sử dụng hàm <code>litellm.completion</code> để tạo hình ảnh.</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import litellm
+import base64
+import json
+import random
+
+random_prompt_seed = random.randint(1, 10000)
+# Seed is used use to generate different images for the same prompt and avoiding caching issues
+
+AI_API_BASE = "https://api.thucchien.ai/v1"
+AI_API_KEY = "your_api_key"
+IMAGE_SAVE_PATH = "generated_chat_image.png"
+
+# Configure Litellm to use AI API
+litellm.api_base = AI_API_BASE
+
+# Use streaming with Gemini 2.5 Flash Image Preview model
+response = litellm.completion(
+  model="litellm_proxy/nano-banana-2",
+  messages=[
+      {
+          "role": "user",
+          "content": "Tạo ảnh 2 con mèo bên khung cửa sổ đang nhìn ra vườn hoa. " + str(random_prompt_seed)
+      }
+  ],
+  api_key=AI_API_KEY,
+  modalities=["image"]  # Specify modalities to include image data
+)
+# Get the base64 image string from the response
+base64_string = response.choices[0].message.images[0].get("image_url").get("url")
+print("Image data received successfully.")
+
+# Decode and save the image ---
+if ',' in base64_string:
+  header, encoded = base64_string.split(',', 1)
+else:
+  encoded = base64_string
+
+image_data = base64.b64decode(encoded)
+
+with open(IMAGE_SAVE_PATH, 'wb') as f:
+  f.write(image_data)
+  
+print(f"Image saved to {IMAGE_SAVE_PATH}")</code></pre></div></div></div></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 12 16"><path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z" fill-rule="evenodd"></path></svg></span>Ghi chú</div><div class="admonitionContent_BuS1"><p>Để biết thêm chi tiết, bạn có thể tham khảo tài liệu về sinh ảnh từ <a href="https://cloud.google.com/vertex-ai/docs/generative-ai/image/generate-images" rel="noopener noreferrer" target="_blank">Gemini Enterprise Agent Platform</a> và các tham số sinh ảnh cho Google AI Studio qua <a href="https://docs.litellm.ai/docs/providers/google_ai_studio/image_gen#supported-parameters" rel="noopener noreferrer" target="_blank">LiteLLM</a>.</p></div></div></div></article></body></html>

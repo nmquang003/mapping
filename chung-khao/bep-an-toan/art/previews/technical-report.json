@@ -1,0 +1,274 @@
+[
+  {
+    "id": "linh-idle-down",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "linh-idle-left",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "linh-idle-right",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "linh-idle-up",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "linh-walk-down",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "linh-walk-left",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "linh-walk-right",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "linh-walk-up",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-idle-down",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-idle-left",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-idle-right",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-idle-up",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-walk-down",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-walk-left",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-walk-right",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "nam-walk-up",
+    "size": [
+      96,
+      112
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "chicken",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "veg",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "fruit",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "sink",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "rawboard",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "cleanboard",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "stove",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "serve",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "trash",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "power",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "water",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "plant",
+    "size": [
+      192,
+      192
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "food-chicken-raw",
+    "size": [
+      96,
+      96
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "food-chicken",
+    "size": [
+      96,
+      96
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "food-salad-raw",
+    "size": [
+      96,
+      96
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "food-salad",
+    "size": [
+      96,
+      96
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "food-fruit-raw",
+    "size": [
+      96,
+      96
+    ],
+    "alpha_verified": true
+  },
+  {
+    "id": "food-fruit",
+    "size": [
+      96,
+      96
+    ],
+    "alpha_verified": true
+  }
+]

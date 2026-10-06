@@ -1,0 +1,47 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Các khái niệm cốt lõi</title><style>body{max-width:980px;margin:40px auto;padding:0 24px;font:17px/1.6 system-ui;color:#202124}pre{background:#f2f4f7;padding:18px;overflow:auto;white-space:pre}code{font-family:monospace}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ccc;padding:8px}img{max-width:100%}a{color:#1659ad}button{display:none}blockquote{border-left:4px solid #ccc;padding-left:16px}</style><body><p><a href="../index.html">Mục lục offline</a> · <a href="https://docs.thucchien.ai/docs/round-2/user-guide/core-concepts">Nguồn</a></p><article><nav aria-label="Breadcrumbs" class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="https://docs.thucchien.ai/"><svg class="breadcrumbHomeIcon_YNFT" viewbox="0 0 24 24"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="https://docs.thucchien.ai/docs/round-2"><span>Vòng Chung Khảo</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../html/00-overview.html"><span>Hướng dẫn sử dụng API</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Các khái niệm cốt lõi</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"></div><div class="theme-doc-markdown markdown"><header><h1>Các khái niệm cốt lõi</h1></header>
+<hr/>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-giao-diện-api-hợp-nhất--tương-thích-openai">1. Giao diện API Hợp nhất &amp; Tương thích OpenAI<a aria-label="Direct link to 1. Giao diện API Hợp nhất &amp; Tương thích OpenAI" class="hash-link" href="../html/02-core-concepts.html#1-giao-diện-api-hợp-nhất--tương-thích-openai" title="Direct link to 1. Giao diện API Hợp nhất &amp; Tương thích OpenAI" translate="no">​</a></h2>
+<p>Thay vì phải làm việc với nhiều API phức tạp từ các nhà cung cấp khác nhau, AI Thực chiến - API Gateway cung cấp một <strong>endpoint duy nhất</strong> và một bộ quy tắc nhất quán.</p>
+<ul>
+<li><strong>Endpoint duy nhất:</strong> Mọi yêu cầu đều được gửi đến <code>https://api.thucchien.ai</code>.</li>
+<li><strong>Tương thích với nhiều nhà cung cấp:</strong> Cung cấp một giao diện thống nhất cho tất cả các nhà cung cấp này, cho phép bạn chuyển đổi giữa các model chỉ bằng cách thay đổi tham số <code>model</code></li>
+</ul>
+<p>Sự hợp nhất này giúp đơn giản hóa mã nguồn của bạn và giúp việc chuyển đổi giữa các mô hình AI trở nên dễ dàng.</p>
+<hr/>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-xác-thực-qua-api-key">2. Xác thực qua API Key<a aria-label="Direct link to 2. Xác thực qua API Key" class="hash-link" href="../html/02-core-concepts.html#2-xác-thực-qua-api-key" title="Direct link to 2. Xác thực qua API Key" translate="no">​</a></h2>
+<p>Mọi yêu cầu gửi đến Gateway đều phải được xác thực bằng một API key. Key này phải được gửi trong header <code>Authorization</code> dưới dạng <code>Bearer</code> token.</p>
+<p><strong>Ví dụ header:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#1D1E1E"><span class="token plain">Authorization: Bearer &lt;your_api_key&gt;</span><br/></span></code></pre></div></div>
+<p>Nếu API key bị thiếu hoặc không hợp lệ, hệ thống sẽ trả về lỗi <code>401 Unauthorized</code>.</p>
+<hr/>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-lựa-chọn-model-linh-hoạt">3. Lựa chọn Model Linh hoạt<a aria-label="Direct link to 3. Lựa chọn Model Linh hoạt" class="hash-link" href="../html/02-core-concepts.html#3-lựa-chọn-model-linh-hoạt" title="Direct link to 3. Lựa chọn Model Linh hoạt" translate="no">​</a></h2>
+<p>Bạn có thể truy cập hàng loạt mô hình AI từ các nhà cung cấp hàng đầu chỉ bằng cách thay đổi một tham số duy nhất: <code>model</code>.</p>
+<p><strong>Ví dụ:</strong> Để chuyển từ mô hình của OpenAI sang Google, bạn chỉ cần thay đổi giá trị của trường <code>model</code> trong body request.</p>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">OpenAI Model</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Google Model</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">{
+"model": "gemini-2.5-pro",
+"messages": [
+  { "role": "user", "content": "Hello from OpenAI!" }
+]
+}</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">{
+"model": "gemini-2.5-pro",
+"messages": [
+  { "role": "user", "content": "Hello from Google!" }
+]
+}</code></pre></div></div></div></div></div>
+<p>Gateway sẽ tự động định tuyến yêu cầu của bạn đến nhà cung cấp tương ứng mà không yêu cầu bạn thay đổi bất kỳ logic nào khác.</p>
+<hr/>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-các-tham-số-chung-để-kiểm-soát-kết-quả">4. Các Tham số Chung để Kiểm soát Kết quả<a aria-label="Direct link to 4. Các Tham số Chung để Kiểm soát Kết quả" class="hash-link" href="../html/02-core-concepts.html#4-các-tham-số-chung-để-kiểm-soát-kết-quả" title="Direct link to 4. Các Tham số Chung để Kiểm soát Kết quả" translate="no">​</a></h2>
+<p>API của chúng tôi cung cấp các tham số chung giúp bạn kiểm soát đầu ra một cách nhất quán trên nhiều loại mô hình.</p>
+<ul>
+<li><strong><code>prompt</code> hoặc <code>messages</code></strong>: Cung cấp đầu vào cho mô hình. <code>prompt</code> thường dùng cho các tác vụ đơn giản (như sinh ảnh), trong khi <code>messages</code> dùng cho các cuộc hội thoại có nhiều lượt.</li>
+<li><strong><code>n</code></strong>: Chỉ định số lượng kết quả trả về. Ví dụ, <code>n: 2</code> trong API sinh ảnh sẽ tạo ra hai hình ảnh khác nhau từ cùng một <code>prompt</code>.</li>
+<li><strong><code>response_format</code></strong>: Yêu cầu định dạng đầu ra cụ thể. Ví dụ, khi tạo ảnh, bạn có thể yêu cầu một URL (<code>"response_format": "url"</code>) hoặc dữ liệu ảnh mã hóa base64 (<code>"response_format": "b64_json"</code>).</li>
+</ul>
+<hr/>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-cấu-trúc-phản-hồi-nhất-quán">5. Cấu trúc Phản hồi Nhất quán<a aria-label="Direct link to 5. Cấu trúc Phản hồi Nhất quán" class="hash-link" href="../html/02-core-concepts.html#5-cấu-trúc-phản-hồi-nhất-quán" title="Direct link to 5. Cấu trúc Phản hồi Nhất quán" translate="no">​</a></h2>
+<p>Dữ liệu trả về từ API luôn có cấu trúc JSON rõ ràng. Kết quả bạn cần thường nằm trong một trong hai trường sau:</p>
+<ul>
+<li><strong><code>data</code></strong>: Một mảng các đối tượng kết quả. Thường được sử dụng cho các API trả về nhiều mục, như sinh ảnh hoặc âm thanh.</li>
+<li><strong><code>choices</code></strong>: Một mảng các lựa chọn phản hồi. Thường được sử dụng trong các API sinh văn bản, nơi mỗi lựa chọn chứa một phiên bản hoàn thành văn bản.</li>
+</ul>
+<p>Việc hiểu rõ các khái niệm này sẽ giúp bạn xây dựng ứng dụng một cách nhanh chóng và hiệu quả hơn trên nền tảng AI Thực chiến - API Gateway.</p></div></article></body></html>

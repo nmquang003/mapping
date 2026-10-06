@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {createItem,touchFood,prepareItem,cookItem,foodRisk,starsFor,MAX_EXPOSURE,seededRandom} from '../rules.js';
+test('safe chicken requires cooking, thermometer verification and clean hands',()=>{const c=createItem('chicken');assert.equal(touchFood(c,false),true);prepareItem(c,false);assert.equal(foodRisk(c),'cook');cookItem(c);assert.equal(foodRisk(c),'cook');c.verified=true;assert.equal(foodRisk(c),null);touchFood(c,true);assert.equal(foodRisk(c),'cross');});
+test('unwashed produce cannot be prepared, contaminated board affects ready food',()=>{const s=createItem('salad');assert.equal(prepareItem(s,false).ok,false);s.stage='washed';prepareItem(s,true);assert.equal(foodRisk(s),'cross');});
+test('raw meat contaminates board; a clean separate board prevents spread',()=>{const c=createItem('chicken');assert.equal(prepareItem(c,false).boardDirty,true);const s=createItem('salad');s.stage='washed';prepareItem(s,false);assert.equal(foodRisk(s),null);});
+test('cooking does not rescue expired food',()=>{const c=createItem('chicken');c.exposure=MAX_EXPOSURE;c.contaminated=true;cookItem(c);c.verified=true;assert.equal(foodRisk(c),'storage');});
+test('stars require target and reward safety; seed reproduces scenarios',()=>{assert.equal(starsFor(3,4,0),0);assert.equal(starsFor(6,4,0),3);assert.equal(starsFor(4,4,2),1);const a=seededRandom(42),b=seededRandom(42);assert.deepEqual(Array.from({length:20},a),Array.from({length:20},b));});

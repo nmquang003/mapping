@@ -1,0 +1,14 @@
+{
+  "url": "https://docs.thucchien.ai/docs/round-2/api-reference/image-generation",
+  "title": "Sinh hình ảnh (Image Generation)",
+  "downloaded_at": "2026-10-05T09:03:17.854876+07:00",
+  "sha256": "b614e1987e1495a5388c29f387cceded60f04bc9e0a3944ead3f3c24a590df3c",
+  "code_blocks": 2,
+  "tables": 0,
+  "headings": [
+    "Sinh hình ảnh (Image Generation)",
+    "POST /images/generations ​",
+    "Cấu trúc yêu cầu (Request Body) ​",
+    "Cấu trúc Phản hồi (Response Body) ​"
+  ]
+}

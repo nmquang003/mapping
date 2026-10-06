@@ -1,0 +1,83 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Tìm kiếm web (Google Search grounding)</title><style>body{max-width:980px;margin:40px auto;padding:0 24px;font:17px/1.6 system-ui;color:#202124}pre{background:#f2f4f7;padding:18px;overflow:auto;white-space:pre}code{font-family:monospace}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ccc;padding:8px}img{max-width:100%}a{color:#1659ad}button{display:none}blockquote{border-left:4px solid #ccc;padding-left:16px}</style><body><p><a href="../index.html">Mục lục offline</a> · <a href="https://docs.thucchien.ai/docs/round-2/user-guide/google-search-grounding">Nguồn</a></p><article><nav aria-label="Breadcrumbs" class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="https://docs.thucchien.ai/"><svg class="breadcrumbHomeIcon_YNFT" viewbox="0 0 24 24"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="https://docs.thucchien.ai/docs/round-2"><span>Vòng Chung Khảo</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../html/00-overview.html"><span>Hướng dẫn sử dụng API</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Tìm kiếm web (Google Search grounding)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"></div><div class="theme-doc-markdown markdown"><header><h1>Tìm kiếm web (Google Search grounding)</h1></header>
+<!-- -->
+<p>Mặc định, model chỉ biết thông tin đến thời điểm được huấn luyện. Bật <strong>tìm kiếm web</strong> thì model tự tạo truy vấn, tìm trên Internet rồi trả lời dựa trên kết quả mới nhất, kèm danh sách nguồn. Tính năng này hợp với câu hỏi về tin tức, giá cả, lịch thi đấu hay số liệu mới.</p>
+<table><thead><tr><th>Nhóm model</th><th>Cách bật</th><th>Endpoint</th></tr></thead><tbody><tr><td>Gemini (Gemini Enterprise Agent Platform (trước đây là Vertex AI))</td><td><code>tools=[{"googleSearch": {}}]</code></td><td><code>POST /chat/completions</code></td></tr><tr><td>OpenAI (<code>gpt-5.6-*</code>, <code>gpt-6*</code>, <code>o3</code>, <code>o4-mini</code>)</td><td><code>tools=[{"type": "web_search"}]</code></td><td><code>POST /responses</code></td></tr><tr><td>DeepSeek</td><td>Không hỗ trợ</td><td>—</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 16 16"><path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z" fill-rule="evenodd"></path></svg></span>Chi phí</div><div class="admonitionContent_BuS1"><p>Mỗi lượt tìm kiếm tốn khoảng <strong>$0.01–$0.035</strong>, đắt hơn hàng chục lần một câu hỏi thường. Chi phí này trừ thẳng vào budget của key. Chỉ bật khi thật sự cần thông tin mới. Xem <a href="../html/08-google-search-grounding.html#b%E1%BA%A3ng-gi%C3%A1">bảng giá</a>.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gemini-google-search-grounding">Gemini: Google Search grounding<a aria-label="Direct link to Gemini: Google Search grounding" class="hash-link" href="../html/08-google-search-grounding.html#gemini-google-search-grounding" title="Direct link to Gemini: Google Search grounding" translate="no">​</a></h2>
+<p><strong>Model hỗ trợ:</strong> tất cả model Gemini sinh văn bản, gồm <code>gemini-3.8-flash</code>, <code>gemini-3.7-flash</code>, <code>gemini-3.6-flash</code>, <code>gemini-3.5-flash</code>, <code>gemini-3.5-flash-lite</code>, <code>gemini-3.1-flash-lite</code>, <code>gemini-3.1-pro-preview</code>, <code>gemini-2.5-pro</code> và <code>gemini-2.5-flash</code>.</p>
+<p>Thêm tool <code>googleSearch</code> vào request. Model tự quyết định có cần tìm kiếm hay không, và có thể chạy nhiều truy vấn trong một request.</p>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">Python (openai)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">curl</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+
+client = OpenAI(
+  api_key="&lt;your_api_key&gt;",
+  base_url="https://api.thucchien.ai"
+)
+
+response = client.chat.completions.create(
+  model="gemini-3.5-flash-lite",
+  messages=[{"role": "user", "content": "Tỷ giá USD/VND hôm nay là bao nhiêu?"}],
+  tools=[{"googleSearch": {}}],
+)
+
+print(response.choices[0].message.content)
+
+# Thông tin tìm kiếm: truy vấn đã chạy và nguồn tham khảo
+grounding = response.model_extra.get("vertex_ai_grounding_metadata") or []
+for meta in grounding:
+  print("Truy vấn:", meta.get("webSearchQueries"))
+  for chunk in meta.get("groundingChunks", []):
+      print("-", chunk["web"]["title"], chunk["web"]["uri"])</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl https://api.thucchien.ai/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+-d '{
+  "model": "gemini-3.5-flash-lite",
+  "messages": [{"role": "user", "content": "Tỷ giá USD/VND hôm nay là bao nhiêu?"}],
+  "tools": [{"googleSearch": {}}]
+}'</code></pre></div></div></div></div></div>
+<p>Response giữ nguyên chuẩn OpenAI và có thêm trường <code>vertex_ai_grounding_metadata</code> (một list). Mỗi phần tử gồm:</p>
+<table><thead><tr><th>Trường</th><th>Ý nghĩa</th></tr></thead><tbody><tr><td><code>webSearchQueries</code></td><td>Các truy vấn model đã chạy. Mỗi truy vấn tính phí riêng với Gemini 3.x.</td></tr><tr><td><code>groundingChunks</code></td><td>Nguồn tham khảo (<code>web.title</code>, <code>web.uri</code>). <code>uri</code> là link chuyển hướng qua Google.</td></tr><tr><td><code>groundingSupports</code></td><td>Đoạn nào trong câu trả lời được nguồn nào hỗ trợ.</td></tr><tr><td><code>searchEntryPoint</code></td><td>HTML gợi ý tìm kiếm của Google (Search Suggestions).</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 14 16"><path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z" fill-rule="evenodd"></path></svg></span>Quy định hiển thị của Google</div><div class="admonitionContent_BuS1"><p>Nếu hiển thị câu trả lời có grounding cho người dùng cuối (ví dụ trong sản phẩm demo), Google yêu cầu hiển thị kèm <strong>Search Suggestions</strong> lấy từ <code>searchEntryPoint.renderedContent</code>. Chi tiết xem <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search" rel="noopener noreferrer" target="_blank">tài liệu Grounding with Google Search</a>.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 14 16"><path d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z" fill-rule="evenodd"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Tham số <code>web_search_options</code> (kiểu OpenAI) chỉ hoạt động với một số model Gemini. Với <code>gemini-2.5-flash</code> và model OpenAI, tham số này bị bỏ qua và model trả lời mà không tìm kiếm. Hãy dùng <code>tools=[{"googleSearch": {}}]</code> như trên.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="openai-web-search-qua-responses-api">OpenAI: web search qua Responses API<a aria-label="Direct link to OpenAI: web search qua Responses API" class="hash-link" href="../html/08-google-search-grounding.html#openai-web-search-qua-responses-api" title="Direct link to OpenAI: web search qua Responses API" translate="no">​</a></h2>
+<p>Model OpenAI chỉ tìm kiếm web qua endpoint <strong><code>/responses</code></strong>, không qua <code>/chat/completions</code>.</p>
+<p><strong>Model hỗ trợ:</strong> <code>gpt-5.6-*</code>, <code>gpt-6-*</code>, <code>gpt-6.1-sol</code>, <code>o3</code>, <code>o4-mini</code>.</p>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">Python (openai)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">curl</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+
+client = OpenAI(
+  api_key="&lt;your_api_key&gt;",
+  base_url="https://api.thucchien.ai"
+)
+
+response = client.responses.create(
+  model="gpt-6-luna",
+  input="Tỷ giá USD/VND hôm nay là bao nhiêu?",
+  tools=[{"type": "web_search"}],
+)
+
+# Câu trả lời đã kèm link nguồn dạng markdown
+print(response.output_text)</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl https://api.thucchien.ai/responses \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+-d '{
+  "model": "gpt-6-luna",
+  "input": "Tỷ giá USD/VND hôm nay là bao nhiêu?",
+  "tools": [{"type": "web_search"}]
+}'</code></pre></div></div></div></div></div>
+<p>Trong <code>response.output</code>, mỗi lần tìm kiếm là một phần tử <code>web_search_call</code>. Câu trả lời nằm trong phần tử <code>message</code>, và nguồn nằm trong <code>content[].annotations</code>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bảng-giá">Bảng giá<a aria-label="Direct link to Bảng giá" class="hash-link" href="../html/08-google-search-grounding.html#bảng-giá" title="Direct link to Bảng giá" translate="no">​</a></h2>
+<p>Ngoài tiền token như bình thường, gateway tính thêm phí tìm kiếm:</p>
+<table><thead><tr><th>Model</th><th style="text-align:right">Phí tìm kiếm</th><th>Đơn vị tính</th></tr></thead><tbody><tr><td>Gemini 3.x (<code>gemini-3.x-*</code>, <code>gemini-3.1-pro-preview</code>)</td><td style="text-align:right">$0.014</td><td>mỗi <strong>truy vấn</strong> (một request thường chạy 1–3 truy vấn)</td></tr><tr><td><code>gemini-2.5-pro</code>, <code>gemini-2.5-flash</code></td><td style="text-align:right">$0.035</td><td>mỗi <strong>request</strong> có dùng tìm kiếm</td></tr><tr><td>OpenAI (<code>/responses</code> + <code>web_search</code>)</td><td style="text-align:right">$0.01</td><td>mỗi lần gọi <code>web_search</code></td></tr></tbody></table>
+<p>Chi phí thực tế đo được trên gateway là khoảng $0.028–$0.058 cho mỗi câu hỏi có tìm kiếm. Kết quả tìm kiếm được đưa vào input của model, nên số token input cũng tăng theo.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mẹo">Mẹo<a aria-label="Direct link to Mẹo" class="hash-link" href="../html/08-google-search-grounding.html#mẹo" title="Direct link to Mẹo" translate="no">​</a></h2>
+<ul>
+<li>Chỉ bật tìm kiếm cho câu hỏi cần thông tin mới. Với kiến thức phổ thông, gọi model bình thường vừa rẻ vừa nhanh hơn.</li>
+<li>Nên ghi rõ ngày trong câu hỏi (ví dụ "hôm nay 28/9/2026") để model tìm đúng thời điểm.</li>
+<li>Model rẻ như <code>gemini-3.1-flash-lite</code> cho kết quả tìm kiếm không thua model lớn trong phần lớn câu hỏi tra cứu.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tham-khảo">Tham khảo<a aria-label="Direct link to Tham khảo" class="hash-link" href="../html/08-google-search-grounding.html#tham-khảo" title="Direct link to Tham khảo" translate="no">​</a></h2>
+<ul>
+<li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search" rel="noopener noreferrer" target="_blank">Grounding with Google Search — Agent Platform</a></li>
+<li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/pricing" rel="noopener noreferrer" target="_blank">Bảng giá Agent Platform (mục Grounding)</a></li>
+<li><a href="https://platform.openai.com/docs/guides/tools-web-search" rel="noopener noreferrer" target="_blank">Web search — OpenAI</a></li>
+<li><a href="https://docs.litellm.ai/docs/completion/web_search" rel="noopener noreferrer" target="_blank">Web search — LiteLLM</a></li>
+</ul></div></article></body></html>

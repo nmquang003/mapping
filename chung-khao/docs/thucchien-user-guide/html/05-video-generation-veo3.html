@@ -1,0 +1,88 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Sinh video với Veo 3.1 (Quy trình bất đồng bộ)</title><style>body{max-width:980px;margin:40px auto;padding:0 24px;font:17px/1.6 system-ui;color:#202124}pre{background:#f2f4f7;padding:18px;overflow:auto;white-space:pre}code{font-family:monospace}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ccc;padding:8px}img{max-width:100%}a{color:#1659ad}button{display:none}blockquote{border-left:4px solid #ccc;padding-left:16px}</style><body><p><a href="../index.html">Mục lục offline</a> · <a href="https://docs.thucchien.ai/docs/round-2/user-guide/video-generation-veo3">Nguồn</a></p><article><nav aria-label="Breadcrumbs" class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="https://docs.thucchien.ai/"><svg class="breadcrumbHomeIcon_YNFT" viewbox="0 0 24 24"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="https://docs.thucchien.ai/docs/round-2"><span>Vòng Chung Khảo</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../html/00-overview.html"><span>Hướng dẫn sử dụng API</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Sinh video với Veo 3.1 (Quy trình bất đồng bộ)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"></div><div class="theme-doc-markdown markdown"><header><h1>Sinh video với Veo 3.1 (Quy trình bất đồng bộ)</h1></header>
+<!-- -->
+<p>Việc tạo video là một tác vụ tốn nhiều tài nguyên và thời gian. Do đó, tương tác với mô hình Veo không diễn ra ngay lập tức mà theo một quy trình bất đồng bộ (asynchronous) gồm 3 bước. API tuân theo chuẩn <a href="https://platform.openai.com/docs/api-reference/videos" rel="noopener noreferrer" target="_blank">OpenAI Videos API</a>, nên bạn dùng được thư viện <code>openai</code> và header <code>Authorization: Bearer</code> như các API khác.</p>
+<p><strong>Model được hỗ trợ</strong> (Gemini Enterprise Agent Platform (trước đây là Vertex AI)):</p>
+<ul>
+<li><code>veo-3.1-generate-001</code>: chất lượng cao nhất, $0.40 / giây video</li>
+<li><code>veo-3.1-fast-generate-001</code>: nhanh hơn, $0.10 / giây video (720p), $0.12 / giây (1080p)</li>
+<li><code>veo-3.1-lite-generate-001</code>: rẻ nhất, $0.05 / giây video (720p)</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 16 16"><path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z" fill-rule="evenodd"></path></svg></span>Chi phí</div><div class="admonitionContent_BuS1"><p>Video được tính tiền theo số giây ngay khi tác vụ được tạo, kể cả khi bạn không tải video về. Không gửi <code>seconds</code> thì video dài 8 giây. Hãy thử prompt với <code>veo-3.1-lite-generate-001</code> và <code>"seconds": "4"</code> trước khi dùng model đắt hơn.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tổng-quan-quy-trình">Tổng quan quy trình<a aria-label="Direct link to Tổng quan quy trình" class="hash-link" href="../html/05-video-generation-veo3.html#tổng-quan-quy-trình" title="Direct link to Tổng quan quy trình" translate="no">​</a></h2>
+<ol>
+<li><strong>Bắt đầu tác vụ:</strong> Gửi <code>POST /v1/videos</code> chứa mô tả (prompt). API trả về <code>id</code> của video để bạn theo dõi.</li>
+<li><strong>Kiểm tra trạng thái:</strong> Gửi <code>GET /v1/videos/{id}</code> lặp lại cho đến khi <code>status</code> là <code>completed</code> (hoặc <code>failed</code>).</li>
+<li><strong>Tải video:</strong> Gửi <code>GET /v1/videos/{id}/content</code> để tải file mp4.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hướng-dẫn-chi-tiết">Hướng dẫn chi tiết<a aria-label="Direct link to Hướng dẫn chi tiết" class="hash-link" href="../html/05-video-generation-veo3.html#hướng-dẫn-chi-tiết" title="Direct link to Hướng dẫn chi tiết" translate="no">​</a></h2>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">curl (Từng bước)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (OpenAI SDK)</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><h4>Bước 1: Bắt đầu tạo video</h4><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl -X POST https://api.thucchien.ai/v1/videos \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+-d '{
+  "model": "veo-3.1-lite-generate-001",
+  "prompt": "A cinematic shot of a hummingbird flying in slow motion",
+  "seconds": "4",
+  "size": "1280x720"
+}'</code></pre></div></div><p>Nếu thành công, API sẽ trả về một JSON chứa <code>id</code> của video. Hãy lưu lại giá trị này.</p><div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">{
+"id": "video_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVy...",
+"object": "video",
+"status": "processing",
+"created_at": 1790159271,
+"model": "veo-3.1-lite-generate-001"
+}</code></pre></div></div><h4>Bước 2: Kiểm tra trạng thái</h4><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl https://api.thucchien.ai/v1/videos/&lt;video_id&gt; \
+-H "Authorization: Bearer &lt;your_api_key&gt;"</code></pre></div></div><p>Lặp lại yêu cầu này (ví dụ 10 giây một lần) cho đến khi response có <code>"status": "completed"</code>. Video 4–8 giây thường mất từ 30 giây đến vài phút.</p><div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">{
+"id": "video_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVy...",
+"object": "video",
+"status": "completed",
+"created_at": 1790159271,
+"model": "veo-3.1-lite-generate-001"
+}</code></pre></div></div><h4>Bước 3: Tải video</h4><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl https://api.thucchien.ai/v1/videos/&lt;video_id&gt;/content \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+--output my_generated_video.mp4</code></pre></div></div><p>Kết quả bạn sẽ có file video như sau:</p><video controls="" src="../assets/87c79439b948.mp4" style="max-width:100%"><p>Your browser does not support the video tag.</p></video></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Kịch bản dưới đây tự động hóa cả 3 bước bằng thư viện <code>openai</code> (<code>pip install openai</code>).</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import time
+from openai import OpenAI
+
+client = OpenAI(
+  api_key="&lt;your_api_key&gt;",
+  base_url="https://api.thucchien.ai",
+)
+
+# Bước 1: bắt đầu tạo video
+video = client.videos.create(
+  model="veo-3.1-lite-generate-001",
+  prompt="A cat playing with a ball of yarn in a sunny garden",
+  seconds="4",
+  size="1280x720",
+)
+print("Đã tạo:", video.id)
+
+# Bước 2: kiểm tra trạng thái tới khi xong
+while video.status not in ("completed", "failed"):
+  time.sleep(10)
+  video = client.videos.retrieve(video.id)
+  print("Trạng thái:", video.status)
+
+if video.status == "failed":
+  raise SystemExit(f"Tạo video thất bại: {video.error}")
+
+# Bước 3: tải video
+content = client.videos.download_content(video.id)
+content.write_to_file("my_generated_video.mp4")
+print("Đã lưu my_generated_video.mp4")</code></pre></div></div></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tạo-video-từ-ảnh-image-to-video">Tạo video từ ảnh (image-to-video)<a aria-label="Direct link to Tạo video từ ảnh (image-to-video)" class="hash-link" href="../html/05-video-generation-veo3.html#tạo-video-từ-ảnh-image-to-video" title="Direct link to Tạo video từ ảnh (image-to-video)" translate="no">​</a></h2>
+<p>Gửi thêm ảnh khởi đầu qua trường <code>input_reference</code>. Khi có file, request phải ở dạng <code>multipart/form-data</code> thay vì JSON.</p>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">curl</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (OpenAI SDK)</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl -X POST https://api.thucchien.ai/v1/videos \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+-F model=veo-3.1-lite-generate-001 \
+-F prompt="The camera slowly zooms in while leaves drift in the wind" \
+-F seconds=4 \
+-F size=1280x720 \
+-F input_reference=@start.png</code></pre></div></div></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">video = client.videos.create(
+  model="veo-3.1-lite-generate-001",
+  prompt="The camera slowly zooms in while leaves drift in the wind",
+  seconds="4",
+  size="1280x720",
+  input_reference=open("start.png", "rb"),
+)</code></pre></div></div><p>Bước 2 và 3 giống như trên.</p></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="các-tham-số">Các tham số<a aria-label="Direct link to Các tham số" class="hash-link" href="../html/05-video-generation-veo3.html#các-tham-số" title="Direct link to Các tham số" translate="no">​</a></h2>
+<table><thead><tr><th>Tham số</th><th>Giá trị</th><th>Mặc định</th></tr></thead><tbody><tr><td><code>model</code></td><td><code>veo-3.1-generate-001</code>, <code>veo-3.1-fast-generate-001</code>, <code>veo-3.1-lite-generate-001</code></td><td>bắt buộc</td></tr><tr><td><code>prompt</code></td><td>Mô tả video</td><td>bắt buộc</td></tr><tr><td><code>seconds</code></td><td><code>"4"</code>, <code>"6"</code>, <code>"8"</code></td><td><code>"8"</code></td></tr><tr><td><code>size</code></td><td><code>"1280x720"</code>, <code>"1920x1080"</code> (16:9), <code>"720x1280"</code>, <code>"1080x1920"</code> (9:16)</td><td><code>"1280x720"</code></td></tr><tr><td><code>input_reference</code></td><td>File ảnh khởi đầu (multipart)</td><td>không có</td></tr></tbody></table>
+<p>Mẹo viết prompt cho Veo, xem <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide" rel="noopener noreferrer" target="_blank">hướng dẫn của Google</a>.</p></div></article></body></html>

@@ -1,0 +1,134 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Model OpenAI và DeepSeek</title><style>body{max-width:980px;margin:40px auto;padding:0 24px;font:17px/1.6 system-ui;color:#202124}pre{background:#f2f4f7;padding:18px;overflow:auto;white-space:pre}code{font-family:monospace}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ccc;padding:8px}img{max-width:100%}a{color:#1659ad}button{display:none}blockquote{border-left:4px solid #ccc;padding-left:16px}</style><body><p><a href="../index.html">Mục lục offline</a> · <a href="https://docs.thucchien.ai/docs/round-2/user-guide/openai-deepseek">Nguồn</a></p><article><nav aria-label="Breadcrumbs" class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="https://docs.thucchien.ai/"><svg class="breadcrumbHomeIcon_YNFT" viewbox="0 0 24 24"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="https://docs.thucchien.ai/docs/round-2"><span>Vòng Chung Khảo</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../html/00-overview.html"><span>Hướng dẫn sử dụng API</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Model OpenAI và DeepSeek</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"></div><div class="theme-doc-markdown markdown"><header><h1>Model OpenAI và DeepSeek</h1></header>
+<!-- -->
+<p>Ngoài Gemini, gateway còn cung cấp model của <strong>OpenAI</strong> và <strong>DeepSeek</strong>. Cách gọi y hệt các trang trước: cùng <code>base_url="https://api.thucchien.ai"</code>, cùng API key, chỉ cần đổi <code>model</code>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="danh-sách-model">Danh sách model<a aria-label="Direct link to Danh sách model" class="hash-link" href="../html/10-openai-deepseek.html#danh-sách-model" title="Direct link to Danh sách model" translate="no">​</a></h2>
+<table><thead><tr><th>Tác vụ</th><th>Model</th><th>Endpoint</th></tr></thead><tbody><tr><td>Sinh văn bản (reasoning)</td><td><code>gpt-6.1-sol</code>, <code>gpt-6-astra</code>, <code>gpt-6-sol</code>, <code>gpt-6-luna</code>, <code>gpt-5.6-sol</code>, <code>gpt-5.6-terra</code>, <code>gpt-5.6-luna</code>, <code>o3</code>, <code>o4-mini</code></td><td><code>/chat/completions</code>, <code>/responses</code></td></tr><tr><td>Sinh văn bản (DeepSeek)</td><td><code>deepseek-flash</code>, <code>deepseek-v4-pro</code></td><td><code>/chat/completions</code></td></tr><tr><td>Tạo ảnh</td><td><code>gpt-image-2.5-flare</code>, <code>gpt-image-2.5-sunburst</code></td><td><code>/images/generations</code></td></tr><tr><td>Text-to-speech</td><td><code>gpt-4o-mini-tts</code></td><td><code>/audio/speech</code></td></tr><tr><td>Speech-to-text</td><td><code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code>, <code>gpt-transcribe</code>, <code>whisper-1</code></td><td><code>/audio/transcriptions</code></td></tr><tr><td>Embedding</td><td><code>text-embedding-3-small</code> (1536 chiều), <code>text-embedding-3-large</code> (3072 chiều). Embedding của Gemini xem ở <a href="../html/09-embeddings.html">Embedding</a></td><td><code>/embeddings</code></td></tr><tr><td>Kiểm duyệt nội dung</td><td><code>omni-moderation-latest</code> (miễn phí)</td><td><code>/moderations</code></td></tr></tbody></table>
+<p>Giá từng model xem ở <a href="../html/11-pricing.html">Bảng giá model</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="openai">OpenAI<a aria-label="Direct link to OpenAI" class="hash-link" href="../html/10-openai-deepseek.html#openai" title="Direct link to OpenAI" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="model-reasoning-gpt-56--gpt-6-o3-o4-mini">Model reasoning (<code>gpt-5.6-*</code>, <code>gpt-6*</code>, <code>o3</code>, <code>o4-mini</code>)<a aria-label="Direct link to model-reasoning-gpt-56--gpt-6-o3-o4-mini" class="hash-link" href="../html/10-openai-deepseek.html#model-reasoning-gpt-56--gpt-6-o3-o4-mini" title="Direct link to model-reasoning-gpt-56--gpt-6-o3-o4-mini" translate="no">​</a></h3>
+<p>Mọi model sinh văn bản của OpenAI trên gateway đều là model reasoning. Model reasoning "suy nghĩ" trước khi trả lời. Token suy nghĩ không hiển thị nhưng <strong>vẫn tính tiền như output</strong> và <strong>vẫn tính vào giới hạn độ dài</strong>.</p>
+<ul>
+<li><strong>Dùng <code>max_completion_tokens</code> thay cho <code>max_tokens</code>.</strong> Mọi model <code>gpt-6*</code> (<code>gpt-6.1-sol</code>, <code>gpt-6-astra</code>, <code>gpt-6-sol</code>, <code>gpt-6-luna</code>) báo lỗi 400 nếu gửi <code>max_tokens</code>:<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#1D1E1E"><span class="token plain">Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.</span><br/></span></code></pre></div></div>
+<code>gpt-5.6-*</code>, <code>o3</code>, <code>o4-mini</code> vẫn nhận <code>max_tokens</code>, nhưng dùng <code>max_completion_tokens</code> cho mọi model là an toàn nhất. Với <code>/responses</code>, tham số tương ứng là <code>max_output_tokens</code>.</li>
+<li><strong>Đừng đặt <code>max_completion_tokens</code> quá nhỏ.</strong> Ví dụ với giới hạn 50 token, model có thể dùng hết 50 token để suy nghĩ và trả về <code>content</code> <strong>rỗng</strong>. Nên để trống, hoặc đặt từ vài nghìn trở lên.</li>
+<li><strong><code>temperature</code>, <code>top_p</code> không có tác dụng.</strong> Gateway tự bỏ các tham số này thay vì báo lỗi.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mức-suy-nghĩ-reasoning_effort">Mức suy nghĩ (<code>reasoning_effort</code>)<a aria-label="Direct link to mức-suy-nghĩ-reasoning_effort" class="hash-link" href="../html/10-openai-deepseek.html#mức-suy-nghĩ-reasoning_effort" title="Direct link to mức-suy-nghĩ-reasoning_effort" translate="no">​</a></h3>
+<p><code>reasoning_effort</code> quyết định model suy nghĩ bao lâu trước khi trả lời. Mức cao trả lời tốt hơn với bài khó nhưng chậm hơn và tốn nhiều token output hơn. Mặc định là <code>medium</code>.</p>
+<ul>
+<li><code>/chat/completions</code>: gửi <code>reasoning_effort="low"</code>.</li>
+<li><code>/responses</code>: gửi <code>reasoning={"effort": "low"}</code>.</li>
+</ul>
+<p>Mức mỗi model nhận (kiểm tra qua <code>/responses</code>):</p>
+<table><thead><tr><th>Model</th><th><code>none</code></th><th><code>low</code> / <code>medium</code> / <code>high</code></th><th><code>xhigh</code> / <code>max</code></th></tr></thead><tbody><tr><td><code>gpt-6-sol</code>, <code>gpt-6-luna</code>, <code>gpt-5.6-sol</code>, <code>gpt-5.6-terra</code>, <code>gpt-5.6-luna</code></td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td><code>gpt-6.1-sol</code>, <code>gpt-6-astra</code></td><td>❌</td><td>✅</td><td>✅</td></tr><tr><td><code>o3</code>, <code>o4-mini</code></td><td>❌</td><td>✅</td><td>❌</td></tr></tbody></table>
+<ul>
+<li><code>none</code> tắt hẳn suy nghĩ, vừa nhanh vừa rẻ với câu hỏi đơn giản (phân loại, trích xuất, viết lại…).</li>
+<li><strong>Không model nào nhận <code>minimal</code>.</strong></li>
+<li>Gửi mức model không hỗ trợ qua <code>/responses</code> sẽ bị lỗi 400 <code>Unsupported value: '...' is not supported with the '&lt;model&gt;' model</code>. Qua <code>/chat/completions</code> request vẫn thành công nhưng mức đó <strong>có thể bị bỏ qua mà không báo lỗi</strong>, nên hãy chọn mức trong bảng trên.</li>
+<li>Số token suy nghĩ đã dùng nằm ở <code>usage.completion_tokens_details.reasoning_tokens</code> (<code>/chat/completions</code>) hoặc <code>usage.output_tokens_details.reasoning_tokens</code> (<code>/responses</code>).</li>
+</ul>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+
+client = OpenAI(api_key="&lt;your_api_key&gt;", base_url="https://api.thucchien.ai")
+
+response = client.chat.completions.create(
+  model="gpt-6-luna",
+  messages=[{"role": "user", "content": "Tóm tắt luật chơi cờ tướng trong 3 câu."}],
+  reasoning_effort="low",
+  max_completion_tokens=4000,
+)
+
+print(response.choices[0].message.content)
+print(response.usage.completion_tokens_details.reasoning_tokens, "token suy nghĩ")</code></pre></div></div>
+<p>Cùng yêu cầu qua Responses API:</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">response = client.responses.create(
+  model="gpt-6-luna",
+  input="Tóm tắt luật chơi cờ tướng trong 3 câu.",
+  reasoning={"effort": "low"},
+  max_output_tokens=4000,
+)
+
+print(response.output_text)
+print(response.usage.output_tokens_details.reasoning_tokens, "token suy nghĩ")</code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tạo-ảnh-gpt-image-">Tạo ảnh (<code>gpt-image-*</code>)<a aria-label="Direct link to tạo-ảnh-gpt-image-" class="hash-link" href="../html/10-openai-deepseek.html#tạo-ảnh-gpt-image-" title="Direct link to tạo-ảnh-gpt-image-" translate="no">​</a></h3>
+<p>Gọi <code>/images/generations</code> như <a href="../html/04-image-generation.html">trang Tạo ảnh</a>. Khác với Nano Banana:</p>
+<ul>
+<li>Chọn kích thước bằng <code>size</code> (<code>1024x1024</code>, <code>1536x1024</code>, <code>1024x1536</code>) và chất lượng bằng <code>quality</code> (<code>low</code>, <code>medium</code>, <code>high</code>). <code>quality="low"</code> rẻ nhất.</li>
+<li>Giá tính theo image token, nên phụ thuộc <code>size</code> và <code>quality</code>. Ảnh <code>gpt-image-2.5-flare</code> 1024×1024 <code>low</code> tốn khoảng $0.006.</li>
+<li>Ảnh trả về dạng base64 trong <code>data[0].b64_json</code>.</li>
+</ul>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import base64
+from openai import OpenAI
+
+client = OpenAI(api_key="&lt;your_api_key&gt;", base_url="https://api.thucchien.ai")
+
+result = client.images.generate(
+  model="gpt-image-2.5-flare",
+  prompt="Một chú mèo đội nón lá, phong cách tranh Đông Hồ",
+  size="1024x1024",
+  quality="low",
+)
+
+with open("cat.png", "wb") as f:
+  f.write(base64.b64decode(result.data[0].b64_json))</code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="âm-thanh">Âm thanh<a aria-label="Direct link to Âm thanh" class="hash-link" href="../html/10-openai-deepseek.html#âm-thanh" title="Direct link to Âm thanh" translate="no">​</a></h3>
+<ul>
+<li><strong>Text-to-speech</strong>: <code>gpt-4o-mini-tts</code> dùng giọng của OpenAI (<code>alloy</code>, <code>echo</code>, <code>fable</code>, <code>onyx</code>, <code>nova</code>, <code>shimmer</code>…), không dùng giọng Gemini như <code>Kore</code>. File trả về là <code>mp3</code>.</li>
+<li><strong>Speech-to-text</strong>: gọi giống <a href="../html/07-speech-to-text.html">trang Speech-to-Text</a>. Riêng <code>gpt-transcribe</code> <strong>bắt buộc</strong> gửi <code>response_format="json"</code>, nếu không sẽ lỗi 400.</li>
+</ul>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">with open("speech.mp3", "rb") as audio_file:
+  transcript = client.audio.transcriptions.create(
+      model="gpt-transcribe",
+      file=audio_file,
+      response_format="json",
+  )
+print(transcript.text)</code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="embedding-và-kiểm-duyệt">Embedding và kiểm duyệt<a aria-label="Direct link to Embedding và kiểm duyệt" class="hash-link" href="../html/10-openai-deepseek.html#embedding-và-kiểm-duyệt" title="Direct link to Embedding và kiểm duyệt" translate="no">​</a></h3>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">emb = client.embeddings.create(model="text-embedding-3-small", input=["xin chào", "tạm biệt"])
+print(len(emb.data[0].embedding))  # 1536
+
+mod = client.moderations.create(model="omni-moderation-latest", input="nội dung cần kiểm tra")
+print(mod.results[0].flagged)</code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deepseek">DeepSeek<a aria-label="Direct link to DeepSeek" class="hash-link" href="../html/10-openai-deepseek.html#deepseek" title="Direct link to DeepSeek" translate="no">​</a></h2>
+<table><thead><tr><th>Model</th><th>Đặc điểm</th></tr></thead><tbody><tr><td><code>deepseek-flash</code></td><td>Nhanh, rẻ. Hợp với phần lớn tác vụ văn bản.</td></tr><tr><td><code>deepseek-v4-pro</code></td><td>Mạnh hơn, giá gấp khoảng 4 lần.</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewbox="0 0 14 16"><path d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z" fill-rule="evenodd"></path></svg></span>Tên model <code>deepseek-flash</code></div><div class="admonitionContent_BuS1"><p>Hãy dùng <code>deepseek-flash</code> làm tên model. Theo DeepSeek, hai tên cũ <code>deepseek-v4-flash</code> và <code>deepseek-v4-flash-vision-exp</code> vẫn được API DeepSeek chấp nhận, nhưng các model tương ứng đã ngừng hoạt động: request gửi tới hai tên này do model DeepSeek-V4.1-Flash xử lý và tính theo giá Flash. Gateway không mở hai tên cũ này (trả lỗi <code>403</code>), chỉ gọi bằng <code>deepseek-flash</code>. Xem <a href="https://api-docs.deepseek.com/quick_start/pricing/" rel="noopener noreferrer" target="_blank">bảng giá DeepSeek</a>.</p></div></div>
+<p><strong>Chế độ suy nghĩ (thinking) bật sẵn.</strong> Phần suy nghĩ trả về riêng trong <code>message.reasoning_content</code>, còn câu trả lời vẫn nằm trong <code>message.content</code>. Token suy nghĩ tính tiền như output.</p>
+<p><strong>Tắt thinking</strong> khi không cần suy luận nhiều (phân loại, trích xuất, viết lại…). Chi phí giảm khoảng 10 lần:</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+
+client = OpenAI(api_key="&lt;your_api_key&gt;", base_url="https://api.thucchien.ai")
+
+response = client.chat.completions.create(
+  model="deepseek-flash",
+  messages=[{"role": "user", "content": "Phân loại cảm xúc: 'Đồ ăn ngon, phục vụ chậm'"}],
+  extra_body={"thinking": {"type": "disabled"}},  # bỏ dòng này để bật lại thinking
+)
+
+print(response.choices[0].message.content)</code></pre></div></div>
+<p>Khi bật thinking, đọc phần suy nghĩ như sau:</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">msg = response.choices[0].message
+print(getattr(msg, "reasoning_content", None))  # quá trình suy nghĩ
+print(msg.content)                              # câu trả lời</code></pre></div></div>
+<p>Lưu ý khác:</p>
+<ul>
+<li><strong>JSON mode</strong>: <code>response_format={"type": "json_object"}</code> hoạt động. Trong prompt phải có chữ "JSON" và mô tả cấu trúc mong muốn.</li>
+<li><strong>Không hỗ trợ</strong> ảnh đầu vào, tạo ảnh, âm thanh hay tìm kiếm web. Với các tác vụ này, hãy dùng Gemini hoặc OpenAI.</li>
+<li>DeepSeek giới hạn theo <strong>số request đồng thời</strong> trên toàn gateway, không theo từng đội. Đừng bắn hàng trăm request song song cùng lúc.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lưu-ý-chung">Lưu ý chung<a aria-label="Direct link to Lưu ý chung" class="hash-link" href="../html/10-openai-deepseek.html#lưu-ý-chung" title="Direct link to Lưu ý chung" translate="no">​</a></h2>
+<ul>
+<li>Model OpenAI và DeepSeek dùng chung một tài khoản cho tất cả các đội. Nếu nhận lỗi <code>429</code>, hãy chờ vài giây rồi thử lại (SDK <code>openai</code> tự thử lại 2 lần).</li>
+<li>Cần thông tin mới trên Internet? Xem <a href="../html/08-google-search-grounding.html">Tìm kiếm web</a>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tham-khảo">Tham khảo<a aria-label="Direct link to Tham khảo" class="hash-link" href="../html/10-openai-deepseek.html#tham-khảo" title="Direct link to Tham khảo" translate="no">​</a></h2>
+<ul>
+<li><a href="https://platform.openai.com/docs/guides/reasoning" rel="noopener noreferrer" target="_blank">Reasoning models — OpenAI</a></li>
+<li><a href="https://platform.openai.com/docs/api-reference/chat/create" rel="noopener noreferrer" target="_blank">API reference: Chat Completions — OpenAI</a> (<code>reasoning_effort</code>, <code>max_completion_tokens</code>)</li>
+<li><a href="https://platform.openai.com/docs/api-reference/responses/create" rel="noopener noreferrer" target="_blank">API reference: Responses — OpenAI</a> (<code>reasoning.effort</code>, <code>max_output_tokens</code>)</li>
+<li><a href="https://docs.litellm.ai/docs/reasoning_content" rel="noopener noreferrer" target="_blank">Reasoning content — LiteLLM</a> (cách gateway chuyển <code>reasoning_effort</code> tới từng nhà cung cấp)</li>
+<li><a href="https://platform.openai.com/docs/guides/tools-web-search" rel="noopener noreferrer" target="_blank">Web search — OpenAI</a></li>
+<li><a href="https://api-docs.deepseek.com/" rel="noopener noreferrer" target="_blank">Tài liệu API DeepSeek</a></li>
+<li><a href="https://api-docs.deepseek.com/guides/thinking_mode" rel="noopener noreferrer" target="_blank">Thinking mode — DeepSeek</a></li>
+<li><a href="https://api-docs.deepseek.com/quick_start/pricing/" rel="noopener noreferrer" target="_blank">Models &amp; Pricing — DeepSeek</a></li>
+</ul></div></article></body></html>

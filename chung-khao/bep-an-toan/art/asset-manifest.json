@@ -1,0 +1,856 @@
+{
+  "schema_version": 1,
+  "art_direction_brief": "art/art-direction.md",
+  "assets": [
+    {
+      "id": "linh-idle-down",
+      "path": "assets/sprites/linh-idle-down.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "linh-idle-left",
+      "path": "assets/sprites/linh-idle-left.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "linh-idle-right",
+      "path": "assets/sprites/linh-idle-right.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "linh-idle-up",
+      "path": "assets/sprites/linh-idle-up.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "linh-walk-down",
+      "path": "assets/sprites/linh-walk-down.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "linh-walk-left",
+      "path": "assets/sprites/linh-walk-left.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "linh-walk-right",
+      "path": "assets/sprites/linh-walk-right.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "linh-walk-up",
+      "path": "assets/sprites/linh-walk-up.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-idle-down",
+      "path": "assets/sprites/nam-idle-down.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-idle-left",
+      "path": "assets/sprites/nam-idle-left.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-idle-right",
+      "path": "assets/sprites/nam-idle-right.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-idle-up",
+      "path": "assets/sprites/nam-idle-up.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-walk-down",
+      "path": "assets/sprites/nam-walk-down.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-walk-left",
+      "path": "assets/sprites/nam-walk-left.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-walk-right",
+      "path": "assets/sprites/nam-walk-right.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "nam-walk-up",
+      "path": "assets/sprites/nam-walk-up.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x112",
+        "alpha": true,
+        "anchor": "bottom-center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/characters-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/characters.png"
+      }
+    },
+    {
+      "id": "chicken",
+      "path": "assets/sprites/chicken.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "veg",
+      "path": "assets/sprites/veg.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "fruit",
+      "path": "assets/sprites/fruit.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "sink",
+      "path": "assets/sprites/sink.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "rawboard",
+      "path": "assets/sprites/rawboard.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "cleanboard",
+      "path": "assets/sprites/cleanboard.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "stove",
+      "path": "assets/sprites/stove.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "serve",
+      "path": "assets/sprites/serve.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "trash",
+      "path": "assets/sprites/trash.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "power",
+      "path": "assets/sprites/power.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "water",
+      "path": "assets/sprites/water.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "plant",
+      "path": "assets/sprites/plant.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "192x192",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/stations-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/stations.png"
+      }
+    },
+    {
+      "id": "food-chicken-raw",
+      "path": "assets/sprites/food-chicken-raw.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x96",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/foods-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/foods.png"
+      }
+    },
+    {
+      "id": "food-chicken",
+      "path": "assets/sprites/food-chicken.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x96",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/foods-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "contact_sheet": "art/previews/foods.png"
+      }
+    },
+    {
+      "id": "food-salad-raw",
+      "path": "assets/sprites/food-salad-raw.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x96",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/foods-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/foods.png"
+      }
+    },
+    {
+      "id": "food-salad",
+      "path": "assets/sprites/food-salad.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x96",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/foods-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/foods.png"
+      }
+    },
+    {
+      "id": "food-fruit-raw",
+      "path": "assets/sprites/food-fruit-raw.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x96",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/foods-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/foods.png"
+      }
+    },
+    {
+      "id": "food-fruit",
+      "path": "assets/sprites/food-fruit.png",
+      "status": "integrated",
+      "technical": {
+        "dimensions": "96x96",
+        "alpha": true,
+        "anchor": "center",
+        "filtering": "smooth"
+      },
+      "source": {
+        "kind": "generated",
+        "url_or_tool": "built-in image_gen",
+        "created_at": "2026-10-06",
+        "reference": "assets/cover.png",
+        "original": "art/source/foods-v2.png",
+        "license": "Generated for this project; no third-party asset pack used; no independent license asserted."
+      },
+      "verification": {
+        "technical_checks_passed": true,
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": false,
+        "contact_sheet": "art/previews/foods.png"
+      }
+    }
+  ]
+}

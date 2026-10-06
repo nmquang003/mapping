@@ -1,0 +1,72 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Chuyển văn bản thành giọng nói (Text-to-Speech)</title><style>body{max-width:980px;margin:40px auto;padding:0 24px;font:17px/1.6 system-ui;color:#202124}pre{background:#f2f4f7;padding:18px;overflow:auto;white-space:pre}code{font-family:monospace}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ccc;padding:8px}img{max-width:100%}a{color:#1659ad}button{display:none}blockquote{border-left:4px solid #ccc;padding-left:16px}</style><body><p><a href="../index.html">Mục lục offline</a> · <a href="https://docs.thucchien.ai/docs/round-2/user-guide/text-to-speech">Nguồn</a></p><article><nav aria-label="Breadcrumbs" class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="https://docs.thucchien.ai/"><svg class="breadcrumbHomeIcon_YNFT" viewbox="0 0 24 24"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="https://docs.thucchien.ai/docs/round-2"><span>Vòng Chung Khảo</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../html/00-overview.html"><span>Hướng dẫn sử dụng API</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Chuyển văn bản thành giọng nói (Text-to-Speech)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"></div><div class="theme-doc-markdown markdown"><header><h1>Chuyển văn bản thành giọng nói (Text-to-Speech)</h1></header>
+<!-- -->
+<p>Các mô hình Text-to-Speech (TTS) cho phép bạn chuyển đổi một đoạn văn bản thành file âm thanh có giọng nói tự nhiên.</p>
+<p><strong>Các model được hỗ trợ</strong> (Gemini Enterprise Agent Platform (trước đây là Vertex AI)):</p>
+<ul>
+<li><code>gemini-3.1-flash-tts-preview</code></li>
+<li><code>gemini-2.5-flash-preview-tts</code></li>
+<li><code>gemini-2.5-pro-preview-tts</code></li>
+</ul>
+<p><strong>Model OpenAI:</strong> <code>gpt-4o-mini-tts</code>. Model này dùng giọng của OpenAI (<code>alloy</code>, <code>nova</code>…) thay vì giọng Gemini, xem <a href="../html/10-openai-deepseek.html#%C3%A2m-thanh">Model OpenAI và DeepSeek</a>.</p>
+<p><strong>Endpoint:</strong> <code>POST /audio/speech</code></p>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul aria-orientation="horizontal" class="tabs" role="tablist"><li aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active" role="tab" tabindex="0">curl</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (requests)</li><li aria-selected="false" class="tabs__item tabItem_LNqP" role="tab" tabindex="-1">Python (openai)</li></ul><div class="margin-top--md"><div class="tabItem_Ymn6" role="tabpanel"><p>Cách này cho phép bạn nhanh chóng tạo và lưu file âm thanh.</p><div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">curl https://api.thucchien.ai/audio/speech \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer &lt;your_api_key&gt;" \
+-d '{
+  "model": "gemini-2.5-flash-preview-tts",
+  "input": "Xin chào, đây là một thử nghiệm chuyển văn bản thành giọng nói qua [AI Thực Chiến](https://thucchien.ai) gateway.",
+  "voice": "Zephyr"
+}' \
+--output speech_output.mp3</code></pre></div></div><p>Kết quả bạn sẽ có file audio như sau:</p><audio controls="" src="../assets/08459811eb1e.mp3"><p>Your browser does not support the audio element.</p></audio></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Cách này cho bạn quyền kiểm soát việc lưu file.</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">import requests
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai"
+AI_API_KEY = "sk-1234" # Thay bằng API key của bạn
+
+# --- Thực thi ---
+url = f"{AI_API_BASE}/audio/speech"
+headers = {
+  "Content-Type": "application/json",
+  "Authorization": f"Bearer {AI_API_KEY}"
+}
+data = {
+  "model": "gemini-2.5-pro-preview-tts",
+  "input": "Hello world! This is a test of the text-to-speech API.",
+  "voice": "Puck"
+}
+
+response = requests.post(url, headers=headers, json=data, stream=True)
+
+if response.status_code == 200:
+  with open("speech_from_requests.mp3", "wb") as f:
+      for chunk in response.iter_content(chunk_size=8192):
+          f.write(chunk)
+  print("File âm thanh đã được tạo thành công!")
+else:
+  print(f"Error: {response.status_code}")
+  print(response.text)</code></pre></div></div><p>Kết quả bạn sẽ có file audio như sau:</p><audio controls="" src="../assets/08459811eb1e.mp3"><p>Your browser does not support the audio element.</p></audio></div><div class="tabItem_Ymn6" hidden="" role="tabpanel"><p>Thư viện <code>openai</code> cung cấp một giao diện rất sạch sẽ cho tác vụ này.</p><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#1D1E1E;--prism-background-color:#DEE4E9"><div class="codeBlockContent_QJqH"><pre class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#1D1E1E;background-color:#DEE4E9" tabindex="0"><code class="codeBlockLines_e6Vv">from openai import OpenAI
+from pathlib import Path
+
+# --- Cấu hình ---
+AI_API_BASE = "https://api.thucchien.ai"
+AI_API_KEY = "sk-1234" # Thay bằng API key của bạn
+
+# --- Thực thi ---
+client = OpenAI(
+  api_key=AI_API_KEY,
+  base_url=AI_API_BASE
+)
+
+speech_file_path = Path(__file__).parent / "speech_from_openai.mp3"
+
+response = client.audio.speech.create(
+model="gemini-2.5-flash-preview-tts",
+voice="Charon",
+input="Hôm nay là một ngày đẹp trời để lập trình."
+)
+
+response.stream_to_file(speech_file_path)
+print(f"File âm thanh đã được lưu tại: {speech_file_path}")</code></pre></div></div><p>Kết quả bạn sẽ có file audio như sau:</p><audio controls="" src="../assets/08459811eb1e.mp3"><p>Your browser does not support the audio element.</p></audio></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="các-tham-số-tùy-chọn">Các tham số tùy chọn<a aria-label="Direct link to Các tham số tùy chọn" class="hash-link" href="../html/06-text-to-speech.html#các-tham-số-tùy-chọn" title="Direct link to Các tham số tùy chọn" translate="no">​</a></h2>
+<p>Ngoài <code>model</code>, <code>input</code>, và <code>voice</code>, bạn có thể sử dụng thêm các tham số khác để tinh chỉnh giọng nói, tốc độ, và định dạng âm thanh đầu ra.</p>
+<p>Để biết danh sách đầy đủ các tham số và cách sử dụng, vui lòng tham khảo tài liệu chính thức tại đây: <a href="https://cloud.google.com/text-to-speech/docs/gemini-tts#examples" rel="noopener noreferrer" target="_blank">Google Cloud Text-to-Speech Documentation</a></p></div></article></body></html>
