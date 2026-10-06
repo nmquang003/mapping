@@ -26,7 +26,23 @@ Tạo lại prompt mà không gọi API:
 chung-khao/UI_testing/.venv/bin/python chung-khao/generate_regional_images.py --prepare-only
 ```
 
-## Nơi lưu
+## Chạy riêng Ninh Bình
+
+```bash
+chung-khao/UI_testing/.venv/bin/python chung-khao/generate_regional_images.py --regions ninh-binh --workers 3
+```
+
+Lệnh này chỉ chạy 8 ảnh Ninh Bình: Tràng An, Tam Cốc, Bích Động, Hoa Lư, Cúc Phương, Bái Đính, Phát Diệm, Hang Múa. Sử dụng prompt và ảnh tham chiếu sẵn có, gửi multipart tới `/images/edits` để giữ đặc trưng địa danh. Tự đọc `GATEWAY_KEY` từ `.env` gốc dự án. Không tạo lại ảnh của ba địa phương khác.
+
+Sau khi tạo xong, đưa ảnh lên web và tải lại trang:
+
+```bash
+python3 chung-khao/atlas-viet/scripts/sync_ai_images.py
+```
+
+Ảnh Ninh Bình được lưu tại `chung-khao/ninh-binh-data/images/output/imagegen/` (PNG gốc) và `chung-khao/ninh-binh-data/images/generated/` (WebP).
+
+## Nơi lưu các bộ ảnh
 
 - [Quảng Ninh: prompt và mô tả ảnh](quang-ninh-data/images/README.md).
 - [Hà Nội: prompt và mô tả ảnh](ha-noi-data/images/README.md).

@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 import hashlib
 from io import BytesIO
 import json
+import mimetypes
 from pathlib import Path
 import shlex
 import threading
@@ -67,10 +68,13 @@ def save_json(path, data):
     temporary.replace(path)
 
 
-def prepare():
+def prepare(selected_regions=None):
+    selected_regions = selected_regions or list(SCENES)
     jobs = []
     groups = []
     for region, scenes in SCENES.items():
+        if region not in selected_regions:
+            continue
         folder = ROOT / (region + '-data') / 'images'
         data = json.loads((folder.parent / 'seed.json').read_text())
         places = {p['id']: p for p in data['places']}
@@ -106,6 +110,22 @@ def prepare():
                       'Nguồn nội dung: ' + ', '.join(job['source_ids']) + ' trong database địa phương. Chi tiết hình ảnh là minh họa, chưa xác minh từng cấu kiện kiến trúc.', '']
         (folder/'README.md').write_text('\n'.join(lines),encoding='utf-8')
         groups.append(region_jobs)
+    if 'ninh-binh' in selected_regions:
+        folder = ROOT / 'ninh-binh-data/images'
+        plan = json.loads((folder / 'generation-plan.json').read_text(encoding='utf-8'))
+        region_jobs = []
+        for original in plan['jobs']:
+            job = dict(original, region='ninh-binh',
+                       prompt=(folder / original['prompt_file']).read_text(encoding='utf-8'),
+                       caption='Minh họa do AI tạo; không phải ảnh tư liệu.',
+                       visual_status='pending_visual_review')
+            reference = folder / job['reference']
+            if not reference.is_file():
+                raise FileNotFoundError('Thiếu ảnh tham chiếu: ' + str(reference))
+            with Image.open(reference) as image:
+                image.verify()
+            region_jobs.append(job)
+        groups.append(region_jobs)
     # Round-robin ensures the first three requests cover all three regions.
     for i in range(max(map(len,groups))):
         jobs.extend(group[i] for group in groups if i < len(group))
@@ -131,7 +151,8 @@ def generate(job, key, stop):
     raw_path=folder/job['raw_output']
     delivery=folder/job['delivery_output']
     record={k:v for k,v in job.items() if k!='prompt'}
-    record.update(model=MODEL,created_on=timestamp())
+    endpoint='https://api.thucchien.ai/images/edits' if job.get('reference') else API
+    record.update(model=MODEL,created_on=timestamp(),endpoint=endpoint)
     if raw_path.exists():
         with Image.open(raw_path) as im:
             im.verify()
@@ -142,9 +163,16 @@ def generate(job, key, stop):
     else:
         print('START '+job['region']+'/'+job['id'],flush=True)
         try:
-            response=requests.post(API,headers={'Authorization':'Bearer '+key},
-                json={'model':MODEL,'prompt':job['prompt'],'n':1,'size':'1536x1024','quality':'high'},
-                timeout=(20,600))
+            payload={'model':MODEL,'prompt':job['prompt'],'n':1,'size':'1536x1024','quality':'high'}
+            options=dict(headers={'Authorization':'Bearer '+key},timeout=(20,600))
+            if job.get('reference'):
+                reference=folder/job['reference']
+                options['data']={k:str(v) for k,v in payload.items()}
+                options['files']=[('image[]',(reference.name,reference.read_bytes(),
+                                   mimetypes.guess_type(reference.name)[0] or 'image/jpeg'))]
+            else:
+                options['json']=payload
+            response=requests.post(endpoint,**options)
         except requests.RequestException as exc:
             stop.set()
             record.update(status='connection_error',error_type=type(exc).__name__,
@@ -185,17 +213,17 @@ def generate(job, key, stop):
 
 
 def manifest(records):
-    for region in SCENES:
+    for region in sorted({record['region'] for record in records.values()}):
         folder=ROOT/(region+'-data')/'images'
         local=[r for r in records.values() if r['region']==region]
-        save_json(folder/'manifest.json',dict(provider=API,model=MODEL,updated_on=timestamp(),
+        save_json(folder/'manifest.json',dict(provider='https://api.thucchien.ai',model=MODEL,updated_on=timestamp(),
             label='Minh họa do AI tạo; không phải ảnh tư liệu.',jobs=local))
 
 
 def contact_sheets(records):
     font_path='/System/Library/Fonts/Supplemental/Arial.ttf'
     font=ImageFont.truetype(font_path,20) if Path(font_path).exists() else ImageFont.load_default()
-    for region in SCENES:
+    for region in sorted({record['region'] for record in records.values()}):
         folder=ROOT/(region+'-data')/'images'
         available=[r for r in records.values() if r['region']==region and r['status'] in ('generated','existing')]
         if not available:
@@ -216,14 +244,17 @@ def main():
     parser.add_argument('--prepare-only',action='store_true')
     parser.add_argument('--workers',type=int,default=3,choices=range(1,7))
     parser.add_argument('--env-file',type=Path,default=ROOT.parent/'.env')
+    parser.add_argument('--regions',nargs='+',choices=['ninh-binh',*SCENES],default=list(SCENES),
+                        help='Chỉ tạo ảnh cho các địa phương được chọn; Ninh Bình dùng ảnh tham chiếu đã chuẩn bị.')
     args=parser.parse_args()
-    jobs=prepare()
-    print('Prepared '+str(len(jobs))+' prompts across 3 regions.',flush=True)
+    selected=list(dict.fromkeys(args.regions))
+    jobs=prepare(selected)
+    print('Prepared '+str(len(jobs))+' prompts for '+', '.join(selected)+'.',flush=True)
     if args.prepare_only:
         return 0
     key=read_key(args.env_file)
     records={}
-    for region in SCENES:
+    for region in selected:
         previous=ROOT/(region+'-data')/'images/manifest.json'
         if previous.exists():
             records.update({r['region']+'/'+r['id']:r for r in json.loads(previous.read_text())['jobs']})
@@ -253,7 +284,8 @@ def main():
                 if following:
                     futures[pool.submit(generate,following,key,stop)]=following
     contact_sheets(records)
-    successful=sum(r['status'] in ('generated','existing') for r in records.values())
+    expected={job['region']+'/'+job['id'] for job in jobs}
+    successful=sum(r['status'] in ('generated','existing') for k,r in records.items() if k in expected)
     print(f'Result: {successful}/{len(jobs)} images available. Credentials were not written to outputs.',flush=True)
     return 0 if successful==len(jobs) else 1
 

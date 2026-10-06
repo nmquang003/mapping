@@ -1,7 +1,7 @@
 {
   "provider": "https://api.thucchien.ai/images/generations",
   "model": "gpt-image-2.5-sunburst",
-  "updated_on": "2026-10-06T07:54:58.130839+00:00",
+  "updated_on": "2026-10-06T08:03:51.687730+00:00",
   "label": "Minh họa do AI tạo; không phải ảnh tư liệu.",
   "jobs": [
     {
@@ -19,10 +19,172 @@
       "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
       "visual_status": "pending_visual_review",
       "model": "gpt-image-2.5-sunburst",
-      "created_on": "2026-10-06T07:54:58.123664+00:00",
-      "status": "connection_error",
-      "error_type": "ConnectionError",
-      "note": "Không tự gửi lại. Nếu lỗi xảy ra sau khi gửi, yêu cầu có thể đã được API xử lý."
+      "created_on": "2026-10-06T07:57:39.866952+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042405000000000005",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "49d98d1814be2daea37975bc0ea89afcf55b14ff948982b7b096623bcf50b304"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "vinh-bai-tu-long",
+      "place_id": "vinh-bai-tu-long",
+      "name": "Vịnh Bái Tử Long",
+      "source_ids": [
+        "S04"
+      ],
+      "prompt_file": "prompts/vinh-bai-tu-long.txt",
+      "raw_output": "output/imagegen/vinh-bai-tu-long.png",
+      "delivery_output": "generated/vinh-bai-tu-long.webp",
+      "alt": "Minh họa do AI tạo về Vịnh Bái Tử Long",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:58:11.124368+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042375",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "2a741bc9678e6c615336b68365fc75070b41091713527c497e39da556b570b26"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "co-to",
+      "place_id": "co-to",
+      "name": "Cô Tô",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt_file": "prompts/co-to.txt",
+      "raw_output": "output/imagegen/co-to.png",
+      "delivery_output": "generated/co-to.webp",
+      "alt": "Minh họa do AI tạo về Cô Tô",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:58:54.536270+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04234",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "108a1eec4c66c4f8fde675eaea6c943179c82fd39de5c2211c23e333f9e449b3"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "thanh-lan",
+      "place_id": "thanh-lan",
+      "name": "Đảo Thanh Lân",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt_file": "prompts/thanh-lan.txt",
+      "raw_output": "output/imagegen/thanh-lan.png",
+      "delivery_output": "generated/thanh-lan.webp",
+      "alt": "Minh họa do AI tạo về Đảo Thanh Lân",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:59:54.978431+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04233",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "7b8114e0dec757a84cb0a9bc31c8609d448070a78a5934bba94eaa587034decd"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "quan-lan",
+      "place_id": "quan-lan",
+      "name": "Quan Lạn",
+      "source_ids": [
+        "S04"
+      ],
+      "prompt_file": "prompts/quan-lan.txt",
+      "raw_output": "output/imagegen/quan-lan.png",
+      "delivery_output": "generated/quan-lan.webp",
+      "alt": "Minh họa do AI tạo về Quan Lạn",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:00:37.420465+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04238",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "3056e6e2d522e698077ec9b49867aa63019148cbbb063a243ab4bd231f269722"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "yen-tu",
+      "place_id": "yen-tu",
+      "name": "Yên Tử",
+      "source_ids": [
+        "S05"
+      ],
+      "prompt_file": "prompts/yen-tu.txt",
+      "raw_output": "output/imagegen/yen-tu.png",
+      "delivery_output": "generated/yen-tu.webp",
+      "alt": "Minh họa do AI tạo về Yên Tử",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:01:32.724227+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042440000000000005",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "8570856f44d98c59bb57c8ea1d82e73dcf6dbcb931708c36af3b20960adb565f"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "bao-tang-quang-ninh",
+      "place_id": "bao-tang-quang-ninh",
+      "name": "Bảo tàng – Thư viện Quảng Ninh",
+      "source_ids": [
+        "S06"
+      ],
+      "prompt_file": "prompts/bao-tang-quang-ninh.txt",
+      "raw_output": "output/imagegen/bao-tang-quang-ninh.png",
+      "delivery_output": "generated/bao-tang-quang-ninh.webp",
+      "alt": "Minh họa do AI tạo về Bảo tàng – Thư viện Quảng Ninh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:02:14.717252+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04238",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "1543480009f24360c3e7226b05f0677a005c1213882f1df4a38ccbd13f5d2cd5"
     }
   ]
 }

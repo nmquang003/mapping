@@ -1,5 +1,6 @@
 """Exercise real map → modal → detail flows; save desktop/mobile QA screenshots."""
 import asyncio
+import json
 from pathlib import Path
 from playwright.async_api import async_playwright
 
@@ -54,10 +55,29 @@ async def main():
             assert await page.locator('.place-card').count()==4
             await page.reload(wait_until='networkidle')
             assert name==await page.locator('#detail-title').inner_text()
-            for tab in ['tong-quan','du-lich','lich-su','van-hoa','nguon','dia-danh']:
+            for tab in ['tong-quan','du-lich','lich-su','van-hoa','nguon','bo-anh','dia-danh']:
                 await page.locator(f'[data-tab="{tab}"]').click()
                 await page.wait_for_function('(tab)=>document.querySelector("[role=tabpanel]")?.getAttribute("aria-labelledby") === "tab-"+tab',arg=tab)
                 assert await page.locator('#tab-content').inner_text()
+                if tab=='bo-anh':
+                    region={'ha-long':'quang-ninh','sa-pa':'lao-cai'}.get(slug,slug)
+                    media=json.loads((ROOT/'dist/assets/ai-images.json').read_text())
+                    count=len(media['regions'].get(region,{}).get('images',[]))
+                    assert await page.locator('.gallery-item').count()==count
+                    if count:
+                        first=page.locator('.gallery-item button').first
+                        await first.click()
+                        assert await page.locator('#info-dialog.image-viewer').is_visible()
+                        assert 'Minh họa do AI tạo' in await page.locator('.image-full figcaption').inner_text()
+                        assert await page.locator('.image-full img').evaluate('(image)=>image.complete && image.naturalWidth>0')
+                        await page.keyboard.press('Escape')
+                        assert not await page.locator('#info-dialog').is_visible()
+                        assert await first.evaluate('(button)=>button===document.activeElement')
+                        for image in await page.locator('.gallery-item img').all():
+                            await image.scroll_into_view_if_needed()
+                            await image.evaluate('(image)=>image.decode()')
+                        assert await page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+                        await page.screenshot(path=str(QA/(slug+'-gallery.png')),full_page=True,animations='disabled')
             if slug=='ninh-binh':
                 await page.locator('[data-save="ninh-binh"]').click()
                 assert await page.locator('#saved-count').inner_text()=='1'
@@ -100,6 +120,13 @@ async def main():
         await mobile.locator('#detail-title').wait_for()
         assert await mobile.evaluate('document.documentElement.scrollWidth <= innerWidth')
         await mobile.screenshot(path=str(QA/'mobile-detail.png'),full_page=True,animations="disabled")
+        await mobile.locator('[data-tab="bo-anh"]').click()
+        await mobile.locator('.ai-gallery').wait_for()
+        assert await mobile.evaluate('document.documentElement.scrollWidth <= innerWidth')
+        await mobile.locator('.gallery-item button').first.click()
+        assert await mobile.locator('#info-dialog').evaluate('(el)=>el.scrollWidth<=el.clientWidth+1')
+        await mobile.screenshot(path=str(QA/'mobile-image-viewer.png'),full_page=True,animations='disabled')
+        await mobile.keyboard.press('Escape')
         await browser.close()
     assert not errors, errors
     print('PASS: 34 provinces; 4 province map/modal/detail flows; full province bounds; legacy routes and saved migration; all tabs; deep links; saved persistence; out-of-scope; desktop/mobile overflow; no browser errors.')

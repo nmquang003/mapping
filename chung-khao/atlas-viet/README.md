@@ -34,7 +34,7 @@ Mở http://127.0.0.1:4322/. Lần đầu tạo embedding qua API BTC; những l
 - Popup bản đồ địa phương với bốn địa danh, dấu mốc, thẻ giới thiệu và liên kết trang chi tiết.
 - Bốn trang riêng bằng hash URL, hỗ trợ tải lại trực tiếp. Đường dẫn `ha-long` và `sa-pa` cũ chuyển sang `quang-ninh` và `lao-cai`; sổ tay đã lưu cũng được chuyển đổi.
 - Popup hiển thị ranh giới toàn tỉnh/thành phố. Hạ Long là địa danh thuộc Quảng Ninh; Sa Pa và Mù Cang Chải thuộc phạm vi Lào Cai trên bản đồ 34 tỉnh/thành phố. Nội dung vẫn là một nhóm địa danh khởi đầu, chưa phải tư liệu đầy đủ về toàn tỉnh.
-- Các tab Địa lý – Tổng quan, Địa danh, Du lịch online, Lịch sử, Văn hóa – Ẩm thực, Nguồn tham khảo.
+- Các tab Địa lý – Tổng quan, Địa danh, Bộ ảnh AI, Du lịch online, Lịch sử, Văn hóa – Ẩm thực, Nguồn tham khảo.
 - Du lịch online nhúng tour AirPano chính thức: 5 cảnh Hà Nội, 9 cảnh Hạ Long thuộc Quảng Ninh; chọn cảnh khởi đầu, thử lại, dừng tour và toàn màn hình. Chỉ tải iframe khi bấm bắt đầu; rời tab sẽ đóng tour. Ninh Bình và Lào Cai hiển thị trạng thái chưa có dữ liệu phù hợp.
 - Lưu tỉnh/thành phố bằng localStorage, sổ tay đã lưu và thông báo ngoài phạm vi.
 - Bố cục máy tính/điện thoại; modal dùng bàn phím và Escape; các tab dùng phím mũi tên.
@@ -44,9 +44,23 @@ Mở http://127.0.0.1:4322/. Lần đầu tạo embedding qua API BTC; những l
 
 Nội dung ngắn được đánh dấu là bản mẫu. Tọa độ địa danh là vị trí tham khảo gần đúng, chưa đối chiếu từng điểm với tài liệu chính thức. Không dùng cho đo đạc, địa chính hoặc dẫn đường.
 
-Ảnh hiện tại là ảnh thực tế có nguồn và giấy phép, **chưa phải ảnh AI**. Chatbot **RAG đã kết nối API BTC** qua backend Python, truy xuất bốn database có nguồn. Xem [hướng dẫn RAG](rag/README.md).
+Ảnh AI đã được nối vào thẻ điểm đến, banner trang chi tiết và các địa danh có ảnh tương ứng. Tab **Bộ ảnh AI** hiển thị ảnh tuyển chọn theo Hà Nội, Quảng Ninh và Lào Cai; bấm ảnh để xem lớn, giới thiệu địa danh và nguồn. Bộ ảnh Quảng Ninh/Lào Cai rộng hơn các dấu mốc Hạ Long/Sa Pa trên bản đồ. Ảnh có nhãn minh họa, không phải ảnh tư liệu. Ninh Bình hiện dùng ảnh thực tế có nguồn vì chưa có ảnh AI hoàn tất trong thư mục đầu vào.
 
-Trước khi nộp: đối chiếu ranh giới, tọa độ, nội dung và mốc dữ liệu; bổ sung hình minh họa AI bằng API BTC và tiếp tục đánh giá chatbot tiếng Việt trả lời từ kho tư liệu có dẫn nguồn.
+Chatbot **RAG sử dụng API BTC** qua backend Python, truy xuất bốn database có nguồn. Cần chạy backend để sử dụng chatbot; trạng thái kết nối hiển thị trong khung trợ lý. Xem [hướng dẫn RAG](rag/README.md).
+
+Trước khi nộp: đối chiếu ranh giới, tọa độ, nội dung và mốc dữ liệu; kiểm tra chi tiết ảnh AI, bổ sung ảnh còn thiếu và chatbot tiếng Việt chỉ trả lời từ kho tri thức đã duyệt, có dẫn nguồn.
+
+## Đồng bộ ảnh mới
+
+Sau khi script tạo ảnh hoàn thành thêm các địa danh, chạy từ thư mục `atlas-viet`:
+
+```sh
+python3 scripts/sync_ai_images.py
+```
+
+Script đọc `../<địa-phương>-data/images/generation-plan.json`, chỉ lấy WebP đã tồn tại, copy vào `dist/assets/ai/<địa-phương>/` và xuất `dist/assets/ai-images.json` với tên, alt, caption, place_id và nguồn nội dung. Không gọi API hoặc đọc key. Tải lại web sau khi đồng bộ. Toàn bộ tài nguyên cần để triển khai nằm trong `dist/`.
+
+Các ảnh chưa tạo không sinh đường dẫn lỗi. Khi chưa có ảnh AI, banner vẫn dùng ảnh thực tế và giữ trích dẫn tương ứng. Nhãn nguồn nội dung địa danh không phải chứng nhận mọi chi tiết trong ảnh AI đúng thực tế.
 
 ## Cấu trúc
 
@@ -57,6 +71,7 @@ Trước khi nộp: đối chiếu ranh giới, tọa độ, nội dung và mố
 - `dist/assets/credits.json`: tác giả, nguồn, giấy phép và thay đổi đối với ảnh.
 - `scripts/prepare_assets.py`: tái tạo tài nguyên từ nguồn công khai đã ghim phiên bản.
 - `scripts/check_ui.py`: kiểm tra luồng thực trên Chromium và tạo ảnh QA ở `.qa/`.
+- `scripts/sync_ai_images.py`: đồng bộ ảnh đã tạo và xuất danh mục media cho web.
 - `scripts/check_tours.py`: kiểm tra giao diện chủ với phản hồi iframe giả lập để xác minh tải khi bắt đầu, chọn cảnh, thử lại/dừng, dọn iframe và responsive. Khả năng tải ảnh thực bên trong tour phụ thuộc AirPano.
 
 ## Tour du lịch online

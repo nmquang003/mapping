@@ -5,6 +5,11 @@
 # Bí mật
 .env
 .env.local
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
 /local
 
 # Python
@@ -13,6 +18,24 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Frontend dependencies / deployment cache
+node_modules/
+.vercel/
+
+# Ảnh gốc sinh bởi API và bảng xem nhanh; giữ WebP để đồng bộ web
+/chung-khao/*-data/images/output/
+/chung-khao/*-data/images/contact-sheet.*
+
+# Tệp trung gian của database và manifest
+/chung-khao/*-data/*.build.sqlite
+/chung-khao/*-data/images/*.json.tmp
+/chung-khao/atlas-viet/dist/assets/*.json.tmp
 
 # IDE / OS
 .vscode/
