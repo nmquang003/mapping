@@ -29,7 +29,7 @@ async def main():
                 await route.continue_()
         await page.route('**/*',requests)
         await page.route('**/api/status',lambda route:route.fulfill(status=503,json={'error':'Backend intentionally unavailable in tour checks.'}))
-        for slug,count in [('ha-noi',5),('quang-ninh',9),('ninh-binh',8)]:
+        for slug,count in [('ha-noi',5),('quang-ninh',9),('ninh-binh',8),('lao-cai',22)]:
             await page.goto(BASE+f'#/dia-phuong/{slug}?tab=du-lich',wait_until='networkidle')
             await page.locator('[data-tour-start]').wait_for()
             assert await page.locator('[data-tour-select]').count()==count
@@ -81,26 +81,22 @@ async def main():
             await page.wait_for_function('document.querySelector("[data-tab=lich-su]")?.getAttribute("aria-selected")=="true"')
             assert await page.locator('#tour-viewer, #tour-audio').count()==0
             assert await page.evaluate('window.leavingAudio.paused')
-        for slug in ['lao-cai']:
-            await page.goto(BASE+f'#/dia-phuong/{slug}?tab=du-lich')
-            await page.locator('.tour-empty').wait_for()
-            assert await page.locator('iframe, #tour-viewer').count()==0
         mobile=await browser.new_page(viewport={'width':390,'height':844},is_mobile=True,has_touch=True)
         await mobile.route('**/*',requests)
         await mobile.route('**/api/status',lambda route:route.fulfill(status=503,json={'error':'Backend intentionally unavailable in tour checks.'}))
         mobile.on('pageerror',lambda e:errors.append(str(e)))
-        for slug in ['quang-ninh','ninh-binh']:
+        for slug in ['quang-ninh','ninh-binh','lao-cai']:
             await mobile.goto(BASE+f'#/dia-phuong/{slug}?tab=du-lich')
             await mobile.locator('[data-tour-start]').click()
             await loaded(mobile)
-            assert any(('/panos/mobile/' if slug=='quang-ninh' else '/ninh-binh/mobile/') in url for url in images)
+            assert any(('/panos/mobile/' if slug=='quang-ninh' else '/sa-pa/mobile/' if slug=='lao-cai' else '/ninh-binh/mobile/') in url for url in images)
             assert await mobile.evaluate('document.documentElement.scrollWidth<=innerWidth')
             await mobile.wait_for_function('document.querySelector("#tour-audio")?.currentTime>0')
-            if slug=='ninh-binh':
-                for i in range(8):
+            if slug in ['ninh-binh','lao-cai']:
+                for i in range(8 if slug=='ninh-binh' else 22):
                     await mobile.locator(f'[data-tour-select="{i}"]').click()
                     await loaded(mobile)
-                assert 'Vietnam.travel' in await mobile.locator('.tour-credit').inner_text()
+                assert ('VRTour' if slug=='lao-cai' else 'Vietnam.travel') in await mobile.locator('.tour-credit').inner_text()
             await mobile.screenshot(path=str(QA/f'local-mobile-{slug}.png'),full_page=True)
             await mobile.locator('[data-tour-stop]').click()
         # Missing local image has an actionable error and retry recovers.
@@ -135,6 +131,6 @@ async def main():
         await browser.close()
     assert not external,external
     assert not errors,errors
-    print('PASS: 22 actual local scenes, hotspot sync, lazy loading, fullscreen, retry/stop, route cleanup, mobile, missing-image recovery; real music playback, mute/volume, continuity, cleanup, autoplay recovery; zero external requests.')
+    print('PASS: 44 actual local scenes, hotspot sync, lazy loading, fullscreen, retry/stop, route cleanup, mobile, missing-image recovery; real music playback, mute/volume, continuity, cleanup, autoplay recovery; zero external requests.')
 
 asyncio.run(main())

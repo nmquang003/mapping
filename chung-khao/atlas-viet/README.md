@@ -40,7 +40,7 @@ Mở http://127.0.0.1:4322/. Lần đầu tạo embedding qua API BTC; những l
 - Bốn trang riêng bằng hash URL, hỗ trợ tải lại trực tiếp. Đường dẫn `ha-long` và `sa-pa` cũ chuyển sang `quang-ninh` và `lao-cai`; sổ tay đã lưu cũng được chuyển đổi.
 - Popup hiển thị ranh giới toàn tỉnh/thành phố. Hạ Long là địa danh thuộc Quảng Ninh; Sa Pa và Mù Cang Chải thuộc phạm vi Lào Cai trên bản đồ 34 tỉnh/thành phố. Nội dung vẫn là một nhóm địa danh khởi đầu, chưa phải tư liệu đầy đủ về toàn tỉnh.
 - Các tab Địa lý – Tổng quan, Địa danh, Bộ ảnh AI, Du lịch online, Lịch sử, Văn hóa – Ẩm thực, Nguồn tham khảo.
-- Du lịch online dùng trình xem Pannellum local: 8 cảnh Ninh Bình, 5 cảnh Hà Nội, 9 cảnh Hạ Long thuộc Quảng Ninh; kéo nhìn quanh, zoom, chuyển cảnh qua danh sách hoặc hotspot, thử lại/dừng và toàn màn hình. Chỉ tải ảnh khi bấm bắt đầu; rời tab giải phóng viewer. Lào Cai chưa có ảnh panorama phù hợp.
+- Du lịch online dùng trình xem Pannellum local: 8 cảnh Ninh Bình, 5 cảnh Hà Nội, 9 cảnh Hạ Long thuộc Quảng Ninh, 22 cảnh Sa Pa thuộc Lào Cai; kéo nhìn quanh, zoom, chuyển cảnh qua danh sách hoặc hotspot, thử lại/dừng và toàn màn hình. Chỉ tải ảnh khi bấm bắt đầu; rời tab giải phóng viewer.
 - Sổ tay cá nhân tại `#/so-tay`: lưu/bỏ lưu địa phương, ghi chú tự lưu, trạng thái đã khám phá, tìm kiếm không dấu, lọc, sắp xếp và tải bản văn bản. Dữ liệu giữ trong localStorage của trình duyệt; chưa đồng bộ tài khoản.
 - Mồi ba mục Ninh Bình, Hà Nội, Lào Cai kèm ghi chú và trạng thái khi nâng cấp sổ tay trống lần đầu. Giữ nguyên danh sách người dùng đã lưu; cờ mồi riêng ngăn dữ liệu mẫu quay lại sau khi bỏ lưu hết. Ghi chú được giữ khi bỏ lưu để có thể đọc lại khi lưu địa phương lần nữa.
 - Bố cục máy tính/điện thoại; modal dùng bàn phím và Escape; các tab dùng phím mũi tên.
@@ -79,13 +79,13 @@ Các ảnh chưa tạo không sinh đường dẫn lỗi. Khi chưa có ảnh AI
 - `scripts/check_ui.py`: kiểm tra luồng thực trên Chromium và tạo ảnh QA ở `.qa/`.
 - `scripts/check_notebook.py`: kiểm tra dữ liệu mẫu, ghi chú/trạng thái, tìm kiếm/lọc/sắp xếp, xuất văn bản, bỏ lưu, tải lại, chuyển đổi dữ liệu cũ và bố cục máy tính/điện thoại.
 - `scripts/sync_ai_images.py`: đồng bộ ảnh đã tạo và xuất danh mục media cho web.
-- `scripts/check_tours.py`: kiểm tra 22 cảnh ảnh thực local, hotspot đồng bộ, tải khi bắt đầu, toàn màn hình, thử lại/dừng, dọn viewer, mobile, lỗi ảnh và không có request bên thứ ba. Đặt `ATLAS_TEST_URL` nếu kiểm tra port hoặc deployment khác.
+- `scripts/check_tours.py`: kiểm tra 44 cảnh ảnh thực local, hotspot đồng bộ, tải khi bắt đầu, toàn màn hình, thử lại/dừng, dọn viewer, mobile, lỗi ảnh và không có request bên thứ ba. Đặt `ATLAS_TEST_URL` nếu kiểm tra port hoặc deployment khác.
 
 ## Tour du lịch online
 
 Tour dùng **Pannellum 2.5.6** (MIT, đóng gói trong `dist/vendor/pannellum/`) để hiển thị cubemap từ `dist/assets/360/`. Thứ tự mặt ảnh: front, right, back, left, up, down. Góc pitch được đổi dấu từ metadata krpano; yaw và FOV giữ theo cảnh nguồn. Desktop dùng ảnh `hi`, màn hình nhỏ dùng `mobile`.
 
-Tên cảnh tiếng Việt, liên kết và ghi công `Courtesy of www.AirPano.com` hiển thị dưới trình xem. Hotspot nối các cảnh dựa trên metadata nguồn và đồng bộ với danh sách. Quảng Ninh hiện chỉ có tour Hạ Long, chưa có Yên Tử/Cô Tô. Nhạc nền `dist/assets/audio/peaceful-tour.mp3` là đoạn ambient 48 giây tự tổng hợp (không dùng sample bên thứ ba), phát lặp khi bắt đầu tour. Có bật/tắt và chỉnh âm lượng; chuyển cảnh hoặc thử lại giữ nhạc liên tục, dừng/rời tab sẽ giải phóng audio. Nếu trình duyệt chặn phát, nút Bật nhạc cho phép thử lại. Tái tạo bằng `scripts/generate_tour_music.py` với numpy và ffmpeg. Ninh Bình có 8 cảnh panorama từ Vietnam.travel (Hang Múa, Tam Cốc, Tràng An, Bái Đính); Lào Cai chưa có dữ liệu panorama.
+Tên cảnh tiếng Việt, liên kết và ghi công `Courtesy of www.AirPano.com` hiển thị dưới trình xem. Hotspot nối các cảnh dựa trên metadata nguồn và đồng bộ với danh sách. Quảng Ninh hiện chỉ có tour Hạ Long, chưa có Yên Tử/Cô Tô. Nhạc nền `dist/assets/audio/peaceful-tour.mp3` là đoạn ambient 48 giây tự tổng hợp (không dùng sample bên thứ ba), phát lặp khi bắt đầu tour. Có bật/tắt và chỉnh âm lượng; chuyển cảnh hoặc thử lại giữ nhạc liên tục, dừng/rời tab sẽ giải phóng audio. Nếu trình duyệt chặn phát, nút Bật nhạc cho phép thử lại. Tái tạo bằng `scripts/generate_tour_music.py` với numpy và ffmpeg. Ninh Bình có 8 cảnh panorama từ Vietnam.travel (Hang Múa, Tam Cốc, Tràng An, Bái Đính); Lào Cai có 22 cảnh Sa Pa từ VRTour.
 
 Bản lưu gốc trong `data/360-tours/` được giữ nguyên, không chạy runtime nguồn. Ảnh và metadata cần cho bản local được sao chép vào `dist/`; không cần iframe hay CDN. User đã yêu cầu tự phục vụ lại ảnh và ghi nguồn; quyền phân phối lại ảnh AirPano vẫn chưa được xác minh độc lập, không mặc định quyền nhúng bao gồm quyền phân phối ảnh. Giấy phép MIT của Pannellum chỉ áp dụng cho thư viện.
 
@@ -148,3 +148,9 @@ Kiểm tra bài viết, nguồn, ảnh và bố cục bằng `scripts/check_arti
 Nguồn ảnh: Vietnam.travel — Ninh Binh in 360. Chỉ tải và kiểm tra JPEG panorama; không chạy runtime hoặc iframe nguồn. Tái tạo bằng `scripts/prepare_ninh_binh_tour.py` (Pillow). Ảnh gốc lưu riêng trong `data/360-tours/ninh-binh/media/`; bản public được thu nhỏ còn 4096×2048 cho desktop và 2048×1024 cho mobile để giảm bộ nhớ WebGL. Metadata gồm liên kết giữa 8 cảnh; tên cảnh được chuyển sang tiếng Việt. Trình xem hỗ trợ cả cubemap và equirectangular. Quyền phân phối ảnh nguồn chưa được xác minh độc lập; user đã yêu cầu tự phục vụ lại và ghi nguồn.
 
 Popup từ bản đồ hiển thị ranh giới hành chính bên trái và tổng quan có ảnh AI, caption, nguồn dẫn bên phải. “Tìm hiểu chi tiết” mở Địa danh. Tab Địa lý – Tổng quan đã bỏ; URL cũ với `tab=tong-quan` mở Địa danh. Dữ liệu bản đồ hiện là ranh giới hành chính tham khảo, không có lớp thửa đất địa chính.
+
+### Panorama Sa Pa — Lào Cai
+
+Nguồn: [VRTour — Thị xã Sa Pa](https://3d.vrtour.vn/tour/sapa/thi-xa-sapa.html). Có 22 cảnh tại trung tâm Sa Pa: toàn cảnh trên cao, nhà thờ đá, quảng trường, Sun Plaza, hồ Sa Pa, con đường tình yêu và chợ Sa Pa. Tour chưa bao gồm Fansipan, Bắc Hà hoặc Mường Hoa.
+
+Tái tạo bằng `uv run --no-project --with pillow python scripts/prepare_sapa_tour.py` (cần curl). Script chỉ đọc XML và tải JPEG, kiểm tra ảnh rồi ghép từng mặt cubemap; không thực thi player/JavaScript nguồn. Bản gốc nằm trong `data/360-tours/sa-pa/`; ảnh public là 2048×2048 mỗi mặt trên desktop và 1024×1024 trên mobile. Manifest `dist/assets/360/sa-pa.json` giữ mã cảnh, tên, góc nhìn, liên kết hotspot, URL nguồn và SHA-256 của các mảnh ảnh từng mặt. Tên cảnh trùng được đánh số góc để dễ chọn. Dùng trình xem và nhạc nền local hiện có; nguồn VRTour hiển thị dưới tour. Quyền phân phối lại chưa được xác minh độc lập; người dùng đã yêu cầu tải và tích hợp vào website.
