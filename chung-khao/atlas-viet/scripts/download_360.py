@@ -25,15 +25,19 @@ ALLOWED_HOSTS = {"vietnam.travel", "www.airpano.com"}
 def fetch(url):
     if urlparse(url).hostname not in ALLOWED_HOSTS:
         raise ValueError(f"Unexpected host: {url}")
-    for attempt in range(3):
+    # The Vietnam.travel media origin currently stalls on missing/broken files.
+    # Bound each media request; a later run retries the failed entries.
+    vietnam_media = url.startswith("https://vietnam.travel/") and "/media/" in url
+    attempts = 1 if vietnam_media else 2
+    for attempt in range(attempts):
         try:
             request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Referer": url})
-            with urllib.request.urlopen(request, context=CONTEXT, timeout=60) as response:
+            with urllib.request.urlopen(request, context=CONTEXT, timeout=8 if vietnam_media else 20) as response:
                 if urlparse(response.url).hostname not in ALLOWED_HOSTS:
                     raise ValueError(f"Unexpected redirect: {response.url}")
                 return response.read(), response.headers.get_content_type()
         except Exception:
-            if attempt == 2:
+            if attempt == attempts - 1:
                 raise
             time.sleep(attempt + 1)
 
@@ -69,9 +73,13 @@ def main():
         return path
 
     def source(tour, url, filename):
-        content, mime = fetch(url)
         path = f"{tour}/source/{filename}"
         target = ROOT / path
+        if target.exists():
+            content = target.read_bytes()
+            mime = "text/plain" if filename.endswith(".txt") else "application/xml"
+        else:
+            content, mime = fetch(url)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(content)
         files.append({"path": path, "url": url, "bytes": len(content), "sha256": hashlib.sha256(content).hexdigest(), "content_type": mime})
@@ -141,7 +149,12 @@ def main():
             content = target.read_bytes()
             if hashlib.sha256(content).hexdigest() == old["sha256"]:
                 return old
-        content, mime = fetch(url)
+        # Recover complete media written before an interrupted inventory flush.
+        if target.exists() and old is None:
+            content = target.read_bytes()
+            mime = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".mp3": "audio/mpeg", ".ogg": "audio/ogg"}.get(target.suffix.lower(), "application/octet-stream")
+        else:
+            content, mime = fetch(url)
         suffix = target.suffix.lower()
         if suffix in {".jpg", ".jpeg"} and not content.startswith(b"\xff\xd8\xff"):
             raise ValueError("Invalid JPEG response")
@@ -156,7 +169,8 @@ def main():
         return {"path": path, "url": url, "bytes": len(content), "sha256": hashlib.sha256(content).hexdigest(), "content_type": mime}
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
-        futures = {pool.submit(download, item): item for item in jobs.items()}
+        ordered = sorted(jobs.items(), key=lambda item: (item[0].startswith("ninh-binh/"), "panorama_" not in item[0], item[0]))
+        futures = {pool.submit(download, item): item for item in ordered}
         for count, future in enumerate(concurrent.futures.as_completed(futures), 1):
             path, url = futures[future]
             try:
@@ -170,6 +184,14 @@ def main():
 
     for item in tours:
         item["download_status"] = "complete" if not any(f["path"].startswith(item["id"] + "/") for f in failures) else "partial"
+        downloaded_paths = {f["path"] for f in files}
+        for scene in item["scenes"]:
+            if scene["projection"] == "equirectangular":
+                available = any(image["path"] in downloaded_paths for image in scene["images"])
+            else:
+                available = any(all(path in downloaded_paths for path in faces.values()) for faces in scene["variants"].values())
+            scene["primary_media_available"] = available
+        item["available_scene_count"] = sum(scene["primary_media_available"] for scene in item["scenes"])
         write_json(ROOT / item["id"] / "tour.json", item)
     write_json(ROOT / "manifest.json", {"downloaded_at": datetime.now(timezone.utc).isoformat(), "scope": "Public panorama media and metadata; original player runtime is excluded.", "tours": tours})
     write_json(inventory_path, {"files": sorted(files, key=lambda item: item["path"]), "failures": failures})
