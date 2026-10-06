@@ -1,0 +1,241 @@
+{
+  "provider": "https://api.thucchien.ai",
+  "model": "gpt-image-2.5-sunburst",
+  "updated_on": "2026-10-06T08:10:32.314181+00:00",
+  "label": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+  "jobs": [
+    {
+      "id": "bai-dinh",
+      "place_id": "bai-dinh",
+      "name": "Chùa Bái Đính",
+      "source_ids": [
+        "S08"
+      ],
+      "reference": "references/bai-dinh.jpg",
+      "prompt_file": "prompts/bai-dinh.txt",
+      "raw_output": "output/imagegen/bai-dinh.png",
+      "delivery_output": "generated/bai-dinh.webp",
+      "alt": "Ảnh minh họa AI quần thể chùa Bái Đính với bảo tháp và các điện thờ",
+      "scene_prompt": "Scene: the newer Bai Dinh Buddhist temple complex, Ninh Binh, Vietnam. Image 1 is the spatial and architecture reference, showing the tower, low temple halls, paths and green hills. Retain the referenced tower proportions and floor count, roof forms and relative building positions. Horizontal elevated wide view with soft golden afternoon light, crisp roof and stone texture, green landscape and natural sky. Respectful, serene atmosphere. Do not duplicate the tower, invent extra halls, change the temple layout, add magical light or substitute architecture from another country.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:14.430219+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.054535",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "7aeeb4b860c63751f52209ab842d89a89deb95d304e2424d2bdd3dc6084f03d8"
+    },
+    {
+      "id": "cuc-phuong",
+      "place_id": "cuc-phuong",
+      "name": "Vườn quốc gia Cúc Phương",
+      "source_ids": [
+        "S07",
+        "S16"
+      ],
+      "reference": "references/cuc-phuong.jpg",
+      "prompt_file": "prompts/cuc-phuong.txt",
+      "raw_output": "output/imagegen/cuc-phuong.png",
+      "delivery_output": "generated/cuc-phuong.webp",
+      "alt": "Ảnh minh họa AI lối đi giữa rừng nhiệt đới tại Cúc Phương",
+      "scene_prompt": "Scene: Cuc Phuong National Park, Vietnam. Image 1 is the reference for a real tropical forest environment and narrow walking path. Preserve the dense layered canopy, varied tree trunks, vines, humid forest floor and realistic vegetation. An inviting path leads into the middle distance under soft morning light filtered through leaves. Natural rich greens, detailed bark and leaf textures, quiet conservation-focused atmosphere. Do not add exotic wildlife, butterflies in impossible abundance, waterfalls, cabins or people touching or feeding animals. Avoid a fantasy glowing jungle.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:14.430173+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.054276000000000005",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "1add584a7873f084cdab8c194bfefb84186dbf77475583bc697818e1a1435368"
+    },
+    {
+      "id": "hoa-lu",
+      "place_id": "hoa-lu",
+      "name": "Cố đô Hoa Lư",
+      "source_ids": [
+        "S05"
+      ],
+      "reference": "references/hoa-lu.jpg",
+      "prompt_file": "prompts/hoa-lu.txt",
+      "raw_output": "output/imagegen/hoa-lu.png",
+      "delivery_output": "generated/hoa-lu.webp",
+      "alt": "Ảnh minh họa AI không gian đền vua Đinh Tiên Hoàng tại Cố đô Hoa Lư",
+      "scene_prompt": "Scene: the Dinh Tien Hoang memorial temple at the Hoa Lu ancient capital, Ninh Binh, Vietnam. Image 1 is the reference for the present-day temple exterior, courtyard and central stone feature. Preserve the architectural silhouette, low tiled roof, stone details and courtyard proportions. Eye-level horizontal architectural photography, soft warm morning illumination, realistic weathered surfaces and surrounding trees. This is the existing heritage site, not a reconstruction of a tenth-century imperial palace. Do not add kings, soldiers, lantern-lined nightlife or buildings from Pho Co Hoa Lu.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:14.430105+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.054545",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "a5c60299bd95d77ff7ed32e14d3708a1df634dcf5eb94b1af9714db68e72451f"
+    },
+    {
+      "id": "tam-coc",
+      "place_id": "tam-coc-bich-dong",
+      "name": "Tam Cốc",
+      "source_ids": [
+        "S06"
+      ],
+      "reference": "references/tam-coc.jpg",
+      "prompt_file": "prompts/tam-coc.txt",
+      "raw_output": "output/imagegen/tam-coc.png",
+      "delivery_output": "generated/tam-coc.webp",
+      "alt": "Ảnh minh họa AI thuyền chèo trên sông Ngô Đồng ở Tam Cốc trong cảnh mùa lúa chín",
+      "scene_prompt": "Scene: Tam Coc along the Ngo Dong River, Ninh Binh, Vietnam. Image 1 is a location reference for the river, small rowing boat, vegetation and rural setting. Create a wider but geographically plausible view with limestone hills and low, flat rice fields beside the water. Golden ripe rice is an intentional seasonal illustration, not a claim about conditions today. One or two modest rowing boats, calm river, warm late afternoon light, natural green and gold colors. Avoid terraced mountain rice fields, ocean water and Trang An temple landmarks. Do not invent a precise aerial map of river bends not shown in the reference.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:14.429940+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.054757",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "92634ae21000a761a259486f0d50a4ef7461008162d9f59e8848a2a95735d863"
+    },
+    {
+      "id": "bich-dong",
+      "place_id": "tam-coc-bich-dong",
+      "name": "Bích Động",
+      "source_ids": [
+        "S06"
+      ],
+      "reference": "references/bich-dong.jpg",
+      "prompt_file": "prompts/bich-dong.txt",
+      "raw_output": "output/imagegen/bich-dong.png",
+      "delivery_output": "generated/bich-dong.webp",
+      "alt": "Ảnh minh họa AI kiến trúc chùa Bích Động dưới tán cây xanh",
+      "scene_prompt": "Scene: Bich Dong Pagoda, Ninh Binh, Vietnam. Image 1 is the architecture reference. Preserve the visible traditional tiled roof, stone columns, dark wooden doors, stone base and relationship to surrounding greenery. Create a horizontal courtyard view with gently filtered morning light and authentic aged materials. Calm, respectful atmosphere; natural stone, dark timber and foliage colors. Do not force the Lower, Middle and Upper pagodas into one invented panorama; do not replace this building with a Chinese palace or a different pagoda. Keep the referenced building recognizable.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:14.430027+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.054271",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "6a2d49d03cd78f32dfdcfa09c3bea6485488567e58f4f549a437daf5977a58eb"
+    },
+    {
+      "id": "trang-an",
+      "place_id": "trang-an",
+      "name": "Tràng An",
+      "source_ids": [
+        "S04"
+      ],
+      "reference": "references/trang-an.jpg",
+      "prompt_file": "prompts/trang-an.txt",
+      "raw_output": "output/imagegen/trang-an.png",
+      "delivery_output": "generated/trang-an.webp",
+      "alt": "Ảnh minh họa AI cảnh thuyền giữa núi đá vôi và dòng nước ở Tràng An",
+      "scene_prompt": "Scene: Trang An, Ninh Binh, Vietnam. Image 1 is the location and terrain reference: small rowing boats on calm water below vegetated limestone cliffs. Retain the natural cliff shapes and believable river setting. Wide composition near water level, layered green karst scenery, a few small rowing boats with realistically sized people and life jackets. Soft clear morning light with faint distant haze, gentle reflections and natural greens. Do not add rice terraces, sea islands or unrelated temples.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:14.429763+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.054617",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "5d41041166ffe6696524a7618d80632c5266da9dd5454476ffdb64bf04f46441"
+    },
+    {
+      "id": "phat-diem",
+      "place_id": "phat-diem",
+      "name": "Nhà thờ đá Phát Diệm",
+      "source_ids": [
+        "S09"
+      ],
+      "reference": "references/phat-diem.jpg",
+      "prompt_file": "prompts/phat-diem.txt",
+      "raw_output": "output/imagegen/phat-diem.png",
+      "delivery_output": "generated/phat-diem.webp",
+      "alt": "Ảnh minh họa AI Phương đình trong quần thể Nhà thờ đá Phát Diệm",
+      "scene_prompt": "Scene: Phat Diem Cathedral complex, Ninh Binh, Vietnam, focusing on the Phuong Dinh shown in Image 1. Use Image 1 as the building identity and architecture reference. Preserve its distinctive stone facade, traditional Vietnamese tiered roof forms, openings and proportions. Horizontal three-quarter courtyard view, straight vertical lines, finely detailed weathered stone, soft morning sunlight, natural trees and calm sky. Respect the Catholic site and its Vietnamese architectural character. Do not turn it into a European Gothic cathedral, add pointed spires, redesign its roof or invent decorative carvings.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:49.035313+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.048834",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "e4b7c4814f7e1e3a5e871076a518cc60393755761bb479e65da4dccc15a47e52"
+    },
+    {
+      "id": "hang-mua",
+      "place_id": "hang-mua",
+      "name": "Hang Múa",
+      "source_ids": [
+        "S10"
+      ],
+      "reference": "references/hang-mua.jpg",
+      "prompt_file": "prompts/hang-mua.txt",
+      "raw_output": "output/imagegen/hang-mua.png",
+      "delivery_output": "generated/hang-mua.webp",
+      "alt": "Ảnh minh họa AI đường bậc đá lên đỉnh núi Hang Múa và đồng ruộng bên dưới",
+      "scene_prompt": "Scene: Hang Mua viewpoint, Ninh Binh, Vietnam. Image 1 is the reference for the limestone peak, winding stone stairway, summit structure and surrounding flat farmland. Preserve the recognizable mountain silhouette, stairway route and small summit structure. Horizontal elevated view from a plausible nearby viewpoint, stone steps as a visual leading line, broad rural valley behind. Warm late afternoon light, natural green vegetation, detailed weathered limestone. Do not add glass bridges, cable cars, impossible sheer stairways, invented towers or unrelated landmark statues.",
+      "region": "ninh-binh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:09:49.907200+00:00",
+      "endpoint": "https://api.thucchien.ai/images/edits",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.054928000000000005",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "385cdd26120332dc9e0b538aabd265fd5d28b9aae4732a6d811d0afcdf63bd97"
+    }
+  ]
+}

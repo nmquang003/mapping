@@ -1,7 +1,7 @@
 {
   "provider": "https://api.thucchien.ai/images/generations",
   "model": "gpt-image-2.5-sunburst",
-  "updated_on": "2026-10-06T07:54:58.130994+00:00",
+  "updated_on": "2026-10-06T08:03:51.688328+00:00",
   "label": "Minh họa do AI tạo; không phải ảnh tư liệu.",
   "jobs": [
     {
@@ -24,6 +24,194 @@
       "status": "connection_error",
       "error_type": "ConnectionError",
       "note": "Không tự gửi lại. Nếu lỗi xảy ra sau khi gửi, yêu cầu có thể đã được API xử lý."
+    },
+    {
+      "region": "ha-noi",
+      "id": "pho-co-ha-noi",
+      "place_id": "pho-co-ha-noi",
+      "name": "Phố cổ Hà Nội",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "prompt_file": "prompts/pho-co-ha-noi.txt",
+      "raw_output": "output/imagegen/pho-co-ha-noi.png",
+      "delivery_output": "generated/pho-co-ha-noi.webp",
+      "alt": "Minh họa do AI tạo về Phố cổ Hà Nội",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:58:16.600260+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04235",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "e6e99edac38a91e5befc61a4efe99f9474acce2cf84955f969885eb971269cfe"
+    },
+    {
+      "region": "ha-noi",
+      "id": "van-mieu-quoc-tu-giam",
+      "place_id": "van-mieu-quoc-tu-giam",
+      "name": "Văn Miếu – Quốc Tử Giám",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt_file": "prompts/van-mieu-quoc-tu-giam.txt",
+      "raw_output": "output/imagegen/van-mieu-quoc-tu-giam.png",
+      "delivery_output": "generated/van-mieu-quoc-tu-giam.webp",
+      "alt": "Minh họa do AI tạo về Văn Miếu – Quốc Tử Giám",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:59:18.170109+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042355000000000004",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "76d08ccca43423af1cf9b3b70646e0ed8b71af89c66d61f1f59919d395658ad3"
+    },
+    {
+      "region": "ha-noi",
+      "id": "hoang-thanh-thang-long",
+      "place_id": "hoang-thanh-thang-long",
+      "name": "Hoàng thành Thăng Long",
+      "source_ids": [
+        "S03",
+        "S06",
+        "S07"
+      ],
+      "prompt_file": "prompts/hoang-thanh-thang-long.txt",
+      "raw_output": "output/imagegen/hoang-thanh-thang-long.png",
+      "delivery_output": "generated/hoang-thanh-thang-long.webp",
+      "alt": "Minh họa do AI tạo về Hoàng thành Thăng Long",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:00:03.476110+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04242",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "d70da685ecfaba9d2f56af08e1c29b74e7255c62922eae644768d0b77ab89794"
+    },
+    {
+      "region": "ha-noi",
+      "id": "lang-chu-tich-ho-chi-minh",
+      "place_id": "lang-chu-tich-ho-chi-minh",
+      "name": "Lăng Chủ tịch Hồ Chí Minh",
+      "source_ids": [
+        "S03",
+        "S05"
+      ],
+      "prompt_file": "prompts/lang-chu-tich-ho-chi-minh.txt",
+      "raw_output": "output/imagegen/lang-chu-tich-ho-chi-minh.png",
+      "delivery_output": "generated/lang-chu-tich-ho-chi-minh.webp",
+      "alt": "Minh họa do AI tạo về Lăng Chủ tịch Hồ Chí Minh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:01:02.936418+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042355000000000004",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "53b28d9519af23e41ef30ab587ec07ff7873c46617307ef9690eb92223b586a4"
+    },
+    {
+      "region": "ha-noi",
+      "id": "nha-hat-lon-ha-noi",
+      "place_id": "nha-hat-lon-ha-noi",
+      "name": "Nhà hát Lớn Hà Nội",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "prompt_file": "prompts/nha-hat-lon-ha-noi.txt",
+      "raw_output": "output/imagegen/nha-hat-lon-ha-noi.png",
+      "delivery_output": "generated/nha-hat-lon-ha-noi.webp",
+      "alt": "Minh họa do AI tạo về Nhà hát Lớn Hà Nội",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:01:42.408973+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04236",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "b8b65ceedd7b00e9256029a02ba5092f0d66ddd237a44a7f3f61eedf8bf43a6d"
+    },
+    {
+      "region": "ha-noi",
+      "id": "bao-tang-dan-toc-hoc",
+      "place_id": "bao-tang-dan-toc-hoc",
+      "name": "Bảo tàng Dân tộc học Việt Nam",
+      "source_ids": [
+        "S05"
+      ],
+      "prompt_file": "prompts/bao-tang-dan-toc-hoc.txt",
+      "raw_output": "output/imagegen/bao-tang-dan-toc-hoc.png",
+      "delivery_output": "generated/bao-tang-dan-toc-hoc.webp",
+      "alt": "Minh họa do AI tạo về Bảo tàng Dân tộc học Việt Nam",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:02:37.880346+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042435",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "c5866cc2191d18aa613c932876d7b5801aa4a2982d23e0e944da7cf941322a13"
+    },
+    {
+      "region": "ha-noi",
+      "id": "nha-tho-lon-ha-noi",
+      "place_id": "nha-tho-lon-ha-noi",
+      "name": "Nhà thờ Lớn Hà Nội",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "prompt_file": "prompts/nha-tho-lon-ha-noi.txt",
+      "raw_output": "output/imagegen/nha-tho-lon-ha-noi.png",
+      "delivery_output": "generated/nha-tho-lon-ha-noi.webp",
+      "alt": "Minh họa do AI tạo về Nhà thờ Lớn Hà Nội",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:03:13.938610+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042375",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "175db5fd13432cd6ae8877a56740001d3ca1fe7b526524239d88da9f29f2ffd1"
     }
   ]
 }

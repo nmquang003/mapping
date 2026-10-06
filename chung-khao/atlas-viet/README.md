@@ -28,9 +28,23 @@ Mở http://127.0.0.1:4321/. Cần máy chủ HTTP để tải GeoJSON; không m
 
 Nội dung ngắn được đánh dấu là bản mẫu. Tọa độ địa danh là vị trí tham khảo gần đúng, chưa đối chiếu từng điểm với tài liệu chính thức. Không dùng cho đo đạc, địa chính hoặc dẫn đường.
 
-Ảnh hiện tại là ảnh thực tế có nguồn và giấy phép, **chưa phải ảnh AI**. Khung trợ lý ghi rõ **chưa kết nối API AI**, không giả lập câu trả lời AI.
+Ảnh AI đã được nối vào thẻ điểm đến, banner trang chi tiết và các địa danh có ảnh tương ứng. Tab **Bộ ảnh AI** hiển thị ảnh tuyển chọn theo Hà Nội, Quảng Ninh và Lào Cai; bấm ảnh để xem lớn, giới thiệu địa danh và nguồn. Bộ ảnh Quảng Ninh/Lào Cai rộng hơn các dấu mốc Hạ Long/Sa Pa trên bản đồ. Ảnh có nhãn minh họa, không phải ảnh tư liệu. Ninh Bình hiện dùng ảnh thực tế có nguồn vì chưa có ảnh AI hoàn tất trong thư mục đầu vào.
 
-Trước khi nộp: đối chiếu ranh giới, tọa độ, nội dung và mốc dữ liệu; bổ sung hình minh họa AI bằng API BTC và chatbot tiếng Việt chỉ trả lời từ kho tri thức đã duyệt, có dẫn nguồn.
+Khung trợ lý ghi rõ **chưa kết nối API AI**, không giả lập câu trả lời AI.
+
+Trước khi nộp: đối chiếu ranh giới, tọa độ, nội dung và mốc dữ liệu; kiểm tra chi tiết ảnh AI, bổ sung ảnh còn thiếu và chatbot tiếng Việt chỉ trả lời từ kho tri thức đã duyệt, có dẫn nguồn.
+
+## Đồng bộ ảnh mới
+
+Sau khi script tạo ảnh hoàn thành thêm các địa danh, chạy từ thư mục `atlas-viet`:
+
+```sh
+python3 scripts/sync_ai_images.py
+```
+
+Script đọc `../<địa-phương>-data/images/generation-plan.json`, chỉ lấy WebP đã tồn tại, copy vào `dist/assets/ai/<địa-phương>/` và xuất `dist/assets/ai-images.json` với tên, alt, caption, place_id và nguồn nội dung. Không gọi API hoặc đọc key. Tải lại web sau khi đồng bộ. Toàn bộ tài nguyên cần để triển khai nằm trong `dist/`.
+
+Các ảnh chưa tạo không sinh đường dẫn lỗi. Khi chưa có ảnh AI, banner vẫn dùng ảnh thực tế và giữ trích dẫn tương ứng. Nhãn nguồn nội dung địa danh không phải chứng nhận mọi chi tiết trong ảnh AI đúng thực tế.
 
 ## Cấu trúc
 
@@ -41,6 +55,7 @@ Trước khi nộp: đối chiếu ranh giới, tọa độ, nội dung và mố
 - `dist/assets/credits.json`: tác giả, nguồn, giấy phép và thay đổi đối với ảnh.
 - `scripts/prepare_assets.py`: tái tạo tài nguyên từ nguồn công khai đã ghim phiên bản.
 - `scripts/check_ui.py`: kiểm tra luồng thực trên Chromium và tạo ảnh QA ở `.qa/`.
+- `scripts/sync_ai_images.py`: đồng bộ ảnh đã tạo và xuất danh mục media cho web.
 
 ## Nguồn bản đồ
 

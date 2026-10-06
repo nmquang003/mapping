@@ -1,0 +1,420 @@
+{
+  "regions": {
+    "ninh-binh": {
+      "name": "Ninh Bình",
+      "images": []
+    },
+    "ha-noi": {
+      "name": "Hà Nội",
+      "images": [
+        {
+          "id": "pho-co-ha-noi",
+          "placeId": "pho-co-ha-noi",
+          "name": "Phố cổ Hà Nội",
+          "src": "assets/ai/ha-noi/pho-co-ha-noi.webp",
+          "alt": "Minh họa do AI tạo về Phố cổ Hà Nội",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Khu phố gắn với thương mại và nghề truyền thống, thể hiện qua những tên phố bắt đầu bằng Hàng.",
+          "sources": [
+            {
+              "title": "Hanoi: six heritage sites",
+              "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites"
+            },
+            {
+              "title": "3 walking tours of Hanoi",
+              "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "van-mieu-quoc-tu-giam",
+          "placeId": "van-mieu-quoc-tu-giam",
+          "name": "Văn Miếu – Quốc Tử Giám",
+          "src": "assets/ai/ha-noi/van-mieu-quoc-tu-giam.webp",
+          "alt": "Minh họa do AI tạo về Văn Miếu – Quốc Tử Giám",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Di tích gắn với truyền thống học tập và khoa cử, có hệ thống bia tiến sĩ được bài giới thiệu di sản nhắc tới.",
+          "sources": [
+            {
+              "title": "Hanoi: six heritage sites",
+              "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "hoang-thanh-thang-long",
+          "placeId": "hoang-thanh-thang-long",
+          "name": "Hoàng thành Thăng Long",
+          "src": "assets/ai/ha-noi/hoang-thanh-thang-long.webp",
+          "alt": "Minh họa do AI tạo về Hoàng thành Thăng Long",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Khu di sản phản ánh nhiều lớp lịch sử kinh đô, với dấu tích kiến trúc và khảo cổ qua các thời kỳ.",
+          "sources": [
+            {
+              "title": "Hanoi: six heritage sites",
+              "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites"
+            },
+            {
+              "title": "Giới thiệu Hoàng thành Thăng Long",
+              "url": "https://hoangthanhthanglong.vn/gioi-thieu/"
+            },
+            {
+              "title": "Thư ngỏ – Hoàng thành Thăng Long",
+              "url": "https://hoangthanhthanglong.vn/thu-ngo/"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "lang-chu-tich-ho-chi-minh",
+          "placeId": "lang-chu-tich-ho-chi-minh",
+          "name": "Lăng Chủ tịch Hồ Chí Minh",
+          "src": "assets/ai/ha-noi/lang-chu-tich-ho-chi-minh.webp",
+          "alt": "Minh họa do AI tạo về Lăng Chủ tịch Hồ Chí Minh",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Không gian tưởng niệm Chủ tịch Hồ Chí Minh được nguồn du lịch Hà Nội giới thiệu.",
+          "sources": [
+            {
+              "title": "Hanoi: six heritage sites",
+              "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites"
+            },
+            {
+              "title": "11 must-see attractions in Ha Noi",
+              "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "nha-hat-lon-ha-noi",
+          "placeId": "nha-hat-lon-ha-noi",
+          "name": "Nhà hát Lớn Hà Nội",
+          "src": "assets/ai/ha-noi/nha-hat-lon-ha-noi.webp",
+          "alt": "Minh họa do AI tạo về Nhà hát Lớn Hà Nội",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Công trình kiến trúc và địa điểm biểu diễn được các bài du lịch giới thiệu trong khu vực trung tâm Hà Nội.",
+          "sources": [
+            {
+              "title": "3 walking tours of Hanoi",
+              "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi"
+            },
+            {
+              "title": "11 must-see attractions in Ha Noi",
+              "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "bao-tang-dan-toc-hoc",
+          "placeId": "bao-tang-dan-toc-hoc",
+          "name": "Bảo tàng Dân tộc học Việt Nam",
+          "src": "assets/ai/ha-noi/bao-tang-dan-toc-hoc.webp",
+          "alt": "Minh họa do AI tạo về Bảo tàng Dân tộc học Việt Nam",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Bảo tàng giới thiệu đời sống và văn hóa của các cộng đồng dân tộc Việt Nam.",
+          "sources": [
+            {
+              "title": "11 must-see attractions in Ha Noi",
+              "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "nha-tho-lon-ha-noi",
+          "placeId": "nha-tho-lon-ha-noi",
+          "name": "Nhà thờ Lớn Hà Nội",
+          "src": "assets/ai/ha-noi/nha-tho-lon-ha-noi.webp",
+          "alt": "Minh họa do AI tạo về Nhà thờ Lớn Hà Nội",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Công trình Công giáo được nguồn du lịch nhắc tới qua kiến trúc Gothic và vị trí trong tuyến khám phá trung tâm.",
+          "sources": [
+            {
+              "title": "3 walking tours of Hanoi",
+              "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi"
+            },
+            {
+              "title": "11 must-see attractions in Ha Noi",
+              "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        }
+      ]
+    },
+    "quang-ninh": {
+      "name": "Quảng Ninh",
+      "images": [
+        {
+          "id": "vinh-ha-long",
+          "placeId": "vinh-ha-long",
+          "name": "Vịnh Hạ Long",
+          "src": "assets/ai/quang-ninh/vinh-ha-long.webp",
+          "alt": "Minh họa do AI tạo về Vịnh Hạ Long",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Cảnh quan vịnh với núi đá vôi, đảo và hang động; phù hợp giới thiệu địa hình karst và trải nghiệm ngắm cảnh trên biển.",
+          "sources": [
+            {
+              "title": "Ha Long",
+              "url": "https://vietnam.travel/places-to-go/northern-vietnam/ha-long"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "vinh-bai-tu-long",
+          "placeId": "vinh-bai-tu-long",
+          "name": "Vịnh Bái Tử Long",
+          "src": "assets/ai/quang-ninh/vinh-bai-tu-long.webp",
+          "alt": "Minh họa do AI tạo về Vịnh Bái Tử Long",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Vịnh được nguồn giới thiệu Quan Lạn xác định là không gian biển nơi đảo Quan Lạn tọa lạc. Hồ sơ hiện tập trung vào mối liên hệ với Quan Lạn.",
+          "sources": [
+            {
+              "title": "Discovering the beauty of Quan Lan Island",
+              "url": "https://vietnamtourism.gov.vn/en/post/9785"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "co-to",
+          "placeId": "co-to",
+          "name": "Cô Tô",
+          "src": "assets/ai/quang-ninh/co-to.webp",
+          "alt": "Minh họa do AI tạo về Cô Tô",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Điểm đến biển đảo có bãi Hồng Vàn, Vàn Chảy và cảnh quan bờ đá Cầu Mỵ.",
+          "sources": [
+            {
+              "title": "Co To Island: pristine beauty of Northeast Vietnam",
+              "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "thanh-lan",
+          "placeId": "thanh-lan",
+          "name": "Đảo Thanh Lân",
+          "src": "assets/ai/quang-ninh/thanh-lan.webp",
+          "alt": "Minh họa do AI tạo về Đảo Thanh Lân",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Đảo thuộc khu vực Cô Tô, được nguồn du lịch giới thiệu với rừng và cảnh quan bờ đá.",
+          "sources": [
+            {
+              "title": "Co To Island: pristine beauty of Northeast Vietnam",
+              "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "quan-lan",
+          "placeId": "quan-lan",
+          "name": "Quan Lạn",
+          "src": "assets/ai/quang-ninh/quan-lan.webp",
+          "alt": "Minh họa do AI tạo về Quan Lạn",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Đảo trong vịnh Bái Tử Long, kết hợp bãi biển với cụm di tích đình, đền, chùa.",
+          "sources": [
+            {
+              "title": "Discovering the beauty of Quan Lan Island",
+              "url": "https://vietnamtourism.gov.vn/en/post/9785"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "yen-tu",
+          "placeId": "yen-tu",
+          "name": "Yên Tử",
+          "src": "assets/ai/quang-ninh/yen-tu.webp",
+          "alt": "Minh họa do AI tạo về Yên Tử",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Khu di tích và danh thắng gắn với Trần Nhân Tông, Thiền phái Trúc Lâm và hệ thống chùa, am, tháp giữa núi rừng.",
+          "sources": [
+            {
+              "title": "Khu di tích lịch sử và danh lam thắng cảnh Yên Tử",
+              "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "bao-tang-quang-ninh",
+          "placeId": "bao-tang-quang-ninh",
+          "name": "Bảo tàng – Thư viện Quảng Ninh",
+          "src": "assets/ai/quang-ninh/bao-tang-quang-ninh.webp",
+          "alt": "Minh họa do AI tạo về Bảo tàng – Thư viện Quảng Ninh",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Đơn vị lưu giữ, nghiên cứu, trưng bày và giới thiệu di sản, lịch sử, văn hóa, thiên nhiên, con người Quảng Ninh.",
+          "sources": [
+            {
+              "title": "Bảo tàng – Thư viện thành phố",
+              "url": "https://www.quangninh.gov.vn/so/sovanhoathethao/trang/chitietbvgioithieu.aspx?bvid=84"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        }
+      ]
+    },
+    "lao-cai": {
+      "name": "Lào Cai",
+      "images": [
+        {
+          "id": "sa-pa",
+          "placeId": "sa-pa",
+          "name": "Sa Pa",
+          "src": "assets/ai/lao-cai/sa-pa.webp",
+          "alt": "Minh họa do AI tạo về Sa Pa",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Điểm đến vùng núi với thung lũng, ruộng bậc thang và những tuyến khám phá làng được nguồn du lịch giới thiệu.",
+          "sources": [
+            {
+              "title": "Sapa",
+              "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "fansipan",
+          "placeId": "fansipan",
+          "name": "Fansipan",
+          "src": "assets/ai/lao-cai/fansipan.webp",
+          "alt": "Minh họa do AI tạo về Fansipan",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Đỉnh núi được nguồn Sa Pa giới thiệu như điểm ngắm cảnh núi và trải nghiệm lên cao.",
+          "sources": [
+            {
+              "title": "Sapa",
+              "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "cho-bac-ha",
+          "placeId": "cho-bac-ha",
+          "name": "Chợ Bắc Hà",
+          "src": "assets/ai/lao-cai/cho-bac-ha.webp",
+          "alt": "Minh họa do AI tạo về Chợ Bắc Hà",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Chợ phiên được nguồn du lịch Sa Pa giới thiệu như điểm khám phá sinh hoạt và giao thương địa phương.",
+          "sources": [
+            {
+              "title": "Sapa",
+              "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "mu-cang-chai",
+          "placeId": "mu-cang-chai",
+          "name": "Mù Cang Chải",
+          "src": "assets/ai/lao-cai/mu-cang-chai.webp",
+          "alt": "Minh họa do AI tạo về Mù Cang Chải",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Cảnh quan ruộng bậc thang gắn với canh tác, làng và văn hóa người Mông theo nguồn du lịch.",
+          "sources": [
+            {
+              "title": "4 things you will love about Mu Cang Chai",
+              "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai"
+            },
+            {
+              "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+              "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "khau-pha",
+          "placeId": "khau-pha",
+          "name": "Đèo Khau Phạ",
+          "src": "assets/ai/lao-cai/khau-pha.webp",
+          "alt": "Minh họa do AI tạo về Đèo Khau Phạ",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Đèo trong khu vực Mù Cang Chải – Tú Lệ, được bài du lịch giới thiệu với cảnh quan thung lũng và ruộng.",
+          "sources": [
+            {
+              "title": "4 things you will love about Mu Cang Chai",
+              "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai"
+            },
+            {
+              "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+              "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "ho-thac-ba",
+          "placeId": "ho-thac-ba",
+          "name": "Hồ Thác Bà",
+          "src": "assets/ai/lao-cai/ho-thac-ba.webp",
+          "alt": "Minh họa do AI tạo về Hồ Thác Bà",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Hồ hình thành cùng công trình thủy điện Thác Bà, được nguồn du lịch giới thiệu qua mặt nước, đảo và cảnh quan ven hồ.",
+          "sources": [
+            {
+              "title": "Thac Ba Lake: the emerald of Yen Bai",
+              "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai"
+            },
+            {
+              "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+              "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "ngoi-tu",
+          "placeId": "ngoi-tu",
+          "name": "Làng Ngòi Tu",
+          "src": "assets/ai/lao-cai/ngoi-tu.webp",
+          "alt": "Minh họa do AI tạo về Làng Ngòi Tu",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Điểm du lịch cộng đồng ở khu vực hồ Thác Bà, được nguồn giới thiệu qua nhà sàn, nghề thủ công và đời sống cộng đồng Dao.",
+          "sources": [
+            {
+              "title": "Thac Ba Lake: the emerald of Yen Bai",
+              "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai"
+            },
+            {
+              "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+              "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        }
+      ]
+    }
+  }
+}

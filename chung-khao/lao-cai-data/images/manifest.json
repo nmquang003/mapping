@@ -1,7 +1,7 @@
 {
   "provider": "https://api.thucchien.ai/images/generations",
   "model": "gpt-image-2.5-sunburst",
-  "updated_on": "2026-10-06T07:54:58.131151+00:00",
+  "updated_on": "2026-10-06T08:03:51.688959+00:00",
   "label": "Minh họa do AI tạo; không phải ảnh tư liệu.",
   "jobs": [
     {
@@ -19,10 +19,176 @@
       "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
       "visual_status": "pending_visual_review",
       "model": "gpt-image-2.5-sunburst",
-      "created_on": "2026-10-06T07:54:58.123934+00:00",
-      "status": "connection_error",
-      "error_type": "ConnectionError",
-      "note": "Không tự gửi lại. Nếu lỗi xảy ra sau khi gửi, yêu cầu có thể đã được API xử lý."
+      "created_on": "2026-10-06T07:57:39.867246+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042355000000000004",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "00d978a26bc5890b0facea297662f7af4440cdb15bf29867aed63b395c05028f"
+    },
+    {
+      "region": "lao-cai",
+      "id": "fansipan",
+      "place_id": "fansipan",
+      "name": "Fansipan",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt_file": "prompts/fansipan.txt",
+      "raw_output": "output/imagegen/fansipan.png",
+      "delivery_output": "generated/fansipan.webp",
+      "alt": "Minh họa do AI tạo về Fansipan",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:58:42.988438+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04234",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "dbf43b1dc4be807e456f20930ad9962968aaa260718a9704a99f672b8d56bbd5"
+    },
+    {
+      "region": "lao-cai",
+      "id": "cho-bac-ha",
+      "place_id": "cho-bac-ha",
+      "name": "Chợ Bắc Hà",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt_file": "prompts/cho-bac-ha.txt",
+      "raw_output": "output/imagegen/cho-bac-ha.png",
+      "delivery_output": "generated/cho-bac-ha.webp",
+      "alt": "Minh họa do AI tạo về Chợ Bắc Hà",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:59:26.088523+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042390000000000004",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "13e1972a95f30a0cce0c6eff5b2970e3f09213d4e6c8066519200c4f84371c6f"
+    },
+    {
+      "region": "lao-cai",
+      "id": "mu-cang-chai",
+      "place_id": "mu-cang-chai",
+      "name": "Mù Cang Chải",
+      "source_ids": [
+        "S04",
+        "S01"
+      ],
+      "prompt_file": "prompts/mu-cang-chai.txt",
+      "raw_output": "output/imagegen/mu-cang-chai.png",
+      "delivery_output": "generated/mu-cang-chai.webp",
+      "alt": "Minh họa do AI tạo về Mù Cang Chải",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:00:29.998444+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.04242",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "0e73bc8b9a92d7917729b24860de2bb3eb9908cf40f73186d5e9ffd9b1d3190b"
+    },
+    {
+      "region": "lao-cai",
+      "id": "khau-pha",
+      "place_id": "khau-pha",
+      "name": "Đèo Khau Phạ",
+      "source_ids": [
+        "S04",
+        "S01"
+      ],
+      "prompt_file": "prompts/khau-pha.txt",
+      "raw_output": "output/imagegen/khau-pha.png",
+      "delivery_output": "generated/khau-pha.webp",
+      "alt": "Minh họa do AI tạo về Đèo Khau Phạ",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:01:07.954014+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042395",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "9cdb919b0337c5d349c0002d1d57b01ebadf1a3db0cc788e4330e82173d0d7cd"
+    },
+    {
+      "region": "lao-cai",
+      "id": "ho-thac-ba",
+      "place_id": "ho-thac-ba",
+      "name": "Hồ Thác Bà",
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "prompt_file": "prompts/ho-thac-ba.txt",
+      "raw_output": "output/imagegen/ho-thac-ba.png",
+      "delivery_output": "generated/ho-thac-ba.webp",
+      "alt": "Minh họa do AI tạo về Hồ Thác Bà",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:02:08.295970+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042405000000000005",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "a132a7b9fbc8ae09031d59e97ec12171718a9cec106a7411d99e5214c26ab4a4"
+    },
+    {
+      "region": "lao-cai",
+      "id": "ngoi-tu",
+      "place_id": "ngoi-tu",
+      "name": "Làng Ngòi Tu",
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "prompt_file": "prompts/ngoi-tu.txt",
+      "raw_output": "output/imagegen/ngoi-tu.png",
+      "delivery_output": "generated/ngoi-tu.webp",
+      "alt": "Minh họa do AI tạo về Làng Ngòi Tu",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T08:02:43.416150+00:00",
+      "status": "generated",
+      "revised_prompt": null,
+      "cost_usd": "0.042405000000000005",
+      "raw_dimensions": [
+        1536,
+        1024
+      ],
+      "raw_format": "PNG",
+      "sha256": "4edb506e87728fcb19bfdb75aae8b563b9ae9892de8b1a945ebe8b1d50d14b24"
     }
   ]
 }
