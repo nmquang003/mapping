@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "",
-  "outputDirectory": "dist"
+  "buildCommand": "python3 scripts/prepare_vercel.py",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/*.py": {
+      "maxDuration": 300,
+      "excludeFiles": "{dist/assets/360/**,dist/assets/audio/**,.qa/**,.rag/**,scripts/**,rag/test_*.py}"
+    }
+  }
 }

@@ -122,7 +122,11 @@ Cần Chromium của Playwright có sẵn để chạy kiểm tra UI. Script ki�
 
 ## Xuất bản
 
-`dist/` là thư mục website tĩnh có thể triển khai. Bản mẫu ban đầu đã được commit/push; bản cập nhật phạm vi chưa xuất bản lên Sites. Tuân theo quy định trong `../AGENTS.md` khi commit/push tiếp.
+Vercel phục vụ giao diện từ `dist/` và hai Python Function `/api/status`, `/api/chat`. Đặt `ATLAS_PROVIDER=btc` và `THUCCHIEN_API_KEY` trong Environment Variables của Vercel (Production); không đặt key vào `dist/` hoặc Git.
+
+Build chạy `python3 scripts/prepare_vercel.py` để đóng gói bốn SQLite từ thư mục cha vào `data/` riêng cho backend. Chỉ mục BTC đã kiểm tra nằm trong `rag/index-btc.json`; mỗi function sao chép sang `/tmp` và chỉ tạo lại embedding nếu nội dung/model thay đổi. Khi cập nhật SQLite, chạy lại build-index bằng BTC rồi cập nhật chỉ mục này. Các ảnh panorama và audio được loại khỏi gói function. API dùng cùng origin với website, kiểm tra câu hỏi/lịch sử và giới hạn hai yêu cầu đồng thời trong mỗi instance.
+
+Tuân theo quy định trong `../AGENTS.md` khi commit/push tiếp.
 
 ## Bài viết và chú thích ảnh
 

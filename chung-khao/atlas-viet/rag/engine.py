@@ -16,7 +16,7 @@ from pathlib import Path
 from config import load_env
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_ROOT = ROOT.parent
+DATA_ROOT = Path(os.environ.get('ATLAS_DATA_ROOT', ROOT.parent))
 MODEL_DIMENSIONS = {'text-multilingual-embedding-002': 768, 'gemini-embedding-001': 3072,
                     'gemini-embedding-2': 3072, 'text-embedding-3-small': 1536,
                     'text-embedding-3-large': 3072, 'text-embedding-005': 768,
