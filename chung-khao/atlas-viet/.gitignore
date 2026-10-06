@@ -1,6 +1,11 @@
 .qa/
 data/*.geojson
 data/gis-tree.json
+data/360-tours/*/media/
+data/360-tours/*/loading/
+data/360-tours/*/panos/
+data/360-tours/*/sounds/
+data/360-tours/*/source/
 __pycache__/
 .openai/local.json
 data/360-tours/
