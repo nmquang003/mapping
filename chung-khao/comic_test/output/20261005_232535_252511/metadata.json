@@ -1,0 +1,24 @@
+{
+  "model_requested": "gpt-image-2.5-sunburst",
+  "size_requested": "1024x1536",
+  "quality_requested": "high",
+  "references": [
+    "minh.png",
+    "huy.png",
+    "ka_dem.png"
+  ],
+  "request_id": "req_794f853daac546acb5ce6ec4f1e952da",
+  "usage": {
+    "input_tokens": 6163,
+    "input_tokens_details": {
+      "image_tokens": 4593,
+      "text_tokens": 1570
+    },
+    "output_tokens": 1372,
+    "total_tokens": 7535,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    }
+  }
+}

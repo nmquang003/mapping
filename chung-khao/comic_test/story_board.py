@@ -1,0 +1,245 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["openai"]
+# ///
+import base64
+import json
+import os
+from contextlib import ExitStack
+from datetime import datetime
+from pathlib import Path
+
+from openai import OpenAI
+
+
+ROOT = Path(__file__).resolve().parent
+Char_dir = ROOT / "nhan_vat"
+REFERENCES = [
+    Char_dir / "minh.png",
+    Char_dir / "huy.png",
+    Char_dir / "ka_dem.png",
+]
+
+# Model API minh họa; không khẳng định là model nền của tool trong chat.
+MODEL = "gpt-image-2.5-sunburst"
+SIZE = "1024x1536"
+QUALITY = "high"
+
+PROMPT = """
+Tạo MỘT TRANG STORYBOARD truyện tranh dọc, tỷ lệ 2:3,
+cho truyện “ĐỒNG ĐỘI BÊN KIA MÀN HÌNH”.
+
+Đây là trang nội dung đầu tiên, KHÔNG PHẢI trang bìa.
+Tiêu đề nhỏ phía trên:
+“NGƯỜI BẠN LÚC HAI GIỜ SÁNG”
+
+=== VAI TRÒ CÁC ẢNH THAM CHIẾU ===
+
+Ảnh 1: character sheet của MINH.
+Giữ khuôn mặt, kiểu tóc đen hơi rối, vóc dáng sinh viên,
+áo thun trơn và tai nghe của Minh.
+Các góc mặt trong sheet đều thuộc cùng MỘT người.
+
+Ảnh 2: character sheet của HUY.
+Giữ khuôn mặt và kiểu tóc của Huy, phân biệt rõ với Minh.
+Huy là bạn cùng phòng, chỉ xuất hiện trên giường ở khung 1.
+
+Ảnh 3: avatar game KẠĐÊM.
+Dùng thiết kế áo choàng có mũ, giáp và chi tiết trăng lưỡi liềm
+cho nhân vật cứu đồng đội trong game.
+KạĐêm chỉ xuất hiện TRONG GAME và qua giao diện.
+Không vẽ KạĐêm thành người đang ở trong phòng Minh.
+
+Ảnh tham chiếu chỉ dùng để giữ nhận diện.
+Không sao chép bố cục character sheet vào trang truyện.
+
+=== PHONG CÁCH ===
+
+Storyboard đen trắng: nét chì và mực phác rõ ràng,
+mảng xám đơn giản để phân biệt sáng tối.
+Ưu tiên bố cục, góc nhìn, hành động và biểu cảm.
+Không cần tô màu, không cần chi tiết trang trí quá dày.
+Nhân vật mang phong cách truyện tranh 2D, tỷ lệ người trẻ tự nhiên.
+
+Phòng trọ sinh viên Việt Nam nhỏ, bình dân, lúc 02:00 sáng.
+Bàn máy tính và giường là hai khu vực rõ ràng.
+Minh chơi bằng bàn phím và chuột, không dùng tay cầm console.
+
+=== BỐ CỤC TRANG ===
+
+Đúng 4 khung, đọc từ trái sang phải và từ trên xuống dưới:
+- Khung 1: ngang rộng, chiếm toàn bộ hàng trên.
+- Khung 2: nửa trái hàng giữa.
+- Khung 3: nửa phải hàng giữa.
+- Khung 4: ngang rộng, chiếm toàn bộ hàng dưới.
+
+Hàng trên khoảng 32% chiều cao phần truyện.
+Hàng giữa khoảng 33%.
+Hàng dưới khoảng 35%.
+Có khoảng trắng ngăn khung và lề ngoài thoáng.
+Không thêm khung phụ hoặc lặp lại cảnh.
+Chữ đủ lớn để đọc ở kích thước ảnh 1024x1536.
+
+=== KHUNG 1 — PHÒNG TRỌ ĐÊM KHUYA ===
+
+Góc toàn cảnh hơi chéo.
+
+Bên trái: Huy nằm trên giường, đầu trên gối,
+quay nhìn Minh với vẻ buồn ngủ.
+
+Bên phải: Minh ngồi trước máy tính, chăm chú chơi,
+tai nghe đeo trên tai.
+Tay phải đặt trên chuột, tay trái trên bàn phím.
+Trên bàn có hộp mì ăn dở và quyển bài tập còn trắng.
+Một đồng hồ nhỏ hiển thị “02:00”.
+
+Bong bóng thoại Huy ở phía trên trái, đuôi chỉ đúng Huy:
+“Mai học tiết đầu đấy. Ngủ chưa?”
+
+Bong bóng thoại Minh ở phía trên phải, đuôi chỉ đúng Minh:
+“Nốt trận này!”
+
+Không để chữ che mặt hoặc bàn tay nhân vật.
+
+=== KHUNG 2 — SẮP THUA TRONG GAME ===
+
+Cận cảnh màn hình game; viền màn hình đủ rõ để người đọc
+hiểu đây là thế giới game.
+
+Nhân vật game của Minh là một kiếm sĩ mặc giáp nhẹ,
+bị nhiều quái vật bóng tối bao vây.
+Thanh máu gần cạn.
+Nhân vật này phải có thiết kế giống nhau ở khung 2 và khung 3.
+
+Lời Minh từ ngoài màn hình:
+“Thôi xong…”
+
+Bong bóng thoại qua voice chat có nhãn “KạĐêm”:
+“Lùi lại! Để tao!”
+
+Không gắn lời của Minh vào miệng quái vật.
+Không vẽ cảnh máu me.
+
+=== KHUNG 3 — ĐỒNG ĐỘI XUẤT HIỆN ===
+
+Cảnh hành động trong game, tiếp nối trực tiếp khung 2.
+
+KạĐêm, theo thiết kế ảnh 3, lao vào đứng chắn trước
+kiếm sĩ của Minh, đánh bật quái vật.
+Hai nhân vật cùng phản công, tạo cảm giác vừa được cứu.
+Đường chuyển động mạnh, tư thế rõ, không rối chi tiết.
+
+Lời Minh qua voice chat, đặt phía trên:
+“Đỉnh thế! Không có ông là tôi nằm rồi.”
+
+Lời KạĐêm qua voice chat, đặt thấp hơn:
+“Đồng đội mà.”
+
+Giữ diện tích tranh đủ lớn. Mỗi lời thoại là một bong bóng riêng.
+Có nhãn người nói nhỏ nếu cần để tránh nhầm.
+
+=== KHUNG 4 — LỜI MỜI KẾT BẠN ===
+
+Trở lại phòng trọ.
+
+Cận trung cảnh Minh ở phía trái, nhìn góc 3/4,
+mỉm cười nhẹ nhõm, tai nghe vẫn đeo trên tai.
+Bên phải là màn hình máy tính hiển thị lời mời kết bạn.
+Tay phải Minh vẫn đặt trên chuột, con trỏ hướng vào nút đồng ý.
+
+Giao diện màn hình tối giản, có avatar KạĐêm và các chữ:
+“KạĐêm”
+“đã gửi lời mời kết bạn”
+“Đồng ý”
+“Từ chối”
+
+Một bong bóng voice chat xuất phát từ phía màn hình:
+“Làm ván nữa không?”
+
+Dưới cùng khung là một ô lời dẫn chữ nhật, nền trắng:
+“Ở thành phố mới, Minh chưa quen nhiều người.
+Nhưng tối nào cũng có một người chờ cậu đăng nhập.”
+
+Biểu cảm kết trang: Minh vui vì tìm được một người bạn.
+Chưa thể hiện sự đáng sợ hoặc vạch trần kẻ lừa đảo.
+
+=== YÊU CẦU CHỮ VÀ TÍNH NHẤT QUÁN ===
+
+Toàn bộ chữ bằng tiếng Việt, đúng dấu, đúng nội dung đã cho.
+Không in các tiêu đề hướng dẫn như “KHUNG 1” lên tranh.
+Không thêm lời thoại ngoài kịch bản.
+Bong bóng thoại trắng, chữ đen, đuôi chỉ đúng người nói.
+Lời qua tai nghe có thể dùng bong bóng góc cạnh và biểu tượng loa.
+
+Giữ khuôn mặt, tóc, áo và tai nghe Minh nhất quán.
+Giữ đồ vật và không gian phòng hợp lý giữa khung 1 và khung 4.
+Chỉ có Minh và Huy ngoài đời; nhân vật game ở trong màn hình.
+Không watermark, không logo thương hiệu.
+"""
+
+
+def main():
+    if not os.getenv("OPENAI_API_KEY"):
+        raise SystemExit("Chưa đặt biến môi trường OPENAI_API_KEY.")
+
+    missing = [str(path) for path in REFERENCES if not path.is_file()]
+    if missing:
+        raise SystemExit("Thiếu ảnh tham chiếu:\n" + "\n".join(missing))
+
+    # Mỗi lần chạy tạo thư mục mới, tránh ghi đè ảnh cũ.
+    run_id = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    output_dir = ROOT / "output" / run_id
+    output_dir.mkdir(parents=True, exist_ok=False)
+
+    (output_dir / "prompt.txt").write_text(PROMPT, encoding="utf-8")
+
+    # Không tự retry để tránh gọi lại ngoài ý muốn khi request bị timeout.
+    client = OpenAI(timeout=600.0, max_retries=0)
+
+    print("Đang tạo storyboard...")
+
+    with ExitStack() as stack:
+        image_files = [
+            stack.enter_context(path.open("rb"))
+            for path in REFERENCES
+        ]
+
+        result = client.images.edit(
+            model=MODEL,
+            image=image_files,
+            prompt=PROMPT,
+            size=SIZE,
+            quality=QUALITY,
+            output_format="png",
+            n=1,
+        )
+
+    if not result.data or not result.data[0].b64_json:
+        raise RuntimeError("API không trả về ảnh base64.")
+
+    output_image = output_dir / "storyboard_page_02.png"
+    output_image.write_bytes(
+        base64.b64decode(result.data[0].b64_json)
+    )
+
+    usage = getattr(result, "usage", None)
+    metadata = {
+        "model_requested": MODEL,
+        "size_requested": SIZE,
+        "quality_requested": QUALITY,
+        "references": [path.name for path in REFERENCES],
+        "request_id": getattr(result, "_request_id", None),
+        "usage": usage.model_dump() if usage else None,
+    }
+
+    (output_dir / "metadata.json").write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    print(f"Đã lưu ảnh: {output_image}")
+    print("Usage:", json.dumps(metadata["usage"], ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

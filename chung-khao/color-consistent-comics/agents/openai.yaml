@@ -1,0 +1,14 @@
+interface:
+  display_name: Truyện tranh — Giữ nét, đổi màu
+  short_description: Giữ nét nhân vật, phối màu tươi và tách chữ dễ sửa
+  default_prompt: Dùng $color-consistent-comics để tô màu trang truyện này, giữ nguyên
+    nét và tạo hình nhân vật.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
