@@ -1,0 +1,449 @@
+{
+  "scenes": [
+    {
+      "id": "h5",
+      "title": "Sunrise at Halong bay",
+      "view": {
+        "hlookat": "38",
+        "vlookat": "27.21",
+        "fov": "75.42",
+        "fovmin": "40",
+        "fovmax": "125",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h6",
+          "style": "hsHelicopter",
+          "ath": "20.515326781651382",
+          "atv": "-6.811483415789519"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h9",
+          "style": "hsHelicopter",
+          "ath": "188.9444234866017",
+          "atv": "-6.819490428738986"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/05/_f.jpg",
+          "b": "ha-long/panos/hi/05/_b.jpg",
+          "l": "ha-long/panos/hi/05/_l.jpg",
+          "r": "ha-long/panos/hi/05/_r.jpg",
+          "u": "ha-long/panos/hi/05/_u.jpg",
+          "d": "ha-long/panos/hi/05/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/05/_f.jpg",
+          "b": "ha-long/panos/mobile/05/_b.jpg",
+          "l": "ha-long/panos/mobile/05/_l.jpg",
+          "r": "ha-long/panos/mobile/05/_r.jpg",
+          "u": "ha-long/panos/mobile/05/_u.jpg",
+          "d": "ha-long/panos/mobile/05/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h1",
+      "title": "Halong bay islands",
+      "view": {
+        "hlookat": "-300",
+        "vlookat": "31.17",
+        "fov": "103.69",
+        "fovmin": "40",
+        "fovmax": "120",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h2",
+          "style": "hsHelicopter",
+          "ath": "80.75616803596941",
+          "atv": "-33"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h9",
+          "style": "hsHelicopter",
+          "ath": "-70.38811786595647",
+          "atv": "-33"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/01/_f.jpg",
+          "b": "ha-long/panos/hi/01/_b.jpg",
+          "l": "ha-long/panos/hi/01/_l.jpg",
+          "r": "ha-long/panos/hi/01/_r.jpg",
+          "u": "ha-long/panos/hi/01/_u.jpg",
+          "d": "ha-long/panos/hi/01/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/01/_f.jpg",
+          "b": "ha-long/panos/mobile/01/_b.jpg",
+          "l": "ha-long/panos/mobile/01/_l.jpg",
+          "r": "ha-long/panos/mobile/01/_r.jpg",
+          "u": "ha-long/panos/mobile/01/_u.jpg",
+          "d": "ha-long/panos/mobile/01/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h2",
+      "title": "Dao Cong Do from height 120 meters",
+      "view": {
+        "hlookat": "-55.20",
+        "vlookat": "45.17",
+        "fov": "118",
+        "fovmin": "40",
+        "fovmax": "120",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h1",
+          "style": "hsHelicopter",
+          "ath": "-23.780336105332267",
+          "atv": "-14"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h3",
+          "style": "hsHelicopter",
+          "ath": "55.86045252173557",
+          "atv": "-14"
+        },
+        {
+          "name": "hsground",
+          "linkedscene": "h4",
+          "style": "hsGround",
+          "ath": "-47.685878374161064",
+          "atv": "40.25748792360792"
+        },
+        {
+          "name": "hshelicopter2",
+          "linkedscene": "h8",
+          "style": "hsHelicopter",
+          "ath": "213.02427136860462",
+          "atv": "-14"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/02/_f.jpg",
+          "b": "ha-long/panos/hi/02/_b.jpg",
+          "l": "ha-long/panos/hi/02/_l.jpg",
+          "r": "ha-long/panos/hi/02/_r.jpg",
+          "u": "ha-long/panos/hi/02/_u.jpg",
+          "d": "ha-long/panos/hi/02/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/02/_f.jpg",
+          "b": "ha-long/panos/mobile/02/_b.jpg",
+          "l": "ha-long/panos/mobile/02/_l.jpg",
+          "r": "ha-long/panos/mobile/02/_r.jpg",
+          "u": "ha-long/panos/mobile/02/_u.jpg",
+          "d": "ha-long/panos/mobile/02/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h3",
+      "title": "Dao Cong Do from height 70 meters",
+      "view": {
+        "hlookat": "-105.41",
+        "vlookat": "22.3",
+        "fov": "104",
+        "fovmin": "40",
+        "fovmax": "130",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h1",
+          "style": "hsHelicopter",
+          "ath": "-27.90761516506842",
+          "atv": "-24.57864299620657"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h8",
+          "style": "hsHelicopter",
+          "ath": "166.5032905558811",
+          "atv": "-24.746423231031208"
+        },
+        {
+          "name": "hsground",
+          "linkedscene": "h4",
+          "style": "hsGround",
+          "ath": "267.1828724712012",
+          "atv": "17.666261898406912"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/03/_f.jpg",
+          "b": "ha-long/panos/hi/03/_b.jpg",
+          "l": "ha-long/panos/hi/03/_l.jpg",
+          "r": "ha-long/panos/hi/03/_r.jpg",
+          "u": "ha-long/panos/hi/03/_u.jpg",
+          "d": "ha-long/panos/hi/03/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/03/_f.jpg",
+          "b": "ha-long/panos/mobile/03/_b.jpg",
+          "l": "ha-long/panos/mobile/03/_l.jpg",
+          "r": "ha-long/panos/mobile/03/_r.jpg",
+          "u": "ha-long/panos/mobile/03/_u.jpg",
+          "d": "ha-long/panos/mobile/03/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h4",
+      "title": "Inside the Cave",
+      "view": {
+        "hlookat": "72.73",
+        "vlookat": "3.91",
+        "fov": "134",
+        "fovmin": "40",
+        "fovmax": "130",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/04/_f.jpg",
+          "b": "ha-long/panos/hi/04/_b.jpg",
+          "l": "ha-long/panos/hi/04/_l.jpg",
+          "r": "ha-long/panos/hi/04/_r.jpg",
+          "u": "ha-long/panos/hi/04/_u.jpg",
+          "d": "ha-long/panos/hi/04/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/04/_f.jpg",
+          "b": "ha-long/panos/mobile/04/_b.jpg",
+          "l": "ha-long/panos/mobile/04/_l.jpg",
+          "r": "ha-long/panos/mobile/04/_r.jpg",
+          "u": "ha-long/panos/mobile/04/_u.jpg",
+          "d": "ha-long/panos/mobile/04/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h6",
+      "title": "Cong Dam village from height 100 meters",
+      "view": {
+        "hlookat": "-165.77",
+        "vlookat": "60.52",
+        "fov": "145",
+        "fovmin": "40",
+        "fovmax": "130",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h3",
+          "style": "hsHelicopter",
+          "ath": "21.323068035796737",
+          "atv": "-9.260714219810415"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h7",
+          "style": "hsHelicopter",
+          "ath": "-2.053936311514647",
+          "atv": "-9.251815048287602"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/06/_f.jpg",
+          "b": "ha-long/panos/hi/06/_b.jpg",
+          "l": "ha-long/panos/hi/06/_l.jpg",
+          "r": "ha-long/panos/hi/06/_r.jpg",
+          "u": "ha-long/panos/hi/06/_u.jpg",
+          "d": "ha-long/panos/hi/06/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/06/_f.jpg",
+          "b": "ha-long/panos/mobile/06/_b.jpg",
+          "l": "ha-long/panos/mobile/06/_l.jpg",
+          "r": "ha-long/panos/mobile/06/_r.jpg",
+          "u": "ha-long/panos/mobile/06/_u.jpg",
+          "d": "ha-long/panos/mobile/06/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h7",
+      "title": "Cong Dam village from height 30 meters",
+      "view": {
+        "hlookat": "-34.81",
+        "vlookat": "30.37",
+        "fov": "68",
+        "fovmin": "40",
+        "fovmax": "130",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h5",
+          "style": "hsHelicopter",
+          "ath": "124.00741297153183",
+          "atv": "-19"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h6",
+          "style": "hsHelicopter",
+          "ath": "152.55172673668346",
+          "atv": "-19"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/07/_f.jpg",
+          "b": "ha-long/panos/hi/07/_b.jpg",
+          "l": "ha-long/panos/hi/07/_l.jpg",
+          "r": "ha-long/panos/hi/07/_r.jpg",
+          "u": "ha-long/panos/hi/07/_u.jpg",
+          "d": "ha-long/panos/hi/07/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/07/_f.jpg",
+          "b": "ha-long/panos/mobile/07/_b.jpg",
+          "l": "ha-long/panos/mobile/07/_l.jpg",
+          "r": "ha-long/panos/mobile/07/_r.jpg",
+          "u": "ha-long/panos/mobile/07/_u.jpg",
+          "d": "ha-long/panos/mobile/07/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h8",
+      "title": "Ha Long port",
+      "view": {
+        "hlookat": "171",
+        "vlookat": "24",
+        "fov": "111",
+        "fovmin": "40",
+        "fovmax": "130",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h2",
+          "style": "hsHelicopter",
+          "ath": "44.78534400994995",
+          "atv": "-6"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h5",
+          "style": "hsHelicopter",
+          "ath": "29.44477581887653",
+          "atv": "-6"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/08/_f.jpg",
+          "b": "ha-long/panos/hi/08/_b.jpg",
+          "l": "ha-long/panos/hi/08/_l.jpg",
+          "r": "ha-long/panos/hi/08/_r.jpg",
+          "u": "ha-long/panos/hi/08/_u.jpg",
+          "d": "ha-long/panos/hi/08/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/08/_f.jpg",
+          "b": "ha-long/panos/mobile/08/_b.jpg",
+          "l": "ha-long/panos/mobile/08/_l.jpg",
+          "r": "ha-long/panos/mobile/08/_r.jpg",
+          "u": "ha-long/panos/mobile/08/_u.jpg",
+          "d": "ha-long/panos/mobile/08/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h9",
+      "title": "Near Dao Cong Do",
+      "view": {
+        "hlookat": "49.17",
+        "vlookat": "30.49",
+        "fov": "102.75",
+        "fovmin": "40",
+        "fovmax": "130",
+        "fisheye": "0.5",
+        "fisheyefovlink": "2.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h1",
+          "style": "hsHelicopter",
+          "ath": "174.64735608029713",
+          "atv": "-9"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h5",
+          "style": "hsHelicopter",
+          "ath": "16.00282730708078",
+          "atv": "-9"
+        },
+        {
+          "name": "hshelicopter2",
+          "linkedscene": "h7",
+          "style": "hsHelicopter",
+          "ath": "34.178250459529835",
+          "atv": "-9"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-long/panos/hi/09/_f.jpg",
+          "b": "ha-long/panos/hi/09/_b.jpg",
+          "l": "ha-long/panos/hi/09/_l.jpg",
+          "r": "ha-long/panos/hi/09/_r.jpg",
+          "u": "ha-long/panos/hi/09/_u.jpg",
+          "d": "ha-long/panos/hi/09/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-long/panos/mobile/09/_f.jpg",
+          "b": "ha-long/panos/mobile/09/_b.jpg",
+          "l": "ha-long/panos/mobile/09/_l.jpg",
+          "r": "ha-long/panos/mobile/09/_r.jpg",
+          "u": "ha-long/panos/mobile/09/_u.jpg",
+          "d": "ha-long/panos/mobile/09/_d.jpg"
+        }
+      }
+    }
+  ]
+}

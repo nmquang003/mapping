@@ -1,0 +1,2436 @@
+{
+  "regions": {
+    "ninh-binh": {
+      "name": "Ninh Bình",
+      "title": "Ninh Bình: non nước và ký ức cố đô",
+      "lead": "Một dòng sông len giữa núi đá, một ngôi đền lưu dấu kinh đô, một khu rừng mở ra thế giới tự nhiên: những địa danh tuyển chọn của Ninh Bình cho thấy cảnh quan và lịch sử luôn có thể được đọc cùng nhau.",
+      "researchedOn": "2026-10-06",
+      "sections": [
+        {
+          "id": "tong-quan",
+          "title": "Tổng quan",
+          "text": "Ninh Bình là điểm đến kết hợp cảnh quan núi đá vôi, sông nước và di sản lịch sử. Khu vực Hoa Lư, Tràng An và Tam Cốc – Bích Động giúp người xem tìm hiểu mối liên hệ giữa địa hình tự nhiên, dấu tích kinh đô và đời sống địa phương. Phạm vi tỉnh hiện nay đã mở rộng sau sắp xếp năm 2025; các hồ sơ trong bản sổ tay này là những địa danh tuyển chọn.",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S05",
+            "S06"
+          ]
+        },
+        {
+          "id": "dia-ly",
+          "title": "Địa lý và cảnh quan",
+          "text": "Nét nổi bật ở khu vực Tràng An – Tam Cốc là núi đá vôi, thung lũng, hang động và dòng nước. Tại Tam Cốc, sông Ngô Đồng đi qua ba hang và những cánh đồng. Cúc Phương bổ sung góc nhìn về hệ sinh thái rừng; vùng Kim Sơn gắn với bãi bồi ven biển và nghề cói.",
+          "source_ids": [
+            "S04",
+            "S06",
+            "S07",
+            "S13"
+          ]
+        },
+        {
+          "id": "lich-su",
+          "title": "Lịch sử và di sản",
+          "text": "Hoa Lư gắn với việc Đinh Bộ Lĩnh lên ngôi năm 968 và lịch sử các triều Đinh, Tiền Lê, đầu thời Lý. Năm 1010, Lý Thái Tổ dời đô về Thăng Long. Những đền thờ vua Đinh Tiên Hoàng và vua Lê Đại Hành là các điểm tiêu biểu để tìm hiểu ký ức lịch sử của vùng đất này.",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "id": "van-hoa",
+          "title": "Văn hóa và làng nghề",
+          "text": "Lễ hội Hoa Lư tưởng nhớ các vị vua và tiền nhân, có các nghi thức như rước nước, rước kiệu và dâng hương. Thêu ren Văn Lâm và nghề cói Kim Sơn thể hiện kỹ năng thủ công được gìn giữ qua nhiều thế hệ. Bái Đính và Phát Diệm là những góc tiếp cận khác nhau về kiến trúc tôn giáo của địa phương.",
+          "source_ids": [
+            "S08",
+            "S09",
+            "S11",
+            "S12",
+            "S13"
+          ]
+        },
+        {
+          "id": "am-thuc",
+          "title": "Ẩm thực địa phương",
+          "text": "Các món được nguồn du lịch địa phương giới thiệu gồm cơm cháy, thịt dê, mắm tép Gia Viễn và nem chua Yên Mạc. Mắm tép gắn với nguyên liệu thủy sản nước ngọt và cách chế biến truyền thống; nem chua Yên Mạc là sản phẩm ẩm thực gắn với địa danh cùng tên.",
+          "source_ids": [
+            "S14",
+            "S15"
+          ]
+        },
+        {
+          "id": "tham-quan",
+          "title": "Thông tin tham quan",
+          "text": "Người xem có thể khám phá cảnh quan bằng thuyền ở Tràng An và Tam Cốc, tìm hiểu lịch sử tại Hoa Lư, quan sát cảnh quan từ Hang Múa hoặc tìm hiểu thiên nhiên tại Cúc Phương. Giờ mở cửa, lịch tuyến, giá vé và điều kiện tiếp cận phải được kiểm tra theo thông báo hiện hành của đơn vị quản lý trước chuyến đi.",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S10",
+            "S16"
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "trang-an",
+          "name": "Quần thể danh thắng Tràng An",
+          "category": "di-san-canh-quan",
+          "summary": "Cảnh quan núi đá vôi, thung lũng và hang động hòa cùng dấu tích lịch sử, văn hóa. Nguồn du lịch địa phương giới thiệu Tràng An là Di sản Văn hóa và Thiên nhiên thế giới.",
+          "highlights": [
+            "Cảnh quan karst và hệ thống hang động",
+            "Trải nghiệm thuyền ở khu du lịch sinh thái",
+            "Sự kết hợp giữa thiên nhiên và di sản văn hóa"
+          ],
+          "source_ids": [
+            "S04"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_review",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "heritage_inscription_year": null,
+          "note": "Phân biệt toàn quần thể di sản với bến thuyền/khu du lịch sinh thái. Chưa đối chiếu ranh giới UNESCO và địa chỉ cổng vào.",
+          "suggested_questions": [
+            "Tràng An có cảnh quan gì nổi bật?",
+            "Quần thể Tràng An gồm những khu vực nào?",
+            "Sổ tay có giá vé hiện hành không?"
+          ],
+          "facts": [
+            {
+              "id": "F06",
+              "entity_id": "trang-an",
+              "topic": "dia-ly",
+              "text": "Quần thể có núi đá vôi, thung lũng, hang động và thủy vực; cảnh quan karst là nét nổi bật.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            },
+            {
+              "id": "F07",
+              "entity_id": "trang-an",
+              "topic": "di-san",
+              "text": "Nguồn du lịch địa phương giới thiệu Tràng An là Di sản Văn hóa và Thiên nhiên thế giới được UNESCO vinh danh.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            },
+            {
+              "id": "F08",
+              "entity_id": "trang-an",
+              "topic": "pham-vi",
+              "text": "Nguồn địa phương nêu ba khu vực bảo tồn: Cố đô Hoa Lư; Tràng An – Tam Cốc – Bích Động; rừng nguyên sinh đặc dụng Hoa Lư.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hoa-lu",
+          "name": "Cố đô Hoa Lư",
+          "category": "lich-su",
+          "summary": "Hoa Lư là kinh đô gắn với các triều Đinh, Tiền Lê và đầu thời Lý. Các đền thờ vua Đinh Tiên Hoàng và vua Lê Đại Hành là điểm tìm hiểu lịch sử tiêu biểu.",
+          "highlights": [
+            "Mốc năm 968",
+            "Mốc dời đô năm 1010",
+            "Đền vua Đinh và đền vua Lê"
+          ],
+          "source_ids": [
+            "S05"
+          ],
+          "status": "source_checked",
+          "current_address": "Phường Tây Hoa Lư, tỉnh Ninh Bình",
+          "address_source_ids": [
+            "S02",
+            "S05"
+          ],
+          "address_status": "source_checked",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Địa chỉ cuối bài S05 còn ghi xã Trường Yên, thành phố Hoa Lư; dùng phần đầu bài và căn cứ sắp xếp ở S02. Không nhầm cố đô với khu du lịch Phố cổ Hoa Lư.",
+          "suggested_questions": [
+            "Vì sao Hoa Lư được chọn làm kinh đô?",
+            "Hoa Lư gắn với những triều đại nào?",
+            "Năm 1010 có sự kiện gì?"
+          ],
+          "facts": [
+            {
+              "id": "F09",
+              "entity_id": "hoa-lu",
+              "topic": "lich-su",
+              "text": "Năm 968, Đinh Bộ Lĩnh lên ngôi Hoàng đế và chọn Hoa Lư làm kinh đô.",
+              "value": 968,
+              "unit": "năm",
+              "time_basis": "Sự kiện lịch sử",
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F10",
+              "entity_id": "hoa-lu",
+              "topic": "lich-su",
+              "text": "Hoa Lư gắn với các triều Đinh, Tiền Lê và đầu thời Lý.",
+              "value": null,
+              "unit": null,
+              "time_basis": "Thế kỷ X–XI",
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F11",
+              "entity_id": "hoa-lu",
+              "topic": "lich-su",
+              "text": "Năm 1010, Lý Thái Tổ dời đô về Thăng Long.",
+              "value": 1010,
+              "unit": "năm",
+              "time_basis": "Sự kiện lịch sử",
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F12",
+              "entity_id": "hoa-lu",
+              "topic": "di-tich",
+              "text": "Đền thờ vua Đinh Tiên Hoàng và vua Lê Đại Hành là những di tích tiêu biểu ở Cố đô Hoa Lư.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tam-coc-bich-dong",
+          "name": "Tam Cốc – Bích Động",
+          "category": "canh-quan-van-hoa",
+          "summary": "Tam Cốc gắn với sông Ngô Đồng và ba hang xuyên núi đá vôi. Bích Động là quần thể chùa và động theo địa thế núi, gồm chùa Hạ, Trung và Thượng.",
+          "highlights": [
+            "Hang Cả, Hang Hai, Hang Ba",
+            "Cảnh quan sông Ngô Đồng và đồng lúa",
+            "Chùa Hạ, Trung, Thượng ở Bích Động"
+          ],
+          "source_ids": [
+            "S06"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Chưa xác minh địa chỉ và cổng vào từng điểm. Không đồng nhất giá thuyền Tam Cốc với thông tin tham quan chùa Bích Động.",
+          "suggested_questions": [
+            "Tên Tam Cốc có nghĩa gì?",
+            "Bích Động có những ngôi chùa nào?",
+            "Cảnh quan Tam Cốc có gì đặc trưng?"
+          ],
+          "facts": [
+            {
+              "id": "F13",
+              "entity_id": "tam-coc-bich-dong",
+              "topic": "dia-ly",
+              "text": "Tam Cốc có nghĩa là ba hang: Hang Cả, Hang Hai, Hang Ba; gắn với dòng sông Ngô Đồng xuyên núi đá vôi.",
+              "value": 3,
+              "unit": "hang",
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S06"
+              ]
+            },
+            {
+              "id": "F14",
+              "entity_id": "tam-coc-bich-dong",
+              "topic": "kien-truc",
+              "text": "Bích Động gồm chùa Hạ, chùa Trung và chùa Thượng, xây dựng theo địa thế núi.",
+              "value": 3,
+              "unit": "chùa",
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S06"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cuc-phuong",
+          "name": "Vườn quốc gia Cúc Phương",
+          "category": "thien-nhien-bao-ton",
+          "summary": "Vườn quốc gia có cảnh quan rừng mưa nhiệt đới và các hoạt động nghiên cứu, cứu hộ, bảo tồn động vật. Nguồn địa phương giới thiệu đây là vườn quốc gia đầu tiên của Việt Nam.",
+          "highlights": [
+            "Hệ sinh thái rừng",
+            "Đa dạng sinh học",
+            "Giáo dục môi trường và cứu hộ động vật"
+          ],
+          "source_ids": [
+            "S07",
+            "S16"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_review",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "related_provinces": [
+            "Ninh Bình",
+            "Phú Thọ",
+            "Thanh Hóa"
+          ],
+          "note": "Vườn liên tỉnh. S07 ghi địa chỉ xã Phú Long, S16 còn ghi xã Cúc Phương/huyện Nho Quan; chưa xác nhận cổng đón khách. Quy định phương tiện vùng lõi có thay đổi được thông báo từ 1/9/2026.",
+          "suggested_questions": [
+            "Cúc Phương có giá trị bảo tồn gì?",
+            "Cúc Phương có nằm hoàn toàn ở Ninh Bình không?",
+            "Tôi cần kiểm tra gì trước khi đi?"
+          ],
+          "facts": [
+            {
+              "id": "F15",
+              "entity_id": "cuc-phuong",
+              "topic": "bao-ton",
+              "text": "Nguồn địa phương giới thiệu Cúc Phương là vườn quốc gia đầu tiên của Việt Nam, có đặc trưng rừng mưa nhiệt đới.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S07"
+              ]
+            },
+            {
+              "id": "F16",
+              "entity_id": "cuc-phuong",
+              "topic": "pham-vi",
+              "text": "Nội dung hiện đọc ở nguồn địa phương nêu vườn nằm trên địa phận Ninh Bình, Phú Thọ và Thanh Hóa.",
+              "value": null,
+              "unit": null,
+              "time_basis": "Tên tỉnh trong nội dung đọc ngày 6/10/2026",
+              "status": "source_checked",
+              "source_ids": [
+                "S07"
+              ]
+            },
+            {
+              "id": "F17",
+              "entity_id": "cuc-phuong",
+              "topic": "bao-ton",
+              "text": "Các chương trình bảo tồn, cứu hộ và giáo dục môi trường là nội dung được giới thiệu trên nguồn địa phương và website vườn.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S07",
+                "S16"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bai-dinh",
+          "name": "Chùa Bái Đính",
+          "category": "kien-truc-ton-giao",
+          "summary": "Quần thể có khu chùa cổ, khu chùa mới và các hạng mục kiến trúc Phật giáo. Nội dung giới thiệu tập trung vào không gian kiến trúc và giá trị văn hóa.",
+          "highlights": [
+            "Khu chùa cổ và chùa mới",
+            "Hành lang La Hán",
+            "Các điện thờ và bảo tháp"
+          ],
+          "source_ids": [
+            "S08"
+          ],
+          "status": "source_checked",
+          "current_address": "Phường Tây Hoa Lư, tỉnh Ninh Bình",
+          "address_source_ids": [
+            "S02",
+            "S08"
+          ],
+          "address_status": "source_checked",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Không khẳng định hiệu quả cầu may/chữa bệnh hoặc kỷ lục chưa kiểm chứng. Phân biệt vé dịch vụ xe điện với vé vào toàn bộ quần thể.",
+          "suggested_questions": [
+            "Bái Đính có những phần kiến trúc nào?",
+            "Chùa cổ và chùa mới khác nhau thế nào?",
+            "Giá xe điện có phải toàn bộ chi phí tham quan không?"
+          ],
+          "facts": [
+            {
+              "id": "F18",
+              "entity_id": "bai-dinh",
+              "topic": "kien-truc",
+              "text": "Quần thể Bái Đính có khu chùa cổ và chùa mới; bài địa phương mô tả hành lang La Hán, các điện thờ và bảo tháp.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S08"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "phat-diem",
+          "name": "Nhà thờ đá Phát Diệm",
+          "category": "kien-truc-ton-giao",
+          "summary": "Quần thể kiến trúc Công giáo kết hợp hình thức nhà thờ với các nét kiến trúc truyền thống Việt Nam, sử dụng đá và gỗ. Theo nguồn địa phương, công trình được xây dựng trong giai đoạn 1875–1898.",
+          "highlights": [
+            "Kiến trúc đá và gỗ",
+            "Phương đình",
+            "Giao thoa hình thức kiến trúc"
+          ],
+          "source_ids": [
+            "S09"
+          ],
+          "status": "source_checked",
+          "current_address": "Xã Phát Diệm, tỉnh Ninh Bình",
+          "address_source_ids": [
+            "S02",
+            "S09"
+          ],
+          "address_status": "source_checked",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Chưa xác minh giờ đón khách, lịch nghi lễ hay quy định chụp ảnh hiện hành.",
+          "suggested_questions": [
+            "Kiến trúc Phát Diệm có gì đặc biệt?",
+            "Nhà thờ được xây dựng vào thời gian nào?",
+            "Vật liệu nào được sử dụng ở đây?"
+          ],
+          "facts": [
+            {
+              "id": "F19",
+              "entity_id": "phat-diem",
+              "topic": "lich-su",
+              "text": "Theo nguồn địa phương, quần thể nhà thờ Phát Diệm được xây dựng trong giai đoạn 1875–1898.",
+              "value": "1875–1898",
+              "unit": "giai đoạn",
+              "time_basis": "Lịch sử xây dựng",
+              "status": "source_checked",
+              "source_ids": [
+                "S09"
+              ]
+            },
+            {
+              "id": "F20",
+              "entity_id": "phat-diem",
+              "topic": "kien-truc",
+              "text": "Quần thể sử dụng đá và gỗ, kết hợp hình thức nhà thờ phương Tây với nét kiến trúc truyền thống Việt Nam.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S09"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hang-mua",
+          "name": "Hang Múa",
+          "category": "canh-quan",
+          "summary": "Điểm khám phá cảnh quan với đường bậc đá lên núi và tầm nhìn xuống vùng sông nước, đồng ruộng. Nguồn địa phương mô tả đường lên gần 500 bậc.",
+          "highlights": [
+            "Đường bậc đá lên núi",
+            "Ngắm cảnh quan từ trên cao",
+            "Câu chuyện dân gian về tên gọi"
+          ],
+          "source_ids": [
+            "S10"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_review",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Tên thôn được ghi khác nhau ngay trong S10 và địa chỉ phường chưa đối chiếu. Không coi câu chuyện dân gian về tên gọi là sự kiện lịch sử đã xác thực.",
+          "suggested_questions": [
+            "Hang Múa có gì để khám phá?",
+            "Tên Hang Múa gắn với câu chuyện nào?",
+            "Thông tin đường lên núi trong nguồn là gì?"
+          ],
+          "facts": [
+            {
+              "id": "F21",
+              "entity_id": "hang-mua",
+              "topic": "canh-quan",
+              "text": "Nguồn địa phương mô tả đường lên đỉnh núi ở Hang Múa có gần 500 bậc đá và tầm nhìn ra cảnh quan vùng Hoa Lư.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S10"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": {
+        "S01": {
+          "id": "S01",
+          "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+          "displayed_date": "2026-10-05",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài dẫn Nghị quyết 202/2025/QH15. Số liệu diện tích và dân số là số liệu phục vụ sắp xếp năm 2025."
+        },
+        "S02": {
+          "id": "S02",
+          "title": "Nghị quyết 1674/NQ-UBTVQH15 về sắp xếp đơn vị hành chính cấp xã Ninh Bình",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1674-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-tinh-ninh-binh-nam-2025-119250616203223135.htm",
+          "displayed_date": "2025-06-20",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nghị quyết thông qua ngày 16/6/2025; dùng làm căn cứ tên xã, phường theo đợt sắp xếp này."
+        },
+        "S03": {
+          "id": "S03",
+          "title": "Ninh Bình",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/vi/places-to-go/northern-vietnam/ninh-binh",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Trang ghi bản dịch được AI tạo. Chỉ lấy nội dung tổng quát; không dùng các kỷ lục, mùa vụ hay lịch vận chuyển như thông tin hiện hành chưa đối chiếu."
+        },
+        "S04": {
+          "id": "S04",
+          "title": "Quần thể Danh thắng Tràng An – Bảo tàng địa chất ngoài trời",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3021",
+          "displayed_date": "2025-03-27",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Ngày trang hiển thị không bảo đảm mọi chi tiết nội dung vẫn nguyên bản tại ngày đó. Không lấy diện tích tổng quần thể làm diện tích vùng lõi UNESCO."
+        },
+        "S05": {
+          "id": "S05",
+          "title": "Cố đô Hoa Lư",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3020",
+          "displayed_date": "2025-03-27",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài trộn địa chỉ mới trong phần đầu và địa chỉ cũ ở cuối. Giá vé cần xác nhận lại."
+        },
+        "S06": {
+          "id": "S06",
+          "title": "Khám phá vẻ đẹp non nước hữu tình tại Khu du lịch Tam Cốc – Bích Động",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3116",
+          "displayed_date": "2025-06-26",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Thời lượng thuyền và mùa lúa là mô tả tham khảo; điều kiện thực tế có thể thay đổi."
+        },
+        "S07": {
+          "id": "S07",
+          "title": "Vườn quốc gia Cúc Phương",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3018",
+          "displayed_date": "2025-03-27",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nội dung hiện đọc nêu Ninh Bình, Phú Thọ, Thanh Hóa; địa chỉ cuối bài khác website vườn. Không tự suy ra cổng vào từ địa chỉ này."
+        },
+        "S08": {
+          "id": "S08",
+          "title": "Chùa Bái Đính",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3015",
+          "displayed_date": "2025-03-26",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Không đưa các tuyên bố kỷ lục vào dữ liệu đã duyệt khi chưa đọc xác nhận riêng."
+        },
+        "S09": {
+          "id": "S09",
+          "title": "Nhà thờ đá Phát Diệm",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3014",
+          "displayed_date": "2025-03-26",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng mô tả kiến trúc và khoảng thời gian xây dựng theo bài; xã Phát Diệm đối chiếu S02."
+        },
+        "S10": {
+          "id": "S10",
+          "title": "Hang Múa – kỳ quan thiên nhiên hùng vĩ của Ninh Bình",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3007",
+          "displayed_date": "2025-03-24",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn ghi phường Hoa Lư; chưa xác nhận lại địa chỉ. Câu chuyện nguồn gốc tên gọi được ghi là câu chuyện dân gian."
+        },
+        "S11": {
+          "id": "S11",
+          "title": "Lễ hội Hoa Lư – Nơi lưu giữ nét đẹp truyền thống nghìn năm",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3359",
+          "displayed_date": "2025-09-24",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Lịch thường niên không thay thế thông báo tổ chức của từng năm."
+        },
+        "S12": {
+          "id": "S12",
+          "title": "Làng nghề thêu ren Văn Lâm tinh hoa thủ công Ninh Bình",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3684",
+          "displayed_date": "2026-08-21",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Giới thiệu nghề; chưa xác nhận cơ sở nào có tour trải nghiệm đang mở."
+        },
+        "S13": {
+          "id": "S13",
+          "title": "Nghề cói Kim Sơn: Làng nghề truyền thống bên bãi bồi ven biển",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3663",
+          "displayed_date": "2026-07-28",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Kim Sơn ở đây là vùng văn hóa/nghề, không gán mọi cơ sở nghề vào xã Kim Sơn hiện hành."
+        },
+        "S14": {
+          "id": "S14",
+          "title": "Mắm tép Gia Viễn, đậm đà hương vị quê hương",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3719",
+          "displayed_date": "2026-09-14",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Thông tin văn hóa ẩm thực, không phải hướng dẫn bảo đảm an toàn thực phẩm."
+        },
+        "S15": {
+          "id": "S15",
+          "title": "Nem chua Yên Mạc – Tinh hoa ẩm thực truyền thống của Ninh Bình",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
+          "url": "https://dulichninhbinh.com.vn/item/3718",
+          "displayed_date": "2026-09-14",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài cũng nhắc cơm cháy và thịt dê là đặc sản Ninh Bình; chưa xác minh giá hoặc cửa hàng."
+        },
+        "S16": {
+          "id": "S16",
+          "title": "Website Vườn quốc gia Cúc Phương",
+          "publisher": "Vườn quốc gia Cúc Phương",
+          "url": "https://vuonquocgiacucphuong.vn/vi/",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Đã đọc trang chủ. Có thông báo quy định phương tiện vào vùng lõi áp dụng từ 1/9/2026; chưa đọc đầy đủ quy định, không tự diễn giải điều kiện."
+        },
+        "S17": {
+          "id": "S17",
+          "title": "Trang An Landscape Complex",
+          "publisher": "UNESCO World Heritage Centre",
+          "url": "https://whc.unesco.org/en/list/1438/",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "not_checked",
+          "note": "Bị chặn ở bước kiểm tra bảo mật khi truy cập. Giữ làm nguồn ưu tiên bổ sung; không dùng như đã đọc trực tiếp trong lần này."
+        },
+        "S18": {
+          "id": "S18",
+          "title": "Bản đồ hành chính Việt Nam",
+          "publisher": "Hạ tầng dữ liệu không gian địa lý quốc gia",
+          "url": "https://vnsdi.mae.gov.vn/bandohanhchinh/",
+          "displayed_date": null,
+          "accessed_on": null,
+          "status": "not_checked",
+          "note": "Nguồn do đề thi cung cấp; chưa kiểm tra dữ liệu hoặc quyền tái sử dụng trong lần này."
+        }
+      }
+    },
+    "ha-noi": {
+      "name": "Hà Nội",
+      "title": "Hà Nội: đọc thành phố qua những lớp thời gian",
+      "lead": "Từ không gian hồ Hoàn Kiếm đến phố nghề, từ Văn Miếu đến Hoàng thành Thăng Long, Hà Nội gợi mở nhiều cách tìm hiểu một thành phố. Những công trình và sinh hoạt thường ngày nối câu chuyện di sản với nhịp sống đô thị.",
+      "researchedOn": "2026-10-06",
+      "sections": [
+        {
+          "id": "O01",
+          "topic": "tong-quan",
+          "title": "Thủ đô qua những lớp di sản",
+          "text": "Hà Nội có thể được khám phá qua những không gian rất khác nhau: di tích hoàng thành, nơi ghi dấu truyền thống học tập, phố nghề, hồ nước và bảo tàng. Tám địa danh trong sổ tay kết nối những lát cắt ấy, từ Hồ Hoàn Kiếm và phố cổ đến Văn Miếu – Quốc Tử Giám, Hoàng thành Thăng Long và các công trình văn hóa của thủ đô.",
+          "status": "source_checked",
+          "source_ids": [
+            "S03",
+            "S05",
+            "S07"
+          ]
+        },
+        {
+          "id": "O02",
+          "topic": "dia-ly",
+          "title": "Hồ và không gian đô thị",
+          "text": "Hồ Hoàn Kiếm là một điểm nhận diện trong khu vực trung tâm, gắn với đền Ngọc Sơn, cầu Thê Húc và không gian phố cổ lân cận. Nguồn tuyến đi bộ còn giới thiệu sông Hồng, cầu Long Biên và khu vực Trúc Bạch như ngữ cảnh đô thị; các điểm này chưa có hồ sơ riêng.",
+          "status": "source_checked",
+          "source_ids": [
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "id": "O03",
+          "topic": "lich-su",
+          "title": "Hoàng thành và truyền thống giáo dục",
+          "text": "Hoàng thành Thăng Long lưu giữ nhiều lớp dấu tích qua các triều đại và được UNESCO ghi danh năm 2010. Văn Miếu có mốc xây dựng năm 1070; Quốc Tử Giám có mốc năm 1076 theo bài giới thiệu di sản. Các mốc này có thể dùng cho dòng thời gian học tập.",
+          "status": "source_checked",
+          "source_ids": [
+            "S03",
+            "S07"
+          ]
+        },
+        {
+          "id": "O04",
+          "topic": "van-hoa",
+          "title": "Phố nghề, di tích và bảo tàng",
+          "text": "Nhiều tên phố bắt đầu bằng Hàng gợi lại hoạt động nghề và buôn bán: Hàng Bạc, Hàng Mã, Hàng Đường. Đọc tên phố là một cách tiếp cận ký ức đô thị. Ở một không gian khác, Bảo tàng Dân tộc học Việt Nam giới thiệu đời sống văn hóa của các cộng đồng dân tộc trên cả nước. Lăng Chủ tịch Hồ Chí Minh là nơi tưởng niệm, đòi hỏi cách ứng xử trang nghiêm khi tham quan.",
+          "status": "source_checked",
+          "source_ids": [
+            "S03",
+            "S05"
+          ]
+        },
+        {
+          "id": "O05",
+          "topic": "am-thuc",
+          "title": "Tên món ăn để khám phá",
+          "text": "Trong các tuyến đi bộ được nguồn du lịch giới thiệu, phở và cà phê trứng là những hương vị có thể gặp khi khám phá Hà Nội; phở cuốn và phở chiên phồng cũng xuất hiện trong trải nghiệm ẩm thực đô thị. Những tên món này giúp mở rộng câu chuyện từ di tích sang đời sống thường ngày. Sổ tay chưa có dữ liệu xác nhận về công thức, giá món hay từng cơ sở phục vụ.",
+          "status": "source_checked",
+          "source_ids": [
+            "S04"
+          ]
+        },
+        {
+          "id": "O06",
+          "topic": "trai-nghiem",
+          "title": "Khám phá theo tuyến chủ đề",
+          "text": "Một hành trình tìm hiểu Hà Nội có thể đi theo chủ đề: lịch sử ở Hoàng thành Thăng Long, truyền thống giáo dục ở Văn Miếu – Quốc Tử Giám, nghề và thương mại ở phố cổ, hoặc văn hóa cộng đồng tại bảo tàng. Các tuyến đi bộ trong nguồn là gợi ý đọc không gian thành phố; lối vào, lịch hoạt động và điều kiện thực tế cần được kiểm tra trước chuyến đi.",
+          "status": "source_checked",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S07"
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "ho-hoan-kiem",
+          "name": "Hồ Hoàn Kiếm",
+          "category": "ho-canh-quan",
+          "summary": "Không gian hồ ở trung tâm đô thị, gắn với đền Ngọc Sơn và cầu Thê Húc trong bài giới thiệu điểm đến Hà Nội.",
+          "highlights": [
+            "Không gian ven hồ",
+            "Đền Ngọc Sơn",
+            "Cầu Thê Húc"
+          ],
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Không dùng nhân vật truyền thuyết bị nhầm trong bài nguồn. Chưa có lịch phố đi bộ hiện hành hoặc thông tin vé đền.",
+          "suggested_questions": [
+            "Hồ Hoàn Kiếm có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Hồ Hoàn Kiếm?",
+            "Sổ tay có nguồn nào cho Hồ Hoàn Kiếm?"
+          ],
+          "facts": [
+            {
+              "id": "F01",
+              "entity_id": "ho-hoan-kiem",
+              "topic": "danh-lam",
+              "text": "Nguồn du lịch giới thiệu hồ Hoàn Kiếm cùng đền Ngọc Sơn và cầu Thê Húc.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F02",
+              "entity_id": "ho-hoan-kiem",
+              "topic": "trai-nghiem",
+              "text": "Hồ Hoàn Kiếm xuất hiện trong tuyến đi bộ tham khảo của cơ quan du lịch.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pho-co-ha-noi",
+          "name": "Phố cổ Hà Nội",
+          "category": "khong-gian-van-hoa",
+          "summary": "Khu phố gắn với thương mại và nghề truyền thống, thể hiện qua những tên phố bắt đầu bằng Hàng.",
+          "highlights": [
+            "Tên phố gắn với nghề",
+            "Hàng Bạc",
+            "Hàng Mã và Hàng Đường"
+          ],
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+          "suggested_questions": [
+            "Phố cổ Hà Nội có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Phố cổ Hà Nội?",
+            "Sổ tay có nguồn nào cho Phố cổ Hà Nội?"
+          ],
+          "facts": [
+            {
+              "id": "F03",
+              "entity_id": "pho-co-ha-noi",
+              "topic": "van-hoa",
+              "text": "Nhiều tên phố cổ bắt đầu bằng Hàng, liên quan đến nghề hoặc mặt hàng buôn bán.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F04",
+              "entity_id": "pho-co-ha-noi",
+              "topic": "pho-nghe",
+              "text": "Hàng Bạc, Hàng Mã và Hàng Đường là các ví dụ được bài di sản Hà Nội nêu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F05",
+              "entity_id": "pho-co-ha-noi",
+              "topic": "trai-nghiem",
+              "text": "Chợ Đồng Xuân xuất hiện trong bài tuyến khám phá phố cổ Hà Nội.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "van-mieu-quoc-tu-giam",
+          "name": "Văn Miếu – Quốc Tử Giám",
+          "category": "di-tich-giao-duc",
+          "summary": "Di tích gắn với truyền thống học tập và khoa cử, có hệ thống bia tiến sĩ được bài giới thiệu di sản nhắc tới.",
+          "highlights": [
+            "Truyền thống giáo dục",
+            "Bia tiến sĩ",
+            "Mốc 1070 và 1076"
+          ],
+          "source_ids": [
+            "S03"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Chưa đọc nguồn quản lý trực tiếp về vé, giờ và địa chỉ mới; không dùng giá cũ từ bài du lịch tổng hợp.",
+          "suggested_questions": [
+            "Văn Miếu – Quốc Tử Giám có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Văn Miếu – Quốc Tử Giám?",
+            "Sổ tay có nguồn nào cho Văn Miếu – Quốc Tử Giám?"
+          ],
+          "facts": [
+            {
+              "id": "F06",
+              "entity_id": "van-mieu-quoc-tu-giam",
+              "topic": "van-hoa",
+              "text": "Văn Miếu – Quốc Tử Giám gắn với truyền thống giáo dục và khoa cử.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F18",
+              "entity_id": "van-mieu-quoc-tu-giam",
+              "topic": "lich-su",
+              "text": "Văn Miếu được xây dựng năm 1070 theo bài giới thiệu di sản Hà Nội.",
+              "value": 1070,
+              "unit": "năm",
+              "time_basis": "1070",
+              "status": "dated_reference",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F19",
+              "entity_id": "van-mieu-quoc-tu-giam",
+              "topic": "lich-su",
+              "text": "Quốc Tử Giám có mốc thành lập năm 1076 theo bài giới thiệu di sản Hà Nội.",
+              "value": 1076,
+              "unit": "năm",
+              "time_basis": "1076",
+              "status": "dated_reference",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F20",
+              "entity_id": "van-mieu-quoc-tu-giam",
+              "topic": "di-san",
+              "text": "Bài giới thiệu di sản Hà Nội nêu 82 bia tiến sĩ tại Văn Miếu – Quốc Tử Giám.",
+              "value": 82,
+              "unit": "bia",
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hoang-thanh-thang-long",
+          "name": "Hoàng thành Thăng Long",
+          "category": "di-san-khao-co",
+          "summary": "Khu di sản phản ánh nhiều lớp lịch sử kinh đô, với dấu tích kiến trúc và khảo cổ qua các thời kỳ.",
+          "highlights": [
+            "Di sản UNESCO năm 2010",
+            "Các lớp khảo cổ",
+            "Lịch sử kinh đô"
+          ],
+          "source_ids": [
+            "S03",
+            "S06",
+            "S07"
+          ],
+          "status": "source_checked",
+          "current_address": "19C Hoàng Diệu, phường Ba Đình, Hà Nội",
+          "address_status": "source_checked",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+          "suggested_questions": [
+            "Hoàng thành Thăng Long có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Hoàng thành Thăng Long?",
+            "Sổ tay có nguồn nào cho Hoàng thành Thăng Long?"
+          ],
+          "address_source_ids": [
+            "S06"
+          ],
+          "facts": [
+            {
+              "id": "F07",
+              "entity_id": "hoang-thanh-thang-long",
+              "topic": "khao-co",
+              "text": "Nguồn quản lý Hoàng thành mô tả những tầng dấu tích khảo cổ qua nhiều thời kỳ.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S07"
+              ]
+            },
+            {
+              "id": "F21",
+              "entity_id": "hoang-thanh-thang-long",
+              "topic": "di-san",
+              "text": "Hoàng thành Thăng Long được UNESCO ghi danh di sản thế giới năm 2010.",
+              "value": 2010,
+              "unit": "năm",
+              "time_basis": "2010",
+              "status": "dated_reference",
+              "source_ids": [
+                "S07"
+              ]
+            },
+            {
+              "id": "F22",
+              "entity_id": "hoang-thanh-thang-long",
+              "topic": "khao-co",
+              "text": "Nguồn quản lý nêu việc khai quật khảo cổ khu vực Hoàng thành bắt đầu tháng 12/2002.",
+              "value": 2002,
+              "unit": "năm",
+              "time_basis": "2002-12",
+              "status": "dated_reference",
+              "source_ids": [
+                "S07"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lang-chu-tich-ho-chi-minh",
+          "name": "Lăng Chủ tịch Hồ Chí Minh",
+          "category": "tuong-niem",
+          "summary": "Không gian tưởng niệm Chủ tịch Hồ Chí Minh được nguồn du lịch Hà Nội giới thiệu.",
+          "highlights": [
+            "Không gian tưởng niệm",
+            "Ứng xử trang nghiêm"
+          ],
+          "source_ids": [
+            "S03",
+            "S05"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Chưa xác nhận lịch viếng, thời gian bảo trì hoặc điều kiện tham quan hiện hành; loại giá vé trong bài tổng hợp.",
+          "suggested_questions": [
+            "Lăng Chủ tịch Hồ Chí Minh có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Lăng Chủ tịch Hồ Chí Minh?",
+            "Sổ tay có nguồn nào cho Lăng Chủ tịch Hồ Chí Minh?"
+          ],
+          "facts": [
+            {
+              "id": "F08",
+              "entity_id": "lang-chu-tich-ho-chi-minh",
+              "topic": "van-hoa",
+              "text": "Lăng Chủ tịch Hồ Chí Minh là địa điểm tưởng niệm, cần ứng xử trang nghiêm theo hướng dẫn tham quan.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nha-hat-lon-ha-noi",
+          "name": "Nhà hát Lớn Hà Nội",
+          "category": "kien-truc-nghe-thuat",
+          "summary": "Công trình kiến trúc và địa điểm biểu diễn được các bài du lịch giới thiệu trong khu vực trung tâm Hà Nội.",
+          "highlights": [
+            "Kiến trúc",
+            "Nghệ thuật biểu diễn"
+          ],
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Không suy ra luôn có tour nội thất hoặc biểu diễn; lịch chương trình cần nguồn đơn vị vận hành.",
+          "suggested_questions": [
+            "Nhà hát Lớn Hà Nội có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Nhà hát Lớn Hà Nội?",
+            "Sổ tay có nguồn nào cho Nhà hát Lớn Hà Nội?"
+          ],
+          "facts": [
+            {
+              "id": "F09",
+              "entity_id": "nha-hat-lon-ha-noi",
+              "topic": "kien-truc",
+              "text": "Nhà hát Lớn được bài du lịch giới thiệu như một điểm kiến trúc ở Hà Nội.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F10",
+              "entity_id": "nha-hat-lon-ha-noi",
+              "topic": "nghe-thuat",
+              "text": "Nguồn giới thiệu Nhà hát Lớn gắn công trình với hoạt động biểu diễn nghệ thuật.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bao-tang-dan-toc-hoc",
+          "name": "Bảo tàng Dân tộc học Việt Nam",
+          "category": "bao-tang",
+          "summary": "Bảo tàng giới thiệu đời sống và văn hóa của các cộng đồng dân tộc Việt Nam.",
+          "highlights": [
+            "Văn hóa các cộng đồng",
+            "Trưng bày hiện vật và không gian kiến trúc"
+          ],
+          "source_ids": [
+            "S05"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Không dùng cách gọi 54 dân tộc thiểu số trong bài tiếng Anh; chưa xác nhận giờ, vé và nội dung triển lãm hiện hành.",
+          "suggested_questions": [
+            "Bảo tàng Dân tộc học Việt Nam có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Bảo tàng Dân tộc học Việt Nam?",
+            "Sổ tay có nguồn nào cho Bảo tàng Dân tộc học Việt Nam?"
+          ],
+          "facts": [
+            {
+              "id": "F11",
+              "entity_id": "bao-tang-dan-toc-hoc",
+              "topic": "van-hoa",
+              "text": "Bảo tàng Dân tộc học giới thiệu văn hóa các cộng đồng dân tộc Việt Nam.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F12",
+              "entity_id": "bao-tang-dan-toc-hoc",
+              "topic": "trung-bay",
+              "text": "Bài giới thiệu bảo tàng nhắc trưng bày hiện vật và kiến trúc truyền thống trong khuôn viên.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nha-tho-lon-ha-noi",
+          "name": "Nhà thờ Lớn Hà Nội",
+          "category": "kien-truc-ton-giao",
+          "summary": "Công trình Công giáo được nguồn du lịch nhắc tới qua kiến trúc Gothic và vị trí trong tuyến khám phá trung tâm.",
+          "highlights": [
+            "Kiến trúc Gothic",
+            "Không gian sinh hoạt tôn giáo"
+          ],
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Chưa có lịch thánh lễ hoặc quy định vào bên trong; không tự coi giờ mở cửa trên bài du lịch là lịch hiện hành.",
+          "suggested_questions": [
+            "Nhà thờ Lớn Hà Nội có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Nhà thờ Lớn Hà Nội?",
+            "Sổ tay có nguồn nào cho Nhà thờ Lớn Hà Nội?"
+          ],
+          "facts": [
+            {
+              "id": "F13",
+              "entity_id": "nha-tho-lon-ha-noi",
+              "topic": "kien-truc",
+              "text": "Nhà thờ Lớn Hà Nội được nguồn du lịch mô tả theo phong cách kiến trúc Gothic.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F14",
+              "entity_id": "nha-tho-lon-ha-noi",
+              "topic": "trai-nghiem",
+              "text": "Nhà thờ Lớn là điểm được nhắc trong tuyến đi bộ trung tâm Hà Nội.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": {
+        "S01": {
+          "id": "S01",
+          "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+          "displayed_date": "2026-10-05",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng để xác định Hà Nội không sáp nhập cấp tỉnh trong đợt năm 2025; không suy ra địa chỉ chi tiết."
+        },
+        "S02": {
+          "id": "S02",
+          "title": "Nghị quyết 1656/NQ-UBTVQH15 về sắp xếp cấp xã Hà Nội",
+          "publisher": "Thông tấn xã Việt Nam",
+          "url": "https://nvsk.vnanet.vn/toan-van-nghi-quyet-so-1656-nq-ubtvqh15-sap-xep-cac-don-vi-hanh-chinh-cap-xa-cua-thanh-pho-ha-noi-nam-2025-1-172085.vna",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Đã đọc phần mở đầu và văn bản về sắp xếp năm 2025. Không thấy ngày đăng riêng; ngày 16/06/2025 là ngày nghị quyết."
+        },
+        "S03": {
+          "id": "S03",
+          "title": "Hanoi: six heritage sites",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho tổng quan di tích, mốc Văn Miếu, Quốc Tử Giám và phố cổ. Loại chi tiết truyền thuyết và niên đại chưa đối chiếu thêm."
+        },
+        "S04": {
+          "id": "S04",
+          "title": "3 walking tours of Hanoi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cho địa danh và tên món ăn; không lấy mô tả nguyên liệu phở cuốn trong bài. Tuyến đi bộ không được coi là hướng dẫn an toàn hay lịch hoạt động hiện hành."
+        },
+        "S05": {
+          "id": "S05",
+          "title": "11 must-see attractions in Ha Noi",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài có chi tiết cần biên tập: nhầm vua xây chùa Một Cột, nhầm nhân vật truyền thuyết trả gươm; cách gọi 54 ethnic minorities không chính xác; giá và giờ không có mốc rõ. Đã loại các chi tiết này, chỉ lấy mô tả địa danh có căn cứ."
+        },
+        "S06": {
+          "id": "S06",
+          "title": "Giới thiệu Hoàng thành Thăng Long",
+          "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
+          "url": "https://hoangthanhthanglong.vn/gioi-thieu/",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Website quản lý trực tiếp; đã đọc địa chỉ footer và giờ 8:00–17:00 trên header. Chưa kiểm tra hiệu lực lịch đối với ngày cụ thể. Đường dẫn đặt vé chưa được kiểm tra nên không đưa vào database."
+        },
+        "S07": {
+          "id": "S07",
+          "title": "Thư ngỏ – Hoàng thành Thăng Long",
+          "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
+          "url": "https://hoangthanhthanglong.vn/thu-ngo/",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn quản lý nêu khai quật khảo cổ năm 2002 và UNESCO năm 2010; dùng đối chiếu lịch sử và di sản."
+        }
+      }
+    },
+    "quang-ninh": {
+      "name": "Quảng Ninh",
+      "title": "Quảng Ninh: từ biển đảo đến núi rừng Yên Tử",
+      "lead": "Quảng Ninh không chỉ có cảnh quan vịnh. Bên cạnh đảo đá, bãi biển và bờ đá là không gian kiến trúc tôn giáo ở Yên Tử và những câu chuyện được lưu giữ tại bảo tàng địa phương. Sổ tay kết nối các điểm đến ấy thành một hành trình đọc cảnh quan và văn hóa.",
+      "researchedOn": "2026-10-06",
+      "sections": [
+        {
+          "id": "O01",
+          "topic": "tong-quan",
+          "title": "Quảng Ninh trong phạm vi sổ tay",
+          "text": "Từ Vịnh Hạ Long đến Cô Tô, Quan Lạn và Yên Tử, Quảng Ninh mở ra hai không gian nổi bật: biển đảo và núi rừng. Bảo tàng – Thư viện Quảng Ninh bổ sung một điểm dừng để tìm hiểu di sản địa phương. Phạm vi hành chính trong kho tư liệu được ghi theo Nghị quyết 36/2026/QH16, hiệu lực từ ngày 01/09/2026; những bài du lịch cũ vẫn mang tên tỉnh theo thời điểm xuất bản.",
+          "status": "source_checked",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05",
+            "S06"
+          ]
+        },
+        {
+          "id": "O02",
+          "topic": "dia-ly",
+          "title": "Biển, đảo và cảnh quan núi",
+          "text": "Hạ Long nổi bật với cảnh quan núi đá vôi giữa biển. Quan Lạn nằm trong vịnh Bái Tử Long; Cô Tô có bãi biển, bờ đá và đảo Thanh Lân. Yên Tử bổ sung cảnh quan núi rừng, tạo một tuyến chủ đề khác với du lịch biển đảo.",
+          "status": "source_checked",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "id": "O03",
+          "topic": "lich-su",
+          "title": "Lịch sử gắn với Yên Tử",
+          "text": "Yên Tử gắn với Trần Nhân Tông và Thiền phái Trúc Lâm. Khu di tích được xếp hạng quốc gia đặc biệt năm 2012; năm 2025, phần Yên Tử thuộc quần thể di sản văn hóa thế giới liên địa phương Yên Tử – Vĩnh Nghiêm – Côn Sơn, Kiếp Bạc. Đây là hai mốc và hai phạm vi khác nhau.",
+          "status": "source_checked",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "id": "O04",
+          "topic": "van-hoa",
+          "title": "Tín ngưỡng và ký ức địa phương",
+          "text": "Ở Yên Tử, chùa, am và tháp tạo thành một không gian kiến trúc gắn với sinh hoạt Phật giáo. Quan Lạn có cụm đình, đền, chùa, cho thấy hành trình biển đảo cũng có thể là hành trình tìm hiểu di sản văn hóa. Bảo tàng – Thư viện Quảng Ninh giữ vai trò lưu giữ và giới thiệu di sản địa phương. Hoạt động hành hương được tiếp cận như sinh hoạt tín ngưỡng của cộng đồng.",
+          "status": "source_checked",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S06"
+          ]
+        },
+        {
+          "id": "O05",
+          "topic": "am-thuc",
+          "title": "Ẩm thực biển đảo",
+          "text": "Bài giới thiệu Cô Tô nhắc đến mực, hàu, bề bề và sá sùng, gợi mở câu chuyện ẩm thực gắn với biển. Đây là các nguyên liệu được nguồn du lịch giới thiệu, không phải danh sách những món chỉ có ở Quảng Ninh. Việc chọn món, tìm cơ sở phục vụ và tham khảo giá cần thêm thông tin tại thời điểm chuyến đi.",
+          "status": "source_checked",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "id": "O06",
+          "topic": "trai-nghiem",
+          "title": "Trải nghiệm theo chủ đề",
+          "text": "Nguồn du lịch giới thiệu ngắm cảnh vịnh bằng thuyền, chèo kayak tại Hạ Long, khám phá bãi biển và bờ đá ở Cô Tô, Quan Lạn; nguồn Yên Tử giới thiệu tuyến kiến trúc tôn giáo giữa núi rừng. Việc đặt tour, điều kiện hoạt động trên biển và lịch lễ hội từng năm cần nguồn vận hành hiện hành.",
+          "status": "source_checked",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "vinh-ha-long",
+          "name": "Vịnh Hạ Long",
+          "category": "canh-quan-bien",
+          "summary": "Cảnh quan vịnh với núi đá vôi, đảo và hang động; phù hợp giới thiệu địa hình karst và trải nghiệm ngắm cảnh trên biển.",
+          "highlights": [
+            "Núi đá vôi giữa biển",
+            "Hang động",
+            "Du thuyền và kayak theo nguồn du lịch"
+          ],
+          "source_ids": [
+            "S02"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Không đồng nhất toàn khu du lịch Hạ Long với ranh giới di sản UNESCO. Không đưa Lan Hạ, Cát Bà vào phạm vi Quảng Ninh.",
+          "suggested_questions": [
+            "Vịnh Hạ Long có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Vịnh Hạ Long?",
+            "Sổ tay có nguồn nào cho Vịnh Hạ Long?"
+          ],
+          "facts": [
+            {
+              "id": "F01",
+              "entity_id": "vinh-ha-long",
+              "topic": "dia-ly",
+              "text": "Vịnh Hạ Long có cảnh quan núi đá vôi và đảo giữa biển.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S02"
+              ]
+            },
+            {
+              "id": "F02",
+              "entity_id": "vinh-ha-long",
+              "topic": "trai-nghiem",
+              "text": "Trang du lịch giới thiệu ngắm vịnh bằng thuyền và chèo kayak như những trải nghiệm ở Hạ Long.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S02"
+              ]
+            },
+            {
+              "id": "F03",
+              "entity_id": "vinh-ha-long",
+              "topic": "canh-quan",
+              "text": "Hang động là một phần cảnh quan được nguồn giới thiệu Hạ Long nhắc tới.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S02"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vinh-bai-tu-long",
+          "name": "Vịnh Bái Tử Long",
+          "category": "canh-quan-bien",
+          "summary": "Vịnh được nguồn giới thiệu Quan Lạn xác định là không gian biển nơi đảo Quan Lạn tọa lạc. Hồ sơ hiện tập trung vào mối liên hệ với Quan Lạn.",
+          "highlights": [
+            "Không gian biển đảo",
+            "Quan Lạn"
+          ],
+          "source_ids": [
+            "S04"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Nguồn năm 2015; chưa có khảo sát toàn vịnh, ranh giới, hệ sinh thái hoặc tour hiện hành.",
+          "suggested_questions": [
+            "Vịnh Bái Tử Long có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Vịnh Bái Tử Long?",
+            "Sổ tay có nguồn nào cho Vịnh Bái Tử Long?"
+          ],
+          "facts": [
+            {
+              "id": "F04",
+              "entity_id": "vinh-bai-tu-long",
+              "topic": "dia-ly",
+              "text": "Quan Lạn nằm trong vịnh Bái Tử Long theo bài giới thiệu của cơ quan du lịch.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "co-to",
+          "name": "Cô Tô",
+          "category": "bien-dao",
+          "summary": "Điểm đến biển đảo có bãi Hồng Vàn, Vàn Chảy và cảnh quan bờ đá Cầu Mỵ.",
+          "highlights": [
+            "Bãi Hồng Vàn",
+            "Bãi Vàn Chảy",
+            "Bờ đá Cầu Mỵ"
+          ],
+          "source_ids": [
+            "S03"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+          "suggested_questions": [
+            "Cô Tô có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Cô Tô?",
+            "Sổ tay có nguồn nào cho Cô Tô?"
+          ],
+          "facts": [
+            {
+              "id": "F05",
+              "entity_id": "co-to",
+              "topic": "danh-lam",
+              "text": "Hồng Vàn và Vàn Chảy là hai bãi biển được nguồn giới thiệu Cô Tô nhắc tới.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F06",
+              "entity_id": "co-to",
+              "topic": "danh-lam",
+              "text": "Cầu Mỵ được giới thiệu qua cảnh quan bờ đá ven biển.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F07",
+              "entity_id": "co-to",
+              "topic": "am-thuc",
+              "text": "Nguồn giới thiệu Cô Tô nhắc mực, hàu, bề bề và sá sùng trong nhóm hải sản địa phương.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "thanh-lan",
+          "name": "Đảo Thanh Lân",
+          "category": "bien-dao",
+          "summary": "Đảo thuộc khu vực Cô Tô, được nguồn du lịch giới thiệu với rừng và cảnh quan bờ đá.",
+          "highlights": [
+            "Cảnh quan rừng",
+            "Bờ biển và đá"
+          ],
+          "source_ids": [
+            "S03"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+          "suggested_questions": [
+            "Đảo Thanh Lân có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Đảo Thanh Lân?",
+            "Sổ tay có nguồn nào cho Đảo Thanh Lân?"
+          ],
+          "facts": [
+            {
+              "id": "F08",
+              "entity_id": "thanh-lan",
+              "topic": "dia-ly",
+              "text": "Thanh Lân là đảo được bài giới thiệu khu vực Cô Tô đề cập.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F09",
+              "entity_id": "thanh-lan",
+              "topic": "canh-quan",
+              "text": "Nguồn du lịch mô tả Thanh Lân với cảnh quan rừng và bờ đá.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quan-lan",
+          "name": "Quan Lạn",
+          "category": "bien-dao-van-hoa",
+          "summary": "Đảo trong vịnh Bái Tử Long, kết hợp bãi biển với cụm di tích đình, đền, chùa.",
+          "highlights": [
+            "Bãi Quan Lạn",
+            "Sơn Hào và Minh Châu",
+            "Cụm di tích văn hóa"
+          ],
+          "source_ids": [
+            "S04"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Bài năm 2015. Chưa xác nhận địa chỉ hành chính chi tiết, lịch tàu hoặc dịch vụ hiện hành.",
+          "suggested_questions": [
+            "Quan Lạn có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Quan Lạn?",
+            "Sổ tay có nguồn nào cho Quan Lạn?"
+          ],
+          "facts": [
+            {
+              "id": "F10",
+              "entity_id": "quan-lan",
+              "topic": "danh-lam",
+              "text": "Bài giới thiệu Quan Lạn nhắc các bãi Quan Lạn, Sơn Hào và Minh Châu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            },
+            {
+              "id": "F11",
+              "entity_id": "quan-lan",
+              "topic": "van-hoa",
+              "text": "Quan Lạn có cụm đình, đền, chùa được nguồn du lịch giới thiệu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            },
+            {
+              "id": "F12",
+              "entity_id": "quan-lan",
+              "topic": "kien-truc",
+              "text": "Nguồn giới thiệu Quan Lạn đề cập nghệ thuật chạm khắc gỗ trong kiến trúc di tích.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "yen-tu",
+          "name": "Yên Tử",
+          "category": "di-tich-ton-giao",
+          "summary": "Khu di tích và danh thắng gắn với Trần Nhân Tông, Thiền phái Trúc Lâm và hệ thống chùa, am, tháp giữa núi rừng.",
+          "highlights": [
+            "Chùa Hoa Yên",
+            "Vườn tháp Huệ Quang",
+            "Chùa Đồng"
+          ],
+          "source_ids": [
+            "S05"
+          ],
+          "status": "source_checked",
+          "current_address": "Phần lớn thuộc phường Yên Tử, một phần thuộc phường Hoàng Quế, Quảng Ninh (phạm vi khu di tích theo nguồn 14/07/2025).",
+          "address_status": "dated_reference",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Nguồn ngày 14/07/2025 nêu khu di tích phần lớn ở phường Yên Tử, một phần ở phường Hoàng Quế. Không coi toàn quần thể UNESCO liên địa phương nằm tại Quảng Ninh.",
+          "suggested_questions": [
+            "Yên Tử có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Yên Tử?",
+            "Sổ tay có nguồn nào cho Yên Tử?"
+          ],
+          "address_source_ids": [
+            "S05"
+          ],
+          "facts": [
+            {
+              "id": "F13",
+              "entity_id": "yen-tu",
+              "topic": "lich-su",
+              "text": "Yên Tử gắn với Trần Nhân Tông và Thiền phái Trúc Lâm.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F14",
+              "entity_id": "yen-tu",
+              "topic": "kien-truc",
+              "text": "Hệ thống kiến trúc Yên Tử gồm chùa, am và tháp phân bố dọc tuyến từ chân núi lên đỉnh.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F15",
+              "entity_id": "yen-tu",
+              "topic": "danh-lam",
+              "text": "Chùa Hoa Yên, vườn tháp Huệ Quang và chùa Đồng thuộc các công trình được nguồn Yên Tử giới thiệu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F19",
+              "entity_id": "yen-tu",
+              "topic": "di-san",
+              "text": "Yên Tử được xếp hạng di tích quốc gia đặc biệt theo Quyết định 1419/QĐ-TTg ngày 27/09/2012.",
+              "value": 2012,
+              "unit": "năm",
+              "time_basis": "2012",
+              "status": "dated_reference",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F20",
+              "entity_id": "yen-tu",
+              "topic": "di-san",
+              "text": "Ngày 12/07/2025, UNESCO công nhận quần thể Yên Tử – Vĩnh Nghiêm – Côn Sơn, Kiếp Bạc là di sản văn hóa thế giới; quần thể gồm thành phần tại Quảng Ninh, Bắc Ninh và Hải Phòng.",
+              "value": 2025,
+              "unit": "năm",
+              "time_basis": "2025-07-12",
+              "status": "dated_reference",
+              "source_ids": [
+                "S05"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bao-tang-quang-ninh",
+          "name": "Bảo tàng – Thư viện Quảng Ninh",
+          "category": "bao-tang",
+          "summary": "Đơn vị lưu giữ, nghiên cứu, trưng bày và giới thiệu di sản, lịch sử, văn hóa, thiên nhiên, con người Quảng Ninh.",
+          "highlights": [
+            "Di sản địa phương",
+            "Giáo dục lịch sử và văn hóa"
+          ],
+          "source_ids": [
+            "S06"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Nguồn đã đọc là hồ sơ chức năng đơn vị; chưa đủ căn cứ mô tả từng tầng trưng bày, kiến trúc, địa chỉ cổng vào hay vé.",
+          "suggested_questions": [
+            "Bảo tàng – Thư viện Quảng Ninh có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Bảo tàng – Thư viện Quảng Ninh?",
+            "Sổ tay có nguồn nào cho Bảo tàng – Thư viện Quảng Ninh?"
+          ],
+          "facts": [
+            {
+              "id": "F16",
+              "entity_id": "bao-tang-quang-ninh",
+              "topic": "chuc-nang",
+              "text": "Bảo tàng – Thư viện Quảng Ninh thực hiện chức năng sưu tầm, bảo quản, nghiên cứu và trưng bày di sản văn hóa.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S06"
+              ]
+            },
+            {
+              "id": "F17",
+              "entity_id": "bao-tang-quang-ninh",
+              "topic": "giao-duc",
+              "text": "Đơn vị có nhiệm vụ giới thiệu lịch sử, văn hóa, thiên nhiên và con người Quảng Ninh phục vụ nghiên cứu, học tập, tham quan.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S06"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": {
+        "S01": {
+          "id": "S01",
+          "title": "Nghị quyết 36/2026/QH16 thành lập thành phố Quảng Ninh",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-36-2026-qh16-thanh-lap-thanh-pho-quang-ninh-tu-1-9-2026-119260903082603583.htm",
+          "displayed_date": "2026-09-03",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nghị quyết thông qua ngày 24/08/2026, hiệu lực 01/09/2026; đọc trực tiếp nội dung Điều 1–3."
+        },
+        "S02": {
+          "id": "S02",
+          "title": "Ha Long",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/places-to-go/northern-vietnam/ha-long",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Chỉ lấy mô tả cảnh quan và trải nghiệm tổng quát. Nội dung có nhắc điểm ngoài Quảng Ninh; đã loại khỏi hồ sơ. Không lấy lịch hoặc thời gian vận chuyển làm thông tin hiện hành."
+        },
+        "S03": {
+          "id": "S03",
+          "title": "Co To Island: pristine beauty of Northeast Vietnam",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Trang tiếng Việt ghi bản dịch do AI tạo. Chỉ lấy mô tả địa danh tổng quát; loại số liệu, niên đại hải đăng và quy định hạn chế nhựa chưa đối chiếu."
+        },
+        "S04": {
+          "id": "S04",
+          "title": "Discovering the beauty of Quan Lan Island",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam – TITC",
+          "url": "https://vietnamtourism.gov.vn/en/post/9785",
+          "displayed_date": "2015-11-09",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài năm 2015 dùng địa danh huyện Vân Đồn trước sắp xếp. Không nhập số lượng phòng, cơ sở lưu trú, lịch tàu, giá hay thời gian chạy tàu như hiện hành."
+        },
+        "S05": {
+          "id": "S05",
+          "title": "Khu di tích lịch sử và danh lam thắng cảnh Yên Tử",
+          "publisher": "Cổng thông tin điện tử Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530",
+          "displayed_date": "2025-07-14",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Bài nêu địa giới phường sau sắp xếp và sự kiện UNESCO ngày 12/07/2025. Chỉ lấy phần di tích Quảng Ninh, không mở rộng hồ sơ sang Bắc Ninh hoặc Hải Phòng."
+        },
+        "S06": {
+          "id": "S06",
+          "title": "Bảo tàng – Thư viện thành phố",
+          "publisher": "Sở Văn hóa, Thể thao và Du lịch Quảng Ninh",
+          "url": "https://www.quangninh.gov.vn/so/sovanhoathethao/trang/chitietbvgioithieu.aspx?bvid=84",
+          "displayed_date": "2026-09-04",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn về chức năng và nhiệm vụ đơn vị, không phải hướng dẫn trưng bày hoặc giá vé. Không nhập thông tin cá nhân cán bộ vào database du lịch."
+        }
+      }
+    },
+    "lao-cai": {
+      "name": "Lào Cai",
+      "title": "Lào Cai: những câu chuyện giữa núi cao và mặt hồ",
+      "lead": "Sa Pa và Fansipan mở ra góc nhìn về núi cao; Mù Cang Chải gắn với ruộng bậc thang; hồ Thác Bà và Ngòi Tu đưa người đọc đến cảnh quan hồ và đời sống cộng đồng. Mỗi địa danh là một lát cắt, giúp cảm nhận sự đa dạng của vùng đất này.",
+      "researchedOn": "2026-10-06",
+      "sections": [
+        {
+          "id": "O01",
+          "topic": "tong-quan",
+          "title": "Lào Cai sau sắp xếp năm 2025",
+          "text": "Các địa danh trong sổ tay Lào Cai trải từ Sa Pa, Fansipan và Bắc Hà đến Mù Cang Chải, Khau Phạ, hồ Thác Bà và Ngòi Tu. Phạm vi này theo sắp xếp năm 2025, gồm Lào Cai và Yên Bái trước đây. Vì vậy, tên Yên Bái trong những bài du lịch cũ cần được đọc theo thời điểm của nguồn, thay vì coi là một địa phương nằm ngoài phạm vi bài viết.",
+          "status": "source_checked",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "id": "O02",
+          "topic": "dia-ly",
+          "title": "Núi, ruộng bậc thang và hồ",
+          "text": "Sa Pa được nguồn du lịch giới thiệu với thung lũng, núi và ruộng bậc thang; Mù Cang Chải nổi bật với cảnh quan ruộng trên sườn núi. Khau Phạ là đèo trong khu vực Mù Cang Chải – Tú Lệ. Hồ Thác Bà là hồ nhân tạo hình thành cùng công trình thủy điện Thác Bà.",
+          "status": "source_checked",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "id": "O03",
+          "topic": "lich-su",
+          "title": "Đọc lịch sử qua cảnh quan sinh kế",
+          "text": "Câu chuyện lịch sử trong phần tư liệu hiện có đi từ sự thay đổi phạm vi hành chính năm 2025 đến mối liên hệ giữa hồ Thác Bà và công trình thủy điện. Bên cạnh đó, ruộng bậc thang được đọc như một cảnh quan nông nghiệp gắn với sinh kế. Những lát cắt này chưa đủ để lập niên biểu lịch sử toàn tỉnh hoặc xác định niên đại từng làng.",
+          "status": "source_checked",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "id": "O04",
+          "topic": "van-hoa",
+          "title": "Đời sống cộng đồng và nghề thủ công",
+          "text": "Ở Mù Cang Chải, nguồn du lịch giới thiệu nghề dệt của người Mông. Tại Ngòi Tu bên hồ Thác Bà, câu chuyện lại gắn với nhà sàn, nghề đan và sinh hoạt của cộng đồng Dao. Những mô tả ấy cho thấy sự đa dạng của đời sống địa phương; mỗi nét văn hóa cần được hiểu trong cộng đồng và không gian cụ thể mà nguồn đề cập.",
+          "status": "source_checked",
+          "source_ids": [
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "id": "O05",
+          "topic": "am-thuc",
+          "title": "Ẩm thực trong trải nghiệm cộng đồng",
+          "text": "Cơm lam và món gà nấu măng chua được bài giới thiệu hồ Thác Bà nhắc đến trong trải nghiệm địa phương. Tên món giúp người đọc hình dung một phần hương vị của chuyến đi, nhưng chưa cung cấp công thức, thực đơn, giá hay địa chỉ phục vụ. Phần ẩm thực Sa Pa và Bắc Hà cần thêm nguồn chuyên biệt để kể sâu hơn.",
+          "status": "source_checked",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "id": "O06",
+          "topic": "trai-nghiem",
+          "title": "Đi bộ, chợ phiên và du lịch hồ",
+          "text": "Nguồn Sa Pa giới thiệu đi bộ khám phá làng và chợ Bắc Hà; nguồn Mù Cang Chải giới thiệu đường đi qua ruộng bậc thang, gợi ý hướng dẫn viên địa phương. Hồ Thác Bà và Ngòi Tu bổ sung trải nghiệm cảnh quan hồ và lưu trú cộng đồng. Lịch chợ, tour, đường đi và điều kiện thời tiết cần xác nhận cho chuyến thực tế.",
+          "status": "source_checked",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "sa-pa",
+          "name": "Sa Pa",
+          "category": "canh-quan-van-hoa",
+          "summary": "Điểm đến vùng núi với thung lũng, ruộng bậc thang và những tuyến khám phá làng được nguồn du lịch giới thiệu.",
+          "highlights": [
+            "Thung lũng và ruộng bậc thang",
+            "Cát Cát và Tả Phìn theo nguồn",
+            "Đi bộ khám phá"
+          ],
+          "source_ids": [
+            "S03"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Hồ sơ dùng Sa Pa như điểm đến du lịch rộng hơn một phường; không tự gán mọi làng cho phường Sa Pa mới.",
+          "suggested_questions": [
+            "Sa Pa có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Sa Pa?",
+            "Sổ tay có nguồn nào cho Sa Pa?"
+          ],
+          "facts": [
+            {
+              "id": "F01",
+              "entity_id": "sa-pa",
+              "topic": "canh-quan",
+              "text": "Nguồn giới thiệu Sa Pa mô tả cảnh quan thung lũng và ruộng bậc thang.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F02",
+              "entity_id": "sa-pa",
+              "topic": "danh-lam",
+              "text": "Cát Cát và Tả Phìn là các làng được nguồn Sa Pa nhắc trong trải nghiệm khám phá.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F03",
+              "entity_id": "sa-pa",
+              "topic": "trai-nghiem",
+              "text": "Đi bộ khám phá và lưu trú cộng đồng là các trải nghiệm được nguồn du lịch Sa Pa giới thiệu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fansipan",
+          "name": "Fansipan",
+          "category": "nui",
+          "summary": "Đỉnh núi được nguồn Sa Pa giới thiệu như điểm ngắm cảnh núi và trải nghiệm lên cao.",
+          "highlights": [
+            "Cảnh quan núi",
+            "Trải nghiệm cáp treo theo nguồn"
+          ],
+          "source_ids": [
+            "S03"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Chưa đối chiếu độ cao hiện hành, tuyến leo, điều kiện hoạt động cáp treo hoặc giá vé; không nhập các con số từ bài tổng hợp.",
+          "suggested_questions": [
+            "Fansipan có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Fansipan?",
+            "Sổ tay có nguồn nào cho Fansipan?"
+          ],
+          "facts": [
+            {
+              "id": "F04",
+              "entity_id": "fansipan",
+              "topic": "danh-lam",
+              "text": "Fansipan là đỉnh núi được trang Sa Pa giới thiệu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            },
+            {
+              "id": "F05",
+              "entity_id": "fansipan",
+              "topic": "trai-nghiem",
+              "text": "Nguồn Sa Pa có giới thiệu cách tiếp cận Fansipan bằng cáp treo; database chưa có lịch và giá hiện hành.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cho-bac-ha",
+          "name": "Chợ Bắc Hà",
+          "category": "cho-phien-van-hoa",
+          "summary": "Chợ phiên được nguồn du lịch Sa Pa giới thiệu như điểm khám phá sinh hoạt và giao thương địa phương.",
+          "highlights": [
+            "Chợ phiên",
+            "Sinh hoạt địa phương"
+          ],
+          "source_ids": [
+            "S03"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Nguồn ghi chợ Chủ nhật, nhưng chưa xác nhận lịch hoạt động ngày cụ thể, địa chỉ mới và thay đổi vào dịp lễ.",
+          "suggested_questions": [
+            "Chợ Bắc Hà có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Chợ Bắc Hà?",
+            "Sổ tay có nguồn nào cho Chợ Bắc Hà?"
+          ],
+          "facts": [
+            {
+              "id": "F06",
+              "entity_id": "cho-bac-ha",
+              "topic": "van-hoa",
+              "text": "Chợ Bắc Hà được bài Sa Pa giới thiệu như một chợ phiên địa phương.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S03"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mu-cang-chai",
+          "name": "Mù Cang Chải",
+          "category": "canh-quan-nong-nghiep",
+          "summary": "Cảnh quan ruộng bậc thang gắn với canh tác, làng và văn hóa người Mông theo nguồn du lịch.",
+          "highlights": [
+            "Ruộng bậc thang",
+            "Mâm Xôi",
+            "La Pán Tẩn"
+          ],
+          "source_ids": [
+            "S04",
+            "S01"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Nguồn du lịch dùng Yên Bái trước sắp xếp; database dùng phạm vi tỉnh Lào Cai mới. Chưa xác nhận mùa lúa năm cụ thể.",
+          "suggested_questions": [
+            "Mù Cang Chải có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Mù Cang Chải?",
+            "Sổ tay có nguồn nào cho Mù Cang Chải?"
+          ],
+          "facts": [
+            {
+              "id": "F07",
+              "entity_id": "mu-cang-chai",
+              "topic": "canh-quan",
+              "text": "Ruộng bậc thang là cảnh quan nông nghiệp nổi bật được nguồn Mù Cang Chải giới thiệu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            },
+            {
+              "id": "F08",
+              "entity_id": "mu-cang-chai",
+              "topic": "danh-lam",
+              "text": "Mâm Xôi và La Pán Tẩn được bài Mù Cang Chải nhắc tới.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            },
+            {
+              "id": "F09",
+              "entity_id": "mu-cang-chai",
+              "topic": "van-hoa",
+              "text": "Bài Mù Cang Chải giới thiệu văn hóa dệt và trang phục của người Mông.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "khau-pha",
+          "name": "Đèo Khau Phạ",
+          "category": "canh-quan-nui",
+          "summary": "Đèo trong khu vực Mù Cang Chải – Tú Lệ, được bài du lịch giới thiệu với cảnh quan thung lũng và ruộng.",
+          "highlights": [
+            "Cảnh quan đèo",
+            "Khu vực Tú Lệ"
+          ],
+          "source_ids": [
+            "S04",
+            "S01"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Chưa kiểm tra tình trạng đường, điểm dừng an toàn hoặc dịch vụ dù lượn; không dùng hồ sơ làm hướng dẫn giao thông.",
+          "suggested_questions": [
+            "Đèo Khau Phạ có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Đèo Khau Phạ?",
+            "Sổ tay có nguồn nào cho Đèo Khau Phạ?"
+          ],
+          "facts": [
+            {
+              "id": "F10",
+              "entity_id": "khau-pha",
+              "topic": "dia-ly",
+              "text": "Khau Phạ được nguồn du lịch giới thiệu trong khu vực Mù Cang Chải và Tú Lệ.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            },
+            {
+              "id": "F11",
+              "entity_id": "khau-pha",
+              "topic": "canh-quan",
+              "text": "Nguồn giới thiệu đèo Khau Phạ với cảnh quan thung lũng và ruộng.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ho-thac-ba",
+          "name": "Hồ Thác Bà",
+          "category": "ho-nhan-tao",
+          "summary": "Hồ hình thành cùng công trình thủy điện Thác Bà, được nguồn du lịch giới thiệu qua mặt nước, đảo và cảnh quan ven hồ.",
+          "highlights": [
+            "Cảnh quan mặt nước và đảo",
+            "Mối liên hệ với thủy điện",
+            "Trải nghiệm thuyền theo nguồn"
+          ],
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Nguồn dùng tỉnh Yên Bái cũ; chưa xác nhận bến thuyền, giờ, giá, ranh giới mặt hồ hoặc số đảo hiện hành.",
+          "suggested_questions": [
+            "Hồ Thác Bà có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Hồ Thác Bà?",
+            "Sổ tay có nguồn nào cho Hồ Thác Bà?"
+          ],
+          "facts": [
+            {
+              "id": "F12",
+              "entity_id": "ho-thac-ba",
+              "topic": "lich-su",
+              "text": "Hồ Thác Bà là hồ nhân tạo hình thành cùng công trình thủy điện Thác Bà.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F13",
+              "entity_id": "ho-thac-ba",
+              "topic": "canh-quan",
+              "text": "Nguồn hồ Thác Bà mô tả mặt nước, đảo xanh và cảnh quan núi đá.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F14",
+              "entity_id": "ho-thac-ba",
+              "topic": "trai-nghiem",
+              "text": "Tham quan bằng thuyền là trải nghiệm được bài hồ Thác Bà giới thiệu.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ngoi-tu",
+          "name": "Làng Ngòi Tu",
+          "category": "du-lich-cong-dong",
+          "summary": "Điểm du lịch cộng đồng ở khu vực hồ Thác Bà, được nguồn giới thiệu qua nhà sàn, nghề thủ công và đời sống cộng đồng Dao.",
+          "highlights": [
+            "Nhà sàn",
+            "Nghề đan",
+            "Trải nghiệm cộng đồng"
+          ],
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "status": "source_checked",
+          "current_address": null,
+          "address_status": "needs_current_confirmation",
+          "latitude": null,
+          "longitude": null,
+          "opening_hours": null,
+          "note": "Không khái quát nghi lễ hoặc phong tục cho mọi người Dao; cần xin phép cộng đồng trước khi ghi hình, tái hiện nghi lễ hoặc tạo hình minh họa chi tiết.",
+          "suggested_questions": [
+            "Làng Ngòi Tu có gì đặc trưng?",
+            "Tôi có thể tìm hiểu điều gì tại Làng Ngòi Tu?",
+            "Sổ tay có nguồn nào cho Làng Ngòi Tu?"
+          ],
+          "facts": [
+            {
+              "id": "F15",
+              "entity_id": "ngoi-tu",
+              "topic": "van-hoa",
+              "text": "Ngòi Tu được nguồn hồ Thác Bà giới thiệu như điểm du lịch cộng đồng với nhà sàn và cư dân Dao.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            },
+            {
+              "id": "F16",
+              "entity_id": "ngoi-tu",
+              "topic": "lang-nghe",
+              "text": "Nguồn Ngòi Tu nhắc nghề đan và sinh hoạt hát dân gian trong trải nghiệm văn hóa.",
+              "value": null,
+              "unit": null,
+              "time_basis": null,
+              "status": "source_checked",
+              "source_ids": [
+                "S05"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": {
+        "S01": {
+          "id": "S01",
+          "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+          "displayed_date": "2026-10-05",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dân số và diện tích Lào Cai là số liệu phục vụ sắp xếp năm 2025; không gọi là số liệu mới nhất năm 2026."
+        },
+        "S02": {
+          "id": "S02",
+          "title": "Nghị quyết 1673/NQ-UBTVQH15 về sắp xếp cấp xã Lào Cai",
+          "publisher": "Báo Điện tử Chính phủ",
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1673-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-tinh-lao-cai-nam-2025-119250616214156071.htm",
+          "displayed_date": "2025-06-20",
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nghị quyết ngày 16/06/2025; chính quyền xã/phường mới hoạt động từ 01/07/2025. Không suy ra địa chỉ điểm đến từ tên huyện cũ."
+        },
+        "S03": {
+          "id": "S03",
+          "title": "Sapa",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Dùng cảnh quan, địa danh và chợ phiên; loại chiều cao Fansipan, thời gian cáp treo và thời gian di chuyển chưa đối chiếu. Mùa vụ và thời tiết là tham khảo, không phải dự báo."
+        },
+        "S04": {
+          "id": "S04",
+          "title": "4 things you will love about Mu Cang Chai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng địa danh tỉnh Yên Bái trước sắp xếp. Dùng mô tả cảnh quan và văn hóa; không dùng số giờ chạy xe hay lịch mùa vụ như cam kết hiện hành."
+        },
+        "S05": {
+          "id": "S05",
+          "title": "Thac Ba Lake: the emerald of Yen Bai",
+          "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+          "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai",
+          "displayed_date": null,
+          "accessed_on": "2026-10-06",
+          "status": "source_checked",
+          "note": "Nguồn dùng Yên Bái và huyện Yên Bình/Lục Yên trước sắp xếp. Đã ánh xạ phạm vi tỉnh qua S01; loại xếp hạng hồ, số đảo và diện tích chưa đối chiếu; không khuyến nghị món cá sống."
+        }
+      }
+    }
+  }
+}

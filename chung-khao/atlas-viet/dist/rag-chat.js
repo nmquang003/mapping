@@ -9,6 +9,8 @@ const submit = document.querySelector('#chat-submit');
 const localPreview = ['127.0.0.1', 'localhost'].includes(location.hostname) && location.port === '4321';
 const apiBase = localPreview ? `http://${location.hostname}:4322` : '';
 let history = [], busy = false, connected = false, healthRequest = null;
+const imageDialog = document.querySelector('#chat-image-dialog');
+let imageTrigger = null;
 const connectionError = 'Chưa kết nối được máy chủ chatbot. Vui lòng thử kết nối lại; nếu vẫn lỗi, tải lại trang.';
 function showError(text, reconnect = false) {
   errorBox.replaceChildren(document.createTextNode(text));
@@ -47,14 +49,16 @@ async function refreshConnection() {
       const status = await requestJSON('/api/status', {signal: controller.signal});
       if (typeof status.ready !== 'boolean' || !Number.isInteger(status.documents)) throw new Error(connectionError);
       connected = status.ready && status.api_configured;
-      statusLabel.textContent = connected ? `RAG · ${status.documents} tư liệu có nguồn` : 'RAG chưa sẵn sàng';
+      statusLabel.textContent = connected ? 'Sẵn sàng cùng bạn khám phá' : 'Đang chờ kết nối';
+      panel.classList.toggle('is-connected', !!connected);
       if (connected) {
         if (errorBox.querySelector('.chat-reconnect')) errorBox.hidden = true;
       } else showError(status.startup_error || 'Cần cấu hình API key và chỉ mục ở backend.', true);
       return connected;
     } catch {
       connected = false;
-      statusLabel.textContent = 'Chưa kết nối backend RAG';
+      statusLabel.textContent = 'Chưa kết nối được hướng dẫn viên';
+      panel.classList.remove('is-connected');
       showError(connectionError, true);
       return false;
     } finally {clearTimeout(timeout);}
@@ -80,18 +84,77 @@ function syncDataset() {
 function message(role, text) {
   const block = document.createElement('div');
   block.className = 'chat-message ' + role;
+  const meta = document.createElement('div');
+  meta.className = 'chat-message-meta';
+  meta.textContent = role === 'user' ? 'Bạn' : '✧ Atlas';
+  const content = document.createElement('div');
+  content.className = 'chat-message-content';
   const p = document.createElement('p');
   p.textContent = text;
-  block.append(p);
+  content.append(p);
+  block.append(meta, content);
   log.append(block);
   scrollToLatest();
   return block;
 }
+function renderIllustrations(content, illustrations) {
+  const images = (Array.isArray(illustrations) ? illustrations : []).filter(image =>
+    image && typeof image.src === 'string' && /^assets\/ai\/[a-z0-9/-]+\.(webp|jpg|png)$/.test(image.src)
+    && typeof image.name === 'string' && typeof image.alt === 'string').slice(0, 3);
+  if (!images.length) return;
+  const gallery = document.createElement('div');
+  gallery.className = 'chat-gallery';
+  gallery.setAttribute('aria-label', 'Ảnh minh họa địa danh');
+  for (const image of images) {
+    const figure = document.createElement('figure');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'chat-image-button';
+    button.setAttribute('aria-label', `Xem ảnh lớn ${image.name}`);
+    const img = document.createElement('img');
+    img.src = image.src;
+    img.alt = image.alt;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    const badge = document.createElement('span');
+    badge.className = 'chat-image-badge';
+    badge.textContent = 'Ảnh minh họa AI';
+    const zoom = document.createElement('span');
+    zoom.className = 'chat-image-zoom';
+    zoom.textContent = '↗';
+    zoom.setAttribute('aria-hidden', 'true');
+    button.append(img, badge, zoom);
+    const caption = document.createElement('figcaption');
+    const name = document.createElement('strong');
+    name.textContent = image.name;
+    const note = document.createElement('span');
+    note.textContent = 'Không phải ảnh tư liệu · Bấm để xem lớn';
+    caption.append(name, note);
+    figure.append(button, caption);
+    img.addEventListener('error', () => {
+      button.disabled = true;
+      img.hidden = true;
+      zoom.textContent = 'Ảnh tạm thời chưa tải được';
+      zoom.classList.add('chat-image-unavailable');
+    }, {once: true});
+    button.addEventListener('click', () => {
+      imageTrigger = button;
+      document.querySelector('#chat-image-full').src = image.src;
+      document.querySelector('#chat-image-full').alt = image.alt;
+      document.querySelector('#chat-image-title').textContent = image.name;
+      imageDialog.showModal();
+    });
+    gallery.append(figure);
+  }
+  content.append(gallery);
+}
 function renderAnswer(result) {
   const block = message('assistant', result.claims?.length ? '' : result.answer);
+  const content = block.querySelector('.chat-message-content');
   const sources = new Map((result.sources || []).map(s => [s.id, s]));
+  const sourceNumbers = new Map([...sources.keys()].map((id, index) => [id, index + 1]));
   if (result.claims?.length) {
-    block.replaceChildren();
+    content.replaceChildren();
     for (const claim of result.claims) {
       const p = document.createElement('p');
       p.textContent = claim.text + ' ';
@@ -103,15 +166,23 @@ function renderAnswer(result) {
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.className = 'chat-citation';
-        link.textContent = `[${sourceId}]`;
+        link.textContent = `[${sourceNumbers.get(sourceId)}]`;
         link.title = source.title;
         p.append(link, ' ');
       }
-      block.append(p);
+      content.append(p);
     }
+  }
+  renderIllustrations(content, result.illustrations);
+  if (typeof result.illustration_note === 'string') {
+    const note = document.createElement('p');
+    note.className = 'chat-illustration-note';
+    note.textContent = result.illustration_note;
+    content.append(note);
   }
   if (sources.size) {
     const details = document.createElement('details');
+    details.className = 'chat-sources';
     const summary = document.createElement('summary');
     summary.textContent = `Xem ${sources.size} nguồn tham khảo`;
     details.append(summary);
@@ -122,13 +193,16 @@ function renderAnswer(result) {
       link.href = source.url;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      link.textContent = `${source.id} · ${source.title}`;
+      link.textContent = `${sourceNumbers.get(source.id)}. ${source.title}`;
       p.append(link, document.createElement('br'), `${source.publisher} · Đọc nguồn: ${source.accessed_on || 'chưa rõ'}`);
       details.append(p);
     }
-    block.append(details);
+    content.append(details);
   }
-  scrollToLatest();
+  requestAnimationFrame(() => {
+    const body = panel.querySelector('.chat-body');
+    body.scrollTop += block.getBoundingClientRect().top - body.getBoundingClientRect().top - 12;
+  });
 }
 async function ask(question) {
   if (busy || !question.trim()) return;
@@ -144,6 +218,12 @@ async function ask(question) {
   input.value = '';
   const pending = message('assistant', 'Đang tìm tư liệu và đối chiếu câu trả lời…');
   pending.classList.add('pending');
+  const dots = document.createElement('span');
+  dots.className = 'chat-typing';
+  dots.setAttribute('aria-hidden', 'true');
+  for (let index = 0; index < 3; index++) dots.append(document.createElement('i'));
+  pending.querySelector('.chat-message-content').prepend(dots);
+  document.querySelector('#chat-destinations').hidden = true;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 240000);
   try {
@@ -152,7 +232,7 @@ async function ask(question) {
       body: JSON.stringify({question, dataset_id: select.value || null, history: history.slice(-6)})
     });
     if (typeof result.answer !== 'string' || !Array.isArray(result.claims) || !Array.isArray(result.sources)) throw new Error(connectionError);
-    statusLabel.textContent = 'RAG · Trả lời có nguồn';
+    statusLabel.textContent = 'Đang đồng hành cùng bạn';
     pending.remove();
     renderAnswer(result);
     history.push({role: 'user', content: question}, {role: 'assistant', content: result.answer.slice(0, 4000)});
@@ -160,7 +240,7 @@ async function ask(question) {
   } catch (error) {
     pending.remove();
     const lostConnection = error.message === 'Failed to fetch' || error.message === connectionError;
-    if (lostConnection) {connected = false; statusLabel.textContent = 'Chưa kết nối backend RAG';}
+    if (lostConnection) {connected = false; statusLabel.textContent = 'Chưa kết nối được hướng dẫn viên'; panel.classList.remove('is-connected');}
     showError(error.name === 'AbortError' ? 'API đang phản hồi chậm. Bạn có thể thử lại.' : (lostConnection ? connectionError : error.message), lostConnection);
     input.value = question;
   } finally {
@@ -190,3 +270,17 @@ window.addEventListener('hashchange', syncDataset);
 window.addEventListener('resize', () => {if (!panel.hidden) scrollToLatest();});
 syncDataset();
 refreshConnection();
+
+const expand = document.querySelector('#chat-expand');
+expand.addEventListener('click', () => {
+  const expanded = panel.classList.toggle('is-expanded');
+  expand.setAttribute('aria-pressed', String(expanded));
+  expand.setAttribute('aria-label', expanded ? 'Thu gọn khung chat' : 'Mở rộng khung chat');
+});
+imageDialog.querySelector('.chat-image-close').addEventListener('click', () => imageDialog.close());
+imageDialog.addEventListener('close', () => imageTrigger?.focus());
+imageDialog.addEventListener('click', event => {
+  if (event.target !== imageDialog) return;
+  const rect = imageDialog.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) imageDialog.close();
+});

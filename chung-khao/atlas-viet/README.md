@@ -14,6 +14,10 @@ Mở http://127.0.0.1:4321/. Cần máy chủ HTTP để tải GeoJSON; không m
 
 ## Chạy chatbot RAG
 
+Để test tạm bằng OpenRouter, giữ `OPENROUTER_API_KEY` trong `.env` ở thư mục gốc repository và chạy `python3 run.py --no-browser` từ `atlas-viet/`, rồi mở http://127.0.0.1:4322/. Atlas trò chuyện như hướng dẫn viên du lịch, gợi ý trải nghiệm từ tư liệu có nguồn. [Cấu hình OpenRouter và chuyển lại BTC](rag/README.md#test-với-openrouter).
+
+Khung chat hiển thị ảnh minh họa theo địa danh đang giới thiệu, lấy từ bộ ảnh AI local. Bấm ảnh để xem lớn; thử câu “Cho mình xem ảnh minh họa Tràng An”. Giao diện hỗ trợ mở rộng trên máy tính, gợi ý câu hỏi, nguồn tham khảo đánh số và bố cục điện thoại.
+
 Có gói bàn giao ở `release/atlas-viet-rag.zip`; xem [hướng dẫn chạy độc lập](rag/README.md).
 
 Đặt `THUCCHIEN_API_KEY` hoặc `AITC_API_KEY` trong môi trường backend, rồi chạy từ thư mục này:
@@ -31,14 +35,16 @@ Mở http://127.0.0.1:4322/. Lần đầu tạo embedding qua API BTC; những l
 - Bản đồ SVG từ dữ liệu ranh giới 34 tỉnh/thành; làm nổi bật bốn tỉnh/thành phố trong phạm vi.
 - Hình học tham khảo quần đảo Hoàng Sa, Trường Sa; bản đồ không biểu diễn đường biên biển.
 - Phóng to, thu nhỏ, kéo bản đồ và chuyển nhanh tới bốn tỉnh/thành phố.
+- Bong bóng cạnh nút Hỏi Atlas khi rê chuột lên 34 tỉnh/thành, dấu mốc hoặc thẻ địa phương; lời chào và gợi ý luân phiên hoàn toàn offline, không gọi API. Mỗi lần hover chọn ngẫu nhiên một câu khác câu vừa hiện, kèm icon; bong bóng chỉ hiện câu chat. Bốn địa phương có câu gợi ý riêng; các địa phương còn lại hiện lời chào và thông báo đang chuẩn bị sổ tay. Chỉnh câu soạn sẵn trong `dist/province-hints.js`.
 - Popup bản đồ địa phương với bốn địa danh, dấu mốc, thẻ giới thiệu và liên kết trang chi tiết.
 - Bốn trang riêng bằng hash URL, hỗ trợ tải lại trực tiếp. Đường dẫn `ha-long` và `sa-pa` cũ chuyển sang `quang-ninh` và `lao-cai`; sổ tay đã lưu cũng được chuyển đổi.
 - Popup hiển thị ranh giới toàn tỉnh/thành phố. Hạ Long là địa danh thuộc Quảng Ninh; Sa Pa và Mù Cang Chải thuộc phạm vi Lào Cai trên bản đồ 34 tỉnh/thành phố. Nội dung vẫn là một nhóm địa danh khởi đầu, chưa phải tư liệu đầy đủ về toàn tỉnh.
 - Các tab Địa lý – Tổng quan, Địa danh, Bộ ảnh AI, Du lịch online, Lịch sử, Văn hóa – Ẩm thực, Nguồn tham khảo.
-- Du lịch online nhúng tour AirPano chính thức: 5 cảnh Hà Nội, 9 cảnh Hạ Long thuộc Quảng Ninh; chọn cảnh khởi đầu, thử lại, dừng tour và toàn màn hình. Chỉ tải iframe khi bấm bắt đầu; rời tab sẽ đóng tour. Ninh Bình và Lào Cai hiển thị trạng thái chưa có dữ liệu phù hợp.
-- Lưu tỉnh/thành phố bằng localStorage, sổ tay đã lưu và thông báo ngoài phạm vi.
+- Du lịch online dùng trình xem Pannellum local: 8 cảnh Ninh Bình, 5 cảnh Hà Nội, 9 cảnh Hạ Long thuộc Quảng Ninh; kéo nhìn quanh, zoom, chuyển cảnh qua danh sách hoặc hotspot, thử lại/dừng và toàn màn hình. Chỉ tải ảnh khi bấm bắt đầu; rời tab giải phóng viewer. Lào Cai chưa có ảnh panorama phù hợp.
+- Sổ tay cá nhân tại `#/so-tay`: lưu/bỏ lưu địa phương, ghi chú tự lưu, trạng thái đã khám phá, tìm kiếm không dấu, lọc, sắp xếp và tải bản văn bản. Dữ liệu giữ trong localStorage của trình duyệt; chưa đồng bộ tài khoản.
+- Mồi ba mục Ninh Bình, Hà Nội, Lào Cai kèm ghi chú và trạng thái khi nâng cấp sổ tay trống lần đầu. Giữ nguyên danh sách người dùng đã lưu; cờ mồi riêng ngăn dữ liệu mẫu quay lại sau khi bỏ lưu hết. Ghi chú được giữ khi bỏ lưu để có thể đọc lại khi lưu địa phương lần nữa.
 - Bố cục máy tính/điện thoại; modal dùng bàn phím và Escape; các tab dùng phím mũi tên.
-- Font và ảnh giao diện phục vụ từ thư mục local. Tour AirPano cần Internet và có thể phát âm thanh khi bắt đầu.
+- Font, thư viện Pannellum và ảnh panorama phục vụ cùng website; trình xem không gọi AirPano hoặc CDN. Nhạc nền không lời tự tổng hợp được phục vụ local, mặc định 25%, có bật/tắt và chỉnh âm lượng.
 
 ## Nội dung đang biên soạn
 
@@ -71,16 +77,17 @@ Các ảnh chưa tạo không sinh đường dẫn lỗi. Khi chưa có ảnh AI
 - `dist/assets/credits.json`: tác giả, nguồn, giấy phép và thay đổi đối với ảnh.
 - `scripts/prepare_assets.py`: tái tạo tài nguyên từ nguồn công khai đã ghim phiên bản.
 - `scripts/check_ui.py`: kiểm tra luồng thực trên Chromium và tạo ảnh QA ở `.qa/`.
+- `scripts/check_notebook.py`: kiểm tra dữ liệu mẫu, ghi chú/trạng thái, tìm kiếm/lọc/sắp xếp, xuất văn bản, bỏ lưu, tải lại, chuyển đổi dữ liệu cũ và bố cục máy tính/điện thoại.
 - `scripts/sync_ai_images.py`: đồng bộ ảnh đã tạo và xuất danh mục media cho web.
-- `scripts/check_tours.py`: kiểm tra giao diện chủ với phản hồi iframe giả lập để xác minh tải khi bắt đầu, chọn cảnh, thử lại/dừng, dọn iframe và responsive. Khả năng tải ảnh thực bên trong tour phụ thuộc AirPano.
+- `scripts/check_tours.py`: kiểm tra 22 cảnh ảnh thực local, hotspot đồng bộ, tải khi bắt đầu, toàn màn hình, thử lại/dừng, dọn viewer, mobile, lỗi ảnh và không có request bên thứ ba. Đặt `ATLAS_TEST_URL` nếu kiểm tra port hoặc deployment khác.
 
 ## Tour du lịch online
 
-Tour dùng mã nhúng do AirPano cung cấp, với ghi công `Courtesy of www.AirPano.com` và liên kết nguồn. Tên cảnh tiếng Việt dựa trên cấu hình tour gốc; thứ tự cảnh giữ nguyên vì tham số `startscene` dùng chỉ số từ 0. Quảng Ninh chỉ có tour khu vực Hạ Long, chưa có tour Yên Tử hoặc Cô Tô.
+Tour dùng **Pannellum 2.5.6** (MIT, đóng gói trong `dist/vendor/pannellum/`) để hiển thị cubemap từ `dist/assets/360/`. Thứ tự mặt ảnh: front, right, back, left, up, down. Góc pitch được đổi dấu từ metadata krpano; yaw và FOV giữ theo cảnh nguồn. Desktop dùng ảnh `hi`, màn hình nhỏ dùng `mobile`.
 
-Danh sách ngoài khung chọn **cảnh khởi đầu**. Người dùng vẫn chuyển được cảnh bên trong tour; do iframe khác origin, web không đồng bộ lựa chọn bên ngoài theo thao tác trong AirPano và không xác nhận được ảnh 360° bên trong đã tải thành công. Nút thử lại và liên kết nguồn luôn có khi tour mở. Ninh Bình chưa nhúng trang nguồn có iframe bất thường; ảnh panorama nguồn chưa tải được.
+Tên cảnh tiếng Việt, liên kết và ghi công `Courtesy of www.AirPano.com` hiển thị dưới trình xem. Hotspot nối các cảnh dựa trên metadata nguồn và đồng bộ với danh sách. Quảng Ninh hiện chỉ có tour Hạ Long, chưa có Yên Tử/Cô Tô. Nhạc nền `dist/assets/audio/peaceful-tour.mp3` là đoạn ambient 48 giây tự tổng hợp (không dùng sample bên thứ ba), phát lặp khi bắt đầu tour. Có bật/tắt và chỉnh âm lượng; chuyển cảnh hoặc thử lại giữ nhạc liên tục, dừng/rời tab sẽ giải phóng audio. Nếu trình duyệt chặn phát, nút Bật nhạc cho phép thử lại. Tái tạo bằng `scripts/generate_tour_music.py` với numpy và ffmpeg. Ninh Bình có 8 cảnh panorama từ Vietnam.travel (Hang Múa, Tam Cốc, Tràng An, Bái Đính); Lào Cai chưa có dữ liệu panorama.
 
-Dữ liệu tải về trong `data/360-tours/` vẫn là bản lưu riêng, chưa được phục vụ công khai cùng website. Không sao chép runtime hoặc ảnh AirPano vào `dist/` trong phiên bản nhúng này.
+Bản lưu gốc trong `data/360-tours/` được giữ nguyên, không chạy runtime nguồn. Ảnh và metadata cần cho bản local được sao chép vào `dist/`; không cần iframe hay CDN. User đã yêu cầu tự phục vụ lại ảnh và ghi nguồn; quyền phân phối lại ảnh AirPano vẫn chưa được xác minh độc lập, không mặc định quyền nhúng bao gồm quyền phân phối ảnh. Giấy phép MIT của Pannellum chỉ áp dụng cho thư viện.
 
 ## Nguồn bản đồ
 
@@ -116,3 +123,24 @@ Cần Chromium của Playwright có sẵn để chạy kiểm tra UI. Script ki�
 ## Xuất bản
 
 `dist/` là thư mục website tĩnh có thể triển khai. Bản mẫu ban đầu đã được commit/push; bản cập nhật phạm vi chưa xuất bản lên Sites. Tuân theo quy định trong `../AGENTS.md` khi commit/push tiếp.
+
+## Bài viết và chú thích ảnh
+
+Bốn bài địa phương gồm tổng quan, địa lý, lịch sử, văn hóa, ẩm thực và trải nghiệm; mục địa danh có đủ 29 hồ sơ. Nội dung dùng `seed.json` của từng địa phương, nguồn dẫn đặt dưới từng phần. Câu mở bài và phần biên tập nằm trong `scripts/build_articles.py`; dữ liệu web nằm ở `dist/assets/articles.json`.
+
+Tạo lại nội dung và đồng bộ ảnh đã có:
+
+```sh
+python3 scripts/build_articles.py
+python3 scripts/sync_ai_images.py
+```
+
+Web hiện có 29 ảnh AI, gồm 8 ảnh Ninh Bình, 7 Hà Nội, 7 Quảng Ninh và 7 Lào Cai. Caption ghi tên địa danh và “Minh họa do AI tạo; không phải ảnh tư liệu”. Ảnh thật có mô tả và ghi nguồn/tác giả; caption panorama 360° đổi theo cảnh đang chọn. Logo la bàn là hình trang trí của giao diện.
+
+Kiểm tra bài viết, nguồn, ảnh và bố cục bằng `scripts/check_articles.cjs` (cần Playwright; `ATLAS_BASE_URL` mặc định `http://127.0.0.1:4321/`).
+
+### Panorama Ninh Bình
+
+Nguồn ảnh: Vietnam.travel — Ninh Binh in 360. Chỉ tải và kiểm tra JPEG panorama; không chạy runtime hoặc iframe nguồn. Tái tạo bằng `scripts/prepare_ninh_binh_tour.py` (Pillow). Ảnh gốc lưu riêng trong `data/360-tours/ninh-binh/media/`; bản public được thu nhỏ còn 4096×2048 cho desktop và 2048×1024 cho mobile để giảm bộ nhớ WebGL. Metadata gồm liên kết giữa 8 cảnh; tên cảnh được chuyển sang tiếng Việt. Trình xem hỗ trợ cả cubemap và equirectangular. Quyền phân phối ảnh nguồn chưa được xác minh độc lập; user đã yêu cầu tự phục vụ lại và ghi nguồn.
+
+Popup từ bản đồ hiển thị ranh giới hành chính bên trái và tổng quan có ảnh AI, caption, nguồn dẫn bên phải. “Tìm hiểu chi tiết” mở Địa danh. Tab Địa lý – Tổng quan đã bỏ; URL cũ với `tab=tong-quan` mở Địa danh. Dữ liệu bản đồ hiện là ranh giới hành chính tham khảo, không có lớp thửa đất địa chính.

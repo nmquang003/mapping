@@ -10,6 +10,16 @@ Tạo lại gói sau khi sửa code/data: `python3 scripts/package_rag.py`. Scri
 
 ## Chạy
 
+### Test với OpenRouter
+
+Backend tự đọc `OPENROUTER_API_KEY` từ `.env` trong `atlas-viet/` hoặc thư mục gốc repository. Biến môi trường của tiến trình được ưu tiên, sau đó `.env` của ứng dụng, rồi `.env` ở gốc. Chỉ các biến cấu hình Atlas được nạp; key luôn ở backend.
+
+Chạy `python3 run.py --no-browser`, rồi mở http://127.0.0.1:4322/. Nếu có key OpenRouter, backend tự chọn provider này; đặt `ATLAS_PROVIDER=btc` để quay lại BTC hoặc `ATLAS_PROVIDER=openrouter` để chọn rõ ràng.
+
+Chat dùng `google/gemini-2.5-flash` (đổi bằng `ATLAS_OPENROUTER_CHAT_MODEL`); embedding dùng `openai/text-embedding-3-small`, 1536 chiều. Cấu hình BTC cũ không ảnh hưởng đến model OpenRouter. Endpoint theo [tài liệu chat OpenRouter](https://openrouter.ai/docs/quickstart) và [tài liệu embedding](https://openrouter.ai/docs/api/api-reference/embeddings/submit-an-embedding-request). Bước viết câu trả lời dùng [structured outputs](https://openrouter.ai/docs/guides/features/structured-outputs), giới hạn mã trích dẫn theo các tư liệu thật đã truy xuất; model thay thế cần hỗ trợ tính năng này. Chỉ mục OpenRouter được lưu riêng ở `.rag/index-openrouter.json`, không ghi đè chỉ mục BTC. Lần chạy đầu tạo embedding cho 142 tư liệu, các lần sau dùng cache.
+
+Atlas đóng vai hướng dẫn viên: xưng mình/bạn, trò chuyện về sở thích, gợi ý trải nghiệm và hành trình từ tư liệu địa phương, có dẫn nguồn cho thông tin thực tế. Chào hỏi và yêu cầu chọn điểm đến được phản hồi theo ngữ cảnh. Giá vé, thời tiết và lịch hoạt động hiện hành vẫn cần dữ liệu xác nhận.
+
 Từ thư mục `chung-khao/atlas-viet/`, đặt `THUCCHIEN_API_KEY` hoặc `AITC_API_KEY` trong môi trường của backend. Không đưa key vào trình duyệt, mã nguồn hoặc chat.
 
 ```sh
@@ -54,10 +64,12 @@ Các kiểm tra trên không bảo đảm loại bỏ tuyệt đối mọi sai s
 - `GET /api/status`: trạng thái chỉ mục, model, số tư liệu và phạm vi; không chứa API key.
 - `POST /api/chat`: JSON gồm `question`, `dataset_id` (tùy chọn), `history` (tùy chọn).
 - Kết quả: `status`, `answer`, `claims`, `sources`, `retrieved_record_ids`.
-- Trạng thái nội dung: `answered`, `out_of_scope`, `insufficient_data`, `clarification`.
+- Trạng thái nội dung: `answered`, `conversation`, `out_of_scope`, `insufficient_data`, `clarification`.
 - Lỗi đầu vào: HTTP 400; origin không được phép: 403; quá 2 câu hỏi đồng thời: 429; API chưa sẵn sàng/lỗi: 503.
 
 UI hiển thị nguồn cạnh từng câu, có thể mở danh sách nguồn, lưu ngữ cảnh hội thoại trong bộ nhớ trang. Phần trả lời được render bằng text node để không thực thi HTML do AI tạo. Nút hỏi Atlas trên thẻ địa danh điền câu hỏi và chọn địa phương; người dùng bấm Gửi.
+
+Khung chat có giao diện xanh–kem, gợi ý mở đầu, nút mở rộng trên máy tính và ảnh minh họa xem lớn bằng hộp thoại. Backend đọc bộ ảnh local `dist/assets/ai-images.json`, chỉ đính tối đa ba ảnh liên quan đến địa danh/địa phương trong câu trả lời đã xác minh. API trả thêm `illustrations` gồm `id`, `name`, `src`, `alt`, `caption`; `src` là đường dẫn local đã kiểm tra tồn tại. AI không tự tạo URL ảnh. Ảnh có nhãn AI/không phải tư liệu; khi không có ảnh phù hợp, phần trả lời văn bản vẫn hoạt động. Yêu cầu xem ảnh cụ thể có thể nhận thêm `illustration_note` để giải thích thiếu ảnh. Không gọi API tạo ảnh trong lúc chat.
 
 Máy chủ chỉ bind `127.0.0.1`, phục vụ bản local. Khi triển khai công khai cần cấu hình reverse proxy/HTTPS, origin, xác thực và hạn mức phù hợp; không đưa trực tiếp máy chủ phát triển này lên Internet.
 

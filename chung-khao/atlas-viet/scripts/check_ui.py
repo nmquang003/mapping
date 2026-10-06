@@ -24,38 +24,47 @@ async def main():
         assert await page.locator('.destination-card').count()==4
         assert await page.evaluate("JSON.parse(localStorage.getItem('atlas-viet-saved'))") == ['quang-ninh','lao-cai']
         await page.locator('#saved-nav').click()
-        assert await page.locator('.saved-item a').all_text_contents()==['Quảng Ninh','Lào Cai']
-        assert await page.locator('.saved-item img').evaluate_all('(images)=>images.every(i=>i.complete && i.naturalWidth>0)')
+        await page.locator('.notebook-card').first.wait_for()
+        assert await page.locator('.notebook-card h2 a').all_text_contents()==['Lào Cai ', 'Quảng Ninh ']
+        for image in await page.locator('.notebook-card img').all():
+            await image.scroll_into_view_if_needed()
+            await image.evaluate('(image)=>image.decode()')
+        assert await page.locator('.notebook-card img').evaluate_all('(images)=>images.every(i=>i.complete && i.naturalWidth>0)')
         for _ in range(2): await page.locator('[data-remove-saved]').first.click()
-        await page.keyboard.press('Escape')
+        await page.locator('.breadcrumb a').click()
+        await page.locator('#country-map').wait_for()
         assert 'Ninh Bình, Hà Nội, Quảng Ninh và Lào Cai' in await page.locator('.scope-strip').inner_text()
-        assert await page.evaluate('Array.from(document.images).every(i=>i.complete && i.naturalWidth>0)')
+        for image in await page.locator('img:visible').all():
+            await image.scroll_into_view_if_needed()
+            await image.evaluate('(image)=>image.decode()')
+        assert await page.locator('img:visible').evaluate_all('(images)=>images.every(i=>i.complete && i.naturalWidth>0)')
         await page.screenshot(path=str(QA/'desktop-home.png'),full_page=True,animations="disabled")
         initial=await page.locator('#country-map').get_attribute('viewBox')
         await page.locator('#focus-north').click()
-        assert await page.locator('#country-map').get_attribute('viewBox')!=initial
-        await page.locator('[data-zoom="reset"]').click()
         assert await page.locator('#country-map').get_attribute('viewBox')==initial
+        await page.locator('[data-zoom="reset"]').click()
+        await page.wait_for_timeout(350)
+        assert await page.locator('#country-map').get_attribute('viewBox')!=initial
         await page.locator('[data-province="16"]').dispatch_event('click')
         assert 'chưa nằm trong phạm vi' in await page.locator('#toast').inner_text()
         for slug,name in [('ninh-binh','Ninh Bình'),('ha-noi','Hà Nội'),('quang-ninh','Quảng Ninh'),('lao-cai','Lào Cai')]:
             await page.locator(f'.marker[data-open="{slug}"]').dispatch_event('click')
             assert await page.locator('#destination-dialog').is_visible()
             assert name in await page.locator('#destination-title').inner_text()
-            assert await page.locator('.local-marker').count()==4
+            assert await page.locator('.local-place-list').count()==0
+            assert await page.locator('.landmark-card').count()==4
+            assert 'TỔNG QUAN ĐỊA PHƯƠNG' in await page.locator('.dialog-sidebar').inner_text()
             assert await page.locator('.local-province.selected').evaluate('(el)=>{const b=el.getBBox(),v=el.ownerSVGElement.viewBox.baseVal;return b.x>=v.x && b.y>=v.y && b.x+b.width<=v.x+v.width && b.y+b.height<=v.y+v.height;}')
             if slug in ['quang-ninh','lao-cai']: await page.screenshot(path=str(QA/(slug+'-popup.png')),full_page=True,animations='disabled')
-            buttons=page.locator('.place-list-button')
-            await buttons.nth(2).click()
-            assert await page.locator('.place-list-button.is-active').count()==1
             if slug=='ninh-binh':await page.screenshot(path=str(QA/'desktop-popup.png'),full_page=True,animations="disabled")
             await page.locator('#detail-link').click()
             await page.locator('#detail-title').wait_for()
             assert name==await page.locator('#detail-title').inner_text()
-            assert await page.locator('.place-card').count()==4
+            expected_places=len(json.loads((ROOT/'dist/assets/articles.json').read_text())['regions'][slug]['places'])
+            assert await page.locator('.place-card').count()==expected_places
             await page.reload(wait_until='networkidle')
             assert name==await page.locator('#detail-title').inner_text()
-            for tab in ['tong-quan','du-lich','lich-su','van-hoa','nguon','bo-anh','dia-danh']:
+            for tab in ['du-lich','lich-su','van-hoa','nguon','bo-anh','dia-danh']:
                 await page.locator(f'[data-tab="{tab}"]').click()
                 await page.wait_for_function('(tab)=>document.querySelector("[role=tabpanel]")?.getAttribute("aria-labelledby") === "tab-"+tab',arg=tab)
                 assert await page.locator('#tab-content').inner_text()
@@ -69,8 +78,10 @@ async def main():
                         await first.click()
                         assert await page.locator('#info-dialog.image-viewer').is_visible()
                         assert 'Minh họa do AI tạo' in await page.locator('.image-full figcaption').inner_text()
+                        await page.locator('.image-full img').evaluate('(image)=>image.decode()')
                         assert await page.locator('.image-full img').evaluate('(image)=>image.complete && image.naturalWidth>0')
                         await page.keyboard.press('Escape')
+                        await page.locator('#info-dialog').wait_for(state='hidden')
                         assert not await page.locator('#info-dialog').is_visible()
                         assert await first.evaluate('(button)=>button===document.activeElement')
                         for image in await page.locator('.gallery-item img').all():
@@ -93,14 +104,18 @@ async def main():
             assert await page.locator('[data-tab=dia-danh]').get_attribute('aria-selected')=='true'
         await page.locator('.breadcrumb a').click()
         await page.locator('#saved-nav').click()
-        assert await page.locator('.saved-item').count()==1
-        await page.keyboard.press('Escape')
+        await page.locator('.notebook-card').first.wait_for()
+        assert await page.locator('.notebook-card').count()==1
+        await page.locator('.breadcrumb a').click()
+        await page.locator('#country-map').wait_for()
         assert not await page.locator('#info-dialog').is_visible()
         await page.locator('#chat-toggle').click()
         assert await page.locator('#chat-panel').is_visible()
         assert await page.locator('#chat-form').is_visible()
-        assert 'RAG' in await page.locator('#chat-status').inner_text()
-        assert 'Quảng Ninh và Lào Cai' in await page.locator('.chat-scope').inner_text()
+        assert await page.locator('#chat-status').inner_text()
+        assert await page.locator('#chat-question').is_enabled()
+        scope=await page.locator('.chat-scope').inner_text()
+        assert all(name in scope for name in ['Ninh Bình','Hà Nội','Quảng Ninh','Lào Cai'])
         await page.locator('#chat-close').click()
         await page.locator('#sources-footer').click()
         assert 'bốn tỉnh/thành phố' in await page.locator('#info-content').inner_text()

@@ -1,0 +1,251 @@
+{
+  "scenes": [
+    {
+      "id": "h1",
+      "title": "Hoàn Kiếm Lake (Lake of the Returned Sword)",
+      "view": {
+        "hlookat": "-499.64",
+        "vlookat": "25.25",
+        "fov": "76.49",
+        "fovmin": "40",
+        "fovmax": "120",
+        "fisheye": "0",
+        "architectural": "0.25",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h2",
+          "style": "hsHelicopter",
+          "ath": "-130.89246",
+          "atv": "-11.44032"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h5",
+          "style": "hsHelicopter",
+          "ath": "-422.45071288183317",
+          "atv": "-15"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-noi/panos/hi/01/_f.jpg",
+          "b": "ha-noi/panos/hi/01/_b.jpg",
+          "l": "ha-noi/panos/hi/01/_l.jpg",
+          "r": "ha-noi/panos/hi/01/_r.jpg",
+          "u": "ha-noi/panos/hi/01/_u.jpg",
+          "d": "ha-noi/panos/hi/01/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-noi/panos/mobile/01/_f.jpg",
+          "b": "ha-noi/panos/mobile/01/_b.jpg",
+          "l": "ha-noi/panos/mobile/01/_l.jpg",
+          "r": "ha-noi/panos/mobile/01/_r.jpg",
+          "u": "ha-noi/panos/mobile/01/_u.jpg",
+          "d": "ha-noi/panos/mobile/01/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h2",
+      "title": "Tortoise Tower in the South of Hoan Kiem Lake",
+      "view": {
+        "hlookat": "-158.4",
+        "vlookat": "0.58",
+        "fov": "80.92",
+        "fovmin": "40",
+        "fovmax": "120",
+        "fisheye": "0",
+        "architectural": "0.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h5",
+          "style": "hsHelicopter",
+          "ath": "-131.98687",
+          "atv": "-15"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h3",
+          "style": "hsHelicopter",
+          "ath": "-141.22405",
+          "atv": "-15"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-noi/panos/hi/02/_f.jpg",
+          "b": "ha-noi/panos/hi/02/_b.jpg",
+          "l": "ha-noi/panos/hi/02/_l.jpg",
+          "r": "ha-noi/panos/hi/02/_r.jpg",
+          "u": "ha-noi/panos/hi/02/_u.jpg",
+          "d": "ha-noi/panos/hi/02/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-noi/panos/mobile/02/_f.jpg",
+          "b": "ha-noi/panos/mobile/02/_b.jpg",
+          "l": "ha-noi/panos/mobile/02/_l.jpg",
+          "r": "ha-noi/panos/mobile/02/_r.jpg",
+          "u": "ha-noi/panos/mobile/02/_u.jpg",
+          "d": "ha-noi/panos/mobile/02/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h3",
+      "title": "Hanoi from above",
+      "view": {
+        "hlookat": "925.65",
+        "vlookat": "17.75",
+        "fov": "79.4",
+        "fovmin": "40",
+        "fovmax": "130",
+        "fisheye": "0",
+        "architectural": "0.4",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h1",
+          "style": "hsHelicopter",
+          "ath": "56.19313",
+          "atv": "-15"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h2",
+          "style": "hsHelicopter",
+          "ath": "784.9738428576699",
+          "atv": "-15"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-noi/panos/hi/03/_f.jpg",
+          "b": "ha-noi/panos/hi/03/_b.jpg",
+          "l": "ha-noi/panos/hi/03/_l.jpg",
+          "r": "ha-noi/panos/hi/03/_r.jpg",
+          "u": "ha-noi/panos/hi/03/_u.jpg",
+          "d": "ha-noi/panos/hi/03/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-noi/panos/mobile/03/_f.jpg",
+          "b": "ha-noi/panos/mobile/03/_b.jpg",
+          "l": "ha-noi/panos/mobile/03/_l.jpg",
+          "r": "ha-noi/panos/mobile/03/_r.jpg",
+          "u": "ha-noi/panos/mobile/03/_u.jpg",
+          "d": "ha-noi/panos/mobile/03/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h4",
+      "title": "Hanoi in the evening",
+      "view": {
+        "hlookat": "-1875.72",
+        "vlookat": "17.41",
+        "fov": "80.66",
+        "fovmin": "65",
+        "fovmax": "120",
+        "fisheye": "0",
+        "architectural": "0.45",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h3",
+          "style": "hsHelicopter",
+          "ath": "67.23271",
+          "atv": "-25"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h5",
+          "style": "hsHelicopter",
+          "ath": "-161.27421",
+          "atv": "-25"
+        },
+        {
+          "name": "hshelicopter2",
+          "linkedscene": "h2",
+          "style": "hsHelicopter",
+          "ath": "-128.50725",
+          "atv": "-25"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-noi/panos/hi/04/_f.jpg",
+          "b": "ha-noi/panos/hi/04/_b.jpg",
+          "l": "ha-noi/panos/hi/04/_l.jpg",
+          "r": "ha-noi/panos/hi/04/_r.jpg",
+          "u": "ha-noi/panos/hi/04/_u.jpg",
+          "d": "ha-noi/panos/hi/04/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-noi/panos/mobile/04/_f.jpg",
+          "b": "ha-noi/panos/mobile/04/_b.jpg",
+          "l": "ha-noi/panos/mobile/04/_l.jpg",
+          "r": "ha-noi/panos/mobile/04/_r.jpg",
+          "u": "ha-noi/panos/mobile/04/_u.jpg",
+          "d": "ha-noi/panos/mobile/04/_d.jpg"
+        }
+      }
+    },
+    {
+      "id": "h5",
+      "title": "Hanoi at night",
+      "view": {
+        "hlookat": "-2091.17",
+        "vlookat": "22.24",
+        "fov": "80.94",
+        "fovmin": "65",
+        "fovmax": "125",
+        "fisheye": "0",
+        "architectural": "0.2",
+        "stereographic": "false"
+      },
+      "hotspots": [
+        {
+          "name": "hshelicopter",
+          "linkedscene": "h1",
+          "style": "hsHelicopter",
+          "ath": "-99.45588",
+          "atv": "-15"
+        },
+        {
+          "name": "hshelicopter1",
+          "linkedscene": "h4",
+          "style": "hsHelicopter",
+          "ath": "68.66543",
+          "atv": "-15"
+        }
+      ],
+      "variants": {
+        "hi": {
+          "f": "ha-noi/panos/hi/05/_f.jpg",
+          "b": "ha-noi/panos/hi/05/_b.jpg",
+          "l": "ha-noi/panos/hi/05/_l.jpg",
+          "r": "ha-noi/panos/hi/05/_r.jpg",
+          "u": "ha-noi/panos/hi/05/_u.jpg",
+          "d": "ha-noi/panos/hi/05/_d.jpg"
+        },
+        "mobile": {
+          "f": "ha-noi/panos/mobile/05/_f.jpg",
+          "b": "ha-noi/panos/mobile/05/_b.jpg",
+          "l": "ha-noi/panos/mobile/05/_l.jpg",
+          "r": "ha-noi/panos/mobile/05/_r.jpg",
+          "u": "ha-noi/panos/mobile/05/_u.jpg",
+          "d": "ha-noi/panos/mobile/05/_d.jpg"
+        }
+      }
+    }
+  ]
+}

@@ -9,6 +9,8 @@
   <link rel="icon" href="assets/compass.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="vendor/pannellum/pannellum.css">
+  <script defer src="vendor/pannellum/pannellum.js"></script>
   <script type="module" src="app.js"></script>
   <script type="module" src="rag-chat.js"></script>
 </head>
@@ -24,15 +26,29 @@
     <span class="edition"><span></span> PHIÊN BẢN KHÁM PHÁ</span>
   </header>
   <main id="main" tabindex="-1"><div class="loading"><img src="assets/compass.svg" width="48" alt=""><p>Đang mở bản đồ Việt Nam…</p></div></main>
-  <footer class="site-footer"><span>© Atlas Việt · Một hành trình tìm hiểu quê hương</span><button id="sources-footer">Nguồn dữ liệu & ghi chú</button><span class="footer-note">Nội dung đang biên soạn</span></footer>
+  <footer class="site-footer"><span>© Atlas Việt · Một hành trình tìm hiểu quê hương</span><button id="sources-footer">Nguồn dữ liệu & ghi chú</button><span class="footer-note">Bài viết có nguồn · Ảnh có chú thích</span></footer>
+  <aside id="province-hint" class="province-hint" hidden aria-label="Gợi ý khám phá địa phương">
+    <p class="province-hint-text" role="status" aria-live="polite" aria-atomic="true"></p>
+  </aside>
   <button id="chat-toggle" class="chat-toggle" aria-expanded="false" aria-controls="chat-panel"><span class="chat-spark">✧</span><span>Hỏi Atlas</span><span class="chat-badge">AI</span></button>
   <aside id="chat-panel" class="chat-panel" hidden aria-labelledby="chat-title">
-    <div class="chat-head"><span class="chat-spark">✧</span><div><strong id="chat-title">Bạn đồng hành Atlas</strong><small id="chat-status">Đang kết nối kho tri thức…</small></div><button id="chat-close" class="icon-button" aria-label="Đóng khung trợ lý">×</button></div>
-    <div class="chat-context"><label for="chat-dataset">Địa phương</label><select id="chat-dataset"><option value="">Cả bốn địa phương</option><option value="ninh-binh">Ninh Bình</option><option value="ha-noi">Hà Nội</option><option value="quang-ninh">Quảng Ninh</option><option value="lao-cai">Lào Cai</option></select></div>
-    <div class="chat-body"><div id="chat-messages" role="log" aria-live="polite" aria-label="Hội thoại với Atlas"><div class="chat-message assistant"><p>Chào bạn! Tôi tìm tư liệu trong sổ tay Ninh Bình, Hà Nội, Quảng Ninh và Lào Cai để trả lời, kèm nguồn tham khảo. Những thông tin chưa có căn cứ sẽ được nói rõ.</p></div></div><div id="chat-destinations" class="chat-suggestions"><button data-chat-question="Hoa Lư có vai trò gì trong lịch sử?">Lịch sử Hoa Lư</button><button data-chat-question="Sa Pa có cảnh quan gì nổi bật?">Khám phá Sa Pa</button></div></div>
-    <form id="chat-form" class="chat-form"><label class="sr-only" for="chat-question">Câu hỏi của bạn</label><textarea id="chat-question" rows="2" maxlength="1500" placeholder="Hỏi về một địa danh, lịch sử hoặc văn hóa…" required></textarea><button id="chat-submit" type="submit" aria-label="Gửi câu hỏi">Gửi ↗</button></form>
-    <p id="chat-error" class="chat-error" role="status" hidden></p><div class="chat-scope">Phạm vi: Ninh Bình, Hà Nội, Quảng Ninh và Lào Cai. AI có thể sai; hãy kiểm tra nguồn. Giá và lịch hiện hành chưa được xác nhận.</div>
+    <div class="chat-head">
+      <span class="chat-avatar" aria-hidden="true">✧</span>
+      <div class="chat-head-copy"><span class="chat-eyebrow">CÙNG BẠN ĐI MUÔN NƠI</span><strong id="chat-title">Hướng dẫn viên Atlas</strong><small id="chat-status" role="status">Đang kết nối…</small></div>
+      <div class="chat-head-actions"><button id="chat-expand" class="icon-button" type="button" aria-label="Mở rộng khung chat" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5h5v-5"/></svg></button><button id="chat-close" class="icon-button" aria-label="Đóng khung trợ lý">×</button></div>
+    </div>
+    <div class="chat-context"><span aria-hidden="true">⌖</span><label for="chat-dataset">Khám phá</label><select id="chat-dataset"><option value="">Cả bốn địa phương</option><option value="ninh-binh">Ninh Bình</option><option value="ha-noi">Hà Nội</option><option value="quang-ninh">Quảng Ninh</option><option value="lao-cai">Lào Cai</option></select></div>
+    <div class="chat-body">
+      <div id="chat-messages" role="log" aria-live="polite" aria-label="Hội thoại với Atlas">
+        <div class="chat-message assistant chat-welcome"><div class="chat-message-meta"><span aria-hidden="true">✧</span> Atlas · Người bạn đồng hành</div><div class="chat-message-content"><span class="chat-welcome-icon" aria-hidden="true">🧭</span><h3>Chuyến đi của bạn,<br>mình cùng lên ý tưởng.</h3><p>Chào bạn! Mình là Atlas. Bạn muốn ngắm cảnh, nghe chuyện lịch sử hay khám phá văn hóa địa phương?</p><p>Kể mình nghe điểm đến và thời gian dự kiến nhé. Mình còn có ảnh minh họa để bạn hình dung chuyến đi nữa.</p></div></div>
+      </div>
+      <div id="chat-destinations" class="chat-suggestions"><span class="chat-suggestions-label">Bắt đầu với một chút cảm hứng</span><button data-chat-question="Mình muốn khám phá Ninh Bình trong một ngày, thích thiên nhiên và lịch sử. Bạn gợi ý những điểm nào?"><span aria-hidden="true">🛶</span> Một ngày ở Ninh Bình</button><button data-chat-question="Cho mình xem ảnh minh họa Tràng An và giới thiệu cảnh quan nơi đây."><span aria-hidden="true">🖼️</span> Ngắm Tràng An</button><button data-chat-question="Sa Pa có cảnh quan gì nổi bật?"><span aria-hidden="true">⛰️</span> Khám phá Sa Pa</button></div>
+    </div>
+    <p id="chat-error" class="chat-error" role="status" hidden></p>
+    <form id="chat-form" class="chat-form"><div class="chat-composer"><label class="sr-only" for="chat-question">Câu hỏi của bạn</label><textarea id="chat-question" rows="2" maxlength="1500" placeholder="Bạn muốn đi đâu? Hỏi Atlas nhé…" required></textarea><button id="chat-submit" type="submit" aria-label="Gửi câu hỏi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8-8-2Zm8 2L21 3"/></svg></button></div><span class="chat-composer-note">Enter để gửi · Shift + Enter để xuống dòng</span></form>
+    <div class="chat-scope">Ninh Bình · Hà Nội · Quảng Ninh · Lào Cai<br>Thông tin có nguồn tham khảo · Ảnh có nhãn minh họa</div>
   </aside>
+  <dialog id="chat-image-dialog" class="chat-image-dialog" aria-labelledby="chat-image-title"><button class="chat-image-close" type="button" aria-label="Đóng ảnh minh họa">×</button><figure><img id="chat-image-full" alt=""><figcaption><strong id="chat-image-title"></strong><span>Minh họa do AI tạo · Không phải ảnh tư liệu</span></figcaption></figure></dialog>
   <dialog id="destination-dialog" class="destination-dialog" aria-labelledby="destination-title"><div id="dialog-content"></div></dialog>
   <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="dialog-close icon-button" aria-label="Đóng" data-close-info>×</button><div id="info-content"></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>

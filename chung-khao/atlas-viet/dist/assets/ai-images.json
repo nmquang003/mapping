@@ -2,7 +2,148 @@
   "regions": {
     "ninh-binh": {
       "name": "Ninh Bình",
-      "images": []
+      "images": [
+        {
+          "id": "trang-an",
+          "placeId": "trang-an",
+          "name": "Tràng An",
+          "src": "assets/ai/ninh-binh/trang-an.webp",
+          "alt": "Ảnh minh họa AI cảnh thuyền giữa núi đá vôi và dòng nước ở Tràng An",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Cảnh quan núi đá vôi, thung lũng và hang động hòa cùng dấu tích lịch sử, văn hóa. Nguồn du lịch địa phương giới thiệu Tràng An là Di sản Văn hóa và Thiên nhiên thế giới.",
+          "sources": [
+            {
+              "title": "Quần thể Danh thắng Tràng An – Bảo tàng địa chất ngoài trời",
+              "url": "https://dulichninhbinh.com.vn/item/3021"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "tam-coc",
+          "placeId": "tam-coc-bich-dong",
+          "name": "Tam Cốc",
+          "src": "assets/ai/ninh-binh/tam-coc.webp",
+          "alt": "Ảnh minh họa AI thuyền chèo trên sông Ngô Đồng ở Tam Cốc trong cảnh mùa lúa chín",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Tam Cốc gắn với sông Ngô Đồng và ba hang xuyên núi đá vôi. Bích Động là quần thể chùa và động theo địa thế núi, gồm chùa Hạ, Trung và Thượng.",
+          "sources": [
+            {
+              "title": "Khám phá vẻ đẹp non nước hữu tình tại Khu du lịch Tam Cốc – Bích Động",
+              "url": "https://dulichninhbinh.com.vn/item/3116"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "bich-dong",
+          "placeId": "tam-coc-bich-dong",
+          "name": "Bích Động",
+          "src": "assets/ai/ninh-binh/bich-dong.webp",
+          "alt": "Ảnh minh họa AI kiến trúc chùa Bích Động dưới tán cây xanh",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Tam Cốc gắn với sông Ngô Đồng và ba hang xuyên núi đá vôi. Bích Động là quần thể chùa và động theo địa thế núi, gồm chùa Hạ, Trung và Thượng.",
+          "sources": [
+            {
+              "title": "Khám phá vẻ đẹp non nước hữu tình tại Khu du lịch Tam Cốc – Bích Động",
+              "url": "https://dulichninhbinh.com.vn/item/3116"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "hoa-lu",
+          "placeId": "hoa-lu",
+          "name": "Cố đô Hoa Lư",
+          "src": "assets/ai/ninh-binh/hoa-lu.webp",
+          "alt": "Ảnh minh họa AI không gian đền vua Đinh Tiên Hoàng tại Cố đô Hoa Lư",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Hoa Lư là kinh đô gắn với các triều Đinh, Tiền Lê và đầu thời Lý. Các đền thờ vua Đinh Tiên Hoàng và vua Lê Đại Hành là điểm tìm hiểu lịch sử tiêu biểu.",
+          "sources": [
+            {
+              "title": "Cố đô Hoa Lư",
+              "url": "https://dulichninhbinh.com.vn/item/3020"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "cuc-phuong",
+          "placeId": "cuc-phuong",
+          "name": "Vườn quốc gia Cúc Phương",
+          "src": "assets/ai/ninh-binh/cuc-phuong.webp",
+          "alt": "Ảnh minh họa AI lối đi giữa rừng nhiệt đới tại Cúc Phương",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Vườn quốc gia có cảnh quan rừng mưa nhiệt đới và các hoạt động nghiên cứu, cứu hộ, bảo tồn động vật. Nguồn địa phương giới thiệu đây là vườn quốc gia đầu tiên của Việt Nam.",
+          "sources": [
+            {
+              "title": "Vườn quốc gia Cúc Phương",
+              "url": "https://dulichninhbinh.com.vn/item/3018"
+            },
+            {
+              "title": "Website Vườn quốc gia Cúc Phương",
+              "url": "https://vuonquocgiacucphuong.vn/vi/"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "bai-dinh",
+          "placeId": "bai-dinh",
+          "name": "Chùa Bái Đính",
+          "src": "assets/ai/ninh-binh/bai-dinh.webp",
+          "alt": "Ảnh minh họa AI quần thể chùa Bái Đính với bảo tháp và các điện thờ",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Quần thể có khu chùa cổ, khu chùa mới và các hạng mục kiến trúc Phật giáo. Nội dung giới thiệu tập trung vào không gian kiến trúc và giá trị văn hóa.",
+          "sources": [
+            {
+              "title": "Chùa Bái Đính",
+              "url": "https://dulichninhbinh.com.vn/item/3015"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "phat-diem",
+          "placeId": "phat-diem",
+          "name": "Nhà thờ đá Phát Diệm",
+          "src": "assets/ai/ninh-binh/phat-diem.webp",
+          "alt": "Ảnh minh họa AI Phương đình trong quần thể Nhà thờ đá Phát Diệm",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Quần thể kiến trúc Công giáo kết hợp hình thức nhà thờ với các nét kiến trúc truyền thống Việt Nam, sử dụng đá và gỗ. Theo nguồn địa phương, công trình được xây dựng trong giai đoạn 1875–1898.",
+          "sources": [
+            {
+              "title": "Nhà thờ đá Phát Diệm",
+              "url": "https://dulichninhbinh.com.vn/item/3014"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        },
+        {
+          "id": "hang-mua",
+          "placeId": "hang-mua",
+          "name": "Hang Múa",
+          "src": "assets/ai/ninh-binh/hang-mua.webp",
+          "alt": "Ảnh minh họa AI đường bậc đá lên đỉnh núi Hang Múa và đồng ruộng bên dưới",
+          "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+          "model": "gpt-image-2.5-sunburst",
+          "summary": "Điểm khám phá cảnh quan với đường bậc đá lên núi và tầm nhìn xuống vùng sông nước, đồng ruộng. Nguồn địa phương mô tả đường lên gần 500 bậc.",
+          "sources": [
+            {
+              "title": "Hang Múa – kỳ quan thiên nhiên hùng vĩ của Ninh Bình",
+              "url": "https://dulichninhbinh.com.vn/item/3007"
+            }
+          ],
+          "visualStatus": "pending_visual_review"
+        }
+      ]
     },
     "ha-noi": {
       "name": "Hà Nội",

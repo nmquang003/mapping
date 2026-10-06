@@ -1,0 +1,202 @@
+{
+  "scenes": [
+    {
+      "id": "panorama_AE70BB68_A010_1860_41D8_E16E37F5E87F",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_AE70BB68_A010_1860_41D8_E16E37F5E87F.jpg",
+        "mobile": "ninh-binh/mobile/panorama_AE70BB68_A010_1860_41D8_E16E37F5E87F.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_B0F51968_A010_386F_418D_7F383D2A029F",
+          "yaw": 130.18,
+          "pitch": 0
+        },
+        {
+          "linkedscene": "panorama_AF30CCDA_A010_18A0_4197_62803617726B",
+          "yaw": -167.43,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "ff2eeddd8ef59cbe774b3fafd02b241b8485b504709c2a796892ed9732f09c51"
+    },
+    {
+      "id": "panorama_B0F51968_A010_386F_418D_7F383D2A029F",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_B0F51968_A010_386F_418D_7F383D2A029F.jpg",
+        "mobile": "ninh-binh/mobile/panorama_B0F51968_A010_386F_418D_7F383D2A029F.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_AD2A789A_A010_78A3_41E1_522B7AED87E2",
+          "yaw": 39.72,
+          "pitch": 0
+        },
+        {
+          "linkedscene": "panorama_B03498E0_A010_F860_41B1_27A403D496DB",
+          "yaw": 11.92,
+          "pitch": 0
+        },
+        {
+          "linkedscene": "panorama_AE70BB68_A010_1860_41D8_E16E37F5E87F",
+          "yaw": 60.44,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "6fdde317e7667615fa019a2885330e72ab7955501ac78f141de9a52024041b04"
+    },
+    {
+      "id": "panorama_AD2A789A_A010_78A3_41E1_522B7AED87E2",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_AD2A789A_A010_78A3_41E1_522B7AED87E2.jpg",
+        "mobile": "ninh-binh/mobile/panorama_AD2A789A_A010_78A3_41E1_522B7AED87E2.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_B0F51968_A010_386F_418D_7F383D2A029F",
+          "yaw": 174.18,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "826aceb9e52c1cb82b16c2d91b78c525b9b704b37d01338583d51a2504e57443"
+    },
+    {
+      "id": "panorama_B03498E0_A010_F860_41B1_27A403D496DB",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_B03498E0_A010_F860_41B1_27A403D496DB.jpg",
+        "mobile": "ninh-binh/mobile/panorama_B03498E0_A010_F860_41B1_27A403D496DB.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_B009E929_A010_39E1_41DD_48A5C6AD5A53",
+          "yaw": -56.58,
+          "pitch": 0
+        },
+        {
+          "linkedscene": "panorama_B0F51968_A010_386F_418D_7F383D2A029F",
+          "yaw": 168.13,
+          "pitch": 0
+        },
+        {
+          "linkedscene": "panorama_AFBA3898_A010_38AF_41D5_9347C1DF2FF6",
+          "yaw": -11.21,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "fa12e0df5d47981b59a2d3ef609a8ef593bc487ebd52fc0f0f2081a4dd010470"
+    },
+    {
+      "id": "panorama_B009E929_A010_39E1_41DD_48A5C6AD5A53",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_B009E929_A010_39E1_41DD_48A5C6AD5A53.jpg",
+        "mobile": "ninh-binh/mobile/panorama_B009E929_A010_39E1_41DD_48A5C6AD5A53.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_B03498E0_A010_F860_41B1_27A403D496DB",
+          "yaw": 177.69,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "a19ff71090f920ae36ee3fdb749076f46e1962873dd689179e20df46ae47cc0f"
+    },
+    {
+      "id": "panorama_AFBA3898_A010_38AF_41D5_9347C1DF2FF6",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_AFBA3898_A010_38AF_41D5_9347C1DF2FF6.jpg",
+        "mobile": "ninh-binh/mobile/panorama_AFBA3898_A010_38AF_41D5_9347C1DF2FF6.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_B03498E0_A010_F860_41B1_27A403D496DB",
+          "yaw": 167.52,
+          "pitch": 0
+        },
+        {
+          "linkedscene": "panorama_ADD60DD8_A010_78A0_41E2_10A986AC4BC3",
+          "yaw": 175.31,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "0d3c55626e190b62a76d03a2ad6b765a902f24f6917be76ed412fa6a247c2ff4"
+    },
+    {
+      "id": "panorama_ADD60DD8_A010_78A0_41E2_10A986AC4BC3",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_ADD60DD8_A010_78A0_41E2_10A986AC4BC3.jpg",
+        "mobile": "ninh-binh/mobile/panorama_ADD60DD8_A010_78A0_41E2_10A986AC4BC3.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_AFBA3898_A010_38AF_41D5_9347C1DF2FF6",
+          "yaw": -173.54,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "10a6e9f5d2ef88dd394e48ad1dee399a5d7598de1ed636d67b4541c4980ef58a"
+    },
+    {
+      "id": "panorama_AF30CCDA_A010_18A0_4197_62803617726B",
+      "projection": "equirectangular",
+      "panorama": {
+        "hi": "ninh-binh/hi/panorama_AF30CCDA_A010_18A0_4197_62803617726B.jpg",
+        "mobile": "ninh-binh/mobile/panorama_AF30CCDA_A010_18A0_4197_62803617726B.jpg"
+      },
+      "view": {
+        "yaw": 0,
+        "pitch": 0,
+        "hfov": 95
+      },
+      "hotspots": [
+        {
+          "linkedscene": "panorama_AE70BB68_A010_1860_41D8_E16E37F5E87F",
+          "yaw": -157.55,
+          "pitch": 0
+        }
+      ],
+      "source_sha256": "11c975b5c1e4a146a5dc1895c39e902b0c3f314d8bc40a442737566bbd5e01e8"
+    }
+  ]
+}
