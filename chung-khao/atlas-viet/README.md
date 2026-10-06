@@ -1,6 +1,6 @@
 # Atlas Việt — Sổ tay điện tử Dư địa chí
 
-Bản mẫu web tương tác dành cho Hà Nội, Ninh Bình, khu vực Hạ Long và Sa Pa.
+Bản mẫu web tương tác dành cho bốn tỉnh/thành phố: Ninh Bình, Hà Nội, Quảng Ninh và Lào Cai.
 
 ## Chạy bản mẫu
 
@@ -14,13 +14,14 @@ Mở http://127.0.0.1:4321/. Cần máy chủ HTTP để tải GeoJSON; không m
 
 ## Đã triển khai
 
-- Bản đồ SVG từ dữ liệu ranh giới 34 tỉnh/thành; đánh dấu bốn điểm đến.
+- Bản đồ SVG từ dữ liệu ranh giới 34 tỉnh/thành; làm nổi bật bốn tỉnh/thành phố trong phạm vi.
 - Hình học tham khảo quần đảo Hoàng Sa, Trường Sa; bản đồ không biểu diễn đường biên biển.
-- Phóng to, thu nhỏ, kéo bản đồ và chuyển nhanh tới bốn điểm đến.
+- Phóng to, thu nhỏ, kéo bản đồ và chuyển nhanh tới bốn tỉnh/thành phố.
 - Popup bản đồ địa phương với bốn địa danh, dấu mốc, thẻ giới thiệu và liên kết trang chi tiết.
-- Bốn trang riêng bằng hash URL, hỗ trợ tải lại trực tiếp.
+- Bốn trang riêng bằng hash URL, hỗ trợ tải lại trực tiếp. Đường dẫn `ha-long` và `sa-pa` cũ chuyển sang `quang-ninh` và `lao-cai`; sổ tay đã lưu cũng được chuyển đổi.
+- Popup hiển thị ranh giới toàn tỉnh/thành phố. Hạ Long là địa danh thuộc Quảng Ninh; Sa Pa và Mù Cang Chải thuộc phạm vi Lào Cai trên bản đồ 34 tỉnh/thành phố. Nội dung vẫn là một nhóm địa danh khởi đầu, chưa phải tư liệu đầy đủ về toàn tỉnh.
 - Các tab Địa lý – Tổng quan, Địa danh, Lịch sử, Văn hóa – Ẩm thực, Nguồn tham khảo.
-- Lưu điểm đến bằng localStorage, sổ tay đã lưu và thông báo ngoài phạm vi.
+- Lưu tỉnh/thành phố bằng localStorage, sổ tay đã lưu và thông báo ngoài phạm vi.
 - Bố cục máy tính/điện thoại; modal dùng bàn phím và Escape; các tab dùng phím mũi tên.
 - Font và ảnh phục vụ từ thư mục local để bản mẫu không phụ thuộc tài nguyên bên ngoài khi mở.
 
@@ -89,4 +90,4 @@ Cần Chromium của Playwright có sẵn để chạy kiểm tra UI. Script ki�
 
 ## Xuất bản
 
-`dist/` là thư mục website tĩnh có thể triển khai. Chưa commit, push hoặc xuất bản lên Sites; cần tuân theo yêu cầu xin phép trong `../AGENTS.md` trước khi commit/push.
+`dist/` là thư mục website tĩnh có thể triển khai. Bản mẫu ban đầu đã được commit/push; bản cập nhật phạm vi chưa xuất bản lên Sites. Tuân theo quy định trong `../AGENTS.md` khi commit/push tiếp.
