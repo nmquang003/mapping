@@ -1,0 +1,124 @@
+{
+  "status": "prepared",
+  "provider": "https://api.thucchien.ai/images/generations",
+  "model": "gpt-image-2.5-sunburst",
+  "request_size": "1536x1024",
+  "quality": "high",
+  "delivery_size": "1536x864",
+  "credential_variable": "GATEWAY_KEY",
+  "note": "Không có ảnh tham chiếu. Cần kiểm tra hình ảnh trước khi công bố như mô tả kiến trúc; không dùng làm bằng chứng lịch sử hoặc địa lý.",
+  "jobs": [
+    {
+      "region": "quang-ninh",
+      "id": "vinh-ha-long",
+      "place_id": "vinh-ha-long",
+      "name": "Vịnh Hạ Long",
+      "source_ids": [
+        "S02"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Vinh Ha Long, Quang Ninh, Vietnam. A wide view across calm emerald sea with irregular steep limestone islands covered in natural foliage. Layered karst silhouettes fading into light atmospheric haze, one modest sightseeing boat far away for scale. Soft morning sun, believable reflections. Sea islands, not an inland river or terraced fields. Do not add temples on islands or a crowded skyline.",
+      "prompt_file": "prompts/vinh-ha-long.txt",
+      "raw_output": "output/imagegen/vinh-ha-long.png",
+      "delivery_output": "generated/vinh-ha-long.webp",
+      "alt": "Minh họa do AI tạo về Vịnh Hạ Long",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "vinh-bai-tu-long",
+      "place_id": "vinh-bai-tu-long",
+      "name": "Vịnh Bái Tử Long",
+      "source_ids": [
+        "S04"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Bai Tu Long Bay, Quang Ninh, Vietnam. A quiet seascape of natural limestone islands and green coastal hills, pale turquoise water and a clear soft sky, seen from a plausible shoreline viewpoint. Modest composition with no fabricated landmark identity, no exact aerial map, no resorts or invented buildings. Emphasize sea, rocky islands and calm atmosphere.",
+      "prompt_file": "prompts/vinh-bai-tu-long.txt",
+      "raw_output": "output/imagegen/vinh-bai-tu-long.png",
+      "delivery_output": "generated/vinh-bai-tu-long.webp",
+      "alt": "Minh họa do AI tạo về Vịnh Bái Tử Long",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "co-to",
+      "place_id": "co-to",
+      "name": "Cô Tô",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Co To archipelago, Quang Ninh, Vietnam. A coastal view inspired by Hong Van beach: clean pale sand, gently curving shoreline, turquoise waves and natural coastal trees. Eye-level wide composition in warm morning light, no grand hotels or tropical fantasy palms everywhere. Do not combine several named beaches into one impossible panorama.",
+      "prompt_file": "prompts/co-to.txt",
+      "raw_output": "output/imagegen/co-to.png",
+      "delivery_output": "generated/co-to.webp",
+      "alt": "Minh họa do AI tạo về Cô Tô",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "thanh-lan",
+      "place_id": "thanh-lan",
+      "name": "Đảo Thanh Lân",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Thanh Lan island in the Co To area, Quang Ninh, Vietnam. A natural rocky shoreline with green island vegetation, small waves and layered blue sea. Low coastal viewpoint, soft late-afternoon light, realistic weathered rocks and forest texture. No invented religious buildings, volcanoes or recognizable landmarks from other provinces.",
+      "prompt_file": "prompts/thanh-lan.txt",
+      "raw_output": "output/imagegen/thanh-lan.png",
+      "delivery_output": "generated/thanh-lan.webp",
+      "alt": "Minh họa do AI tạo về Đảo Thanh Lân",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "quan-lan",
+      "place_id": "quan-lan",
+      "name": "Quan Lạn",
+      "source_ids": [
+        "S04"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Quan Lan island, Bai Tu Long Bay, Quang Ninh, Vietnam. An inviting broad coastal beach, gentle blue-green sea, natural low coastal vegetation and a softly receding shoreline. Quiet morning light, detailed sand and small waves. A scenic illustration, not an exact map of Minh Chau or Son Hao; no invented temple in the water and no skyscrapers.",
+      "prompt_file": "prompts/quan-lan.txt",
+      "raw_output": "output/imagegen/quan-lan.png",
+      "delivery_output": "generated/quan-lan.webp",
+      "alt": "Minh họa do AI tạo về Quan Lạn",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "yen-tu",
+      "place_id": "yen-tu",
+      "name": "Yên Tử",
+      "source_ids": [
+        "S05"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Yen Tu, Quang Ninh, Vietnam. A respectful view of Hoa Yen Buddhist pagoda in a green mountain setting, a modest traditional Vietnamese temple exterior with low curved tiled roofs, weathered stone courtyard and mature trees. Soft mist in distant wooded mountain slopes, gentle morning light. Keep the architecture modest and plausible; do not invent an imperial palace, giant statue, theatrical ceremony or combine every Yen Tu temple into one view.",
+      "prompt_file": "prompts/yen-tu.txt",
+      "raw_output": "output/imagegen/yen-tu.png",
+      "delivery_output": "generated/yen-tu.webp",
+      "alt": "Minh họa do AI tạo về Yên Tử",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "quang-ninh",
+      "id": "bao-tang-quang-ninh",
+      "place_id": "bao-tang-quang-ninh",
+      "name": "Bảo tàng – Thư viện Quảng Ninh",
+      "source_ids": [
+        "S06"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Quang Ninh Museum and Library, Vietnam. Architectural travel illustration of the museum exterior: a restrained modern black-glass rectangular volume, reflective dark facade, broad clean forecourt, trees and natural sky. Wide three-quarter view, straight verticals, soft daylight. No text on the facade, no invented extra towers, no crowds and no display of fabricated museum artifacts.",
+      "prompt_file": "prompts/bao-tang-quang-ninh.txt",
+      "raw_output": "output/imagegen/bao-tang-quang-ninh.png",
+      "delivery_output": "generated/bao-tang-quang-ninh.webp",
+      "alt": "Minh họa do AI tạo về Bảo tàng – Thư viện Quảng Ninh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    }
+  ]
+}

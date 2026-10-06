@@ -1,0 +1,128 @@
+{
+  "status": "prepared",
+  "provider": "https://api.thucchien.ai/images/generations",
+  "model": "gpt-image-2.5-sunburst",
+  "request_size": "1536x1024",
+  "quality": "high",
+  "delivery_size": "1536x864",
+  "credential_variable": "GATEWAY_KEY",
+  "note": "Không có ảnh tham chiếu. Cần kiểm tra hình ảnh trước khi công bố như mô tả kiến trúc; không dùng làm bằng chứng lịch sử hoặc địa lý.",
+  "jobs": [
+    {
+      "region": "lao-cai",
+      "id": "sa-pa",
+      "place_id": "sa-pa",
+      "name": "Sa Pa",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Sa Pa, Lao Cai, Vietnam. A wide valley panorama with layered cultivated rice terraces below green mountain slopes, light cloud and distant mist. Plausible mountain viewpoint, small rural houses only far away, warm soft morning light, natural greens. No European ski resort, fantasy floating clouds, invented pagodas or vast golden fields on flat plains.",
+      "prompt_file": "prompts/sa-pa.txt",
+      "raw_output": "output/imagegen/sa-pa.png",
+      "delivery_output": "generated/sa-pa.webp",
+      "alt": "Minh họa do AI tạo về Sa Pa",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "lao-cai",
+      "id": "fansipan",
+      "place_id": "fansipan",
+      "name": "Fansipan",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Fansipan mountain near Sa Pa, Lao Cai, Vietnam. A wide mountain summit landscape with rugged rocky foreground, layered high ridges and clouds below the distant horizon. Quiet natural sunrise light, believable vegetation and rock texture. Focus on mountain scenery; no invented summit monument, readable height marker, glass bridge or unsafe tourists on edges.",
+      "prompt_file": "prompts/fansipan.txt",
+      "raw_output": "output/imagegen/fansipan.png",
+      "delivery_output": "generated/fansipan.webp",
+      "alt": "Minh họa do AI tạo về Fansipan",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "lao-cai",
+      "id": "cho-bac-ha",
+      "place_id": "cho-bac-ha",
+      "name": "Chợ Bắc Hà",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Bac Ha market, Lao Cai, Vietnam. Respectful eye-level market scene of local people buying vegetables and everyday produce at modest stalls, natural daylight, realistic faces and ordinary daily activity. Any patterned clothing should be understated and natural, never invented ceremonial regalia. No staged ethnic spectacle, caricatures, sacred objects, tourist posing or readable signs. Keep vendors and shoppers realistically scaled.",
+      "prompt_file": "prompts/cho-bac-ha.txt",
+      "raw_output": "output/imagegen/cho-bac-ha.png",
+      "delivery_output": "generated/cho-bac-ha.webp",
+      "alt": "Minh họa do AI tạo về Chợ Bắc Hà",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "lao-cai",
+      "id": "mu-cang-chai",
+      "place_id": "mu-cang-chai",
+      "name": "Mù Cang Chải",
+      "source_ids": [
+        "S04",
+        "S01"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Mu Cang Chai, in present-day Lao Cai, Vietnam. A broad view of sculpted rice terraces winding around rounded mountain slopes, inspired by Mam Xoi and La Pan Tan agricultural landscapes. Green and golden rice during an intentionally seasonal ripe-rice illustration, realistic field edges, distant mountains and soft afternoon light. No exact map claim, no flat lowland fields, oceans, temples or fantasy geometry.",
+      "prompt_file": "prompts/mu-cang-chai.txt",
+      "raw_output": "output/imagegen/mu-cang-chai.png",
+      "delivery_output": "generated/mu-cang-chai.webp",
+      "alt": "Minh họa do AI tạo về Mù Cang Chải",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "lao-cai",
+      "id": "khau-pha",
+      "place_id": "khau-pha",
+      "name": "Đèo Khau Phạ",
+      "source_ids": [
+        "S04",
+        "S01"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Khau Pha mountain pass in the Mu Cang Chai - Tu Le area, present-day Lao Cai, Vietnam. Scenic view from a plausible safe overlook, curving mountain road at a distance, terraced valley and green ridges, soft light with restrained haze. Focus on landscape, not precise navigation. No invented glass bridges, spectacular impossible bends or paragliding festival.",
+      "prompt_file": "prompts/khau-pha.txt",
+      "raw_output": "output/imagegen/khau-pha.png",
+      "delivery_output": "generated/khau-pha.webp",
+      "alt": "Minh họa do AI tạo về Đèo Khau Phạ",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "lao-cai",
+      "id": "ho-thac-ba",
+      "place_id": "ho-thac-ba",
+      "name": "Hồ Thác Bà",
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Thac Ba Lake in present-day Lao Cai, Vietnam, formerly Yen Bai. Wide lake landscape of tranquil blue-green water, scattered small green islands and layered low hills. One modest passenger boat far away, natural morning light, detailed ripples and wooded shore. A scenic illustration rather than exact map or island count; no tall ocean karst columns, giant dam in foreground or luxury floating city.",
+      "prompt_file": "prompts/ho-thac-ba.txt",
+      "raw_output": "output/imagegen/ho-thac-ba.png",
+      "delivery_output": "generated/ho-thac-ba.webp",
+      "alt": "Minh họa do AI tạo về Hồ Thác Bà",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "lao-cai",
+      "id": "ngoi-tu",
+      "place_id": "ngoi-tu",
+      "name": "Làng Ngòi Tu",
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Ngoi Tu community village near Thac Ba Lake, present-day Lao Cai, Vietnam. Respectful tranquil village illustration featuring modest timber stilt houses, natural vegetation, a rural footpath and a subtle lake glimpse. Soft morning light, believable timber and woven textures. No staged ceremony, sacred symbols, invented ethnic costume, poverty spectacle or modern resort. Do not claim an exact current village layout.",
+      "prompt_file": "prompts/ngoi-tu.txt",
+      "raw_output": "output/imagegen/ngoi-tu.png",
+      "delivery_output": "generated/ngoi-tu.webp",
+      "alt": "Minh họa do AI tạo về Làng Ngòi Tu",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    }
+  ]
+}

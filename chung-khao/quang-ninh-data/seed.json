@@ -1,0 +1,645 @@
+{
+  "schema_version": "1.0",
+  "researched_on": "2026-10-06",
+  "language": "vi",
+  "scope": {
+    "province_id": "quang-ninh",
+    "province_name": "Quảng Ninh",
+    "administrative_type": "city",
+    "administrative_basis": "Theo Nghị quyết 36/2026/QH16: thành lập thành phố Quảng Ninh trên cơ sở toàn bộ tỉnh Quảng Ninh; hiệu lực 01/09/2026. Bài du lịch cũ vẫn dùng tên tỉnh Quảng Ninh.",
+    "coverage_label": "Sổ tay giới thiệu tổng quan Quảng Ninh và 7 địa danh tuyển chọn: Vịnh Hạ Long, Vịnh Bái Tử Long, Cô Tô, Đảo Thanh Lân, Quan Lạn, Yên Tử, Bảo tàng – Thư viện Quảng Ninh. Không bao phủ mọi địa danh trong địa phương.",
+    "other_provinces_supported": false,
+    "cross_province_note": "Vịnh Lan Hạ và Cát Bà thuộc Hải Phòng không có hồ sơ trong database này. Di sản Yên Tử – Vĩnh Nghiêm – Côn Sơn, Kiếp Bạc liên địa phương; chỉ giới thiệu phần Yên Tử ở Quảng Ninh."
+  },
+  "status_definitions": {
+    "source_checked": "Đã đọc trực tiếp nội dung công khai của nguồn, diễn đạt lại có căn cứ; chưa phải xác minh độc lập toàn bộ sự kiện.",
+    "dated_reference": "Thông tin theo văn bản hoặc mốc nguồn cụ thể; không được gọi là số liệu mới nhất.",
+    "needs_current_confirmation": "Đã thấy trong nguồn nhưng cần xác nhận hiệu lực hiện hành trước khi công bố như thông tin hôm nay.",
+    "needs_review": "Có mâu thuẫn hoặc chưa đủ căn cứ; không tự động dùng để trả lời như sự thật.",
+    "not_checked": "Nguồn được đề xuất nhưng chưa đọc được nội dung trong lần nghiên cứu này."
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Nghị quyết 36/2026/QH16 thành lập thành phố Quảng Ninh",
+      "publisher": "Báo Điện tử Chính phủ",
+      "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-36-2026-qh16-thanh-lap-thanh-pho-quang-ninh-tu-1-9-2026-119260903082603583.htm",
+      "displayed_date": "2026-09-03",
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Nghị quyết thông qua ngày 24/08/2026, hiệu lực 01/09/2026; đọc trực tiếp nội dung Điều 1–3."
+    },
+    {
+      "id": "S02",
+      "title": "Ha Long",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://vietnam.travel/places-to-go/northern-vietnam/ha-long",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Chỉ lấy mô tả cảnh quan và trải nghiệm tổng quát. Nội dung có nhắc điểm ngoài Quảng Ninh; đã loại khỏi hồ sơ. Không lấy lịch hoặc thời gian vận chuyển làm thông tin hiện hành."
+    },
+    {
+      "id": "S03",
+      "title": "Co To Island: pristine beauty of Northeast Vietnam",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Trang tiếng Việt ghi bản dịch do AI tạo. Chỉ lấy mô tả địa danh tổng quát; loại số liệu, niên đại hải đăng và quy định hạn chế nhựa chưa đối chiếu."
+    },
+    {
+      "id": "S04",
+      "title": "Discovering the beauty of Quan Lan Island",
+      "publisher": "Cục Du lịch Quốc gia Việt Nam – TITC",
+      "url": "https://vietnamtourism.gov.vn/en/post/9785",
+      "displayed_date": "2015-11-09",
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Bài năm 2015 dùng địa danh huyện Vân Đồn trước sắp xếp. Không nhập số lượng phòng, cơ sở lưu trú, lịch tàu, giá hay thời gian chạy tàu như hiện hành."
+    },
+    {
+      "id": "S05",
+      "title": "Khu di tích lịch sử và danh lam thắng cảnh Yên Tử",
+      "publisher": "Cổng thông tin điện tử Quảng Ninh",
+      "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530",
+      "displayed_date": "2025-07-14",
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Bài nêu địa giới phường sau sắp xếp và sự kiện UNESCO ngày 12/07/2025. Chỉ lấy phần di tích Quảng Ninh, không mở rộng hồ sơ sang Bắc Ninh hoặc Hải Phòng."
+    },
+    {
+      "id": "S06",
+      "title": "Bảo tàng – Thư viện thành phố",
+      "publisher": "Sở Văn hóa, Thể thao và Du lịch Quảng Ninh",
+      "url": "https://www.quangninh.gov.vn/so/sovanhoathethao/trang/chitietbvgioithieu.aspx?bvid=84",
+      "displayed_date": "2026-09-04",
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Nguồn về chức năng và nhiệm vụ đơn vị, không phải hướng dẫn trưng bày hoặc giá vé. Không nhập thông tin cá nhân cán bộ vào database du lịch."
+    }
+  ],
+  "overview_sections": [
+    {
+      "id": "O01",
+      "topic": "tong-quan",
+      "title": "Quảng Ninh trong phạm vi sổ tay",
+      "text": "Sổ tay tập trung vào cảnh quan biển đảo, di tích Yên Tử và bảo tàng địa phương. Theo Nghị quyết 36/2026/QH16, thành phố Quảng Ninh được thành lập từ toàn bộ tỉnh Quảng Ninh, có hiệu lực từ 01/09/2026. Các bài du lịch cũ dùng tên tỉnh được giữ nguyên tên nguồn và chú thích thời điểm.",
+      "status": "source_checked",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "id": "O02",
+      "topic": "dia-ly",
+      "title": "Biển, đảo và cảnh quan núi",
+      "text": "Hạ Long nổi bật với cảnh quan núi đá vôi giữa biển. Quan Lạn nằm trong vịnh Bái Tử Long; Cô Tô có bãi biển, bờ đá và đảo Thanh Lân. Yên Tử bổ sung cảnh quan núi rừng, tạo một tuyến chủ đề khác với du lịch biển đảo.",
+      "status": "source_checked",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "O03",
+      "topic": "lich-su",
+      "title": "Lịch sử gắn với Yên Tử",
+      "text": "Yên Tử gắn với Trần Nhân Tông và Thiền phái Trúc Lâm. Khu di tích được xếp hạng quốc gia đặc biệt năm 2012; năm 2025, phần Yên Tử thuộc quần thể di sản văn hóa thế giới liên địa phương Yên Tử – Vĩnh Nghiêm – Côn Sơn, Kiếp Bạc. Đây là hai mốc và hai phạm vi khác nhau.",
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "O04",
+      "topic": "van-hoa",
+      "title": "Tín ngưỡng và ký ức địa phương",
+      "text": "Có thể giới thiệu kiến trúc chùa, am, tháp ở Yên Tử; cụm đình, đền, chùa tại Quan Lạn; và chức năng lưu giữ, giới thiệu di sản của Bảo tàng – Thư viện Quảng Ninh. Khi kể về hành hương, trình bày như sinh hoạt tín ngưỡng, không hứa hẹn cầu may.",
+      "status": "source_checked",
+      "source_ids": [
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "id": "O05",
+      "topic": "am-thuc",
+      "title": "Ẩm thực biển đảo",
+      "text": "Bài giới thiệu Cô Tô nhắc các hải sản như mực, hàu, bề bề và sá sùng. Đây là danh mục nguyên liệu được nguồn du lịch giới thiệu, chưa phải danh sách món độc quyền của địa phương, nhà hàng khuyến nghị hoặc bảng giá.",
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "O06",
+      "topic": "trai-nghiem",
+      "title": "Trải nghiệm theo chủ đề",
+      "text": "Nguồn du lịch giới thiệu ngắm cảnh vịnh bằng thuyền, chèo kayak tại Hạ Long, khám phá bãi biển và bờ đá ở Cô Tô, Quan Lạn; nguồn Yên Tử giới thiệu tuyến kiến trúc tôn giáo giữa núi rừng. Việc đặt tour, điều kiện hoạt động trên biển và lịch lễ hội từng năm cần nguồn vận hành hiện hành.",
+      "status": "source_checked",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "vinh-ha-long",
+      "name": "Vịnh Hạ Long",
+      "category": "canh-quan-bien",
+      "summary": "Cảnh quan vịnh với núi đá vôi, đảo và hang động; phù hợp giới thiệu địa hình karst và trải nghiệm ngắm cảnh trên biển.",
+      "highlights": [
+        "Núi đá vôi giữa biển",
+        "Hang động",
+        "Du thuyền và kayak theo nguồn du lịch"
+      ],
+      "source_ids": [
+        "S02"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Không đồng nhất toàn khu du lịch Hạ Long với ranh giới di sản UNESCO. Không đưa Lan Hạ, Cát Bà vào phạm vi Quảng Ninh.",
+      "suggested_questions": [
+        "Vịnh Hạ Long có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Vịnh Hạ Long?",
+        "Sổ tay có nguồn nào cho Vịnh Hạ Long?"
+      ]
+    },
+    {
+      "id": "vinh-bai-tu-long",
+      "name": "Vịnh Bái Tử Long",
+      "category": "canh-quan-bien",
+      "summary": "Vịnh được nguồn giới thiệu Quan Lạn xác định là không gian biển nơi đảo Quan Lạn tọa lạc. Hồ sơ hiện tập trung vào mối liên hệ với Quan Lạn.",
+      "highlights": [
+        "Không gian biển đảo",
+        "Quan Lạn"
+      ],
+      "source_ids": [
+        "S04"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Nguồn năm 2015; chưa có khảo sát toàn vịnh, ranh giới, hệ sinh thái hoặc tour hiện hành.",
+      "suggested_questions": [
+        "Vịnh Bái Tử Long có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Vịnh Bái Tử Long?",
+        "Sổ tay có nguồn nào cho Vịnh Bái Tử Long?"
+      ]
+    },
+    {
+      "id": "co-to",
+      "name": "Cô Tô",
+      "category": "bien-dao",
+      "summary": "Điểm đến biển đảo có bãi Hồng Vàn, Vàn Chảy và cảnh quan bờ đá Cầu Mỵ.",
+      "highlights": [
+        "Bãi Hồng Vàn",
+        "Bãi Vàn Chảy",
+        "Bờ đá Cầu Mỵ"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+      "suggested_questions": [
+        "Cô Tô có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Cô Tô?",
+        "Sổ tay có nguồn nào cho Cô Tô?"
+      ]
+    },
+    {
+      "id": "thanh-lan",
+      "name": "Đảo Thanh Lân",
+      "category": "bien-dao",
+      "summary": "Đảo thuộc khu vực Cô Tô, được nguồn du lịch giới thiệu với rừng và cảnh quan bờ đá.",
+      "highlights": [
+        "Cảnh quan rừng",
+        "Bờ biển và đá"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+      "suggested_questions": [
+        "Đảo Thanh Lân có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Đảo Thanh Lân?",
+        "Sổ tay có nguồn nào cho Đảo Thanh Lân?"
+      ]
+    },
+    {
+      "id": "quan-lan",
+      "name": "Quan Lạn",
+      "category": "bien-dao-van-hoa",
+      "summary": "Đảo trong vịnh Bái Tử Long, kết hợp bãi biển với cụm di tích đình, đền, chùa.",
+      "highlights": [
+        "Bãi Quan Lạn",
+        "Sơn Hào và Minh Châu",
+        "Cụm di tích văn hóa"
+      ],
+      "source_ids": [
+        "S04"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Bài năm 2015. Chưa xác nhận địa chỉ hành chính chi tiết, lịch tàu hoặc dịch vụ hiện hành.",
+      "suggested_questions": [
+        "Quan Lạn có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Quan Lạn?",
+        "Sổ tay có nguồn nào cho Quan Lạn?"
+      ]
+    },
+    {
+      "id": "yen-tu",
+      "name": "Yên Tử",
+      "category": "di-tich-ton-giao",
+      "summary": "Khu di tích và danh thắng gắn với Trần Nhân Tông, Thiền phái Trúc Lâm và hệ thống chùa, am, tháp giữa núi rừng.",
+      "highlights": [
+        "Chùa Hoa Yên",
+        "Vườn tháp Huệ Quang",
+        "Chùa Đồng"
+      ],
+      "source_ids": [
+        "S05"
+      ],
+      "status": "source_checked",
+      "current_address": "Phần lớn thuộc phường Yên Tử, một phần thuộc phường Hoàng Quế, Quảng Ninh (phạm vi khu di tích theo nguồn 14/07/2025).",
+      "address_status": "dated_reference",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Nguồn ngày 14/07/2025 nêu khu di tích phần lớn ở phường Yên Tử, một phần ở phường Hoàng Quế. Không coi toàn quần thể UNESCO liên địa phương nằm tại Quảng Ninh.",
+      "suggested_questions": [
+        "Yên Tử có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Yên Tử?",
+        "Sổ tay có nguồn nào cho Yên Tử?"
+      ],
+      "address_source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "bao-tang-quang-ninh",
+      "name": "Bảo tàng – Thư viện Quảng Ninh",
+      "category": "bao-tang",
+      "summary": "Đơn vị lưu giữ, nghiên cứu, trưng bày và giới thiệu di sản, lịch sử, văn hóa, thiên nhiên, con người Quảng Ninh.",
+      "highlights": [
+        "Di sản địa phương",
+        "Giáo dục lịch sử và văn hóa"
+      ],
+      "source_ids": [
+        "S06"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Nguồn đã đọc là hồ sơ chức năng đơn vị; chưa đủ căn cứ mô tả từng tầng trưng bày, kiến trúc, địa chỉ cổng vào hay vé.",
+      "suggested_questions": [
+        "Bảo tàng – Thư viện Quảng Ninh có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Bảo tàng – Thư viện Quảng Ninh?",
+        "Sổ tay có nguồn nào cho Bảo tàng – Thư viện Quảng Ninh?"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "F01",
+      "entity_id": "vinh-ha-long",
+      "topic": "dia-ly",
+      "text": "Vịnh Hạ Long có cảnh quan núi đá vôi và đảo giữa biển.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "F02",
+      "entity_id": "vinh-ha-long",
+      "topic": "trai-nghiem",
+      "text": "Trang du lịch giới thiệu ngắm vịnh bằng thuyền và chèo kayak như những trải nghiệm ở Hạ Long.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "F03",
+      "entity_id": "vinh-ha-long",
+      "topic": "canh-quan",
+      "text": "Hang động là một phần cảnh quan được nguồn giới thiệu Hạ Long nhắc tới.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "F04",
+      "entity_id": "vinh-bai-tu-long",
+      "topic": "dia-ly",
+      "text": "Quan Lạn nằm trong vịnh Bái Tử Long theo bài giới thiệu của cơ quan du lịch.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F05",
+      "entity_id": "co-to",
+      "topic": "danh-lam",
+      "text": "Hồng Vàn và Vàn Chảy là hai bãi biển được nguồn giới thiệu Cô Tô nhắc tới.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F06",
+      "entity_id": "co-to",
+      "topic": "danh-lam",
+      "text": "Cầu Mỵ được giới thiệu qua cảnh quan bờ đá ven biển.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F07",
+      "entity_id": "co-to",
+      "topic": "am-thuc",
+      "text": "Nguồn giới thiệu Cô Tô nhắc mực, hàu, bề bề và sá sùng trong nhóm hải sản địa phương.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F08",
+      "entity_id": "thanh-lan",
+      "topic": "dia-ly",
+      "text": "Thanh Lân là đảo được bài giới thiệu khu vực Cô Tô đề cập.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F09",
+      "entity_id": "thanh-lan",
+      "topic": "canh-quan",
+      "text": "Nguồn du lịch mô tả Thanh Lân với cảnh quan rừng và bờ đá.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F10",
+      "entity_id": "quan-lan",
+      "topic": "danh-lam",
+      "text": "Bài giới thiệu Quan Lạn nhắc các bãi Quan Lạn, Sơn Hào và Minh Châu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F11",
+      "entity_id": "quan-lan",
+      "topic": "van-hoa",
+      "text": "Quan Lạn có cụm đình, đền, chùa được nguồn du lịch giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F12",
+      "entity_id": "quan-lan",
+      "topic": "kien-truc",
+      "text": "Nguồn giới thiệu Quan Lạn đề cập nghệ thuật chạm khắc gỗ trong kiến trúc di tích.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F13",
+      "entity_id": "yen-tu",
+      "topic": "lich-su",
+      "text": "Yên Tử gắn với Trần Nhân Tông và Thiền phái Trúc Lâm.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F14",
+      "entity_id": "yen-tu",
+      "topic": "kien-truc",
+      "text": "Hệ thống kiến trúc Yên Tử gồm chùa, am và tháp phân bố dọc tuyến từ chân núi lên đỉnh.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F15",
+      "entity_id": "yen-tu",
+      "topic": "danh-lam",
+      "text": "Chùa Hoa Yên, vườn tháp Huệ Quang và chùa Đồng thuộc các công trình được nguồn Yên Tử giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F16",
+      "entity_id": "bao-tang-quang-ninh",
+      "topic": "chuc-nang",
+      "text": "Bảo tàng – Thư viện Quảng Ninh thực hiện chức năng sưu tầm, bảo quản, nghiên cứu và trưng bày di sản văn hóa.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "F17",
+      "entity_id": "bao-tang-quang-ninh",
+      "topic": "giao-duc",
+      "text": "Đơn vị có nhiệm vụ giới thiệu lịch sử, văn hóa, thiên nhiên và con người Quảng Ninh phục vụ nghiên cứu, học tập, tham quan.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "F18",
+      "entity_id": "quang-ninh",
+      "topic": "hanh-chinh",
+      "text": "Nghị quyết 36/2026/QH16 thành lập thành phố Quảng Ninh từ toàn bộ diện tích tự nhiên và dân số tỉnh Quảng Ninh, có hiệu lực 01/09/2026.",
+      "value": null,
+      "unit": null,
+      "time_basis": "Nghị quyết thông qua 24/08/2026; hiệu lực 01/09/2026",
+      "status": "dated_reference",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "F19",
+      "entity_id": "yen-tu",
+      "topic": "di-san",
+      "text": "Yên Tử được xếp hạng di tích quốc gia đặc biệt theo Quyết định 1419/QĐ-TTg ngày 27/09/2012.",
+      "value": 2012,
+      "unit": "năm",
+      "time_basis": "2012",
+      "status": "dated_reference",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F20",
+      "entity_id": "yen-tu",
+      "topic": "di-san",
+      "text": "Ngày 12/07/2025, UNESCO công nhận quần thể Yên Tử – Vĩnh Nghiêm – Côn Sơn, Kiếp Bạc là di sản văn hóa thế giới; quần thể gồm thành phần tại Quảng Ninh, Bắc Ninh và Hải Phòng.",
+      "value": 2025,
+      "unit": "năm",
+      "time_basis": "2025-07-12",
+      "status": "dated_reference",
+      "source_ids": [
+        "S05"
+      ]
+    }
+  ],
+  "dated_practical_info": [
+    {
+      "id": "P01",
+      "entity_id": "yen-tu",
+      "kind": "festival_calendar",
+      "label": "Mốc lễ hội thường niên được bài nguồn nêu",
+      "value": "Bắt đầu ngày 10 tháng Giêng âm lịch, kéo dài trong mùa xuân",
+      "unit": null,
+      "source_ids": [
+        "S05"
+      ],
+      "source_displayed_date": "2025-07-14",
+      "status": "needs_current_confirmation",
+      "publish_as_current": false,
+      "note": "Đây là mô tả thường niên, chưa phải thông báo tổ chức năm 2026 hoặc 2027; chưa quy đổi sang dương lịch."
+    }
+  ],
+  "editorial_guidelines": [
+    "Diễn đạt lại bằng tiếng Việt; hiển thị nguồn cạnh dữ kiện. Không sao chép toàn bộ bài hay tự sử dụng ảnh có bản quyền.",
+    "Tên tỉnh, xã, phường và số liệu phải đi kèm thời điểm. Không dùng địa chỉ huyện trong bài cũ như địa chỉ hành chính hiện hành.",
+    "Không tự sinh tọa độ, giá vé, lịch vận chuyển, giờ mở cửa, đường dẫn đặt vé hoặc số liệu dân số hiện tại.",
+    "Tôn trọng tín ngưỡng và đời sống cộng đồng; truyền thuyết cần gắn nhãn truyền thuyết, không kể như sự kiện lịch sử.",
+    "Ảnh do AI tạo phải gắn nhãn minh họa AI; không dùng ảnh tái dựng làm bằng chứng về kiến trúc hay nghi lễ thực tế.",
+    "Các ý tưởng tương tác và gợi ý hành trình là biên tập của đội, không phải dữ kiện của nguồn hoặc cam kết dịch vụ."
+  ],
+  "chatbot_rules": [
+    "Trả lời bằng tiếng Việt, chỉ sử dụng hồ sơ và dữ kiện thuộc database đang chọn.",
+    "Với địa danh chưa có hồ sơ, nói: Địa danh này chưa có trong sổ tay; không lấy kiến thức mô hình để bù.",
+    "Với câu hỏi ngoài phạm vi địa phương đang chọn, đề nghị chuyển sang database tương ứng nếu hệ thống đã nạp; không tự trả lời địa phương khác.",
+    "Chỉ khẳng định dữ kiện từ chatbot_knowledge; mỗi câu trả lời phải có source_ids hoặc URL thực sự hỗ trợ nội dung.",
+    "Giữ mốc thời gian của dated_reference; không gọi số liệu theo nghị quyết là số liệu mới nhất.",
+    "needs_review và not_checked không được dùng làm căn cứ khẳng định. Không suy diễn từ tên hoặc tiêu đề nguồn.",
+    "Đối với giá vé, lịch tàu, giờ mở cửa, đặt vé, thời tiết và tình trạng đường: nếu chưa xác nhận hiện hành, nói chưa có dữ liệu hiện hành trong sổ tay.",
+    "Tọa độ null không được tự suy ra; không dùng dữ liệu này để dẫn đường chính xác.",
+    "Không coi source_checked là chứng nhận đúng tuyệt đối; khi có mâu thuẫn, nêu chưa chắc và chuyển mục sang needs_review."
+  ],
+  "research_gaps": [
+    "Chưa có bộ giá vé hiện hành, chi phí ăn ở, lịch vận chuyển hoặc dịch vụ đặt vé đã xác nhận.",
+    "Chưa đối chiếu tọa độ từng địa danh và ranh giới hành chính để đặt marker/map3D; latitude và longitude để null.",
+    "Chưa có đầy đủ địa chỉ xã/phường mới của từng điểm; chỉ điền địa chỉ khi nguồn trực tiếp nêu.",
+    "Chưa có ảnh AI, âm thanh thuyết minh hoặc mô hình 3D; đây là database nội dung.",
+    "Bộ hồ sơ tuyển chọn không bao phủ mọi địa danh, lễ hội, cộng đồng và món ăn của địa phương."
+  ]
+}

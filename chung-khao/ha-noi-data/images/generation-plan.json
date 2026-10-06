@@ -1,0 +1,147 @@
+{
+  "status": "prepared",
+  "provider": "https://api.thucchien.ai/images/generations",
+  "model": "gpt-image-2.5-sunburst",
+  "request_size": "1536x1024",
+  "quality": "high",
+  "delivery_size": "1536x864",
+  "credential_variable": "GATEWAY_KEY",
+  "note": "Không có ảnh tham chiếu. Cần kiểm tra hình ảnh trước khi công bố như mô tả kiến trúc; không dùng làm bằng chứng lịch sử hoặc địa lý.",
+  "jobs": [
+    {
+      "region": "ha-noi",
+      "id": "ho-hoan-kiem",
+      "place_id": "ho-hoan-kiem",
+      "name": "Hồ Hoàn Kiếm",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Ho Hoan Kiem, Hanoi, Vietnam. View over the lake toward the red wooden The Huc bridge leading to Ngoc Son temple amid trees. Recognizable modest bridge proportions, red railing and green water, soft morning light and subtle city background. No legend characters, dragons, boats beneath a giant bridge or invented pagodas in the lake; keep distant buildings unobtrusive.",
+      "prompt_file": "prompts/ho-hoan-kiem.txt",
+      "raw_output": "output/imagegen/ho-hoan-kiem.png",
+      "delivery_output": "generated/ho-hoan-kiem.webp",
+      "alt": "Minh họa do AI tạo về Hồ Hoàn Kiếm",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "ha-noi",
+      "id": "pho-co-ha-noi",
+      "place_id": "pho-co-ha-noi",
+      "name": "Phố cổ Hà Nội",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Hanoi Old Quarter, Vietnam. Eye-level street view of a narrow old commercial street with modest weathered shop houses, aged plaster, small balconies and everyday storefronts. A few ordinary pedestrians and bicycles, candid respectful daily life in warm morning light. No legible shop signs, no invented festival, no exotic costumes or uniform Chinese lantern decoration.",
+      "prompt_file": "prompts/pho-co-ha-noi.txt",
+      "raw_output": "output/imagegen/pho-co-ha-noi.png",
+      "delivery_output": "generated/pho-co-ha-noi.webp",
+      "alt": "Minh họa do AI tạo về Phố cổ Hà Nội",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "ha-noi",
+      "id": "van-mieu-quoc-tu-giam",
+      "place_id": "van-mieu-quoc-tu-giam",
+      "name": "Văn Miếu – Quốc Tử Giám",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Van Mieu - Quoc Tu Giam, Hanoi, Vietnam. Focus on Khue Van Cac: the modest red wooden pavilion with circular openings above white masonry supports, traditional tiled roof and tranquil courtyard greenery. Straight architectural proportions, warm diffuse daylight, aged material texture. Do not depict a huge palace or fabricate readable inscriptions and examination ceremonies.",
+      "prompt_file": "prompts/van-mieu-quoc-tu-giam.txt",
+      "raw_output": "output/imagegen/van-mieu-quoc-tu-giam.png",
+      "delivery_output": "generated/van-mieu-quoc-tu-giam.webp",
+      "alt": "Minh họa do AI tạo về Văn Miếu – Quốc Tử Giám",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "ha-noi",
+      "id": "hoang-thanh-thang-long",
+      "place_id": "hoang-thanh-thang-long",
+      "name": "Hoàng thành Thăng Long",
+      "source_ids": [
+        "S03",
+        "S06",
+        "S07"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Imperial Citadel of Thang Long, Hanoi, Vietnam. View of the present-day Doan Mon gate, weathered masonry with arched entrances and a modest traditional pavilion above, open green grounds and mature trees. Wide frontal architectural composition with straight verticals and soft morning light. Existing heritage site, not a reconstruction of a medieval royal palace. No emperors, soldiers, invented grand walls or readable plaques.",
+      "prompt_file": "prompts/hoang-thanh-thang-long.txt",
+      "raw_output": "output/imagegen/hoang-thanh-thang-long.png",
+      "delivery_output": "generated/hoang-thanh-thang-long.webp",
+      "alt": "Minh họa do AI tạo về Hoàng thành Thăng Long",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "ha-noi",
+      "id": "lang-chu-tich-ho-chi-minh",
+      "place_id": "lang-chu-tich-ho-chi-minh",
+      "name": "Lăng Chủ tịch Hồ Chí Minh",
+      "source_ids": [
+        "S03",
+        "S05"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Ho Chi Minh Mausoleum, Hanoi, Vietnam. Respectful exterior view of the low monumental grey stone mausoleum, simple rectilinear tiers and square columns, broad quiet plaza and green lawns. Balanced wide frontal framing, dignified natural daylight. No readable inscriptions, no political slogans, no invented ceremony and no interior, body or tomb imagery.",
+      "prompt_file": "prompts/lang-chu-tich-ho-chi-minh.txt",
+      "raw_output": "output/imagegen/lang-chu-tich-ho-chi-minh.png",
+      "delivery_output": "generated/lang-chu-tich-ho-chi-minh.webp",
+      "alt": "Minh họa do AI tạo về Lăng Chủ tịch Hồ Chí Minh",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "ha-noi",
+      "id": "nha-hat-lon-ha-noi",
+      "place_id": "nha-hat-lon-ha-noi",
+      "name": "Nhà hát Lớn Hà Nội",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Hanoi Opera House, Vietnam. Three-quarter exterior view of the pale yellow and cream neoclassical theatre, columns, balanced facade, historic roofline and broad forecourt. Elegant but realistic scale, restrained morning light, a few small ordinary pedestrians. Keep the actual building character rather than creating a generic European palace. No readable signs or staged performance outside.",
+      "prompt_file": "prompts/nha-hat-lon-ha-noi.txt",
+      "raw_output": "output/imagegen/nha-hat-lon-ha-noi.png",
+      "delivery_output": "generated/nha-hat-lon-ha-noi.webp",
+      "alt": "Minh họa do AI tạo về Nhà hát Lớn Hà Nội",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "ha-noi",
+      "id": "bao-tang-dan-toc-hoc",
+      "place_id": "bao-tang-dan-toc-hoc",
+      "name": "Bảo tàng Dân tộc học Việt Nam",
+      "source_ids": [
+        "S05"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: Vietnam Museum of Ethnology, Hanoi, Vietnam. A tranquil outdoor architectural exhibition setting with a traditional timber stilt house, a tall steep thatched roof, visible wood supports and trees. Focus on construction materials and human scale rather than invented artifacts. Illustrative selection from a museum environment, not a claim of exact current exhibition layout. No people dressed in invented ethnic costumes, no ritual reenactment, no readable signs.",
+      "prompt_file": "prompts/bao-tang-dan-toc-hoc.txt",
+      "raw_output": "output/imagegen/bao-tang-dan-toc-hoc.png",
+      "delivery_output": "generated/bao-tang-dan-toc-hoc.webp",
+      "alt": "Minh họa do AI tạo về Bảo tàng Dân tộc học Việt Nam",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    },
+    {
+      "region": "ha-noi",
+      "id": "nha-tho-lon-ha-noi",
+      "place_id": "nha-tho-lon-ha-noi",
+      "name": "Nhà thờ Lớn Hà Nội",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: Vietnamese local geography handbook website illustration.\nCreate a new, polished travel image of the named Vietnamese destination. Natural colors, realistic materials and vegetation, restrained contrast, fine detail, believable light and scale. Contemporary setting. One continuous scene, not a collage. Horizontal landscape canvas, 1536x1024, with the main subject fully inside the central 1536x864 safe area for a 16:9 crop. No text, lettering, captions, logos, watermark, border, invented monuments, fantasy scenery, exaggerated HDR or neon lighting. Respect the local religious and cultural setting. Do not invent historical scenes, ceremonies or costumes. This image will be labeled externally as an AI illustration, not documentary photography or evidence of exact geographic or architectural details.\n\nScene: St Joseph Cathedral, Hanoi, Vietnam. Respectful exterior architectural view with two square towers, a central rose window, weathered grey facade and Gothic arched openings. Plausible courtyard viewpoint, straight verticals, natural soft daylight and a few ordinary visitors at a distance. No invented extra spires, no European alpine backdrop, no religious ceremony or readable signage.",
+      "prompt_file": "prompts/nha-tho-lon-ha-noi.txt",
+      "raw_output": "output/imagegen/nha-tho-lon-ha-noi.png",
+      "delivery_output": "generated/nha-tho-lon-ha-noi.webp",
+      "alt": "Minh họa do AI tạo về Nhà thờ Lớn Hà Nội",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review"
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+{
+  "schema_version": "1.0",
+  "researched_on": "2026-10-06",
+  "language": "vi",
+  "scope": {
+    "province_id": "lao-cai",
+    "province_name": "Lào Cai",
+    "administrative_type": "province",
+    "administrative_basis": "Tỉnh Lào Cai sau sắp xếp năm 2025 gồm toàn bộ tỉnh Lào Cai và Yên Bái trước sắp xếp; chính quyền mới hoạt động từ 01/07/2025.",
+    "coverage_label": "Sổ tay giới thiệu tổng quan Lào Cai và 7 địa danh tuyển chọn: Sa Pa, Fansipan, Chợ Bắc Hà, Mù Cang Chải, Đèo Khau Phạ, Hồ Thác Bà, Làng Ngòi Tu. Không bao phủ mọi địa danh trong địa phương.",
+    "other_provinces_supported": false,
+    "cross_province_note": "Mù Cang Chải, Khau Phạ, hồ Thác Bà và Ngòi Tu từng được bài du lịch ghi thuộc Yên Bái; nay thuộc phạm vi tỉnh Lào Cai theo căn cứ sắp xếp cấp tỉnh. Không mở rộng sang tỉnh khác."
+  },
+  "status_definitions": {
+    "source_checked": "Đã đọc trực tiếp nội dung công khai của nguồn, diễn đạt lại có căn cứ; chưa phải xác minh độc lập toàn bộ sự kiện.",
+    "dated_reference": "Thông tin theo văn bản hoặc mốc nguồn cụ thể; không được gọi là số liệu mới nhất.",
+    "needs_current_confirmation": "Đã thấy trong nguồn nhưng cần xác nhận hiệu lực hiện hành trước khi công bố như thông tin hôm nay.",
+    "needs_review": "Có mâu thuẫn hoặc chưa đủ căn cứ; không tự động dùng để trả lời như sự thật.",
+    "not_checked": "Nguồn được đề xuất nhưng chưa đọc được nội dung trong lần nghiên cứu này."
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+      "publisher": "Báo Điện tử Chính phủ",
+      "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+      "displayed_date": "2026-10-05",
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Dân số và diện tích Lào Cai là số liệu phục vụ sắp xếp năm 2025; không gọi là số liệu mới nhất năm 2026."
+    },
+    {
+      "id": "S02",
+      "title": "Nghị quyết 1673/NQ-UBTVQH15 về sắp xếp cấp xã Lào Cai",
+      "publisher": "Báo Điện tử Chính phủ",
+      "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1673-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-tinh-lao-cai-nam-2025-119250616214156071.htm",
+      "displayed_date": "2025-06-20",
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Nghị quyết ngày 16/06/2025; chính quyền xã/phường mới hoạt động từ 01/07/2025. Không suy ra địa chỉ điểm đến từ tên huyện cũ."
+    },
+    {
+      "id": "S03",
+      "title": "Sapa",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Dùng cảnh quan, địa danh và chợ phiên; loại chiều cao Fansipan, thời gian cáp treo và thời gian di chuyển chưa đối chiếu. Mùa vụ và thời tiết là tham khảo, không phải dự báo."
+    },
+    {
+      "id": "S04",
+      "title": "4 things you will love about Mu Cang Chai",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Nguồn dùng địa danh tỉnh Yên Bái trước sắp xếp. Dùng mô tả cảnh quan và văn hóa; không dùng số giờ chạy xe hay lịch mùa vụ như cam kết hiện hành."
+    },
+    {
+      "id": "S05",
+      "title": "Thac Ba Lake: the emerald of Yen Bai",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Nguồn dùng Yên Bái và huyện Yên Bình/Lục Yên trước sắp xếp. Đã ánh xạ phạm vi tỉnh qua S01; loại xếp hạng hồ, số đảo và diện tích chưa đối chiếu; không khuyến nghị món cá sống."
+    }
+  ],
+  "overview_sections": [
+    {
+      "id": "O01",
+      "topic": "tong-quan",
+      "title": "Lào Cai sau sắp xếp năm 2025",
+      "text": "Tỉnh Lào Cai hiện được giới thiệu theo phạm vi sau sắp xếp từ Lào Cai và Yên Bái trước đây. Vì vậy, sổ tay lựa chọn cả nhóm Sa Pa, Fansipan, Bắc Hà và nhóm Mù Cang Chải, Khau Phạ, hồ Thác Bà, Ngòi Tu. Tên tỉnh Yên Bái trong nguồn du lịch cũ được chú thích theo thời điểm.",
+      "status": "source_checked",
+      "source_ids": [
+        "S01",
+        "S03",
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "O02",
+      "topic": "dia-ly",
+      "title": "Núi, ruộng bậc thang và hồ",
+      "text": "Sa Pa được nguồn du lịch giới thiệu với thung lũng, núi và ruộng bậc thang; Mù Cang Chải nổi bật với cảnh quan ruộng trên sườn núi. Khau Phạ là đèo trong khu vực Mù Cang Chải – Tú Lệ. Hồ Thác Bà là hồ nhân tạo hình thành cùng công trình thủy điện Thác Bà.",
+      "status": "source_checked",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "O03",
+      "topic": "lich-su",
+      "title": "Đọc lịch sử qua cảnh quan sinh kế",
+      "text": "Bộ dữ liệu hiện có căn cứ cho lịch sử hành chính năm 2025 và mối liên hệ hồ Thác Bà với công trình thủy điện. Ruộng bậc thang được giới thiệu như cảnh quan nông nghiệp và sinh kế. Chưa có đủ nguồn để lập niên biểu lịch sử toàn tỉnh hoặc khẳng định niên đại từng làng.",
+      "status": "source_checked",
+      "source_ids": [
+        "S01",
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "O04",
+      "topic": "van-hoa",
+      "title": "Đời sống cộng đồng và nghề thủ công",
+      "text": "Nguồn Mù Cang Chải giới thiệu văn hóa dệt của người Mông; bài hồ Thác Bà giới thiệu Ngòi Tu với nhà sàn, nghề đan và sinh hoạt cộng đồng Dao. Các mô tả gắn với cộng đồng trong bài, không được khái quát thành phong tục của mọi cư dân Lào Cai.",
+      "status": "source_checked",
+      "source_ids": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "O05",
+      "topic": "am-thuc",
+      "title": "Ẩm thực trong trải nghiệm cộng đồng",
+      "text": "Bài hồ Thác Bà nhắc cơm lam và món gà nấu măng chua trong trải nghiệm địa phương. Đây là tên món theo nguồn, chưa phải công thức, thực đơn, giá hoặc chỉ dẫn về cơ sở phục vụ. Dữ liệu ẩm thực Sa Pa và Bắc Hà cần bổ sung nguồn chuyên biệt.",
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "O06",
+      "topic": "trai-nghiem",
+      "title": "Đi bộ, chợ phiên và du lịch hồ",
+      "text": "Nguồn Sa Pa giới thiệu đi bộ khám phá làng và chợ Bắc Hà; nguồn Mù Cang Chải giới thiệu đường đi qua ruộng bậc thang, gợi ý hướng dẫn viên địa phương. Hồ Thác Bà và Ngòi Tu bổ sung trải nghiệm cảnh quan hồ và lưu trú cộng đồng. Lịch chợ, tour, đường đi và điều kiện thời tiết cần xác nhận cho chuyến thực tế.",
+      "status": "source_checked",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S05"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "sa-pa",
+      "name": "Sa Pa",
+      "category": "canh-quan-van-hoa",
+      "summary": "Điểm đến vùng núi với thung lũng, ruộng bậc thang và những tuyến khám phá làng được nguồn du lịch giới thiệu.",
+      "highlights": [
+        "Thung lũng và ruộng bậc thang",
+        "Cát Cát và Tả Phìn theo nguồn",
+        "Đi bộ khám phá"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Hồ sơ dùng Sa Pa như điểm đến du lịch rộng hơn một phường; không tự gán mọi làng cho phường Sa Pa mới.",
+      "suggested_questions": [
+        "Sa Pa có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Sa Pa?",
+        "Sổ tay có nguồn nào cho Sa Pa?"
+      ]
+    },
+    {
+      "id": "fansipan",
+      "name": "Fansipan",
+      "category": "nui",
+      "summary": "Đỉnh núi được nguồn Sa Pa giới thiệu như điểm ngắm cảnh núi và trải nghiệm lên cao.",
+      "highlights": [
+        "Cảnh quan núi",
+        "Trải nghiệm cáp treo theo nguồn"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Chưa đối chiếu độ cao hiện hành, tuyến leo, điều kiện hoạt động cáp treo hoặc giá vé; không nhập các con số từ bài tổng hợp.",
+      "suggested_questions": [
+        "Fansipan có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Fansipan?",
+        "Sổ tay có nguồn nào cho Fansipan?"
+      ]
+    },
+    {
+      "id": "cho-bac-ha",
+      "name": "Chợ Bắc Hà",
+      "category": "cho-phien-van-hoa",
+      "summary": "Chợ phiên được nguồn du lịch Sa Pa giới thiệu như điểm khám phá sinh hoạt và giao thương địa phương.",
+      "highlights": [
+        "Chợ phiên",
+        "Sinh hoạt địa phương"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Nguồn ghi chợ Chủ nhật, nhưng chưa xác nhận lịch hoạt động ngày cụ thể, địa chỉ mới và thay đổi vào dịp lễ.",
+      "suggested_questions": [
+        "Chợ Bắc Hà có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Chợ Bắc Hà?",
+        "Sổ tay có nguồn nào cho Chợ Bắc Hà?"
+      ]
+    },
+    {
+      "id": "mu-cang-chai",
+      "name": "Mù Cang Chải",
+      "category": "canh-quan-nong-nghiep",
+      "summary": "Cảnh quan ruộng bậc thang gắn với canh tác, làng và văn hóa người Mông theo nguồn du lịch.",
+      "highlights": [
+        "Ruộng bậc thang",
+        "Mâm Xôi",
+        "La Pán Tẩn"
+      ],
+      "source_ids": [
+        "S04",
+        "S01"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Nguồn du lịch dùng Yên Bái trước sắp xếp; database dùng phạm vi tỉnh Lào Cai mới. Chưa xác nhận mùa lúa năm cụ thể.",
+      "suggested_questions": [
+        "Mù Cang Chải có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Mù Cang Chải?",
+        "Sổ tay có nguồn nào cho Mù Cang Chải?"
+      ]
+    },
+    {
+      "id": "khau-pha",
+      "name": "Đèo Khau Phạ",
+      "category": "canh-quan-nui",
+      "summary": "Đèo trong khu vực Mù Cang Chải – Tú Lệ, được bài du lịch giới thiệu với cảnh quan thung lũng và ruộng.",
+      "highlights": [
+        "Cảnh quan đèo",
+        "Khu vực Tú Lệ"
+      ],
+      "source_ids": [
+        "S04",
+        "S01"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Chưa kiểm tra tình trạng đường, điểm dừng an toàn hoặc dịch vụ dù lượn; không dùng hồ sơ làm hướng dẫn giao thông.",
+      "suggested_questions": [
+        "Đèo Khau Phạ có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Đèo Khau Phạ?",
+        "Sổ tay có nguồn nào cho Đèo Khau Phạ?"
+      ]
+    },
+    {
+      "id": "ho-thac-ba",
+      "name": "Hồ Thác Bà",
+      "category": "ho-nhan-tao",
+      "summary": "Hồ hình thành cùng công trình thủy điện Thác Bà, được nguồn du lịch giới thiệu qua mặt nước, đảo và cảnh quan ven hồ.",
+      "highlights": [
+        "Cảnh quan mặt nước và đảo",
+        "Mối liên hệ với thủy điện",
+        "Trải nghiệm thuyền theo nguồn"
+      ],
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Nguồn dùng tỉnh Yên Bái cũ; chưa xác nhận bến thuyền, giờ, giá, ranh giới mặt hồ hoặc số đảo hiện hành.",
+      "suggested_questions": [
+        "Hồ Thác Bà có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Hồ Thác Bà?",
+        "Sổ tay có nguồn nào cho Hồ Thác Bà?"
+      ]
+    },
+    {
+      "id": "ngoi-tu",
+      "name": "Làng Ngòi Tu",
+      "category": "du-lich-cong-dong",
+      "summary": "Điểm du lịch cộng đồng ở khu vực hồ Thác Bà, được nguồn giới thiệu qua nhà sàn, nghề thủ công và đời sống cộng đồng Dao.",
+      "highlights": [
+        "Nhà sàn",
+        "Nghề đan",
+        "Trải nghiệm cộng đồng"
+      ],
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Không khái quát nghi lễ hoặc phong tục cho mọi người Dao; cần xin phép cộng đồng trước khi ghi hình, tái hiện nghi lễ hoặc tạo hình minh họa chi tiết.",
+      "suggested_questions": [
+        "Làng Ngòi Tu có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Làng Ngòi Tu?",
+        "Sổ tay có nguồn nào cho Làng Ngòi Tu?"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "F01",
+      "entity_id": "sa-pa",
+      "topic": "canh-quan",
+      "text": "Nguồn giới thiệu Sa Pa mô tả cảnh quan thung lũng và ruộng bậc thang.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F02",
+      "entity_id": "sa-pa",
+      "topic": "danh-lam",
+      "text": "Cát Cát và Tả Phìn là các làng được nguồn Sa Pa nhắc trong trải nghiệm khám phá.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F03",
+      "entity_id": "sa-pa",
+      "topic": "trai-nghiem",
+      "text": "Đi bộ khám phá và lưu trú cộng đồng là các trải nghiệm được nguồn du lịch Sa Pa giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F04",
+      "entity_id": "fansipan",
+      "topic": "danh-lam",
+      "text": "Fansipan là đỉnh núi được trang Sa Pa giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F05",
+      "entity_id": "fansipan",
+      "topic": "trai-nghiem",
+      "text": "Nguồn Sa Pa có giới thiệu cách tiếp cận Fansipan bằng cáp treo; database chưa có lịch và giá hiện hành.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F06",
+      "entity_id": "cho-bac-ha",
+      "topic": "van-hoa",
+      "text": "Chợ Bắc Hà được bài Sa Pa giới thiệu như một chợ phiên địa phương.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F07",
+      "entity_id": "mu-cang-chai",
+      "topic": "canh-quan",
+      "text": "Ruộng bậc thang là cảnh quan nông nghiệp nổi bật được nguồn Mù Cang Chải giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F08",
+      "entity_id": "mu-cang-chai",
+      "topic": "danh-lam",
+      "text": "Mâm Xôi và La Pán Tẩn được bài Mù Cang Chải nhắc tới.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F09",
+      "entity_id": "mu-cang-chai",
+      "topic": "van-hoa",
+      "text": "Bài Mù Cang Chải giới thiệu văn hóa dệt và trang phục của người Mông.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F10",
+      "entity_id": "khau-pha",
+      "topic": "dia-ly",
+      "text": "Khau Phạ được nguồn du lịch giới thiệu trong khu vực Mù Cang Chải và Tú Lệ.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F11",
+      "entity_id": "khau-pha",
+      "topic": "canh-quan",
+      "text": "Nguồn giới thiệu đèo Khau Phạ với cảnh quan thung lũng và ruộng.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F12",
+      "entity_id": "ho-thac-ba",
+      "topic": "lich-su",
+      "text": "Hồ Thác Bà là hồ nhân tạo hình thành cùng công trình thủy điện Thác Bà.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F13",
+      "entity_id": "ho-thac-ba",
+      "topic": "canh-quan",
+      "text": "Nguồn hồ Thác Bà mô tả mặt nước, đảo xanh và cảnh quan núi đá.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F14",
+      "entity_id": "ho-thac-ba",
+      "topic": "trai-nghiem",
+      "text": "Tham quan bằng thuyền là trải nghiệm được bài hồ Thác Bà giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F15",
+      "entity_id": "ngoi-tu",
+      "topic": "van-hoa",
+      "text": "Ngòi Tu được nguồn hồ Thác Bà giới thiệu như điểm du lịch cộng đồng với nhà sàn và cư dân Dao.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F16",
+      "entity_id": "ngoi-tu",
+      "topic": "lang-nghe",
+      "text": "Nguồn Ngòi Tu nhắc nghề đan và sinh hoạt hát dân gian trong trải nghiệm văn hóa.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F17",
+      "entity_id": "lao-cai",
+      "topic": "am-thuc",
+      "text": "Cơm lam và gà nấu măng chua là các tên món được bài hồ Thác Bà giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F18",
+      "entity_id": "lao-cai",
+      "topic": "hanh-chinh",
+      "text": "Tỉnh Lào Cai sau sắp xếp năm 2025 gồm toàn bộ tỉnh Lào Cai và tỉnh Yên Bái trước sắp xếp.",
+      "value": null,
+      "unit": null,
+      "time_basis": "Nghị quyết 202/2025/QH15; chính quyền mới hoạt động 01/07/2025",
+      "status": "dated_reference",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "F19",
+      "entity_id": "lao-cai",
+      "topic": "dien-tich",
+      "text": "Diện tích Lào Cai theo số liệu phục vụ sắp xếp năm 2025 là 13.256,92 km².",
+      "value": 13256.92,
+      "unit": "km²",
+      "time_basis": "Số liệu theo sắp xếp cấp tỉnh năm 2025",
+      "status": "dated_reference",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "F20",
+      "entity_id": "lao-cai",
+      "topic": "dan-so",
+      "text": "Quy mô dân số Lào Cai theo số liệu phục vụ sắp xếp năm 2025 là 1.778.785 người; không phải ước tính dân số hiện tại năm 2026.",
+      "value": 1778785,
+      "unit": "người",
+      "time_basis": "Số liệu theo sắp xếp cấp tỉnh năm 2025",
+      "status": "dated_reference",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "F21",
+      "entity_id": "lao-cai",
+      "topic": "hanh-chinh",
+      "text": "Theo Nghị quyết 1673/NQ-UBTVQH15 năm 2025, Lào Cai có 99 đơn vị hành chính cấp xã: 89 xã và 10 phường.",
+      "value": 99,
+      "unit": "đơn vị cấp xã",
+      "time_basis": "Nghị quyết năm 2025",
+      "status": "dated_reference",
+      "source_ids": [
+        "S02"
+      ]
+    }
+  ],
+  "dated_practical_info": [
+    {
+      "id": "P01",
+      "entity_id": "cho-bac-ha",
+      "kind": "market_calendar",
+      "label": "Ngày chợ phiên theo trang Sa Pa",
+      "value": "Chủ nhật",
+      "unit": null,
+      "source_ids": [
+        "S03"
+      ],
+      "source_displayed_date": null,
+      "status": "needs_current_confirmation",
+      "publish_as_current": false,
+      "note": "Nguồn không hiển thị ngày đăng; chưa có thông báo lịch hoạt động hiện hành của ban quản lý chợ. Không cam kết chợ mở mọi Chủ nhật."
+    }
+  ],
+  "editorial_guidelines": [
+    "Diễn đạt lại bằng tiếng Việt; hiển thị nguồn cạnh dữ kiện. Không sao chép toàn bộ bài hay tự sử dụng ảnh có bản quyền.",
+    "Tên tỉnh, xã, phường và số liệu phải đi kèm thời điểm. Không dùng địa chỉ huyện trong bài cũ như địa chỉ hành chính hiện hành.",
+    "Không tự sinh tọa độ, giá vé, lịch vận chuyển, giờ mở cửa, đường dẫn đặt vé hoặc số liệu dân số hiện tại.",
+    "Tôn trọng tín ngưỡng và đời sống cộng đồng; truyền thuyết cần gắn nhãn truyền thuyết, không kể như sự kiện lịch sử.",
+    "Ảnh do AI tạo phải gắn nhãn minh họa AI; không dùng ảnh tái dựng làm bằng chứng về kiến trúc hay nghi lễ thực tế.",
+    "Các ý tưởng tương tác và gợi ý hành trình là biên tập của đội, không phải dữ kiện của nguồn hoặc cam kết dịch vụ."
+  ],
+  "chatbot_rules": [
+    "Trả lời bằng tiếng Việt, chỉ sử dụng hồ sơ và dữ kiện thuộc database đang chọn.",
+    "Với địa danh chưa có hồ sơ, nói: Địa danh này chưa có trong sổ tay; không lấy kiến thức mô hình để bù.",
+    "Với câu hỏi ngoài phạm vi địa phương đang chọn, đề nghị chuyển sang database tương ứng nếu hệ thống đã nạp; không tự trả lời địa phương khác.",
+    "Chỉ khẳng định dữ kiện từ chatbot_knowledge; mỗi câu trả lời phải có source_ids hoặc URL thực sự hỗ trợ nội dung.",
+    "Giữ mốc thời gian của dated_reference; không gọi số liệu theo nghị quyết là số liệu mới nhất.",
+    "needs_review và not_checked không được dùng làm căn cứ khẳng định. Không suy diễn từ tên hoặc tiêu đề nguồn.",
+    "Đối với giá vé, lịch tàu, giờ mở cửa, đặt vé, thời tiết và tình trạng đường: nếu chưa xác nhận hiện hành, nói chưa có dữ liệu hiện hành trong sổ tay.",
+    "Tọa độ null không được tự suy ra; không dùng dữ liệu này để dẫn đường chính xác.",
+    "Không coi source_checked là chứng nhận đúng tuyệt đối; khi có mâu thuẫn, nêu chưa chắc và chuyển mục sang needs_review."
+  ],
+  "research_gaps": [
+    "Chưa có bộ giá vé hiện hành, chi phí ăn ở, lịch vận chuyển hoặc dịch vụ đặt vé đã xác nhận.",
+    "Chưa đối chiếu tọa độ từng địa danh và ranh giới hành chính để đặt marker/map3D; latitude và longitude để null.",
+    "Chưa có đầy đủ địa chỉ xã/phường mới của từng điểm; chỉ điền địa chỉ khi nguồn trực tiếp nêu.",
+    "Chưa có ảnh AI, âm thanh thuyết minh hoặc mô hình 3D; đây là database nội dung.",
+    "Bộ hồ sơ tuyển chọn không bao phủ mọi địa danh, lễ hội, cộng đồng và món ăn của địa phương."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "provider": "https://api.thucchien.ai/images/generations",
+  "model": "gpt-image-2.5-sunburst",
+  "updated_on": "2026-10-06T07:54:58.130994+00:00",
+  "label": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+  "jobs": [
+    {
+      "region": "ha-noi",
+      "id": "ho-hoan-kiem",
+      "place_id": "ho-hoan-kiem",
+      "name": "Hồ Hoàn Kiếm",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "prompt_file": "prompts/ho-hoan-kiem.txt",
+      "raw_output": "output/imagegen/ho-hoan-kiem.png",
+      "delivery_output": "generated/ho-hoan-kiem.webp",
+      "alt": "Minh họa do AI tạo về Hồ Hoàn Kiếm",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:54:58.123798+00:00",
+      "status": "connection_error",
+      "error_type": "ConnectionError",
+      "note": "Không tự gửi lại. Nếu lỗi xảy ra sau khi gửi, yêu cầu có thể đã được API xử lý."
+    }
+  ]
+}

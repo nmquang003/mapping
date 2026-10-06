@@ -1,0 +1,105 @@
+{
+  "catalog_version": 1,
+  "path_base": "Directory containing this catalog (chung-khao/)",
+  "description": "Danh mục bốn bộ dữ liệu tuyển chọn phục vụ web và chatbot; JSON là dữ liệu gốc, SQLite là bản sinh ra.",
+  "id_scope": "Record IDs are local to each dataset; use (dataset_id, record_id) when combining.",
+  "datasets": [
+    {
+      "id": "ninh-binh",
+      "name": "Ninh Bình",
+      "administrative_type": "province",
+      "researched_on": "2026-10-06",
+      "schema_version": "1.0",
+      "directory": "ninh-binh-data",
+      "paths": {
+        "readme": "ninh-binh-data/README.md",
+        "seed_json": "ninh-binh-data/seed.json",
+        "sqlite": "ninh-binh-data/ninh_binh.sqlite",
+        "sources_csv": "ninh-binh-data/sources.csv",
+        "build_script": "ninh-binh-data/build_database.py"
+      },
+      "counts": {
+        "places": 7,
+        "facts": 26,
+        "overview_sections": 6,
+        "sources": 18,
+        "dated_practical_info": 8
+      },
+      "images": {
+        "status": "references_and_prompts_only_no_generated_images",
+        "directory": "ninh-binh-data/images",
+        "references": "ninh-binh-data/images/references.json",
+        "generation_plan": "ninh-binh-data/images/generation-plan.json"
+      }
+    },
+    {
+      "id": "ha-noi",
+      "name": "Hà Nội",
+      "administrative_type": "city",
+      "researched_on": "2026-10-06",
+      "schema_version": "1.0",
+      "directory": "ha-noi-data",
+      "paths": {
+        "readme": "ha-noi-data/README.md",
+        "seed_json": "ha-noi-data/seed.json",
+        "sqlite": "ha-noi-data/ha_noi.sqlite",
+        "sources_csv": "ha-noi-data/sources.csv",
+        "build_script": "ha-noi-data/build_database.py"
+      },
+      "counts": {
+        "places": 8,
+        "facts": 22,
+        "overview_sections": 6,
+        "sources": 7,
+        "dated_practical_info": 1
+      },
+      "images": null
+    },
+    {
+      "id": "lao-cai",
+      "name": "Lào Cai",
+      "administrative_type": "province",
+      "researched_on": "2026-10-06",
+      "schema_version": "1.0",
+      "directory": "lao-cai-data",
+      "paths": {
+        "readme": "lao-cai-data/README.md",
+        "seed_json": "lao-cai-data/seed.json",
+        "sqlite": "lao-cai-data/lao_cai.sqlite",
+        "sources_csv": "lao-cai-data/sources.csv",
+        "build_script": "lao-cai-data/build_database.py"
+      },
+      "counts": {
+        "places": 7,
+        "facts": 21,
+        "overview_sections": 6,
+        "sources": 5,
+        "dated_practical_info": 1
+      },
+      "images": null
+    },
+    {
+      "id": "quang-ninh",
+      "name": "Quảng Ninh",
+      "administrative_type": "city",
+      "researched_on": "2026-10-06",
+      "schema_version": "1.0",
+      "directory": "quang-ninh-data",
+      "paths": {
+        "readme": "quang-ninh-data/README.md",
+        "seed_json": "quang-ninh-data/seed.json",
+        "sqlite": "quang-ninh-data/quang_ninh.sqlite",
+        "sources_csv": "quang-ninh-data/sources.csv",
+        "build_script": "quang-ninh-data/build_database.py"
+      },
+      "counts": {
+        "places": 7,
+        "facts": 20,
+        "overview_sections": 6,
+        "sources": 6,
+        "dated_practical_info": 1
+      },
+      "images": null
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "provider": "https://api.thucchien.ai/images/generations",
+  "model": "gpt-image-2.5-sunburst",
+  "updated_on": "2026-10-06T07:54:58.131151+00:00",
+  "label": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+  "jobs": [
+    {
+      "region": "lao-cai",
+      "id": "sa-pa",
+      "place_id": "sa-pa",
+      "name": "Sa Pa",
+      "source_ids": [
+        "S03"
+      ],
+      "prompt_file": "prompts/sa-pa.txt",
+      "raw_output": "output/imagegen/sa-pa.png",
+      "delivery_output": "generated/sa-pa.webp",
+      "alt": "Minh họa do AI tạo về Sa Pa",
+      "caption": "Minh họa do AI tạo; không phải ảnh tư liệu.",
+      "visual_status": "pending_visual_review",
+      "model": "gpt-image-2.5-sunburst",
+      "created_on": "2026-10-06T07:54:58.123934+00:00",
+      "status": "connection_error",
+      "error_type": "ConnectionError",
+      "note": "Không tự gửi lại. Nếu lỗi xảy ra sau khi gửi, yêu cầu có thể đã được API xử lý."
+    }
+  ]
+}

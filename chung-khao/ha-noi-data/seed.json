@@ -1,0 +1,710 @@
+{
+  "schema_version": "1.0",
+  "researched_on": "2026-10-06",
+  "language": "vi",
+  "scope": {
+    "province_id": "ha-noi",
+    "province_name": "Hà Nội",
+    "administrative_type": "city",
+    "administrative_basis": "Thành phố Hà Nội không sáp nhập cấp tỉnh trong đợt năm 2025; đơn vị cấp xã theo Nghị quyết 1656/NQ-UBTVQH15.",
+    "coverage_label": "Sổ tay giới thiệu tổng quan Hà Nội và 8 địa danh tuyển chọn: Hồ Hoàn Kiếm, Phố cổ Hà Nội, Văn Miếu – Quốc Tử Giám, Hoàng thành Thăng Long, Lăng Chủ tịch Hồ Chí Minh, Nhà hát Lớn Hà Nội, Bảo tàng Dân tộc học Việt Nam, Nhà thờ Lớn Hà Nội. Không bao phủ mọi địa danh trong địa phương.",
+    "other_provinces_supported": false,
+    "cross_province_note": "Hồ sơ tuyển chọn chủ yếu thuộc khu vực trung tâm đô thị; không bao phủ mọi địa danh của Hà Nội."
+  },
+  "status_definitions": {
+    "source_checked": "Đã đọc trực tiếp nội dung công khai của nguồn, diễn đạt lại có căn cứ; chưa phải xác minh độc lập toàn bộ sự kiện.",
+    "dated_reference": "Thông tin theo văn bản hoặc mốc nguồn cụ thể; không được gọi là số liệu mới nhất.",
+    "needs_current_confirmation": "Đã thấy trong nguồn nhưng cần xác nhận hiệu lực hiện hành trước khi công bố như thông tin hôm nay.",
+    "needs_review": "Có mâu thuẫn hoặc chưa đủ căn cứ; không tự động dùng để trả lời như sự thật.",
+    "not_checked": "Nguồn được đề xuất nhưng chưa đọc được nội dung trong lần nghiên cứu này."
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh",
+      "publisher": "Báo Điện tử Chính phủ",
+      "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+      "displayed_date": "2026-10-05",
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Dùng để xác định Hà Nội không sáp nhập cấp tỉnh trong đợt năm 2025; không suy ra địa chỉ chi tiết."
+    },
+    {
+      "id": "S02",
+      "title": "Nghị quyết 1656/NQ-UBTVQH15 về sắp xếp cấp xã Hà Nội",
+      "publisher": "Thông tấn xã Việt Nam",
+      "url": "https://nvsk.vnanet.vn/toan-van-nghi-quyet-so-1656-nq-ubtvqh15-sap-xep-cac-don-vi-hanh-chinh-cap-xa-cua-thanh-pho-ha-noi-nam-2025-1-172085.vna",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Đã đọc phần mở đầu và văn bản về sắp xếp năm 2025. Không thấy ngày đăng riêng; ngày 16/06/2025 là ngày nghị quyết."
+    },
+    {
+      "id": "S03",
+      "title": "Hanoi: six heritage sites",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Dùng cho tổng quan di tích, mốc Văn Miếu, Quốc Tử Giám và phố cổ. Loại chi tiết truyền thuyết và niên đại chưa đối chiếu thêm."
+    },
+    {
+      "id": "S04",
+      "title": "3 walking tours of Hanoi",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Dùng cho địa danh và tên món ăn; không lấy mô tả nguyên liệu phở cuốn trong bài. Tuyến đi bộ không được coi là hướng dẫn an toàn hay lịch hoạt động hiện hành."
+    },
+    {
+      "id": "S05",
+      "title": "11 must-see attractions in Ha Noi",
+      "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
+      "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Bài có chi tiết cần biên tập: nhầm vua xây chùa Một Cột, nhầm nhân vật truyền thuyết trả gươm; cách gọi 54 ethnic minorities không chính xác; giá và giờ không có mốc rõ. Đã loại các chi tiết này, chỉ lấy mô tả địa danh có căn cứ."
+    },
+    {
+      "id": "S06",
+      "title": "Giới thiệu Hoàng thành Thăng Long",
+      "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
+      "url": "https://hoangthanhthanglong.vn/gioi-thieu/",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Website quản lý trực tiếp; đã đọc địa chỉ footer và giờ 8:00–17:00 trên header. Chưa kiểm tra hiệu lực lịch đối với ngày cụ thể. Đường dẫn đặt vé chưa được kiểm tra nên không đưa vào database."
+    },
+    {
+      "id": "S07",
+      "title": "Thư ngỏ – Hoàng thành Thăng Long",
+      "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
+      "url": "https://hoangthanhthanglong.vn/thu-ngo/",
+      "displayed_date": null,
+      "accessed_on": "2026-10-06",
+      "status": "source_checked",
+      "note": "Nguồn quản lý nêu khai quật khảo cổ năm 2002 và UNESCO năm 2010; dùng đối chiếu lịch sử và di sản."
+    }
+  ],
+  "overview_sections": [
+    {
+      "id": "O01",
+      "topic": "tong-quan",
+      "title": "Thủ đô qua những lớp di sản",
+      "text": "Hà Nội được giới thiệu qua di tích hoàng thành, truyền thống học tập, phố cổ, không gian hồ và bảo tàng. Bộ hồ sơ này tập trung vào tám điểm tuyển chọn, không phải danh bạ đầy đủ mọi địa danh thủ đô.",
+      "status": "source_checked",
+      "source_ids": [
+        "S03",
+        "S05",
+        "S07"
+      ]
+    },
+    {
+      "id": "O02",
+      "topic": "dia-ly",
+      "title": "Hồ và không gian đô thị",
+      "text": "Hồ Hoàn Kiếm là một điểm nhận diện trong khu vực trung tâm, gắn với đền Ngọc Sơn, cầu Thê Húc và không gian phố cổ lân cận. Nguồn tuyến đi bộ còn giới thiệu sông Hồng, cầu Long Biên và khu vực Trúc Bạch như ngữ cảnh đô thị; các điểm này chưa có hồ sơ riêng.",
+      "status": "source_checked",
+      "source_ids": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "O03",
+      "topic": "lich-su",
+      "title": "Hoàng thành và truyền thống giáo dục",
+      "text": "Hoàng thành Thăng Long lưu giữ nhiều lớp dấu tích qua các triều đại và được UNESCO ghi danh năm 2010. Văn Miếu có mốc xây dựng năm 1070; Quốc Tử Giám có mốc năm 1076 theo bài giới thiệu di sản. Các mốc này có thể dùng cho dòng thời gian học tập.",
+      "status": "source_checked",
+      "source_ids": [
+        "S03",
+        "S07"
+      ]
+    },
+    {
+      "id": "O04",
+      "topic": "van-hoa",
+      "title": "Phố nghề, di tích và bảo tàng",
+      "text": "Tên nhiều phố cổ bắt đầu bằng Hàng, gợi lại các hoạt động nghề và buôn bán như Hàng Bạc, Hàng Mã, Hàng Đường. Bảo tàng Dân tộc học giới thiệu đời sống văn hóa của các cộng đồng dân tộc Việt Nam; Lăng Chủ tịch Hồ Chí Minh là không gian tưởng niệm cần cách ứng xử trang nghiêm.",
+      "status": "source_checked",
+      "source_ids": [
+        "S03",
+        "S05"
+      ]
+    },
+    {
+      "id": "O05",
+      "topic": "am-thuc",
+      "title": "Tên món ăn để khám phá",
+      "text": "Nguồn tuyến đi bộ giới thiệu phở, cà phê trứng, phở cuốn và phở chiên phồng trong trải nghiệm Hà Nội. Database hiện lưu tên món và bối cảnh giới thiệu; chưa xác nhận công thức, quán ăn, nguồn gốc độc quyền hoặc mức giá.",
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "O06",
+      "topic": "trai-nghiem",
+      "title": "Khám phá theo tuyến chủ đề",
+      "text": "Có thể xây dựng trải nghiệm lựa chọn giữa di sản hoàng thành, lịch sử giáo dục, phố nghề và văn hóa bảo tàng. Nguồn đã có tuyến đi bộ tham khảo; khi đưa vào web, đội cần đối chiếu lối vào, lịch hoạt động, khoảng cách và điều kiện thực tế trước khi hướng dẫn người dùng.",
+      "status": "source_checked",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S05",
+        "S07"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "ho-hoan-kiem",
+      "name": "Hồ Hoàn Kiếm",
+      "category": "ho-canh-quan",
+      "summary": "Không gian hồ ở trung tâm đô thị, gắn với đền Ngọc Sơn và cầu Thê Húc trong bài giới thiệu điểm đến Hà Nội.",
+      "highlights": [
+        "Không gian ven hồ",
+        "Đền Ngọc Sơn",
+        "Cầu Thê Húc"
+      ],
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Không dùng nhân vật truyền thuyết bị nhầm trong bài nguồn. Chưa có lịch phố đi bộ hiện hành hoặc thông tin vé đền.",
+      "suggested_questions": [
+        "Hồ Hoàn Kiếm có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Hồ Hoàn Kiếm?",
+        "Sổ tay có nguồn nào cho Hồ Hoàn Kiếm?"
+      ]
+    },
+    {
+      "id": "pho-co-ha-noi",
+      "name": "Phố cổ Hà Nội",
+      "category": "khong-gian-van-hoa",
+      "summary": "Khu phố gắn với thương mại và nghề truyền thống, thể hiện qua những tên phố bắt đầu bằng Hàng.",
+      "highlights": [
+        "Tên phố gắn với nghề",
+        "Hàng Bạc",
+        "Hàng Mã và Hàng Đường"
+      ],
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+      "suggested_questions": [
+        "Phố cổ Hà Nội có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Phố cổ Hà Nội?",
+        "Sổ tay có nguồn nào cho Phố cổ Hà Nội?"
+      ]
+    },
+    {
+      "id": "van-mieu-quoc-tu-giam",
+      "name": "Văn Miếu – Quốc Tử Giám",
+      "category": "di-tich-giao-duc",
+      "summary": "Di tích gắn với truyền thống học tập và khoa cử, có hệ thống bia tiến sĩ được bài giới thiệu di sản nhắc tới.",
+      "highlights": [
+        "Truyền thống giáo dục",
+        "Bia tiến sĩ",
+        "Mốc 1070 và 1076"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Chưa đọc nguồn quản lý trực tiếp về vé, giờ và địa chỉ mới; không dùng giá cũ từ bài du lịch tổng hợp.",
+      "suggested_questions": [
+        "Văn Miếu – Quốc Tử Giám có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Văn Miếu – Quốc Tử Giám?",
+        "Sổ tay có nguồn nào cho Văn Miếu – Quốc Tử Giám?"
+      ]
+    },
+    {
+      "id": "hoang-thanh-thang-long",
+      "name": "Hoàng thành Thăng Long",
+      "category": "di-san-khao-co",
+      "summary": "Khu di sản phản ánh nhiều lớp lịch sử kinh đô, với dấu tích kiến trúc và khảo cổ qua các thời kỳ.",
+      "highlights": [
+        "Di sản UNESCO năm 2010",
+        "Các lớp khảo cổ",
+        "Lịch sử kinh đô"
+      ],
+      "source_ids": [
+        "S03",
+        "S06",
+        "S07"
+      ],
+      "status": "source_checked",
+      "current_address": "19C Hoàng Diệu, phường Ba Đình, Hà Nội",
+      "address_status": "source_checked",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Hồ sơ nội dung đã có nguồn; địa chỉ hành chính chi tiết, tọa độ, giá và giờ hiện hành chưa xác nhận.",
+      "suggested_questions": [
+        "Hoàng thành Thăng Long có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Hoàng thành Thăng Long?",
+        "Sổ tay có nguồn nào cho Hoàng thành Thăng Long?"
+      ],
+      "address_source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "lang-chu-tich-ho-chi-minh",
+      "name": "Lăng Chủ tịch Hồ Chí Minh",
+      "category": "tuong-niem",
+      "summary": "Không gian tưởng niệm Chủ tịch Hồ Chí Minh được nguồn du lịch Hà Nội giới thiệu.",
+      "highlights": [
+        "Không gian tưởng niệm",
+        "Ứng xử trang nghiêm"
+      ],
+      "source_ids": [
+        "S03",
+        "S05"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Chưa xác nhận lịch viếng, thời gian bảo trì hoặc điều kiện tham quan hiện hành; loại giá vé trong bài tổng hợp.",
+      "suggested_questions": [
+        "Lăng Chủ tịch Hồ Chí Minh có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Lăng Chủ tịch Hồ Chí Minh?",
+        "Sổ tay có nguồn nào cho Lăng Chủ tịch Hồ Chí Minh?"
+      ]
+    },
+    {
+      "id": "nha-hat-lon-ha-noi",
+      "name": "Nhà hát Lớn Hà Nội",
+      "category": "kien-truc-nghe-thuat",
+      "summary": "Công trình kiến trúc và địa điểm biểu diễn được các bài du lịch giới thiệu trong khu vực trung tâm Hà Nội.",
+      "highlights": [
+        "Kiến trúc",
+        "Nghệ thuật biểu diễn"
+      ],
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Không suy ra luôn có tour nội thất hoặc biểu diễn; lịch chương trình cần nguồn đơn vị vận hành.",
+      "suggested_questions": [
+        "Nhà hát Lớn Hà Nội có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Nhà hát Lớn Hà Nội?",
+        "Sổ tay có nguồn nào cho Nhà hát Lớn Hà Nội?"
+      ]
+    },
+    {
+      "id": "bao-tang-dan-toc-hoc",
+      "name": "Bảo tàng Dân tộc học Việt Nam",
+      "category": "bao-tang",
+      "summary": "Bảo tàng giới thiệu đời sống và văn hóa của các cộng đồng dân tộc Việt Nam.",
+      "highlights": [
+        "Văn hóa các cộng đồng",
+        "Trưng bày hiện vật và không gian kiến trúc"
+      ],
+      "source_ids": [
+        "S05"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Không dùng cách gọi 54 dân tộc thiểu số trong bài tiếng Anh; chưa xác nhận giờ, vé và nội dung triển lãm hiện hành.",
+      "suggested_questions": [
+        "Bảo tàng Dân tộc học Việt Nam có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Bảo tàng Dân tộc học Việt Nam?",
+        "Sổ tay có nguồn nào cho Bảo tàng Dân tộc học Việt Nam?"
+      ]
+    },
+    {
+      "id": "nha-tho-lon-ha-noi",
+      "name": "Nhà thờ Lớn Hà Nội",
+      "category": "kien-truc-ton-giao",
+      "summary": "Công trình Công giáo được nguồn du lịch nhắc tới qua kiến trúc Gothic và vị trí trong tuyến khám phá trung tâm.",
+      "highlights": [
+        "Kiến trúc Gothic",
+        "Không gian sinh hoạt tôn giáo"
+      ],
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "status": "source_checked",
+      "current_address": null,
+      "address_status": "needs_current_confirmation",
+      "latitude": null,
+      "longitude": null,
+      "opening_hours": null,
+      "note": "Chưa có lịch thánh lễ hoặc quy định vào bên trong; không tự coi giờ mở cửa trên bài du lịch là lịch hiện hành.",
+      "suggested_questions": [
+        "Nhà thờ Lớn Hà Nội có gì đặc trưng?",
+        "Tôi có thể tìm hiểu điều gì tại Nhà thờ Lớn Hà Nội?",
+        "Sổ tay có nguồn nào cho Nhà thờ Lớn Hà Nội?"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "F01",
+      "entity_id": "ho-hoan-kiem",
+      "topic": "danh-lam",
+      "text": "Nguồn du lịch giới thiệu hồ Hoàn Kiếm cùng đền Ngọc Sơn và cầu Thê Húc.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F02",
+      "entity_id": "ho-hoan-kiem",
+      "topic": "trai-nghiem",
+      "text": "Hồ Hoàn Kiếm xuất hiện trong tuyến đi bộ tham khảo của cơ quan du lịch.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F03",
+      "entity_id": "pho-co-ha-noi",
+      "topic": "van-hoa",
+      "text": "Nhiều tên phố cổ bắt đầu bằng Hàng, liên quan đến nghề hoặc mặt hàng buôn bán.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F04",
+      "entity_id": "pho-co-ha-noi",
+      "topic": "pho-nghe",
+      "text": "Hàng Bạc, Hàng Mã và Hàng Đường là các ví dụ được bài di sản Hà Nội nêu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F05",
+      "entity_id": "pho-co-ha-noi",
+      "topic": "trai-nghiem",
+      "text": "Chợ Đồng Xuân xuất hiện trong bài tuyến khám phá phố cổ Hà Nội.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F06",
+      "entity_id": "van-mieu-quoc-tu-giam",
+      "topic": "van-hoa",
+      "text": "Văn Miếu – Quốc Tử Giám gắn với truyền thống giáo dục và khoa cử.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F07",
+      "entity_id": "hoang-thanh-thang-long",
+      "topic": "khao-co",
+      "text": "Nguồn quản lý Hoàng thành mô tả những tầng dấu tích khảo cổ qua nhiều thời kỳ.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "F08",
+      "entity_id": "lang-chu-tich-ho-chi-minh",
+      "topic": "van-hoa",
+      "text": "Lăng Chủ tịch Hồ Chí Minh là địa điểm tưởng niệm, cần ứng xử trang nghiêm theo hướng dẫn tham quan.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F09",
+      "entity_id": "nha-hat-lon-ha-noi",
+      "topic": "kien-truc",
+      "text": "Nhà hát Lớn được bài du lịch giới thiệu như một điểm kiến trúc ở Hà Nội.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F10",
+      "entity_id": "nha-hat-lon-ha-noi",
+      "topic": "nghe-thuat",
+      "text": "Nguồn giới thiệu Nhà hát Lớn gắn công trình với hoạt động biểu diễn nghệ thuật.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F11",
+      "entity_id": "bao-tang-dan-toc-hoc",
+      "topic": "van-hoa",
+      "text": "Bảo tàng Dân tộc học giới thiệu văn hóa các cộng đồng dân tộc Việt Nam.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F12",
+      "entity_id": "bao-tang-dan-toc-hoc",
+      "topic": "trung-bay",
+      "text": "Bài giới thiệu bảo tàng nhắc trưng bày hiện vật và kiến trúc truyền thống trong khuôn viên.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F13",
+      "entity_id": "nha-tho-lon-ha-noi",
+      "topic": "kien-truc",
+      "text": "Nhà thờ Lớn Hà Nội được nguồn du lịch mô tả theo phong cách kiến trúc Gothic.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "F14",
+      "entity_id": "nha-tho-lon-ha-noi",
+      "topic": "trai-nghiem",
+      "text": "Nhà thờ Lớn là điểm được nhắc trong tuyến đi bộ trung tâm Hà Nội.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F15",
+      "entity_id": "ha-noi",
+      "topic": "am-thuc",
+      "text": "Phở và cà phê trứng là hai tên món được nguồn tuyến đi bộ Hà Nội giới thiệu.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F16",
+      "entity_id": "ha-noi",
+      "topic": "am-thuc",
+      "text": "Phở cuốn và phở chiên phồng được nguồn giới thiệu trong trải nghiệm ẩm thực Hà Nội.",
+      "value": null,
+      "unit": null,
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "F17",
+      "entity_id": "ha-noi",
+      "topic": "hanh-chinh",
+      "text": "Theo sắp xếp năm 2025, Hà Nội có 126 đơn vị hành chính cấp xã: 51 phường và 75 xã.",
+      "value": 126,
+      "unit": "đơn vị cấp xã",
+      "time_basis": "Nghị quyết 1656/NQ-UBTVQH15 năm 2025",
+      "status": "dated_reference",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "F18",
+      "entity_id": "van-mieu-quoc-tu-giam",
+      "topic": "lich-su",
+      "text": "Văn Miếu được xây dựng năm 1070 theo bài giới thiệu di sản Hà Nội.",
+      "value": 1070,
+      "unit": "năm",
+      "time_basis": "1070",
+      "status": "dated_reference",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F19",
+      "entity_id": "van-mieu-quoc-tu-giam",
+      "topic": "lich-su",
+      "text": "Quốc Tử Giám có mốc thành lập năm 1076 theo bài giới thiệu di sản Hà Nội.",
+      "value": 1076,
+      "unit": "năm",
+      "time_basis": "1076",
+      "status": "dated_reference",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F20",
+      "entity_id": "van-mieu-quoc-tu-giam",
+      "topic": "di-san",
+      "text": "Bài giới thiệu di sản Hà Nội nêu 82 bia tiến sĩ tại Văn Miếu – Quốc Tử Giám.",
+      "value": 82,
+      "unit": "bia",
+      "time_basis": null,
+      "status": "source_checked",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "F21",
+      "entity_id": "hoang-thanh-thang-long",
+      "topic": "di-san",
+      "text": "Hoàng thành Thăng Long được UNESCO ghi danh di sản thế giới năm 2010.",
+      "value": 2010,
+      "unit": "năm",
+      "time_basis": "2010",
+      "status": "dated_reference",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "F22",
+      "entity_id": "hoang-thanh-thang-long",
+      "topic": "khao-co",
+      "text": "Nguồn quản lý nêu việc khai quật khảo cổ khu vực Hoàng thành bắt đầu tháng 12/2002.",
+      "value": 2002,
+      "unit": "năm",
+      "time_basis": "2002-12",
+      "status": "dated_reference",
+      "source_ids": [
+        "S07"
+      ]
+    }
+  ],
+  "dated_practical_info": [
+    {
+      "id": "P01",
+      "entity_id": "hoang-thanh-thang-long",
+      "kind": "opening_hours",
+      "label": "Giờ tham quan trên header website quản lý",
+      "value": "08:00–17:00 hằng ngày",
+      "unit": null,
+      "source_ids": [
+        "S06"
+      ],
+      "source_displayed_date": null,
+      "status": "needs_current_confirmation",
+      "publish_as_current": false,
+      "note": "Đọc ngày 06/10/2026; website không nêu ngày hiệu lực riêng. Cần xác nhận ngày cụ thể, ngày lễ hoặc đóng cửa đột xuất; không gán vào opening_hours hiện hành."
+    }
+  ],
+  "editorial_guidelines": [
+    "Diễn đạt lại bằng tiếng Việt; hiển thị nguồn cạnh dữ kiện. Không sao chép toàn bộ bài hay tự sử dụng ảnh có bản quyền.",
+    "Tên tỉnh, xã, phường và số liệu phải đi kèm thời điểm. Không dùng địa chỉ huyện trong bài cũ như địa chỉ hành chính hiện hành.",
+    "Không tự sinh tọa độ, giá vé, lịch vận chuyển, giờ mở cửa, đường dẫn đặt vé hoặc số liệu dân số hiện tại.",
+    "Tôn trọng tín ngưỡng và đời sống cộng đồng; truyền thuyết cần gắn nhãn truyền thuyết, không kể như sự kiện lịch sử.",
+    "Ảnh do AI tạo phải gắn nhãn minh họa AI; không dùng ảnh tái dựng làm bằng chứng về kiến trúc hay nghi lễ thực tế.",
+    "Các ý tưởng tương tác và gợi ý hành trình là biên tập của đội, không phải dữ kiện của nguồn hoặc cam kết dịch vụ."
+  ],
+  "chatbot_rules": [
+    "Trả lời bằng tiếng Việt, chỉ sử dụng hồ sơ và dữ kiện thuộc database đang chọn.",
+    "Với địa danh chưa có hồ sơ, nói: Địa danh này chưa có trong sổ tay; không lấy kiến thức mô hình để bù.",
+    "Với câu hỏi ngoài phạm vi địa phương đang chọn, đề nghị chuyển sang database tương ứng nếu hệ thống đã nạp; không tự trả lời địa phương khác.",
+    "Chỉ khẳng định dữ kiện từ chatbot_knowledge; mỗi câu trả lời phải có source_ids hoặc URL thực sự hỗ trợ nội dung.",
+    "Giữ mốc thời gian của dated_reference; không gọi số liệu theo nghị quyết là số liệu mới nhất.",
+    "needs_review và not_checked không được dùng làm căn cứ khẳng định. Không suy diễn từ tên hoặc tiêu đề nguồn.",
+    "Đối với giá vé, lịch tàu, giờ mở cửa, đặt vé, thời tiết và tình trạng đường: nếu chưa xác nhận hiện hành, nói chưa có dữ liệu hiện hành trong sổ tay.",
+    "Tọa độ null không được tự suy ra; không dùng dữ liệu này để dẫn đường chính xác.",
+    "Không coi source_checked là chứng nhận đúng tuyệt đối; khi có mâu thuẫn, nêu chưa chắc và chuyển mục sang needs_review."
+  ],
+  "research_gaps": [
+    "Chưa có bộ giá vé hiện hành, chi phí ăn ở, lịch vận chuyển hoặc dịch vụ đặt vé đã xác nhận.",
+    "Chưa đối chiếu tọa độ từng địa danh và ranh giới hành chính để đặt marker/map3D; latitude và longitude để null.",
+    "Chưa có đầy đủ địa chỉ xã/phường mới của từng điểm; chỉ điền địa chỉ khi nguồn trực tiếp nêu.",
+    "Chưa có ảnh AI, âm thanh thuyết minh hoặc mô hình 3D; đây là database nội dung.",
+    "Bộ hồ sơ tuyển chọn không bao phủ mọi địa danh, lễ hội, cộng đồng và món ăn của địa phương."
+  ]
+}
