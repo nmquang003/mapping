@@ -190,3 +190,12 @@
 .tour-music input{width:110px;accent-color:var(--forest);cursor:pointer}
 .tour-music button[aria-pressed=true]{background:#e7eddf;border-color:var(--forest)}
 @media(max-width:760px){.tour-music{gap:10px}.tour-music [role=status]{flex-basis:100%}}
+
+.regional-overview{margin-bottom:38px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.regional-overview h2{font-size:32px;margin:12px 0}.regional-overview .article-lead{max-width:85ch}
+.overview-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 36px;margin:26px 0}
+.overview-topics h3,.overview-landmarks h3{font-size:22px;line-height:1.35;margin-bottom:10px}
+.overview-topics p,.overview-landmarks li{font-size:12px;line-height:1.9;color:#687569}
+.overview-topics .article-citations,.overview-landmarks .article-citations{font-size:10px}
+.overview-landmarks ul{padding-left:20px}.overview-landmarks li{margin:8px 0}.overview-landmarks strong{color:var(--forest);font-weight:600}
+@media(max-width:760px){.regional-overview h2{font-size:27px}.overview-topics{grid-template-columns:1fr;gap:22px;margin-top:22px}.overview-topics h3,.overview-landmarks h3{font-size:21px}}

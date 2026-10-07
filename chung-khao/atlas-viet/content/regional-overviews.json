@@ -1,0 +1,462 @@
+{
+  "reviewed_on": "2026-10-07",
+  "regions": {
+    "ninh-binh": {
+      "lead": "Ninh Bình nối miền núi đá và dấu tích kinh đô với đồng bằng, làng nghề và vùng cửa biển. Nét riêng của địa phương nằm ở sự gặp gỡ giữa cảnh quan tự nhiên và những lớp văn hóa của phía nam đồng bằng sông Hồng.",
+      "summary": "Ninh Bình nằm ở phía nam đồng bằng sông Hồng, được giới thiệu theo phạm vi hợp nhất Hà Nam, Nam Định và Ninh Bình năm 2025. Vùng đất có núi đá vôi Tràng An, đồng bằng phù sa, sông Đáy, sông Ninh Cơ và bãi bồi ven biển. Hoa Lư gắn với các triều Đinh, Tiền Lê và đầu thời Lý; đời sống địa phương còn được nhận ra qua lễ hội, nghề cói, thêu ren và các làng nghề. Tràng An, Hoa Lư, Cúc Phương, Tam Chúc và Phủ Giầy là năm điểm đại diện cho cảnh sắc và văn hóa trong phạm vi tỉnh mới.",
+      "source_ids": [
+        "S01",
+        "S05",
+        "OV_GEO",
+        "OV_CRAFT"
+      ],
+      "sections": [
+        {
+          "title": "Vị trí và phạm vi hành chính",
+          "text": "Ninh Bình nằm ở phía nam đồng bằng sông Hồng, nối không gian nội đồng với duyên hải Bắc Bộ. Bài viết dùng phạm vi tỉnh sau sắp xếp năm 2025, hợp nhất toàn bộ Hà Nam, Nam Định và Ninh Bình trước đây; chính quyền mới hoạt động từ ngày 1/7/2025. Vì vậy, câu chuyện địa phương rộng hơn nhóm điểm Tràng An – Tam Cốc – Hoa Lư vốn quen thuộc với du khách.",
+          "source_ids": [
+            "S01",
+            "OV_GEO"
+          ]
+        },
+        {
+          "title": "Địa hình, sông nước và cảnh quan",
+          "text": "Cảnh quan chuyển từ núi đá vôi và đồi thấp sang đồng bằng phù sa, rồi đến bãi triều ven biển. Ở Tràng An và Tam Cốc, hang động, thung lũng và dòng nước tạo nên địa hình đặc trưng; sông Ngô Đồng uốn qua cánh đồng. Trên phạm vi tỉnh mới, sông Đáy và sông Ninh Cơ góp thêm không gian sông nước, còn Cúc Phương mở góc nhìn về hệ sinh thái rừng.",
+          "source_ids": [
+            "OV_GEO",
+            "S04",
+            "S06",
+            "S07"
+          ]
+        },
+        {
+          "title": "Những mốc lịch sử chính",
+          "text": "Năm 968, Đinh Bộ Lĩnh lên ngôi, Hoa Lư trở thành kinh đô gắn với các triều Đinh, Tiền Lê và đầu thời Lý. Năm 1010, Lý Thái Tổ dời đô đến Thăng Long. Năm 2014, Quần thể danh thắng Tràng An được UNESCO ghi danh là di sản hỗn hợp văn hóa và thiên nhiên. Đợt hợp nhất năm 2025 mở rộng phạm vi hành chính, kết nối thêm di sản của Hà Nam và Nam Định trước đây.",
+          "source_ids": [
+            "S05",
+            "S17",
+            "S01"
+          ]
+        },
+        {
+          "title": "Đời sống, văn hóa và nghề truyền thống",
+          "text": "Lễ hội Hoa Lư gìn giữ sinh hoạt tưởng nhớ các vị vua và tiền nhân qua rước nước, rước kiệu, dâng hương. Thêu ren Văn Lâm và nghề cói Kim Sơn cho thấy sự gắn bó giữa kỹ năng thủ công và sản vật địa phương. Trong không gian tỉnh mới còn có nghề trống Đọi Tam, lụa Nha Xá và đúc đồng Tống Xá. Cơm cháy, thịt dê, mắm tép Gia Viễn, nem chua Yên Mạc bổ sung nét riêng về hương vị.",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S13",
+            "S14",
+            "S15",
+            "OV_CRAFT"
+          ]
+        }
+      ],
+      "representatives": [
+        {
+          "name": "Tràng An",
+          "text": "Núi đá vôi, hang động và thung lũng ngập nước trong một quần thể di sản.",
+          "source_ids": [
+            "S04",
+            "S17"
+          ]
+        },
+        {
+          "name": "Hoa Lư",
+          "text": "Dấu tích kinh đô và đền thờ vua Đinh, vua Lê.",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "name": "Cúc Phương",
+          "text": "Không gian tìm hiểu rừng và hệ sinh thái của vườn quốc gia liên tỉnh.",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "name": "Tam Chúc",
+          "text": "Cảnh quan hồ và kiến trúc Phật giáo ở vùng Hà Nam trước sắp xếp.",
+          "source_ids": [
+            "OV_GEO"
+          ]
+        },
+        {
+          "name": "Phủ Giầy",
+          "text": "Một không gian tiêu biểu của tín ngưỡng thờ Mẫu ở vùng Nam Định trước sắp xếp.",
+          "source_ids": [
+            "OV_GEO"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "OV_GEO",
+          "title": "Ninh Bình trong không gian phát triển du lịch mới",
+          "publisher": "Sở Văn hóa và Thể thao Ninh Bình",
+          "url": "https://vhtt.ninhbinh.gov.vn/vi/tuyen-truyen-phat-trien-du-lich/ninh-binh-quyet-tam-thuc-hien-tot-cac-muc-tieu-chien-luoc-phat-trien-du-lich-1619.html",
+          "displayed_date": "2025-08-08",
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        },
+        {
+          "id": "OV_CRAFT",
+          "title": "Làng nghề Ninh Bình trong không gian phát triển mới",
+          "publisher": "Hội Liên hiệp Phụ nữ tỉnh Ninh Bình",
+          "url": "https://hoilienhiepphunutinh.ninhbinh.gov.vn/trai-nghiem-du-lich/lang-nghe-ninh-binh-trong-khong-gian-phat-trien-moi-1943.html",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        }
+      ]
+    },
+    "ha-noi": {
+      "lead": "Hà Nội là một thành phố của sông, hồ và những lớp thời gian. Vai trò thủ đô, di sản Thăng Long, phố nghề và đời sống đô thị cùng tạo nên bản sắc; phạm vi thành phố còn có vùng ngoại thành và cảnh quan đồi núi.",
+      "summary": "Hà Nội là thủ đô, nằm trong vùng châu thổ sông Hồng. Bài viết dùng phạm vi toàn thành phố, không chỉ khu vực Hoàn Kiếm và phố cổ; Hà Nội không sáp nhập cấp tỉnh trong đợt năm 2025. Sông Hồng, các hồ đô thị và vùng đồi núi phía tây tạo nên cảnh quan đa dạng. Từ mốc định đô năm 1010 đến di sản Văn Miếu – Quốc Tử Giám, lịch sử hiện diện bên phố nghề và nhịp sống dịch vụ. Hồ Hoàn Kiếm, Hoàng thành Thăng Long, Văn Miếu, phố cổ và núi Ba Vì là năm điểm giúp đọc những nét riêng ấy.",
+      "source_ids": [
+        "S01",
+        "S03",
+        "S05",
+        "S07",
+        "OV_GEO",
+        "OV_MOUNTAIN"
+      ],
+      "sections": [
+        {
+          "title": "Vị trí và phạm vi hành chính",
+          "text": "Hà Nội là thủ đô, nằm trong vùng châu thổ sông Hồng và giữ vai trò trung tâm chính trị, văn hóa, giáo dục của cả nước. Bài viết dùng phạm vi toàn thành phố, gồm không gian đô thị, vùng ngoại thành và vùng đồi núi. Hà Nội không sáp nhập cấp tỉnh trong đợt năm 2025; việc sắp xếp cấp xã được thực hiện riêng theo Nghị quyết 1656/NQ-UBTVQH15.",
+          "source_ids": [
+            "S01",
+            "S02",
+            "OV_GEO"
+          ]
+        },
+        {
+          "title": "Địa hình, sông hồ và cảnh quan",
+          "text": "Đồng bằng chiếm phần lớn không gian Hà Nội, nhưng thành phố còn có đồi và núi thấp. Sông Hồng tạo một trục cảnh quan quan trọng; hồ Hoàn Kiếm và các hồ đô thị mở những khoảng nước giữa phố xá. Về phía tây, núi Ba Vì cho thấy một Hà Nội khác với khu trung tâm. Sự đan xen ấy giúp hiểu thủ đô qua cả môi trường tự nhiên lẫn cách tổ chức đời sống đô thị.",
+          "source_ids": [
+            "OV_GEO",
+            "OV_MOUNTAIN",
+            "S05"
+          ]
+        },
+        {
+          "title": "Những mốc lịch sử chính",
+          "text": "Năm 1010, Lý Thái Tổ dời đô từ Hoa Lư đến Đại La và đặt tên kinh đô là Thăng Long. Văn Miếu được xây dựng năm 1070, Quốc Tử Giám ra đời năm 1076, đánh dấu một lớp di sản về học tập. Năm 2010, Khu trung tâm Hoàng thành Thăng Long được UNESCO ghi danh. Những mốc này nối lịch sử kinh đô với truyền thống giáo dục và công việc bảo tồn di sản trong thành phố hôm nay.",
+          "source_ids": [
+            "S03",
+            "S07"
+          ]
+        },
+        {
+          "title": "Đời sống, văn hóa và phố nghề",
+          "text": "Tên Hàng Bạc, Hàng Mã, Hàng Đường gợi ký ức nghề và buôn bán trong phố cổ. Di tích, bảo tàng, không gian tưởng niệm và các tuyến đi bộ cho thấy nhiều cách người dân gìn giữ, diễn giải và tiếp nối văn hóa đô thị. Đời sống còn hiện diện qua những hàng ăn và quán cà phê: phở, cà phê trứng, phở cuốn là các hương vị được tư liệu du lịch giới thiệu. Bản sắc Hà Nội vì thế có cả di sản và sinh hoạt thường ngày.",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        }
+      ],
+      "representatives": [
+        {
+          "name": "Hồ Hoàn Kiếm",
+          "text": "Không gian hồ gắn với đền Ngọc Sơn và nhịp đi bộ ở trung tâm.",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "name": "Hoàng thành Thăng Long",
+          "text": "Các lớp dấu tích của kinh đô qua nhiều thời kỳ.",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "name": "Văn Miếu – Quốc Tử Giám",
+          "text": "Di sản về học tập và truyền thống khoa cử.",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "name": "Phố cổ Hà Nội",
+          "text": "Phố nghề, thương mại và ký ức đô thị.",
+          "source_ids": [
+            "S03",
+            "S05"
+          ]
+        },
+        {
+          "name": "Núi Ba Vì",
+          "text": "Cảnh quan núi và đồi ở phía tây thành phố.",
+          "source_ids": [
+            "OV_MOUNTAIN"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "OV_GEO",
+          "title": "Ảnh hưởng của điều kiện tự nhiên đến Hà Nội",
+          "publisher": "Cổng thông tin điện tử thành phố Hà Nội",
+          "url": "https://hanoi.gov.vn/dia-ly-dia-hinh",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        },
+        {
+          "id": "OV_MOUNTAIN",
+          "title": "Núi ở Hà Nội",
+          "publisher": "Cổng thông tin điện tử thành phố Hà Nội",
+          "url": "https://hanoi.gov.vn/dia-danh/nui-o-ha-noi-4241009134518725.htm",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        }
+      ]
+    },
+    "quang-ninh": {
+      "lead": "Quảng Ninh có bản sắc của biển đảo, núi rừng và Vùng mỏ. Cảnh quan Hạ Long, di sản Yên Tử cùng văn hóa biển và văn hóa công nhân mỏ giúp hiểu địa phương sâu hơn một danh sách điểm đến.",
+      "summary": "Quảng Ninh nằm ở Đông Bắc Việt Nam, tiếp giáp Trung Quốc và Biển Đông. Bài viết dùng phạm vi thành phố Quảng Ninh được thành lập trên toàn bộ tỉnh Quảng Ninh trước đây, có hiệu lực từ 1/9/2026. Núi đá vôi của Hạ Long, biển đảo Bái Tử Long – Cô Tô và núi rừng Yên Tử tạo nên nhiều lớp cảnh quan. Di sản Trúc Lâm, văn hóa biển và truyền thống công nhân mỏ là những nét riêng của đời sống. Hạ Long, Yên Tử, Cô Tô, Quan Lạn và Bảo tàng – Thư viện Quảng Ninh là năm địa danh đại diện.",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S04",
+        "S05",
+        "OV_CULTURE"
+      ],
+      "sections": [
+        {
+          "title": "Vị trí và phạm vi hành chính",
+          "text": "Quảng Ninh nằm ở Đông Bắc Việt Nam, tiếp giáp Trung Quốc và Biển Đông, kết nối không gian biên giới với duyên hải Bắc Bộ. Bài viết dùng phạm vi thành phố Quảng Ninh được thành lập trên cơ sở toàn bộ tỉnh Quảng Ninh trước đây theo Nghị quyết 36/2026/QH16, có hiệu lực từ ngày 1/9/2026. Tên “tỉnh Quảng Ninh” trong tư liệu cũ được hiểu theo thời điểm xuất bản.",
+          "source_ids": [
+            "S01"
+          ]
+        },
+        {
+          "title": "Địa hình, biển đảo và cảnh quan",
+          "text": "Hạ Long nổi bật với những khối núi đá vôi giữa biển, hang động và khoảng nước thay đổi theo góc nhìn. Vịnh Bái Tử Long và Quan Lạn mở rộng câu chuyện ra cảnh quan đảo; Cô Tô có bãi biển, bờ đá và đảo Thanh Lân. Yên Tử lại đưa người đọc vào núi rừng. Địa phương vì vậy có cả không gian biển đảo và cảnh quan miền núi, không chỉ một vịnh du lịch.",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "title": "Những mốc lịch sử chính",
+          "text": "Yên Tử gắn với Trần Nhân Tông và Thiền phái Trúc Lâm, là một lớp di sản quan trọng trong lịch sử địa phương. Ngày 30/10/1963, tỉnh Quảng Ninh được thành lập từ tỉnh Hải Ninh và khu Hồng Quảng. Năm 2025, Yên Tử là một phần của quần thể Yên Tử – Vĩnh Nghiêm – Côn Sơn, Kiếp Bạc được UNESCO ghi danh; quần thể di sản này trải trên nhiều địa phương. Từ ngày 1/9/2026, Quảng Ninh chuyển thành thành phố theo nghị quyết của Quốc hội. Các mốc phản ánh cả lịch sử văn hóa và sự thay đổi tổ chức hành chính.",
+          "source_ids": [
+            "S05",
+            "OV_HISTORY",
+            "S01",
+            "OV_UNESCO"
+          ]
+        },
+        {
+          "title": "Đời sống, văn hóa và sinh kế",
+          "text": "Văn hóa Quảng Ninh được tạo nên từ sự giao thoa giữa đời sống biển, các cộng đồng dân tộc và văn hóa công nhân mỏ. Hoạt động khai thác than cùng truyền thống của người thợ mỏ để lại dấu ấn riêng của Vùng mỏ. Ở một không gian khác, chùa, am, tháp Yên Tử và cụm đình, đền, chùa Quan Lạn gắn với sinh hoạt tín ngưỡng. Bảo tàng – Thư viện Quảng Ninh giúp tìm hiểu ký ức và đời sống địa phương.",
+          "source_ids": [
+            "OV_CULTURE",
+            "S04",
+            "S05",
+            "S06"
+          ]
+        }
+      ],
+      "representatives": [
+        {
+          "name": "Vịnh Hạ Long",
+          "text": "Cảnh quan núi đá vôi và hang động giữa biển.",
+          "source_ids": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Yên Tử",
+          "text": "Di sản Phật giáo Trúc Lâm trong cảnh quan núi rừng.",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "name": "Cô Tô",
+          "text": "Biển, bờ đá và những trải nghiệm đảo.",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "name": "Quan Lạn",
+          "text": "Cảnh quan vịnh Bái Tử Long và cụm di tích đình, đền, chùa.",
+          "source_ids": [
+            "S04"
+          ]
+        },
+        {
+          "name": "Bảo tàng – Thư viện Quảng Ninh",
+          "text": "Điểm đọc ký ức, thiên nhiên và văn hóa địa phương.",
+          "source_ids": [
+            "S06"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "OV_HISTORY",
+          "title": "Tự lực, tự cường vươn lên – 61 năm thành lập Quảng Ninh",
+          "publisher": "Cổng thông tin điện tử Quảng Ninh",
+          "url": "https://quangninh.gov.vn/Trang/ChiTietTinTuc.aspx?nid=145471",
+          "displayed_date": "2024-10-30",
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        },
+        {
+          "id": "OV_CULTURE",
+          "title": "Văn hóa và con người Quảng Ninh",
+          "publisher": "Cổng thông tin điện tử Quảng Ninh",
+          "url": "https://quangninh.gov.vn/Trang/ChiTietTinTuc.aspx?nid=153584",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        },
+        {
+          "id": "OV_UNESCO",
+          "title": "Yên Tử – Vĩnh Nghiêm – Côn Sơn, Kiếp Bạc",
+          "publisher": "UNESCO World Heritage Centre",
+          "url": "https://whc.unesco.org/en/list/1732/",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        }
+      ]
+    },
+    "lao-cai": {
+      "lead": "Lào Cai là miền núi của những thung lũng, sườn ruộng và cộng đồng nhiều bản sắc. Trong phạm vi tỉnh sau sắp xếp năm 2025, cảnh sắc vùng cao Sa Pa được nối với ruộng Mù Cang Chải và không gian hồ Thác Bà.",
+      "summary": "Lào Cai là tỉnh miền núi ở Tây Bắc, có vai trò cửa ngõ giao thương với Trung Quốc. Bài viết dùng phạm vi hợp nhất Lào Cai và Yên Bái năm 2025, nên bao gồm cả Sa Pa, Fansipan, Bắc Hà, Mù Cang Chải và hồ Thác Bà. Địa hình núi, thung lũng, ruộng bậc thang và hồ nhân tạo tạo nên nhiều môi trường sống. Canh tác trên sườn núi, dệt của người Mông, sinh hoạt cộng đồng Dao ở Ngòi Tu và chợ vùng cao là những lát cắt tiêu biểu. Các mốc lịch sử được ghi rõ theo phạm vi Lào Cai trước hoặc sau sắp xếp.",
+      "source_ids": [
+        "S01",
+        "S03",
+        "S04",
+        "S05",
+        "OV_GEO"
+      ],
+      "sections": [
+        {
+          "title": "Vị trí và phạm vi hành chính",
+          "text": "Lào Cai nằm ở vùng Tây Bắc, là cửa ngõ giao thương giữa Việt Nam và Trung Quốc qua cửa khẩu quốc tế Lào Cai. Bài viết dùng phạm vi tỉnh hợp nhất toàn bộ Lào Cai và Yên Bái trước đây theo sắp xếp năm 2025; chính quyền mới hoạt động từ ngày 1/7/2025. Vì thế, Mù Cang Chải, Khau Phạ, hồ Thác Bà và Ngòi Tu cũng thuộc phạm vi tổng quan, dù nguồn cũ ghi tên Yên Bái.",
+          "source_ids": [
+            "S01",
+            "OV_GEO"
+          ]
+        },
+        {
+          "title": "Địa hình, ruộng bậc thang và hồ",
+          "text": "Núi cao, thung lũng và các trục sông Hồng, sông Chảy tạo nên nhiều lớp cảnh quan. Ở Sa Pa và Fansipan, ruộng bậc thang thể hiện cách canh tác thích ứng với sườn núi. Mù Cang Chải và đèo Khau Phạ mở thêm những góc nhìn về địa hình vùng cao. Hồ Thác Bà là hồ nhân tạo hình thành cùng công trình thủy điện, đem lại một không gian mặt nước khác với miền núi. Sự đa dạng ấy gắn cảnh quan với cách con người cư trú và lao động.",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "OV_GEO"
+          ]
+        },
+        {
+          "title": "Những mốc lịch sử chính",
+          "text": "Trong lịch sử của Lào Cai trước sắp xếp, tỉnh dân sự được thành lập ngày 12/7/1907; tỉnh Lào Cai được tái lập ngày 1/10/1991 sau thời kỳ thuộc tỉnh Hoàng Liên Sơn. Năm 2025, Lào Cai và Yên Bái hợp nhất thành tỉnh Lào Cai hiện nay. Khi đọc tư liệu về địa phương, cần đặt tên gọi và địa giới vào đúng thời điểm; các mốc của tỉnh cũ không được hiểu như niên biểu đầy đủ cho toàn bộ tỉnh mới.",
+          "source_ids": [
+            "OV_HISTORY",
+            "OV_REBUILD",
+            "S01"
+          ]
+        },
+        {
+          "title": "Đời sống, văn hóa và sinh kế",
+          "text": "Ruộng bậc thang cho thấy sinh kế nông nghiệp gắn với địa hình núi. Tư liệu Mù Cang Chải giới thiệu nghề dệt của người Mông; ở Ngòi Tu bên hồ Thác Bà, đời sống cộng đồng Dao gắn với nhà sàn và nghề đan. Chợ Bắc Hà là một điểm tiếp cận hoạt động trao đổi và gặp gỡ vùng cao. Các nét văn hóa này thuộc những cộng đồng, không gian cụ thể, cùng tạo nên sự đa dạng của Lào Cai.",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        }
+      ],
+      "representatives": [
+        {
+          "name": "Sa Pa",
+          "text": "Thung lũng, cảnh quan núi và đời sống vùng cao.",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "name": "Fansipan",
+          "text": "Một điểm đại diện cho cảnh quan núi cao.",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "name": "Mù Cang Chải",
+          "text": "Ruộng bậc thang và sinh kế trên sườn núi.",
+          "source_ids": [
+            "S04"
+          ]
+        },
+        {
+          "name": "Chợ Bắc Hà",
+          "text": "Không gian trao đổi và gặp gỡ của vùng cao.",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "name": "Hồ Thác Bà",
+          "text": "Cảnh quan hồ nhân tạo và đời sống cộng đồng ven hồ.",
+          "source_ids": [
+            "S05"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "OV_GEO",
+          "title": "Vị trí địa lý – Địa hình – Địa giới hành chính tỉnh Lào Cai",
+          "publisher": "Cổng thông tin đối ngoại tỉnh Lào Cai",
+          "url": "https://doingoailaocai.vn/vi/bai-viet/24268",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        },
+        {
+          "id": "OV_HISTORY",
+          "title": "Lịch sử hình thành tỉnh Lào Cai",
+          "publisher": "Báo Lào Cai",
+          "url": "https://baolaocai.vn/lich-su-hinh-thanh-tinh-lao-cai-post386820.html",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        },
+        {
+          "id": "OV_REBUILD",
+          "title": "Hành trình 30 năm mở lối giao thương",
+          "publisher": "Báo Lào Cai",
+          "url": "https://baolaocai.vn/hanh-trinh-30-nam-mo-loi-giao-thuong-post346856.html",
+          "displayed_date": null,
+          "accessed_on": "2026-10-07",
+          "status": "source_checked",
+          "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
+        }
+      ]
+    }
+  }
+}

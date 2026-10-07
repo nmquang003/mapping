@@ -2,7 +2,9 @@
 
 No network calls. Run again after editing the source datasets.
 """
+import argparse
 import json
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,13 +34,27 @@ PROSE = {
   4: 'Cơm lam và món gà nấu măng chua được bài giới thiệu hồ Thác Bà nhắc đến trong trải nghiệm địa phương. Tên món giúp người đọc hình dung một phần hương vị của chuyến đi, nhưng chưa cung cấp công thức, thực đơn, giá hay địa chỉ phục vụ. Phần ẩm thực Sa Pa và Bắc Hà cần thêm nguồn chuyên biệt để kể sâu hơn.'
  }
 }
+parser = argparse.ArgumentParser()
+parser.add_argument('--committed-seeds', action='store_true', help='Use Git HEAD datasets while unrelated dataset edits are in progress')
+args = parser.parse_args()
+editorial = json.loads((ROOT / 'content/regional-overviews.json').read_text())
 regions = {}
 for slug, (title, lead) in LEADS.items():
-    seed = json.loads((ROOT.parent / f'{slug}-data/seed.json').read_text())
+    seed_path = ROOT.parent / f'{slug}-data/seed.json'
+    raw = subprocess.check_output(['git', 'show', f'HEAD:chung-khao/{slug}-data/seed.json'], cwd=ROOT) if args.committed_seeds else seed_path.read_text()
+    seed = json.loads(raw)
     sources = {s['id']: s for s in seed['sources']}
     sections = [dict(item) for item in seed['overview_sections']]
     for index, text in PROSE.get(slug, {}).items():
         sections[index]['text'] = text
+    overview = editorial['regions'][slug]
+    sources.update({s['id']: s for s in overview['sources']})
+    for index, item in [(0, dict(text=overview['summary'], source_ids=overview['source_ids'])),
+                        (1, overview['sections'][1]), (2, overview['sections'][2]), (3, overview['sections'][3])]:
+        sections[index].update(item)
+    for item in [overview, *overview['sections'], *overview['representatives']]:
+        for source_id in item['source_ids']:
+            assert source_id in sources, (slug, source_id)
     places = []
     for place in seed['places']:
         facts = [f for f in seed['facts'] if f.get('entity_id') == place['id'] and f.get('status') in ('source_checked', 'dated_reference')]
@@ -46,8 +62,8 @@ for slug, (title, lead) in LEADS.items():
     for item in [*sections, *places, *(f for p in places for f in p['facts'])]:
         for source_id in item['source_ids']:
             assert source_id in sources, (slug, source_id)
-    regions[slug] = dict(name=seed['scope']['province_name'], title=title, lead=lead,
-                         researchedOn=seed['researched_on'], sections=sections,
+    regions[slug] = dict(name=seed['scope']['province_name'], title=title, lead=overview['lead'], overview={k:v for k,v in overview.items() if k!='sources'}, overviewReviewedOn=editorial['reviewed_on'],
+                         researchedOn=max(seed['researched_on'], editorial['reviewed_on']), sections=sections,
                          places=places, sources=sources)
 output = ROOT / 'dist/assets/articles.json'
 output.write_text(json.dumps({'regions': regions}, ensure_ascii=False, indent=2) + '\n')
