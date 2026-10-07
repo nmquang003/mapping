@@ -1,7 +1,7 @@
 import { installMotion, dismissDialog } from './motion.js';
 import { createLocalTour } from './local-tour.js';
 import { narrationView, createNarration } from './tour-narration.js';
-import { articleView, animateReading } from './articles.js';
+import { articleView, overviewView, animateReading } from './articles.js';
 import { createProvinceHints } from './province-hints.js';
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -243,9 +243,8 @@ function localMap(d) {
 function openDestination(id) {
  const d=destinationById(id);if(!d)return;
  const region=articleRegions[id];
- const overview=region?.sections[0];
  const image=heroImage(d);
- $('#dialog-content').innerHTML=`<div class="dialog-header"><div><span class="eyebrow">BẢN ĐỒ · SỔ TAY ĐỊA PHƯƠNG</span><h2 id="destination-title">${escapeHTML(d.name)}</h2></div><button class="icon-button" data-close-destination aria-label="Đóng bản đồ địa phương">×</button></div><div class="dialog-grid overview-dialog"><div class="local-map-panel"><span class="eyebrow">${escapeHTML(d.name)} · RANH GIỚI HÀNH CHÍNH</span>${localMap(d)}<div class="local-map-caption">Điểm du lịch ở vị trí tham khảo · Chọn ảnh để đọc về địa danh<br>Ranh giới: Vietnamese Provinces Database</div></div><div class="dialog-sidebar"><span class="eyebrow">TỔNG QUAN ĐỊA PHƯƠNG</span><h3>${escapeHTML(region?.title || d.headline)}</h3>${image?placeImage(d,image.id,true):''}<p>${escapeHTML(overview?.text || d.description)}</p>${overview?`<p class="article-citations">Nguồn: ${overview.source_ids.map(id=>region.sources[id]).filter(Boolean).map(source=>`<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.title)} ↗</a>`).join(' · ')}</p>`:''}<a id="detail-link" class="primary-button" href="#/dia-phuong/${d.id}?tab=dia-danh">Tìm hiểu chi tiết ${icon('arrow')}</a></div></div>`;
+ $('#dialog-content').innerHTML=`<div class="dialog-header"><div><span class="eyebrow">BẢN ĐỒ · SỔ TAY ĐỊA PHƯƠNG</span><h2 id="destination-title">${escapeHTML(d.name)}</h2></div><button class="icon-button" data-close-destination aria-label="Đóng bản đồ địa phương">×</button></div><div class="dialog-grid overview-dialog"><div class="local-map-panel"><span class="eyebrow">${escapeHTML(d.name)} · RANH GIỚI HÀNH CHÍNH</span>${localMap(d)}<div class="local-map-caption">Điểm du lịch ở vị trí tham khảo · Chọn ảnh để đọc về địa danh<br>Ranh giới: Vietnamese Provinces Database</div></div><div class="dialog-sidebar" tabindex="0" role="region" aria-label="Bài tổng quan ${escapeHTML(d.name)} — cuộn để đọc">${overviewView(region,image?placeImage(d,image.id,true):'') || `<h3>${escapeHTML(d.headline)}</h3><p>${escapeHTML(d.description)}</p>`}<a id="detail-link" class="primary-button" href="#/dia-phuong/${d.id}?tab=dia-danh">Tìm hiểu chi tiết ${icon('arrow')}</a></div></div>`;
  $('#dialog-content').dataset.destination=id;
  if(!dialog.open)dialog.showModal();
  $('[data-close-destination]',dialog).onclick=()=>dismissDialog(dialog);
