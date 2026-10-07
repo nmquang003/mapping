@@ -93,8 +93,6 @@
           }
         ]
       },
-      "overviewReviewedOn": "2026-10-07",
-      "researchedOn": "2026-10-07",
       "sections": [
         {
           "id": "tong-quan",
@@ -598,7 +596,6 @@
           "publisher": "Báo Điện tử Chính phủ",
           "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
           "displayed_date": "2026-10-05",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Bài dẫn Nghị quyết 202/2025/QH15. Số liệu diện tích và dân số là số liệu phục vụ sắp xếp năm 2025."
         },
@@ -608,7 +605,6 @@
           "publisher": "Báo Điện tử Chính phủ",
           "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1674-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-tinh-ninh-binh-nam-2025-119250616203223135.htm",
           "displayed_date": "2025-06-20",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nghị quyết thông qua ngày 16/6/2025; dùng làm căn cứ tên xã, phường theo đợt sắp xếp này."
         },
@@ -618,7 +614,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/vi/places-to-go/northern-vietnam/ninh-binh",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Trang ghi bản dịch được AI tạo. Chỉ lấy nội dung tổng quát; không dùng các kỷ lục, mùa vụ hay lịch vận chuyển như thông tin hiện hành chưa đối chiếu."
         },
@@ -628,7 +623,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3021",
           "displayed_date": "2025-03-27",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Ngày trang hiển thị không bảo đảm mọi chi tiết nội dung vẫn nguyên bản tại ngày đó. Không lấy diện tích tổng quần thể làm diện tích vùng lõi UNESCO."
         },
@@ -638,7 +632,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3020",
           "displayed_date": "2025-03-27",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Bài trộn địa chỉ mới trong phần đầu và địa chỉ cũ ở cuối. Giá vé cần xác nhận lại."
         },
@@ -648,7 +641,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3116",
           "displayed_date": "2025-06-26",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Thời lượng thuyền và mùa lúa là mô tả tham khảo; điều kiện thực tế có thể thay đổi."
         },
@@ -658,7 +650,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3018",
           "displayed_date": "2025-03-27",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nội dung hiện đọc nêu Ninh Bình, Phú Thọ, Thanh Hóa; địa chỉ cuối bài khác website vườn. Không tự suy ra cổng vào từ địa chỉ này."
         },
@@ -668,7 +659,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3015",
           "displayed_date": "2025-03-26",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Không đưa các tuyên bố kỷ lục vào dữ liệu đã duyệt khi chưa đọc xác nhận riêng."
         },
@@ -678,7 +668,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3014",
           "displayed_date": "2025-03-26",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Dùng mô tả kiến trúc và khoảng thời gian xây dựng theo bài; xã Phát Diệm đối chiếu S02."
         },
@@ -688,7 +677,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3007",
           "displayed_date": "2025-03-24",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nguồn ghi phường Hoa Lư; chưa xác nhận lại địa chỉ. Câu chuyện nguồn gốc tên gọi được ghi là câu chuyện dân gian."
         },
@@ -698,7 +686,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3359",
           "displayed_date": "2025-09-24",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Lịch thường niên không thay thế thông báo tổ chức của từng năm."
         },
@@ -708,7 +695,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3684",
           "displayed_date": "2026-08-21",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Giới thiệu nghề; chưa xác nhận cơ sở nào có tour trải nghiệm đang mở."
         },
@@ -718,7 +704,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3663",
           "displayed_date": "2026-07-28",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Kim Sơn ở đây là vùng văn hóa/nghề, không gán mọi cơ sở nghề vào xã Kim Sơn hiện hành."
         },
@@ -728,7 +713,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3719",
           "displayed_date": "2026-09-14",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Thông tin văn hóa ẩm thực, không phải hướng dẫn bảo đảm an toàn thực phẩm."
         },
@@ -738,7 +722,6 @@
           "publisher": "Trung tâm Thông tin Xúc tiến Du lịch – Sở Du lịch Ninh Bình",
           "url": "https://dulichninhbinh.com.vn/item/3718",
           "displayed_date": "2026-09-14",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Bài cũng nhắc cơm cháy và thịt dê là đặc sản Ninh Bình; chưa xác minh giá hoặc cửa hàng."
         },
@@ -748,7 +731,6 @@
           "publisher": "Vườn quốc gia Cúc Phương",
           "url": "https://vuonquocgiacucphuong.vn/vi/",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Đã đọc trang chủ. Có thông báo quy định phương tiện vào vùng lõi áp dụng từ 1/9/2026; chưa đọc đầy đủ quy định, không tự diễn giải điều kiện."
         },
@@ -758,7 +740,6 @@
           "publisher": "UNESCO World Heritage Centre",
           "url": "https://whc.unesco.org/en/list/1438/",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "not_checked",
           "note": "Bị chặn ở bước kiểm tra bảo mật khi truy cập. Giữ làm nguồn ưu tiên bổ sung; không dùng như đã đọc trực tiếp trong lần này."
         },
@@ -768,7 +749,6 @@
           "publisher": "Hạ tầng dữ liệu không gian địa lý quốc gia",
           "url": "https://vnsdi.mae.gov.vn/bandohanhchinh/",
           "displayed_date": null,
-          "accessed_on": null,
           "status": "not_checked",
           "note": "Nguồn do đề thi cung cấp; chưa kiểm tra dữ liệu hoặc quyền tái sử dụng trong lần này."
         },
@@ -778,7 +758,6 @@
           "publisher": "Sở Văn hóa và Thể thao Ninh Bình",
           "url": "https://vhtt.ninhbinh.gov.vn/vi/tuyen-truyen-phat-trien-du-lich/ninh-binh-quyet-tam-thuc-hien-tot-cac-muc-tieu-chien-luoc-phat-trien-du-lich-1619.html",
           "displayed_date": "2025-08-08",
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         },
@@ -788,7 +767,6 @@
           "publisher": "Hội Liên hiệp Phụ nữ tỉnh Ninh Bình",
           "url": "https://hoilienhiepphunutinh.ninhbinh.gov.vn/trai-nghiem-du-lich/lang-nghe-ninh-binh-trong-khong-gian-phat-trien-moi-1943.html",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         }
@@ -885,8 +863,6 @@
           }
         ]
       },
-      "overviewReviewedOn": "2026-10-07",
-      "researchedOn": "2026-10-07",
       "sections": [
         {
           "id": "O01",
@@ -1448,7 +1424,6 @@
           "publisher": "Báo Điện tử Chính phủ",
           "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
           "displayed_date": "2026-10-05",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Dùng để xác định Hà Nội không sáp nhập cấp tỉnh trong đợt năm 2025; không suy ra địa chỉ chi tiết."
         },
@@ -1458,7 +1433,6 @@
           "publisher": "Thông tấn xã Việt Nam",
           "url": "https://nvsk.vnanet.vn/toan-van-nghi-quyet-so-1656-nq-ubtvqh15-sap-xep-cac-don-vi-hanh-chinh-cap-xa-cua-thanh-pho-ha-noi-nam-2025-1-172085.vna",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Đã đọc phần mở đầu và văn bản về sắp xếp năm 2025. Không thấy ngày đăng riêng; ngày 16/06/2025 là ngày nghị quyết."
         },
@@ -1468,7 +1442,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/things-to-do/hanoi-six-heritage-sites",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Dùng cho tổng quan di tích, mốc Văn Miếu, Quốc Tử Giám và phố cổ. Loại chi tiết truyền thuyết và niên đại chưa đối chiếu thêm."
         },
@@ -1478,7 +1451,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/things-to-do/3-walking-tours-hanoi",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Dùng cho địa danh và tên món ăn; không lấy mô tả nguyên liệu phở cuốn trong bài. Tuyến đi bộ không được coi là hướng dẫn an toàn hay lịch hoạt động hiện hành."
         },
@@ -1488,7 +1460,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/things-to-do/11-must-see-attractions-ha-noi",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Bài có chi tiết cần biên tập: nhầm vua xây chùa Một Cột, nhầm nhân vật truyền thuyết trả gươm; cách gọi 54 ethnic minorities không chính xác; giá và giờ không có mốc rõ. Đã loại các chi tiết này, chỉ lấy mô tả địa danh có căn cứ."
         },
@@ -1498,7 +1469,6 @@
           "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
           "url": "https://hoangthanhthanglong.vn/gioi-thieu/",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Website quản lý trực tiếp; đã đọc địa chỉ footer và giờ 8:00–17:00 trên header. Chưa kiểm tra hiệu lực lịch đối với ngày cụ thể. Đường dẫn đặt vé chưa được kiểm tra nên không đưa vào database."
         },
@@ -1508,7 +1478,6 @@
           "publisher": "Trung tâm Bảo tồn di sản Thăng Long – Hà Nội",
           "url": "https://hoangthanhthanglong.vn/thu-ngo/",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nguồn quản lý nêu khai quật khảo cổ năm 2002 và UNESCO năm 2010; dùng đối chiếu lịch sử và di sản."
         },
@@ -1518,7 +1487,6 @@
           "publisher": "Cổng thông tin điện tử thành phố Hà Nội",
           "url": "https://hanoi.gov.vn/dia-ly-dia-hinh",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         },
@@ -1528,7 +1496,6 @@
           "publisher": "Cổng thông tin điện tử thành phố Hà Nội",
           "url": "https://hanoi.gov.vn/dia-danh/nui-o-ha-noi-4241009134518725.htm",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         }
@@ -1625,8 +1592,6 @@
           }
         ]
       },
-      "overviewReviewedOn": "2026-10-07",
-      "researchedOn": "2026-10-07",
       "sections": [
         {
           "id": "O01",
@@ -2157,7 +2122,6 @@
           "publisher": "Báo Điện tử Chính phủ",
           "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-36-2026-qh16-thanh-lap-thanh-pho-quang-ninh-tu-1-9-2026-119260903082603583.htm",
           "displayed_date": "2026-09-03",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nghị quyết thông qua ngày 24/08/2026, hiệu lực 01/09/2026; đọc trực tiếp nội dung Điều 1–3."
         },
@@ -2167,7 +2131,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/places-to-go/northern-vietnam/ha-long",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Chỉ lấy mô tả cảnh quan và trải nghiệm tổng quát. Nội dung có nhắc điểm ngoài Quảng Ninh; đã loại khỏi hồ sơ. Không lấy lịch hoặc thời gian vận chuyển làm thông tin hiện hành."
         },
@@ -2177,7 +2140,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://www.vietnam.travel/vi/things-to-do/co-island-pristine-beauty-northeast-vietnam",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Trang tiếng Việt ghi bản dịch do AI tạo. Chỉ lấy mô tả địa danh tổng quát; loại số liệu, niên đại hải đăng và quy định hạn chế nhựa chưa đối chiếu."
         },
@@ -2187,7 +2149,6 @@
           "publisher": "Cục Du lịch Quốc gia Việt Nam – TITC",
           "url": "https://vietnamtourism.gov.vn/en/post/9785",
           "displayed_date": "2015-11-09",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Bài năm 2015 dùng địa danh huyện Vân Đồn trước sắp xếp. Không nhập số lượng phòng, cơ sở lưu trú, lịch tàu, giá hay thời gian chạy tàu như hiện hành."
         },
@@ -2197,7 +2158,6 @@
           "publisher": "Cổng thông tin điện tử Quảng Ninh",
           "url": "https://www.quangninh.gov.vn/Trang/ChiTietBVGioiThieu.aspx?bvid=530",
           "displayed_date": "2025-07-14",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Bài nêu địa giới phường sau sắp xếp và sự kiện UNESCO ngày 12/07/2025. Chỉ lấy phần di tích Quảng Ninh, không mở rộng hồ sơ sang Bắc Ninh hoặc Hải Phòng."
         },
@@ -2207,7 +2167,6 @@
           "publisher": "Sở Văn hóa, Thể thao và Du lịch Quảng Ninh",
           "url": "https://www.quangninh.gov.vn/so/sovanhoathethao/trang/chitietbvgioithieu.aspx?bvid=84",
           "displayed_date": "2026-09-04",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nguồn về chức năng và nhiệm vụ đơn vị, không phải hướng dẫn trưng bày hoặc giá vé. Không nhập thông tin cá nhân cán bộ vào database du lịch."
         },
@@ -2217,7 +2176,6 @@
           "publisher": "Cổng thông tin điện tử Quảng Ninh",
           "url": "https://quangninh.gov.vn/Trang/ChiTietTinTuc.aspx?nid=145471",
           "displayed_date": "2024-10-30",
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         },
@@ -2227,7 +2185,6 @@
           "publisher": "Cổng thông tin điện tử Quảng Ninh",
           "url": "https://quangninh.gov.vn/Trang/ChiTietTinTuc.aspx?nid=153584",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         },
@@ -2237,7 +2194,6 @@
           "publisher": "UNESCO World Heritage Centre",
           "url": "https://whc.unesco.org/en/list/1732/",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         }
@@ -2333,8 +2289,6 @@
           }
         ]
       },
-      "overviewReviewedOn": "2026-10-07",
-      "researchedOn": "2026-10-07",
       "sections": [
         {
           "id": "O01",
@@ -2824,7 +2778,6 @@
           "publisher": "Báo Điện tử Chính phủ",
           "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
           "displayed_date": "2026-10-05",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Dân số và diện tích Lào Cai là số liệu phục vụ sắp xếp năm 2025; không gọi là số liệu mới nhất năm 2026."
         },
@@ -2834,7 +2787,6 @@
           "publisher": "Báo Điện tử Chính phủ",
           "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1673-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-tinh-lao-cai-nam-2025-119250616214156071.htm",
           "displayed_date": "2025-06-20",
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nghị quyết ngày 16/06/2025; chính quyền xã/phường mới hoạt động từ 01/07/2025. Không suy ra địa chỉ điểm đến từ tên huyện cũ."
         },
@@ -2844,7 +2796,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/places-to-go/northern-vietnam/sapa",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Dùng cảnh quan, địa danh và chợ phiên; loại chiều cao Fansipan, thời gian cáp treo và thời gian di chuyển chưa đối chiếu. Mùa vụ và thời tiết là tham khảo, không phải dự báo."
         },
@@ -2854,7 +2805,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/things-to-do/4-things-youll-love-about-mu-cang-chai",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nguồn dùng địa danh tỉnh Yên Bái trước sắp xếp. Dùng mô tả cảnh quan và văn hóa; không dùng số giờ chạy xe hay lịch mùa vụ như cam kết hiện hành."
         },
@@ -2864,7 +2814,6 @@
           "publisher": "Vietnam Tourism – Cục Du lịch Quốc gia Việt Nam",
           "url": "https://vietnam.travel/things-to-do/thac-ba-lake-emerald-yen-bai",
           "displayed_date": null,
-          "accessed_on": "2026-10-06",
           "status": "source_checked",
           "note": "Nguồn dùng Yên Bái và huyện Yên Bình/Lục Yên trước sắp xếp. Đã ánh xạ phạm vi tỉnh qua S01; loại xếp hạng hồ, số đảo và diện tích chưa đối chiếu; không khuyến nghị món cá sống."
         },
@@ -2874,7 +2823,6 @@
           "publisher": "Cổng thông tin đối ngoại tỉnh Lào Cai",
           "url": "https://doingoailaocai.vn/vi/bai-viet/24268",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         },
@@ -2884,7 +2832,6 @@
           "publisher": "Báo Lào Cai",
           "url": "https://baolaocai.vn/lich-su-hinh-thanh-tinh-lao-cai-post386820.html",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         },
@@ -2894,7 +2841,6 @@
           "publisher": "Báo Lào Cai",
           "url": "https://baolaocai.vn/hanh-trinh-30-nam-mo-loi-giao-thuong-post346856.html",
           "displayed_date": null,
-          "accessed_on": "2026-10-07",
           "status": "source_checked",
           "note": "Nguồn cho bài tổng quan; diễn đạt lại nội dung tuyển chọn, không dùng số liệu hoặc địa chỉ cũ như thông tin hiện hành."
         }

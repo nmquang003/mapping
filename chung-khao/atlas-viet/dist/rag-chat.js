@@ -194,7 +194,7 @@ function renderAnswer(result) {
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.textContent = `${sourceNumbers.get(source.id)}. ${source.title}`;
-      p.append(link, document.createElement('br'), `${source.publisher} · Đọc nguồn: ${source.accessed_on || 'chưa rõ'}`);
+      p.append(link, document.createElement('br'), source.publisher);
       details.append(p);
     }
     content.append(details);

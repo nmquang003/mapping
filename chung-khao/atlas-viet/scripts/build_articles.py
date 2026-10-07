@@ -49,6 +49,8 @@ for slug, (title, lead) in LEADS.items():
         sections[index]['text'] = text
     overview = editorial['regions'][slug]
     sources.update({s['id']: s for s in overview['sources']})
+    # Reading/review dates belong to the editorial records, not the public article.
+    sources = {key: {k: v for k, v in source.items() if k != 'accessed_on'} for key, source in sources.items()}
     for index, item in [(0, dict(text=overview['summary'], source_ids=overview['source_ids'])),
                         (1, overview['sections'][1]), (2, overview['sections'][2]), (3, overview['sections'][3])]:
         sections[index].update(item)
@@ -62,8 +64,7 @@ for slug, (title, lead) in LEADS.items():
     for item in [*sections, *places, *(f for p in places for f in p['facts'])]:
         for source_id in item['source_ids']:
             assert source_id in sources, (slug, source_id)
-    regions[slug] = dict(name=seed['scope']['province_name'], title=title, lead=overview['lead'], overview={k:v for k,v in overview.items() if k!='sources'}, overviewReviewedOn=editorial['reviewed_on'],
-                         researchedOn=max(seed['researched_on'], editorial['reviewed_on']), sections=sections,
+    regions[slug] = dict(name=seed['scope']['province_name'], title=title, lead=overview['lead'], overview={k:v for k,v in overview.items() if k!='sources'}, sections=sections,
                          places=places, sources=sources)
 output = ROOT / 'dist/assets/articles.json'
 output.write_text(json.dumps({'regions': regions}, ensure_ascii=False, indent=2) + '\n')
